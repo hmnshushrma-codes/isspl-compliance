@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-EV-IDX-001 — Master Evidence Index | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+  <style>
+    .progress-bar-bg {
+      background: var(--rs-border);
+      border-radius: 4px;
+      height: 8px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background: var(--rs-green);
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .category-card {
+      border: 1px solid var(--rs-border);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.15s;
+    }
+    .category-card:hover { border-color: var(--rs-accent); }
+    .category-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+    }
+    .category-card .cat-desc {
+      font-size: 0.85rem;
+      color: var(--rs-muted);
+      margin-bottom: 0.7rem;
+    }
+    .cat-stats {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--rs-charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .cat-stats strong { color: var(--rs-navy); }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .summary-stat {
+      text-align: center;
+      padding: 1.2rem 1rem;
+      border: 1px solid var(--rs-border);
+      border-radius: 6px;
+      background: var(--rs-light-gray);
+    }
+    .summary-stat .stat-num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--rs-navy);
+      line-height: 1;
+    }
+    .summary-stat .stat-label {
+      font-size: 0.8rem;
+      color: var(--rs-muted);
+      margin-top: 0.3rem;
+    }
+    .cat-number {
+      display: inline-block;
+      background: var(--rs-accent-lt);
+      color: var(--rs-accent);
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 0.15em 0.5em;
+      border-radius: 3px;
+      margin-right: 0.4rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="doc-nav">
+  <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+  <div>
+    <a href="../index.html">Home</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       DOCUMENT HEADER
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="doc-header">
+    <p class="org-name">Ramdoot Solutions</p>
+    <p class="org-sub">Internal Compliance Documentation</p>
+    <h1 class="doc-title" style="border:none; margin-top:1rem;">Master Evidence Index</h1>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. DOCUMENT CONTROL
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="document-control">
+    <h2>Document Control</h2>
+    <table class="doc-control">
+      <tr><th>Document Title</th><td>Master Evidence Index</td></tr>
+      <tr><th>Document ID</th><td>RS-EV-IDX-001</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td>Draft</td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2. PURPOSE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="purpose">
+    <h2>1. Purpose</h2>
+    <p>This document serves as the master index for all compliance evidence collected and maintained by Ramdoot Solutions. It provides a centralized view of evidence collection progress across all compliance categories, organized to support SOC 2, SOC 1, and NISP audit readiness activities.</p>
+    <p>Use this index to track overall evidence collection status, identify gaps, and navigate to the detailed <a href="./evidence-request-list.html">Evidence Request List (RS-EV-REQ-001)</a> and <a href="./evidence-mapping.html">Evidence Mapping (RS-EV-MAP-001)</a> documents.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. COLLECTION SUMMARY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="summary">
+    <h2>2. Collection Summary</h2>
+
+    <div class="summary-grid">
+      <div class="summary-stat">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num">67</div>
+        <div class="stat-label">Total Required</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Collected</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num">67</div>
+        <div class="stat-label">Outstanding</div>
+      </div>
+      <div class="summary-stat">
+        <div class="stat-num">0%</div>
+        <div class="stat-label">Completion</div>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <p><strong>Evidence Collection Not Started.</strong> No evidence items have been collected. Refer to the <a href="./evidence-request-list.html">Evidence Request List</a> for specific requirements per category and assign responsible owners to begin collection.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4. RELATED DOCUMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="related-docs">
+    <h2>3. Related Documents</h2>
+    <table>
+      <thead>
+        <tr><th>Document ID</th><th>Title</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-EV-REQ-001</code></td>
+          <td><a href="./evidence-request-list.html">Evidence Request List</a></td>
+          <td>Comprehensive list of all evidence items required, with descriptions, associated controls, responsible owners, and collection status.</td>
+        </tr>
+        <tr>
+          <td><code>RS-EV-MAP-001</code></td>
+          <td><a href="./evidence-mapping.html">Cross-Framework Evidence Mapping</a></td>
+          <td>Maps evidence items to SOC 2 criteria, SOC 1 objectives, NISP sections, and supporting policies.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. EVIDENCE CATEGORIES
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="categories">
+    <h2>4. Evidence Categories</h2>
+
+    <!-- Summary Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Required</th>
+          <th>Collected</th>
+          <th>Outstanding</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="#cat-governance">Governance &amp; Management</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="#cat-hr">Human Resources</a></td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="#cat-infosec">Information Security</a></td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><a href="#cat-access">Access Control</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><a href="#cat-network">Network &amp; Infrastructure</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><a href="#cat-appsec">Application Security</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><a href="#cat-change">Change Management</a></td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><a href="#cat-ops">Operations &amp; Monitoring</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><a href="#cat-bcp">Business Continuity</a></td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><a href="#cat-vendor">Vendor Management</a></td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td><a href="#cat-data">Data Protection</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td><a href="#cat-audit">Compliance &amp; Audit</a></td>
+          <td>6</td>
+          <td>0</td>
+          <td>6</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+        <tr style="font-weight:700; background: var(--rs-accent-lt);">
+          <td></td>
+          <td>Total</td>
+          <td>67</td>
+          <td>0</td>
+          <td>67</td>
+          <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ── Category 1: Governance & Management ── -->
+    <div class="category-card" id="cat-governance">
+      <h3><span class="cat-number">CAT-01</span> Governance &amp; Management</h3>
+      <p class="cat-desc">Board minutes, organizational charts, job descriptions, management review records, and governance policies demonstrating tone-at-the-top commitment to security and compliance.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Board/management meeting minutes approving security policies, current organizational chart showing reporting lines, job descriptions for security-relevant roles, code of ethics/conduct signed acknowledgments, management review meeting minutes, entity-level risk assessment documentation.</p>
+    </div>
+
+    <!-- ── Category 2: Human Resources ── -->
+    <div class="category-card" id="cat-hr">
+      <h3><span class="cat-number">CAT-02</span> Human Resources</h3>
+      <p class="cat-desc">Employee handbook, code of conduct, training records, background verification results, and onboarding/offboarding checklists supporting personnel security controls.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>5</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>5</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Current employee handbook with security responsibilities section, signed code of conduct/confidentiality agreements, security awareness training completion records, background check policy and sample verification records, onboarding/offboarding checklists with access provisioning steps.</p>
+    </div>
+
+    <!-- ── Category 3: Information Security ── -->
+    <div class="category-card" id="cat-infosec">
+      <h3><span class="cat-number">CAT-03</span> Information Security</h3>
+      <p class="cat-desc">Information security policies, procedures, security awareness training materials, acceptable use policies, and risk management documentation.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>5</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>5</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Approved information security policy (RS-POL-001), acceptable use policy with signed acknowledgments, security awareness training program materials and schedule, risk assessment methodology document, information security incident response plan.</p>
+    </div>
+
+    <!-- ── Category 4: Access Control ── -->
+    <div class="category-card" id="cat-access">
+      <h3><span class="cat-number">CAT-04</span> Access Control</h3>
+      <p class="cat-desc">Access reviews, MFA configuration evidence, authentication settings, privileged access management records, and user access provisioning/deprovisioning evidence.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Quarterly access review reports, screenshot of MFA enforcement configuration, password policy configuration from identity provider, list of privileged users with business justification, user provisioning/deprovisioning request samples, terminated user access removal evidence.</p>
+    </div>
+
+    <!-- ── Category 5: Network & Infrastructure ── -->
+    <div class="category-card" id="cat-network">
+      <h3><span class="cat-number">CAT-05</span> Network &amp; Infrastructure</h3>
+      <p class="cat-desc">Network architecture diagrams, firewall rules and configurations, intrusion detection/prevention system setup, server hardening evidence, and patch management records.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Current network architecture diagram with security zones, firewall rule set with review/approval records, IDS/IPS configuration and alert samples, server hardening baseline and compliance scan results, patch management policy and patching status report, network segmentation evidence between production and development.</p>
+    </div>
+
+    <!-- ── Category 6: Application Security ── -->
+    <div class="category-card" id="cat-appsec">
+      <h3><span class="cat-number">CAT-06</span> Application Security</h3>
+      <p class="cat-desc">Software development lifecycle documentation, code review records, vulnerability scan results, penetration testing reports, and secure coding standards.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Documented SDLC methodology with security integration points, code review records for recent releases, vulnerability scan reports (SAST/DAST) with remediation tracking, penetration testing report from qualified assessor, secure coding standards/guidelines document, application architecture diagram with data flows.</p>
+    </div>
+
+    <!-- ── Category 7: Change Management ── -->
+    <div class="category-card" id="cat-change">
+      <h3><span class="cat-number">CAT-07</span> Change Management</h3>
+      <p class="cat-desc">Change management tickets, deployment records, change approval workflows, emergency change procedures, and release management documentation.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>5</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>5</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Change management policy/procedure document, sample of 5 change tickets showing full approval workflow, deployment records with pre/post validation, emergency change process documentation with sample tickets, change advisory board meeting minutes or approval records.</p>
+    </div>
+
+    <!-- ── Category 8: Operations & Monitoring ── -->
+    <div class="category-card" id="cat-ops">
+      <h3><span class="cat-number">CAT-08</span> Operations &amp; Monitoring</h3>
+      <p class="cat-desc">Monitoring system configuration, alert records and escalation paths, incident tickets with resolution timelines, capacity planning records, and operational procedures.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Monitoring system dashboard configuration showing covered assets, alert escalation matrix with SLA targets, sample incident tickets showing detection-through-resolution timeline, log aggregation and retention configuration, capacity monitoring reports and thresholds, operational runbook for critical systems.</p>
+    </div>
+
+    <!-- ── Category 9: Business Continuity ── -->
+    <div class="category-card" id="cat-bcp">
+      <h3><span class="cat-number">CAT-09</span> Business Continuity</h3>
+      <p class="cat-desc">BCP/DRP plans, disaster recovery testing results, backup configuration and restoration test records, and business impact analysis documentation.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>5</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>5</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Business continuity plan with defined RTOs/RPOs, disaster recovery plan and procedures, DR test results from most recent exercise, backup configuration showing schedule/retention/encryption settings, backup restoration test log with success/failure outcomes.</p>
+    </div>
+
+    <!-- ── Category 10: Vendor Management ── -->
+    <div class="category-card" id="cat-vendor">
+      <h3><span class="cat-number">CAT-10</span> Vendor Management</h3>
+      <p class="cat-desc">Vendor risk assessments, SOC reports from critical vendors, contracts with security clauses, SLA documentation, and vendor review meeting records.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>5</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>5</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Vendor inventory with risk tier classification, completed vendor security assessment questionnaires for critical vendors, SOC 2 or equivalent reports from critical service providers, vendor contracts with data protection/security clauses highlighted, SLA performance monitoring records.</p>
+    </div>
+
+    <!-- ── Category 11: Data Protection ── -->
+    <div class="category-card" id="cat-data">
+      <h3><span class="cat-number">CAT-11</span> Data Protection</h3>
+      <p class="cat-desc">Data classification records, retention policy compliance evidence, encryption configuration, data disposal records, and privacy impact assessments.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Data classification scheme and labeled asset inventory, data retention schedule with compliance verification records, encryption-at-rest configuration for databases and storage, encryption-in-transit configuration (TLS certificates and settings), data disposal/destruction records with certificates, privacy impact assessment for systems processing personal data.</p>
+    </div>
+
+    <!-- ── Category 12: Compliance & Audit ── -->
+    <div class="category-card" id="cat-audit">
+      <h3><span class="cat-number">CAT-12</span> Compliance &amp; Audit</h3>
+      <p class="cat-desc">Risk assessments, internal and external audit reports, compliance tracking matrices, remediation action tracking, and regulatory mapping documentation.</p>
+      <div class="cat-stats">
+        <span>Required: <strong>6</strong></span>
+        <span>Collected: <strong>0</strong></span>
+        <span>Outstanding: <strong>6</strong></span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%"></div></div>
+      <p style="font-size:0.82rem; margin-top:0.6rem;">Evidence items: Annual information security risk assessment report, risk treatment plan with owner assignments and due dates, internal audit schedule and completed audit reports, external audit findings and management responses, compliance tracking matrix against applicable frameworks, remediation action tracker with status and evidence of closure.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       6. APPROVAL BLOCK
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="approval">
+    <h2>5. Approval</h2>
+    <table class="approval-block">
+      <tr>
+        <th>Prepared By</th>
+        <td>Ramdoot Solutions</td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Reviewed By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Approved By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. VERSION HISTORY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="version-history">
+    <h2>6. Version History</h2>
+    <table class="version-history">
+      <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Ramdoot Solutions</td><td>Initial draft — master evidence index created with 12 categories and 67 evidence requirements.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+    <span>RS-EV-IDX-001 — Master Evidence Index</span>
+  </div>
+
+</div>
+
+</body>
+</html>

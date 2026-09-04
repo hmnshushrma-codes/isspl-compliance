@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Management Decisions Required — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="assets/compliance.css">
+  <link rel="stylesheet" media="print" href="assets/print.css">
+</head>
+<body>
+
+<nav class="doc-nav no-print">
+  <a href="index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+  <div>
+    <a href="soc2/index.html">SOC 2</a> &nbsp;|&nbsp;
+    <a href="soc1/index.html">SOC 1</a> &nbsp;|&nbsp;
+    <a href="gap-analysis.html">Gap Analysis</a> &nbsp;|&nbsp;
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <div class="doc-header">
+    <div class="org-name">RAMDOOT SOLUTIONS</div>
+    <div class="org-sub">Compliance &amp; Information Security</div>
+    <h1 class="doc-title">Management Decisions Required</h1>
+  </div>
+
+  <table class="doc-control">
+    <tr><th>Document ID</th><td>RS-MGT-001</td></tr>
+    <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+    <tr><th>Version</th><td>1.0</td></tr>
+    <tr><th>Classification</th><td>Confidential</td></tr>
+    <tr><th>Status</th><td><span class="badge badge-draft">Awaiting Management Review</span></td></tr>
+  </table>
+
+  <div class="callout callout-warning">
+    <strong>Purpose:</strong> This document consolidates all unresolved decisions that must be made by Ramdoot Solutions management before the compliance documentation suite can be finalized and an external SOC assessment can be engaged. Each decision is cross-referenced to the affected documents and controls.
+  </div>
+
+  <p>Total unresolved decisions: <strong>32</strong></p>
+
+  <!-- Category 1: Scope & Framework -->
+  <h2 id="scope">1. Scope &amp; Framework Decisions</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><strong>SOC 2 Trust Services Categories in scope</strong></td>
+        <td>Security is mandatory. Availability, Confidentiality, Processing Integrity, and Privacy are optional. Recommend including Availability and Confidentiality if customer SLAs or data handling agreements exist.</td>
+        <td>RS-SOC2-001, RS-SOC2-003, RS-SOC2-004</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><strong>SOC 2 Type I or Type II</strong></td>
+        <td>Type I: design/implementation at a point in time. Type II: design + operating effectiveness over a period (3–12 months). Type II is more valuable for customer trust.</td>
+        <td>RS-SOC2-001, evidence collection timeline</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><strong>SOC 1 applicability</strong></td>
+        <td>Required only if Ramdoot Solutions' services affect customer Internal Control over Financial Reporting (ICFR). If services are purely software/SaaS without financial transaction processing, SOC 1 may not be applicable.</td>
+        <td>RS-SOC1-001, RS-SOC1-003</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><strong>Target audit period</strong></td>
+        <td>For SOC 2 Type II: 3 months (minimum), 6 months (common first audit), or 12 months (standard). Evidence collection must begin before the audit period starts.</td>
+        <td>All evidence documents, RS-EV-REQ-001</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>System boundaries</strong></td>
+        <td>Confirm which systems are in scope: CertFlow web app, API, database, MinIO, PDF parser, CI/CD, email service, DNS/CDN. Exclude any components not relevant to services provided to customers.</td>
+        <td>RS-SOC2-002, RS-SOC2-004</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 2: Governance -->
+  <h2 id="governance">2. Governance &amp; Organization</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>6</td>
+        <td><strong>Information Security Officer / CISO appointment</strong></td>
+        <td>Designate an existing employee or hire a dedicated security officer. This person will own all security policies and oversee the compliance program.</td>
+        <td>All policies (RS-POL-*), RS-NISP-001, RS-GOV-003</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><strong>Policy approvers</strong></td>
+        <td>Identify management personnel who will review and approve each policy document. Typically CEO/CTO for overarching policies, department heads for operational policies.</td>
+        <td>All documents with approval blocks</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><strong>Board of Directors or Advisory Board</strong></td>
+        <td>SOC 2 CC1 references board oversight. If no formal board exists, document management committee or advisory board that provides governance oversight.</td>
+        <td>RS-SOC2-003 (CC1.2), RS-GOV-001</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><strong>Organizational chart</strong></td>
+        <td>Provide current org chart showing reporting lines, security responsibilities, and IT team structure.</td>
+        <td>RS-SOC2-002, RS-SOC2-003 (CC1.3), RS-GOV-003</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td><strong>Employee count and departments</strong></td>
+        <td>Total employee count, contractor count, department structure — needed for scope sizing and policy applicability.</td>
+        <td>RS-SOC2-002, RS-NISP-001</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 3: Security -->
+  <h2 id="security">3. Security &amp; Technical Decisions</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>11</td>
+        <td><strong>MFA enforcement timeline and method</strong></td>
+        <td>TOTP (Google Authenticator/Authy) vs. SMS vs. hardware keys. Phased rollout (admin first, then all users) vs. all-at-once.</td>
+        <td>RS-POL-003, RS-IAM-003</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td><strong>Password policy parameters</strong></td>
+        <td>Minimum length (recommend 12+), complexity requirements, rotation period (recommend 90 days for privileged, 365 for standard), history depth.</td>
+        <td>RS-POL-003</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td><strong>Data-at-rest encryption approach</strong></td>
+        <td>Full-disk encryption (LUKS) on VPS vs. PostgreSQL TDE vs. application-layer column encryption. Each has different complexity, performance, and key management implications.</td>
+        <td>RS-POL-008, RS-SEC-002</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td><strong>Secrets management solution</strong></td>
+        <td>HashiCorp Vault (self-hosted), AWS Secrets Manager, Azure Key Vault, or environment variables with documented rotation. Affects JWT secret, database credentials, API keys.</td>
+        <td>RS-POL-008, RS-SEC-003</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td><strong>Log aggregation platform</strong></td>
+        <td>Open-source (Loki+Grafana, ELK) vs. commercial (Datadog, Splunk Cloud). Budget and operational complexity vary significantly.</td>
+        <td>RS-POL-013, RS-MON-002</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td><strong>Intrusion detection system</strong></td>
+        <td>OSSEC, Wazuh, CrowdStrike, or cloud-native IDS. Open-source options reduce cost but require operational expertise.</td>
+        <td>RS-POL-013, RS-OPS-014</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 4: Business Continuity -->
+  <h2 id="bcp">4. Business Continuity &amp; Recovery</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>17</td>
+        <td><strong>Recovery Time Objective (RTO)</strong></td>
+        <td>Maximum acceptable downtime: 1 hour, 4 hours, 24 hours? Drives infrastructure requirements and DR investment.</td>
+        <td>RS-POL-015, RS-POL-016</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td><strong>Recovery Point Objective (RPO)</strong></td>
+        <td>Maximum acceptable data loss: 0 (real-time replication), 1 hour, 24 hours? Drives backup frequency and replication strategy.</td>
+        <td>RS-POL-015, RS-POL-016, RS-POL-017</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td><strong>Offsite backup location</strong></td>
+        <td>S3-compatible cloud storage (AWS S3, Backblaze B2, Wasabi) vs. secondary VPS in different region. Consider data residency (India-only vs. multi-region).</td>
+        <td>RS-POL-017, RS-OPS-003</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td><strong>Critical business functions ranking</strong></td>
+        <td>Prioritize which services must be restored first during a disaster. Drives BCP recovery sequence.</td>
+        <td>RS-POL-015</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td><strong>Insurance coverage</strong></td>
+        <td>Cyber insurance, professional liability, E&amp;O coverage. SOC 2 CC9.1 references insurance as a risk mitigation strategy.</td>
+        <td>RS-POL-019, CC9.1</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 5: HR & Personnel -->
+  <h2 id="hr">5. HR &amp; Personnel</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>22</td>
+        <td><strong>Background check policy</strong></td>
+        <td>Pre-employment verification scope: identity, education, criminal, reference checks. Indian labor law permits these with consent.</td>
+        <td>RS-POL-023, RS-PRO-001</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td><strong>Security awareness training provider</strong></td>
+        <td>In-house training vs. third-party platform (KnowBe4, Curricula, etc.). Must include phishing simulation. Annual requirement for SOC 2.</td>
+        <td>RS-POL-023, RS-REG-007</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td><strong>Employee handbook existence</strong></td>
+        <td>Confirm whether a current employee handbook exists. SOC 2 CC1.1 requires evidence of standards of conduct communicated to employees.</td>
+        <td>RS-GOV-001, CC1.1</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 6: Vendor & Legal -->
+  <h2 id="vendor">6. Vendor &amp; Legal</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>25</td>
+        <td><strong>Subservice organizations</strong></td>
+        <td>Identify vendors whose services are part of the system description: Cloudflare, Hostinger, GitHub, VPS provider. Determine inclusive vs. carve-out method for each.</td>
+        <td>RS-SOC2-002, RS-POL-018</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td><strong>Penetration testing frequency and scope</strong></td>
+        <td>Annual vs. bi-annual. Internal + external network vs. application-only. Third-party firm selection.</td>
+        <td>RS-POL-009, RS-SEC-021</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td><strong>Vulnerability remediation SLAs</strong></td>
+        <td>Recommended: Critical ≤48hrs, High ≤7 days, Medium ≤30 days, Low ≤90 days. Management must confirm acceptable risk levels.</td>
+        <td>RS-POL-009</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td><strong>Data residency requirements</strong></td>
+        <td>India-only data residency vs. multi-region acceptable. Affects cloud provider, backup location, and DR site selection. Consider DPDP Act requirements.</td>
+        <td>RS-POL-020, RS-POL-017</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td><strong>SOC 2 audit firm selection</strong></td>
+        <td>Select a CPA firm licensed to perform SOC attestations. Consider: AICPA membership, industry experience, pricing, timeline.</td>
+        <td>Assessment planning</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Category 7: Operational -->
+  <h2 id="operational">7. Operational Parameters</h2>
+  <table>
+    <thead>
+      <tr><th>#</th><th>Decision Required</th><th>Options / Guidance</th><th>Affected Documents</th><th>Priority</th><th>Decision</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>30</td>
+        <td><strong>Review frequencies for policies</strong></td>
+        <td>Annual review is standard for SOC 2. Confirm whether specific policies need more frequent review (e.g., risk register quarterly, access reviews quarterly).</td>
+        <td>All RS-POL-* documents</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td><strong>Incident severity classification model</strong></td>
+        <td>Proposed P1-P4 model (see RS-POL-014). Management must confirm response time SLAs for each severity level.</td>
+        <td>RS-POL-014, RS-PRO-005</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td><strong>Budget allocation for compliance program</strong></td>
+        <td>Covers: security tooling, audit firm fees, penetration testing, training platform, potential staffing. Typical first SOC 2 engagement: $50K–$150K depending on scope.</td>
+        <td>Remediation roadmap</td>
+        <td><span class="badge badge-critical">Critical</span></td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-info">
+    <strong>Next Steps:</strong> Once these decisions are made, update the relevant policy documents, finalize the SOC 2 scope, and begin the evidence collection period. The compliance documentation suite can then be formally approved and the organization can engage an audit firm.
+  </div>
+
+  <div class="doc-footer">
+    <span>Ramdoot Solutions &mdash; Confidential</span>
+    <span>RS-MGT-001 &nbsp;|&nbsp; v1.0</span>
+  </div>
+
+</div>
+</body>
+</html>

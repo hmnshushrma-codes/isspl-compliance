@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 2 Readiness Report — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Navigation Bar
+       ============================================================ -->
+  <nav class="doc-nav">
+    <span class="nav-brand">Ramdoot Solutions &mdash; Compliance Documentation</span>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       Cover Page
+       ============================================================ -->
+  <div class="cover-page">
+    <p class="org-name">RAMDOOT SOLUTIONS</p>
+    <p class="doc-type">Compliance Documentation</p>
+    <h1 class="cover-title">SOC 2 Security &amp; Trust Services<br>Readiness Documentation</h1>
+    <p class="cover-subtitle">Preparation for SOC 2 Type I / Type II Assessment</p>
+    <div class="cover-meta">
+      <p><strong>Document ID:</strong> RS-SOC2-001</p>
+      <p><strong>Version:</strong> 1.0</p>
+      <p><strong>Classification:</strong> Confidential</p>
+      <p><strong>Status:</strong> Draft for Management Review</p>
+    </div>
+    <div class="cover-notice">
+      <strong>Notice:</strong> This document is part of Ramdoot Solutions' internal compliance and
+      security governance program. It does not constitute or represent an independent SOC attestation.
+      The information herein is intended to support Ramdoot Solutions' readiness for a future
+      SOC 2 examination by an independent CPA firm and should be treated as confidential working material.
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ============================================================
+         Document Control
+         ============================================================ -->
+    <section id="doc-control">
+      <h2>Document Control</h2>
+      <table class="doc-control">
+        <tr><th>Document ID</th><td>RS-SOC2-001</td></tr>
+        <tr><th>Title</th><td>SOC 2 Security &amp; Trust Services Readiness Documentation</td></tr>
+        <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+        <tr><th>Document Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Version</th><td>1.0</td></tr>
+        <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><th>Classification</th><td>Confidential</td></tr>
+        <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Table of Contents
+         ============================================================ -->
+    <div class="toc" id="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#sec-purpose">Purpose</a></li>
+        <li><a href="#sec-scope">Scope</a></li>
+        <li><a href="#sec-background">Background &mdash; AICPA Trust Services Criteria</a>
+          <ol>
+            <li><a href="#sec-background-tsc">Trust Services Criteria Overview</a></li>
+            <li><a href="#sec-background-types">SOC 2 Type I vs Type II</a></li>
+          </ol>
+        </li>
+        <li><a href="#sec-readiness-summary">Readiness Assessment Summary</a></li>
+        <li><a href="#sec-tsc-scope">Trust Services Categories in Scope</a></li>
+        <li><a href="#sec-system-overview">System Overview</a>
+          <ol>
+            <li><a href="#sec-system-boundaries">System Boundaries</a></li>
+            <li><a href="#sec-system-infra">Infrastructure &amp; Technology</a></li>
+            <li><a href="#sec-system-people">People &amp; Organization</a></li>
+            <li><a href="#sec-system-data">Data Classification</a></li>
+          </ol>
+        </li>
+        <li><a href="#sec-control-assessment">Control Environment Assessment</a>
+          <ol>
+            <li><a href="#sec-cc1">CC1 &mdash; Control Environment</a></li>
+            <li><a href="#sec-cc2">CC2 &mdash; Communication &amp; Information</a></li>
+            <li><a href="#sec-cc3">CC3 &mdash; Risk Assessment</a></li>
+            <li><a href="#sec-cc4">CC4 &mdash; Monitoring Activities</a></li>
+            <li><a href="#sec-cc5">CC5 &mdash; Control Activities</a></li>
+            <li><a href="#sec-cc6">CC6 &mdash; Logical &amp; Physical Access Controls</a></li>
+            <li><a href="#sec-cc7">CC7 &mdash; System Operations</a></li>
+            <li><a href="#sec-cc8">CC8 &mdash; Change Management</a></li>
+            <li><a href="#sec-cc9">CC9 &mdash; Risk Mitigation</a></li>
+          </ol>
+        </li>
+        <li><a href="#sec-gap-summary">Gap Summary</a></li>
+        <li><a href="#sec-remediation">Remediation Roadmap</a></li>
+        <li><a href="#sec-pre-assessment">Pre-Assessment Checklist</a></li>
+        <li><a href="#sec-management-responsibilities">Management Responsibilities</a></li>
+        <li><a href="#sec-related-docs">Related Documents</a></li>
+        <li><a href="#sec-approval">Approval Block</a></li>
+        <li><a href="#sec-version-history">Version History</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         Section 1: Purpose
+         ============================================================ -->
+    <section id="sec-purpose">
+      <h1>1. Purpose</h1>
+      <p>
+        This readiness documentation has been prepared to evaluate Ramdoot Solutions' current state of
+        preparedness for a SOC 2 examination against the AICPA Trust Services Criteria (2017, updated 2022).
+        The document serves three primary objectives:
+      </p>
+      <ol>
+        <li>
+          <strong>Baseline assessment:</strong> Establish a clear understanding of the controls currently
+          in place across the organization, mapped to the Common Criteria (CC1 through CC9) and any
+          additional Trust Services Categories that may be in scope.
+        </li>
+        <li>
+          <strong>Gap identification:</strong> Identify areas where controls are absent, partially
+          implemented, or insufficiently documented to meet the expectations of an independent auditor
+          performing a SOC 2 Type I or Type II examination.
+        </li>
+        <li>
+          <strong>Remediation planning:</strong> Provide a structured roadmap with prioritized actions
+          that Ramdoot Solutions' management can execute to achieve readiness before engaging an
+          external audit firm.
+        </li>
+      </ol>
+      <div class="callout callout-info">
+        <p>
+          <strong>Important:</strong> This document is an internal working artifact. It does not
+          constitute a SOC 2 attestation, report, or certification. SOC 2 examinations are
+          performed exclusively by independent CPA firms licensed under AICPA standards.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 2: Scope
+         ============================================================ -->
+    <section id="sec-scope">
+      <h1>2. Scope</h1>
+      <p>
+        The scope of this readiness assessment encompasses the following dimensions. Where specific
+        details are pending management confirmation, placeholders have been inserted.
+      </p>
+
+      <h3>2.1 Services in Scope</h3>
+      <table>
+        <thead>
+          <tr><th>Service / Product</th><th>Description</th><th>Hosting Model</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[Cloud / On-Premises / Hybrid]</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2.2 Organizational Units</h3>
+      <ul>
+        <li>Engineering / Development teams responsible for product development and deployment</li>
+        <li>Infrastructure / DevOps teams responsible for production environments</li>
+        <li>Information Security function (or designated security personnel)</li>
+        <li>Human Resources for personnel onboarding, background checks, and termination procedures</li>
+        <li>Executive management for governance oversight</li>
+        <li><span class="placeholder">[Additional departments TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+      </ul>
+
+      <h3>2.3 Exclusions</h3>
+      <p>
+        The following are explicitly out of scope for this readiness assessment unless management
+        determines otherwise:
+      </p>
+      <ul>
+        <li>Internal corporate IT systems not related to service delivery (e.g., internal HR portals, corporate email administration)</li>
+        <li>Physical office security beyond server room / data center access controls</li>
+        <li>Third-party services that maintain their own SOC 2 reports (subservice organizations under the carve-out method)</li>
+        <li><span class="placeholder">[Additional exclusions TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+      </ul>
+
+      <h3>2.4 Reporting Period</h3>
+      <div class="callout callout-warning">
+        <p>
+          <strong>Decision required:</strong> Management must determine whether to pursue a
+          <strong>SOC 2 Type I</strong> (point-in-time design assessment) or
+          <strong>SOC 2 Type II</strong> (operating effectiveness over a period, typically 6&ndash;12 months).
+          This decision affects the observation window and evidence requirements.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 3: Background
+         ============================================================ -->
+    <section id="sec-background" class="allow-break">
+      <h1>3. Background &mdash; AICPA Trust Services Criteria</h1>
+
+      <h2 id="sec-background-tsc">3.1 Trust Services Criteria Overview</h2>
+      <p>
+        The AICPA Trust Services Criteria (TSC), originally published in 2017 and most recently
+        updated in 2022, provide the authoritative framework against which SOC 2 examinations are
+        conducted. The TSC is organized around the COSO 2013 Internal Control framework and comprises
+        the following Common Criteria families:
+      </p>
+      <table>
+        <thead>
+          <tr><th>CC Family</th><th>Name</th><th>Focus Area</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CC1</td><td>Control Environment</td><td>Tone at the top, governance, organizational structure, integrity, and ethical values</td></tr>
+          <tr><td>CC2</td><td>Communication &amp; Information</td><td>Internal and external communication of policies, objectives, and responsibilities</td></tr>
+          <tr><td>CC3</td><td>Risk Assessment</td><td>Identification and analysis of risks to achieving objectives; fraud risk</td></tr>
+          <tr><td>CC4</td><td>Monitoring Activities</td><td>Ongoing and periodic evaluation of control effectiveness</td></tr>
+          <tr><td>CC5</td><td>Control Activities</td><td>Policies and procedures that enforce management directives; segregation of duties</td></tr>
+          <tr><td>CC6</td><td>Logical &amp; Physical Access Controls</td><td>Authentication, authorization, encryption, physical security</td></tr>
+          <tr><td>CC7</td><td>System Operations</td><td>Detection of anomalies, incident response, disaster recovery</td></tr>
+          <tr><td>CC8</td><td>Change Management</td><td>Change authorization, testing, and deployment controls</td></tr>
+          <tr><td>CC9</td><td>Risk Mitigation</td><td>Vendor management, insurance, business continuity</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Beyond the Common Criteria (which map to the <strong>Security</strong> category), the TSC
+        defines four additional categories that may be included in the scope of a SOC 2 report:
+        Availability, Confidentiality, Processing Integrity, and Privacy.
+      </p>
+
+      <h2 id="sec-background-types">3.2 SOC 2 Type I vs Type II</h2>
+      <table>
+        <thead>
+          <tr><th>Aspect</th><th>Type I</th><th>Type II</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Objective</td>
+            <td>Evaluate the <em>design</em> (suitability) of controls at a specific point in time</td>
+            <td>Evaluate both the <em>design and operating effectiveness</em> of controls over a defined period</td>
+          </tr>
+          <tr>
+            <td>Observation Period</td>
+            <td>Single date (snapshot)</td>
+            <td>Typically 6 to 12 months of continuous operation</td>
+          </tr>
+          <tr>
+            <td>Evidence Required</td>
+            <td>Documented policies, procedures, system configurations at the point-in-time</td>
+            <td>All Type I evidence plus operational logs, tickets, review records, and sample testing</td>
+          </tr>
+          <tr>
+            <td>Typical Use Case</td>
+            <td>First-time assessment to demonstrate control framework is in place</td>
+            <td>Ongoing assurance to clients and stakeholders; usually follows a Type I</td>
+          </tr>
+          <tr>
+            <td>Recommended For</td>
+            <td>Organizations new to SOC 2 seeking initial attestation</td>
+            <td>Organizations with mature, consistently operating controls</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-info">
+        <p>
+          <strong>Recommendation:</strong> For organizations undergoing their first SOC 2 examination,
+          beginning with a Type I assessment is common practice. This validates the control design
+          before committing to the extended observation period required for Type II.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 4: Readiness Assessment Summary
+         ============================================================ -->
+    <section id="sec-readiness-summary" class="allow-break">
+      <h1>4. Readiness Assessment Summary</h1>
+      <p>
+        The table below provides a high-level summary of Ramdoot Solutions' current readiness posture
+        against each Common Criteria family. Status indicators reflect the assessment team's evaluation
+        at the time of document preparation.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>CC Family</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Key Observations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC1</td>
+            <td>Control Environment</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Organizational structure defined; formal code of conduct and board oversight documentation needed</td>
+          </tr>
+          <tr>
+            <td>CC2</td>
+            <td>Communication &amp; Information</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Internal communication channels exist; formal information security policy distribution and acknowledgement tracking required</td>
+          </tr>
+          <tr>
+            <td>CC3</td>
+            <td>Risk Assessment</td>
+            <td><span class="badge badge-required">Required</span></td>
+            <td>No formal risk assessment process or risk register identified; fraud risk assessment not yet conducted</td>
+          </tr>
+          <tr>
+            <td>CC4</td>
+            <td>Monitoring Activities</td>
+            <td><span class="badge badge-required">Required</span></td>
+            <td>Ad-hoc monitoring in place; structured internal audit program and control effectiveness reviews needed</td>
+          </tr>
+          <tr>
+            <td>CC5</td>
+            <td>Control Activities</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Some operational procedures documented; segregation of duties not formally mapped across critical functions</td>
+          </tr>
+          <tr>
+            <td>CC6</td>
+            <td>Logical &amp; Physical Access</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Role-based access implemented in applications; centralized access review process and MFA enforcement gaps identified</td>
+          </tr>
+          <tr>
+            <td>CC7</td>
+            <td>System Operations</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Monitoring and alerting partially configured; formal incident response plan and DR testing documentation needed</td>
+          </tr>
+          <tr>
+            <td>CC8</td>
+            <td>Change Management</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+            <td>Version control and code review in use; formal change advisory board process and emergency change procedures to be documented</td>
+          </tr>
+          <tr>
+            <td>CC9</td>
+            <td>Risk Mitigation</td>
+            <td><span class="badge badge-required">Required</span></td>
+            <td>Vendor risk management program not formalized; business continuity plan requires development</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-warning">
+        <p>
+          <strong>Overall Assessment:</strong> Ramdoot Solutions has foundational controls in place across
+          several domains but requires significant formalization, documentation, and evidence collection
+          before engaging an independent auditor. Estimated preparation effort: 3&ndash;6 months depending
+          on resource allocation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 5: Trust Services Categories in Scope
+         ============================================================ -->
+    <section id="sec-tsc-scope">
+      <h1>5. Trust Services Categories in Scope</h1>
+      <p>
+        SOC 2 requires the <strong>Security</strong> category as a baseline. Additional categories are
+        included based on the nature of services provided and client/stakeholder expectations.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Included</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Security</strong> (Common Criteria CC1&ndash;CC9)</td>
+            <td><span class="badge badge-implemented">Baseline &mdash; Required</span></td>
+            <td>Mandatory for all SOC 2 examinations. Covers protection against unauthorized access, both logical and physical.</td>
+          </tr>
+          <tr>
+            <td><strong>Availability</strong> (A1)</td>
+            <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            <td>Recommended if Ramdoot Solutions provides services with SLA commitments on uptime or availability. <span class="placeholder">[Requires management/auditor scope confirmation]</span></td>
+          </tr>
+          <tr>
+            <td><strong>Confidentiality</strong> (C1)</td>
+            <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            <td>Recommended if the organization processes or stores confidential data on behalf of clients beyond what is covered by Security criteria alone. <span class="placeholder">[Requires management/auditor scope confirmation]</span></td>
+          </tr>
+          <tr>
+            <td><strong>Processing Integrity</strong> (PI1)</td>
+            <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            <td>Applicable if the service performs calculations, transactions, or data transformations where accuracy and completeness are critical. <span class="placeholder">[Requires management/auditor scope confirmation]</span></td>
+          </tr>
+          <tr>
+            <td><strong>Privacy</strong> (P1)</td>
+            <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            <td>Applicable if the organization collects, uses, retains, or disposes of personal information governed by privacy commitments. Note: Privacy criteria align with the AICPA Generally Accepted Privacy Principles (GAPP). <span class="placeholder">[Requires management/auditor scope confirmation]</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-info">
+        <p>
+          <strong>Next step:</strong> Management should meet with the prospective audit firm to finalize
+          which Trust Services Categories will be included in the SOC 2 report scope. This decision
+          should be documented in the engagement letter.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 6: System Overview
+         ============================================================ -->
+    <section id="sec-system-overview" class="allow-break">
+      <h1>6. System Overview</h1>
+      <p>
+        The SOC 2 system description must define the boundaries of the system being examined. This
+        includes five components: infrastructure, software, people, procedures, and data. The following
+        subsections outline the current understanding and areas requiring completion.
+      </p>
+
+      <h2 id="sec-system-boundaries">6.1 System Boundaries</h2>
+      <p>
+        The system boundary defines what is included in (and excluded from) the SOC 2 examination scope.
+        All components that directly support the delivery of in-scope services must be identified.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Component</th><th>Description</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Production Environment</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; hosting provider, region, network architecture]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>Application Stack</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; application frameworks, APIs, databases]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CI/CD Pipeline</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; build, test, and deployment tooling]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>Third-Party Integrations</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; payment processors, email providers, cloud services]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>Data Storage</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; databases, object storage, backup locations]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-system-infra">6.2 Infrastructure &amp; Technology</h2>
+      <p>
+        Document the technology stack that supports the in-scope services. The auditor will examine
+        configurations, patching levels, and security controls for each component.
+      </p>
+      <ul>
+        <li><strong>Cloud Provider(s):</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+        <li><strong>Operating Systems:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+        <li><strong>Databases:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+        <li><strong>Container / Orchestration:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+        <li><strong>Networking / Firewall:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+        <li><strong>Encryption:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; at rest and in transit]</span></li>
+        <li><strong>Monitoring / Logging:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+      </ul>
+
+      <h2 id="sec-system-people">6.3 People &amp; Organization</h2>
+      <p>
+        Identify the key roles and responsibilities related to the in-scope system. The auditor will
+        verify that personnel have appropriate qualifications, training, and background checks.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Role</th><th>Responsibility</th><th>Assigned To</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Executive Sponsor</td>
+            <td>Overall accountability for SOC 2 compliance program</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>Information Security Officer</td>
+            <td>Day-to-day management of security policies, incident response, and risk assessments</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>Engineering Lead</td>
+            <td>Secure development practices, code review, change management</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>DevOps / Infrastructure Lead</td>
+            <td>Production environment security, monitoring, patching, and backup operations</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>HR Representative</td>
+            <td>Background checks, security awareness training, onboarding/offboarding procedures</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="sec-system-data">6.4 Data Classification</h2>
+      <p>
+        A data classification scheme must be established and documented. The following is a recommended
+        starting framework that should be tailored to Ramdoot Solutions' specific data types:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Classification Level</th><th>Description</th><th>Examples</th><th>Handling Requirements</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Restricted</strong></td>
+            <td>Highly sensitive data; unauthorized disclosure causes severe impact</td>
+            <td>Credentials, encryption keys, PII, financial data</td>
+            <td>Encrypted at rest and in transit; strict access controls; audit logging</td>
+          </tr>
+          <tr>
+            <td><strong>Confidential</strong></td>
+            <td>Internal business data; disclosure causes moderate impact</td>
+            <td>Client configurations, internal reports, source code</td>
+            <td>Access limited to authorized personnel; encrypted in transit</td>
+          </tr>
+          <tr>
+            <td><strong>Internal</strong></td>
+            <td>General internal information; disclosure causes limited impact</td>
+            <td>Process documentation, meeting notes, project plans</td>
+            <td>Access within organization; standard controls</td>
+          </tr>
+          <tr>
+            <td><strong>Public</strong></td>
+            <td>Information approved for public disclosure</td>
+            <td>Marketing materials, published documentation</td>
+            <td>No restrictions on access; integrity controls for publishing</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Section 7: Control Environment Assessment
+         ============================================================ -->
+    <section id="sec-control-assessment" class="allow-break">
+      <h1>7. Control Environment Assessment</h1>
+      <p>
+        This section provides a detailed assessment of each Common Criteria family, documenting existing
+        controls, gaps, and recommended actions. Each subsection maps to specific TSC criteria points.
+      </p>
+
+      <!-- CC1 -->
+      <h2 id="sec-cc1">7.1 CC1 &mdash; Control Environment</h2>
+      <p><em>The entity demonstrates commitment to integrity and ethical values; exercises oversight responsibility; establishes structure, authority, and responsibility.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC1.1</td>
+            <td>Board / management oversight of internal controls; demonstrated commitment to integrity</td>
+            <td>Management involved in operations; formal board charter and oversight committee not yet documented</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC1.2</td>
+            <td>Board independence from management in exercising oversight</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; board structure/independence]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC1.3</td>
+            <td>Organizational structure with defined lines of reporting and authority</td>
+            <td>Org chart exists; reporting lines informally understood but not formally documented for audit purposes</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC1.4</td>
+            <td>Commitment to attract, develop, and retain competent individuals</td>
+            <td>Hiring process in place; formal competency assessment and retention policies need documentation</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC1.5</td>
+            <td>Accountability of individuals for internal control responsibilities</td>
+            <td>Role definitions exist in job descriptions; specific internal control responsibilities not yet mapped to roles</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC2 -->
+      <h2 id="sec-cc2">7.2 CC2 &mdash; Communication &amp; Information</h2>
+      <p><em>The entity obtains or generates and uses relevant, quality information to support internal control; internally communicates information necessary for internal control.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC2.1</td>
+            <td>Entity obtains or generates quality information relevant to internal controls</td>
+            <td>Operational data collected; no formal process to validate information quality for control purposes</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC2.2</td>
+            <td>Internal communication of policies, objectives, and control responsibilities</td>
+            <td>Team communication via standard channels; security policies not formally distributed with acknowledgement tracking</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC2.3</td>
+            <td>External communication regarding matters affecting internal control</td>
+            <td>Client-facing communications handled ad-hoc; formal external communication policy for security incidents not established</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC3 -->
+      <h2 id="sec-cc3">7.3 CC3 &mdash; Risk Assessment</h2>
+      <p><em>The entity specifies objectives with sufficient clarity to identify and assess risks; identifies and analyzes risks; considers the potential for fraud.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC3.1</td>
+            <td>Clear objectives to enable identification and assessment of risks</td>
+            <td>Business objectives defined at high level; not linked to specific control objectives for risk identification</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC3.2</td>
+            <td>Identification and analysis of risks to the achievement of objectives</td>
+            <td>No formal risk register or risk assessment methodology in place</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC3.3</td>
+            <td>Consideration of fraud risk, including incentives/pressures, opportunities, and attitudes/rationalizations</td>
+            <td>No documented fraud risk assessment process</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC3.4</td>
+            <td>Identification and assessment of significant changes that could impact internal controls</td>
+            <td>Organizational changes managed operationally; no formal process to assess impact on control environment</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC4 -->
+      <h2 id="sec-cc4">7.4 CC4 &mdash; Monitoring Activities</h2>
+      <p><em>The entity selects, develops, and performs ongoing and/or separate evaluations to ascertain whether control components are present and functioning.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC4.1</td>
+            <td>Ongoing and/or separate evaluations of internal controls</td>
+            <td>Some operational monitoring exists; no structured internal audit or control testing program</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC4.2</td>
+            <td>Communication and remediation of internal control deficiencies</td>
+            <td>Deficiencies identified ad-hoc; no formal deficiency tracking or escalation process</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC5 -->
+      <h2 id="sec-cc5">7.5 CC5 &mdash; Control Activities</h2>
+      <p><em>The entity selects and develops control activities that contribute to the mitigation of risks; deploys through policies and procedures.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC5.1</td>
+            <td>Selection and development of control activities to mitigate risks</td>
+            <td>Operational procedures exist for key workflows; formal mapping of controls to identified risks not completed</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC5.2</td>
+            <td>Technology general controls (ITGC) selected and developed</td>
+            <td>Access controls, backup procedures, and change management partially implemented; requires formalization</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC5.3</td>
+            <td>Deployment of control activities through policies and procedures</td>
+            <td>Some written procedures; policy library incomplete and not centrally managed</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC6 -->
+      <h2 id="sec-cc6">7.6 CC6 &mdash; Logical &amp; Physical Access Controls</h2>
+      <p><em>The entity implements logical and physical access controls to protect information assets and restrict access to authorized individuals.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC6.1</td>
+            <td>Logical access security software, infrastructure, and architectures</td>
+            <td>Role-based access control implemented in production applications; IAM configuration documentation incomplete</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC6.2</td>
+            <td>User registration and authorization; access provisioning and deprovisioning</td>
+            <td>Onboarding provisioning exists; formal access request/approval workflow and offboarding checklist not documented</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC6.3</td>
+            <td>Access removal upon termination or role change</td>
+            <td>Access removed on termination; no automated process or documented SLA for access revocation timing</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC6.4</td>
+            <td>Restriction and management of physical access to facilities and assets</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; office/data center physical access controls]</span></td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC6.5</td>
+            <td>Management of data in transmission (encryption in transit)</td>
+            <td>TLS enforced on public endpoints; internal service-to-service encryption status to be verified</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC6.6</td>
+            <td>Periodic access reviews</td>
+            <td>No formal periodic user access review process; quarterly reviews recommended</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC6.7</td>
+            <td>Multi-factor authentication for remote access and privileged accounts</td>
+            <td>MFA status varies by system; comprehensive enforcement across all critical systems to be confirmed</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC6.8</td>
+            <td>Prevention, detection, and response to unauthorized or malicious software</td>
+            <td>Endpoint protection in use; centralized management and reporting to be verified</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC7 -->
+      <h2 id="sec-cc7">7.7 CC7 &mdash; System Operations</h2>
+      <p><em>The entity detects and monitors anomalies, evaluates vulnerabilities, and responds to incidents.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC7.1</td>
+            <td>Detection and monitoring of security events and anomalies</td>
+            <td>Application-level logging in place; centralized SIEM or log aggregation not yet implemented</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC7.2</td>
+            <td>Monitoring of system components for anomalies indicative of malicious acts or failures</td>
+            <td>Infrastructure monitoring partially configured; alert thresholds and escalation procedures not formalized</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC7.3</td>
+            <td>Evaluation of security events to determine if they constitute incidents</td>
+            <td>No formal incident classification or triage criteria documented</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC7.4</td>
+            <td>Incident response: containment, eradication, recovery, and communication</td>
+            <td>Informal incident handling; written incident response plan with roles, procedures, and communication templates needed</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC7.5</td>
+            <td>Disaster recovery and business continuity planning and testing</td>
+            <td>Backup procedures in place; formal DR plan and regular testing/tabletop exercises not documented</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC8 -->
+      <h2 id="sec-cc8">7.8 CC8 &mdash; Change Management</h2>
+      <p><em>The entity authorizes, designs, develops, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC8.1</td>
+            <td>Change authorization, testing, and approval before implementation</td>
+            <td>Git-based version control with pull request reviews; formal change approval documentation (CAB minutes, risk assessment per change) not yet established</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC8.2</td>
+            <td>Infrastructure and software configuration management</td>
+            <td>Deployment scripts and infrastructure-as-code partially adopted; configuration baseline documentation incomplete</td>
+            <td><span class="badge badge-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td>CC8.3</td>
+            <td>Emergency change procedures</td>
+            <td>No formal emergency/hotfix change process documented; ad-hoc deployments handled without retrospective review</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CC9 -->
+      <h2 id="sec-cc9">7.9 CC9 &mdash; Risk Mitigation</h2>
+      <p><em>The entity identifies, selects, and develops risk mitigation activities, including vendor management and business continuity.</em></p>
+      <table>
+        <thead>
+          <tr><th>Criteria</th><th>Control Expectation</th><th>Current State</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CC9.1</td>
+            <td>Identification and assessment of risk mitigation strategies</td>
+            <td>Risk mitigation handled case-by-case; no formal risk treatment plan or risk appetite statement</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC9.2</td>
+            <td>Vendor and third-party risk management program</td>
+            <td>Vendor relationships managed operationally; no formal vendor risk assessment, due diligence checklist, or SOC report review process</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+          <tr>
+            <td>CC9.3</td>
+            <td>Business continuity and disaster recovery planning</td>
+            <td>Overlaps with CC7.5; formal BCP covering people, processes, and technology not yet developed</td>
+            <td><span class="badge badge-required">Required</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Section 8: Gap Summary
+         ============================================================ -->
+    <section id="sec-gap-summary" class="allow-break">
+      <h1>8. Gap Summary</h1>
+      <p>
+        The following table consolidates all identified gaps, categorized by severity. Severity is
+        assessed based on the likelihood of an auditor finding it a control deficiency and the
+        potential impact on the SOC 2 opinion.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Gap Description</th>
+            <th>CC Reference</th>
+            <th>Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GAP-001</td>
+            <td>No formal risk register or risk assessment methodology; fraud risk assessment not conducted</td>
+            <td>CC3.1, CC3.2, CC3.3</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>GAP-002</td>
+            <td>Incident response plan not documented; no classification criteria or communication templates</td>
+            <td>CC7.3, CC7.4</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>GAP-003</td>
+            <td>Vendor risk management program absent; no third-party due diligence process or SOC report review</td>
+            <td>CC9.2</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>GAP-004</td>
+            <td>Business continuity and disaster recovery plan not formalized; no testing evidence</td>
+            <td>CC7.5, CC9.3</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>GAP-005</td>
+            <td>No formal internal audit or control monitoring program</td>
+            <td>CC4.1, CC4.2</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>GAP-006</td>
+            <td>Periodic user access reviews not conducted; no documented review schedule or evidence</td>
+            <td>CC6.6</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>GAP-007</td>
+            <td>Security policy distribution and employee acknowledgement tracking not formalized</td>
+            <td>CC2.2</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>GAP-008</td>
+            <td>Emergency change management procedures not documented</td>
+            <td>CC8.3</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-009</td>
+            <td>External communication policy for security incidents not established</td>
+            <td>CC2.3</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-010</td>
+            <td>MFA not uniformly enforced across all critical systems and privileged accounts</td>
+            <td>CC6.7</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-011</td>
+            <td>Centralized log management / SIEM not yet deployed</td>
+            <td>CC7.1</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-012</td>
+            <td>Segregation of duties not formally mapped for critical functions</td>
+            <td>CC5.1</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-013</td>
+            <td>Formal board/governance charter and oversight committee documentation missing</td>
+            <td>CC1.1, CC1.2</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>GAP-014</td>
+            <td>Access deprovisioning SLA and automated offboarding process not documented</td>
+            <td>CC6.3</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>GAP-015</td>
+            <td>Configuration baseline documentation for infrastructure components incomplete</td>
+            <td>CC8.2</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <p>
+          <strong>Summary:</strong> 3 critical gaps, 4 high-severity gaps, 5 medium-severity gaps, and
+          3 low-severity gaps identified. Critical and high gaps must be resolved before engaging an
+          auditor for the SOC 2 examination.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 9: Remediation Roadmap
+         ============================================================ -->
+    <section id="sec-remediation" class="allow-break">
+      <h1>9. Remediation Roadmap</h1>
+      <p>
+        The remediation roadmap prioritizes actions based on gap severity and interdependencies.
+        Timelines are estimates and should be validated by management based on available resources.
+      </p>
+
+      <h3>Phase 1 &mdash; Foundation (Weeks 1&ndash;4): Critical Gaps</h3>
+      <table>
+        <thead>
+          <tr><th>Action</th><th>Gap Ref</th><th>Owner</th><th>Target</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Develop and document formal risk assessment methodology; create risk register with scoring criteria; conduct initial enterprise-wide risk assessment including fraud risk</td>
+            <td>GAP-001</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 2</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Draft incident response plan including: classification matrix, severity levels, containment procedures, escalation paths, communication templates (internal and external), and post-incident review process</td>
+            <td>GAP-002</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 3</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Establish vendor risk management framework: assessment questionnaire, risk tiering, SOC report collection and review process, contract security clauses</td>
+            <td>GAP-003</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 4</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Phase 2 &mdash; Core Controls (Weeks 5&ndash;10): High Gaps</h3>
+      <table>
+        <thead>
+          <tr><th>Action</th><th>Gap Ref</th><th>Owner</th><th>Target</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Develop business continuity plan (BCP) and disaster recovery plan (DRP); schedule tabletop exercise; document recovery time objectives (RTO) and recovery point objectives (RPO)</td>
+            <td>GAP-004</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 6</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Design and implement internal control monitoring program: define control testing schedule, assign control owners, create deficiency tracking and escalation procedure</td>
+            <td>GAP-005</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 7</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Implement quarterly user access review process: define review scope, assign reviewers per system, create evidence templates, conduct first review cycle</td>
+            <td>GAP-006</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 8</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Formalize security policy library: distribute all policies to personnel, implement acknowledgement tracking system, retain evidence of employee sign-off</td>
+            <td>GAP-007</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 9</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Phase 3 &mdash; Hardening (Weeks 11&ndash;16): Medium &amp; Low Gaps</h3>
+      <table>
+        <thead>
+          <tr><th>Action</th><th>Gap Ref</th><th>Owner</th><th>Target</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Document emergency change management procedures; integrate with existing change process; define retrospective review requirements for emergency changes</td>
+            <td>GAP-008</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 12</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Establish external communication policy for security incidents; define notification timelines, stakeholder lists, and regulatory reporting obligations</td>
+            <td>GAP-009</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 12</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Enforce MFA across all critical systems and privileged accounts; document MFA policy and exceptions process</td>
+            <td>GAP-010</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 13</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Deploy centralized log management / SIEM solution; define log retention policy (minimum 90 days recommended); configure alerting rules</td>
+            <td>GAP-011</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 14</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Map and document segregation of duties across critical functions (finance, infrastructure, code deployment, access provisioning)</td>
+            <td>GAP-012</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 14</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Draft governance charter and oversight committee documentation; formalize board meeting cadence and minutes retention</td>
+            <td>GAP-013</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 15</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Document access deprovisioning SLA (recommended: 24 hours for termination, 48 hours for role changes); automate where possible</td>
+            <td>GAP-014</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 15</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Complete infrastructure configuration baseline documentation; establish configuration drift detection</td>
+            <td>GAP-015</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Week 16</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-info">
+        <p>
+          <strong>Phase 4 &mdash; Evidence Collection (Weeks 17&ndash;20):</strong> Following remediation,
+          allocate time for operating the new controls and collecting evidence of their effectiveness.
+          For a Type II examination, this evidence collection period extends to 6&ndash;12 months.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 10: Pre-Assessment Checklist
+         ============================================================ -->
+    <section id="sec-pre-assessment">
+      <h1>10. Pre-Assessment Checklist</h1>
+      <p>
+        Before engaging an independent audit firm to perform the SOC 2 examination, ensure the
+        following items are completed and evidence is available for auditor review.
+      </p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Item</th><th>Status</th><th>Evidence Location</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>System description drafted (infrastructure, software, people, procedures, data boundaries)</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>All security policies approved by management, distributed to employees, and acknowledgements collected</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Risk assessment completed with documented risk register and treatment plans</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Incident response plan documented, communicated, and at least one tabletop exercise conducted</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Vendor risk assessments completed for all critical third-party service providers</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Business continuity and disaster recovery plans documented and tested</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>User access reviews completed for all in-scope systems (at least one cycle)</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>MFA enforced on all production systems and privileged accounts with documented exceptions</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Change management process documented with evidence of at least 3 months of operation</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Security awareness training completed for all employees with attendance records</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Centralized logging deployed with defined retention policy and alerting rules active</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Internal control monitoring program operational with evidence of at least one evaluation cycle</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Background check policy documented; evidence of checks for all current employees in scope roles</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Trust Services Categories confirmed with prospective auditor (Security + any additional)</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Audit firm selected and engagement letter signed</td>
+            <td><span class="badge badge-required">Pending</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Section 11: Management Responsibilities
+         ============================================================ -->
+    <section id="sec-management-responsibilities">
+      <h1>11. Management Responsibilities</h1>
+      <p>
+        Under the AICPA standards governing SOC 2 examinations, management of the service organization
+        (Ramdoot Solutions) bears specific responsibilities that cannot be delegated to the auditor:
+      </p>
+      <ol>
+        <li>
+          <strong>System description:</strong> Management is responsible for preparing and presenting the
+          system description fairly, in accordance with the description criteria. The auditor does not
+          draft this description; management owns it.
+        </li>
+        <li>
+          <strong>Control design and operation:</strong> Management is responsible for designing,
+          implementing, and operating controls that meet the applicable Trust Services Criteria.
+        </li>
+        <li>
+          <strong>Assertion:</strong> Management must provide a written assertion that the system
+          description is fairly presented, controls are suitably designed, and (for Type II) that
+          controls operated effectively during the examination period.
+        </li>
+        <li>
+          <strong>Completeness of information:</strong> Management must provide complete and accurate
+          information to the auditor, including all known control deficiencies and incidents.
+        </li>
+        <li>
+          <strong>Subservice organization oversight:</strong> Where carve-out or inclusive methods are
+          used for subservice organizations, management must maintain appropriate oversight and monitoring.
+        </li>
+      </ol>
+
+      <h3>RACI Matrix for SOC 2 Readiness</h3>
+      <table class="raci-table">
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Executive Sponsor</th>
+            <th>Info Security</th>
+            <th>Engineering</th>
+            <th>HR</th>
+            <th>External Auditor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Approve SOC 2 scope and budget</td>
+            <td><strong>A</strong></td>
+            <td>R</td>
+            <td>C</td>
+            <td>I</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>Draft system description</td>
+            <td>A</td>
+            <td><strong>R</strong></td>
+            <td>C</td>
+            <td>C</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>Implement and document controls</td>
+            <td>I</td>
+            <td><strong>R</strong></td>
+            <td><strong>R</strong></td>
+            <td>R</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>Conduct risk assessment</td>
+            <td>A</td>
+            <td><strong>R</strong></td>
+            <td>C</td>
+            <td>C</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>Collect and organize evidence</td>
+            <td>I</td>
+            <td><strong>R</strong></td>
+            <td>R</td>
+            <td>R</td>
+            <td>I</td>
+          </tr>
+          <tr>
+            <td>Perform SOC 2 examination</td>
+            <td>I</td>
+            <td>C</td>
+            <td>C</td>
+            <td>C</td>
+            <td><strong>R/A</strong></td>
+          </tr>
+          <tr>
+            <td>Remediate audit findings</td>
+            <td>A</td>
+            <td><strong>R</strong></td>
+            <td>R</td>
+            <td>R</td>
+            <td>C</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>R = Responsible, A = Accountable, C = Consulted, I = Informed</em></p>
+    </section>
+
+    <!-- ============================================================
+         Section 12: Related Documents
+         ============================================================ -->
+    <section id="sec-related-docs">
+      <h1>12. Related Documents</h1>
+      <p>
+        The following documents form part of or support Ramdoot Solutions' overall compliance and
+        security governance program:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Document ID</th><th>Title</th><th>Location</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Information Security Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Acceptable Use Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Incident Response Plan</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Business Continuity Plan</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Disaster Recovery Plan</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Change Management Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Vendor Risk Management Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Data Classification Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Access Control Policy</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+          <tr>
+            <td><span class="placeholder">[ID]</span></td>
+            <td>Risk Register</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Section 13: Approval Block
+         ============================================================ -->
+    <section id="sec-approval">
+      <h1>13. Approval</h1>
+      <p>
+        This readiness documentation has been reviewed and is submitted for management approval.
+        Signatures below indicate agreement with the findings, gap assessments, and recommended
+        remediation roadmap.
+      </p>
+      <div class="approval-block">
+        <table>
+          <tbody>
+            <tr>
+              <th>Prepared By</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Role / Title</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Signature</th>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <th>Reviewed By</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Role / Title</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Signature</th>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <th>Approved By</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Role / Title</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            </tr>
+            <tr>
+              <th>Signature</th>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Section 14: Version History
+         ============================================================ -->
+    <section id="sec-version-history">
+      <h1>14. Version History</h1>
+      <table class="version-history">
+        <thead>
+          <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft &mdash; baseline readiness assessment against AICPA Trust Services Criteria (CC1&ndash;CC9)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <div class="doc-footer">
+      <span>Ramdoot Solutions | Confidential</span>
+      <span>RS-SOC2-001 | v1.0</span>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+</body>
+</html>

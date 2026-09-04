@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-SOC2-003 — Trust Services Criteria Mapping | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Navigation Bar
+       ============================================================ -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <div>
+      <a href="../index.html">Home</a> &nbsp;|&nbsp;
+      <a href="index.html">SOC 2</a> &nbsp;|&nbsp;
+      <button class="btn-print" onclick="window.print()">Print / PDF</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       Cover Page
+       ============================================================ -->
+  <div class="cover-page">
+    <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+    <div class="org-name">Ramdoot Solutions</div>
+    <div class="doc-type">Internal Compliance Documentation</div>
+    <h1 class="cover-title">SOC 2 Trust Services Criteria Mapping</h1>
+    <div class="cover-subtitle">AICPA Trust Services Criteria &mdash; Control Response &amp; Evidence Matrix</div>
+    <div class="cover-meta">
+      <p><strong>Document ID:</strong> RS-SOC2-003</p>
+      <p><strong>Classification:</strong> Confidential &mdash; Internal Use Only</p>
+      <p><strong>Effective Date:</strong> 04 September 2026</p>
+    </div>
+    <div class="cover-notice">
+      <strong>Disclaimer:</strong> This document is an internal compliance mapping prepared by
+      Ramdoot Solutions for its own governance and readiness purposes. It is <em>not</em> a SOC 2
+      attestation report and has not been issued or reviewed by an independent auditor. This document
+      shall not be represented externally as evidence of SOC 2 compliance or certification.
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Main Content
+       ============================================================ -->
+  <div class="page-wrapper">
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-SOC2-003</td></tr>
+      <tr><th>Title</th><td>SOC 2 Trust Services Criteria Mapping</td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; Internal Use Only</td></tr>
+      <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Owner</th><td>Information Security Team</td></tr>
+      <tr><th>Effective Date</th><td>04 September 2026</td></tr>
+      <tr><th>Last Reviewed</th><td>04 September 2026</td></tr>
+      <tr><th>Next Review Date</th><td>04 September 2027</td></tr>
+      <tr><th>Applicable Standard</th><td>AICPA Trust Services Criteria (2017, updated 2022)</td></tr>
+      <tr><th>Scope</th><td>All Ramdoot Solutions systems, personnel, and processes supporting service delivery</td></tr>
+    </table>
+
+    <!-- ============================================================
+         Table of Contents
+         ============================================================ -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li>
+          <a href="#introduction">Introduction</a>
+          <ol>
+            <li><a href="#purpose">Purpose</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#how-to-read">How to Read This Document</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc1">CC1 &mdash; Control Environment</a>
+          <ol>
+            <li><a href="#cc1-1">CC1.1 &mdash; Commitment to Integrity and Ethical Values</a></li>
+            <li><a href="#cc1-2">CC1.2 &mdash; Board Independence and Oversight</a></li>
+            <li><a href="#cc1-3">CC1.3 &mdash; Management Authority and Responsibility</a></li>
+            <li><a href="#cc1-4">CC1.4 &mdash; Commitment to Competence</a></li>
+            <li><a href="#cc1-5">CC1.5 &mdash; Accountability for Internal Control</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc2">CC2 &mdash; Communication and Information</a>
+          <ol>
+            <li><a href="#cc2-1">CC2.1 &mdash; Information Quality for Internal Control</a></li>
+            <li><a href="#cc2-2">CC2.2 &mdash; Internal Communication</a></li>
+            <li><a href="#cc2-3">CC2.3 &mdash; External Communication</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc3">CC3 &mdash; Risk Assessment</a>
+          <ol>
+            <li><a href="#cc3-1">CC3.1 &mdash; Objective Specification</a></li>
+            <li><a href="#cc3-2">CC3.2 &mdash; Risk Identification and Analysis</a></li>
+            <li><a href="#cc3-3">CC3.3 &mdash; Fraud Risk Assessment</a></li>
+            <li><a href="#cc3-4">CC3.4 &mdash; Change Impact Assessment</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc4">CC4 &mdash; Monitoring Activities</a>
+          <ol>
+            <li><a href="#cc4-1">CC4.1 &mdash; Ongoing and Separate Evaluations</a></li>
+            <li><a href="#cc4-2">CC4.2 &mdash; Deficiency Communication</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc5">CC5 &mdash; Control Activities</a>
+          <ol>
+            <li><a href="#cc5-1">CC5.1 &mdash; Control Selection and Development</a></li>
+            <li><a href="#cc5-2">CC5.2 &mdash; Technology General Controls</a></li>
+            <li><a href="#cc5-3">CC5.3 &mdash; Policy-Based Control Deployment</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc6">CC6 &mdash; Logical and Physical Access</a>
+          <ol>
+            <li><a href="#cc6-1">CC6.1 &mdash; Logical Access Security</a></li>
+            <li><a href="#cc6-2">CC6.2 &mdash; User Registration and Authorization</a></li>
+            <li><a href="#cc6-3">CC6.3 &mdash; Role-Based Access</a></li>
+            <li><a href="#cc6-4">CC6.4 &mdash; Physical Access Restrictions</a></li>
+            <li><a href="#cc6-5">CC6.5 &mdash; Logical Access Deprovisioning</a></li>
+            <li><a href="#cc6-6">CC6.6 &mdash; External Threat Mitigation</a></li>
+            <li><a href="#cc6-7">CC6.7 &mdash; Data Transmission Protection</a></li>
+            <li><a href="#cc6-8">CC6.8 &mdash; Malicious Software Prevention</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc7">CC7 &mdash; System Operations</a>
+          <ol>
+            <li><a href="#cc7-1">CC7.1 &mdash; Vulnerability Detection</a></li>
+            <li><a href="#cc7-2">CC7.2 &mdash; Anomaly and Event Monitoring</a></li>
+            <li><a href="#cc7-3">CC7.3 &mdash; Incident Evaluation</a></li>
+            <li><a href="#cc7-4">CC7.4 &mdash; Incident Response</a></li>
+            <li><a href="#cc7-5">CC7.5 &mdash; Incident Recovery</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc8">CC8 &mdash; Change Management</a>
+          <ol>
+            <li><a href="#cc8-1">CC8.1 &mdash; Managed Changes</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#cc9">CC9 &mdash; Risk Mitigation</a>
+          <ol>
+            <li><a href="#cc9-1">CC9.1 &mdash; Risk Mitigation Activities</a></li>
+            <li><a href="#cc9-2">CC9.2 &mdash; Vendor and Business Partner Risk</a></li>
+          </ol>
+        </li>
+        <li>
+          <a href="#availability">Availability (A1)</a>
+        </li>
+        <li>
+          <a href="#confidentiality">Confidentiality (C1)</a>
+        </li>
+        <li>
+          <a href="#processing-integrity">Processing Integrity (PI1)</a>
+        </li>
+        <li>
+          <a href="#privacy">Privacy (P1)</a>
+        </li>
+        <li>
+          <a href="#approval">Document Approval</a>
+        </li>
+        <li>
+          <a href="#version-history">Version History</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         1. Introduction
+         ============================================================ -->
+    <h1 id="introduction">1. Introduction</h1>
+
+    <h2 id="purpose">1.1 Purpose</h2>
+    <p>
+      This document maps each AICPA Trust Services Criteria (TSC) point to the controls, policies,
+      and evidence maintained by Ramdoot Solutions. It serves as the primary internal reference for
+      demonstrating how the organization addresses the Common Criteria and, where elected,
+      the additional Trust Services Categories of Availability, Confidentiality, Processing Integrity,
+      and Privacy.
+    </p>
+
+    <h2 id="scope">1.2 Scope</h2>
+    <p>
+      The scope of this document covers all Ramdoot Solutions information systems, infrastructure,
+      personnel, policies, and processes that support the delivery of services to clients. This includes
+      production environments, development and staging environments where they impact production data,
+      corporate IT systems, and third-party services integrated into the service delivery chain.
+    </p>
+
+    <h2 id="how-to-read">1.3 How to Read This Document</h2>
+    <p>Each criterion section contains the following subsections:</p>
+    <ul>
+      <li><strong>Criteria Reference &amp; Requirement:</strong> The official TSC reference number and a summary of the requirement.</li>
+      <li><strong>Points of Focus:</strong> Key areas that auditors and management should consider (summarized, not verbatim).</li>
+      <li><strong>Ramdoot Solutions Control Response:</strong> How the organization addresses the criterion.</li>
+      <li><strong>Related Policies:</strong> Links to supporting policy and procedure documents.</li>
+      <li><strong>Required Evidence:</strong> Artifacts that demonstrate the control is operating effectively.</li>
+      <li><strong>Status:</strong> Current implementation status indicated by a badge.</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <p><strong>Status Badges Legend:</strong></p>
+      <p>
+        <span class="badge badge-implemented">Implemented</span> &mdash; Control is in place and operating effectively.
+        <br>
+        <span class="badge badge-partial">Partial</span> &mdash; Control exists but requires further work.
+        <br>
+        <span class="badge badge-draft">Draft</span> &mdash; Control is planned or documented but not yet deployed.
+        <br>
+        <span class="badge badge-required">Required</span> &mdash; Control is needed but not yet started.
+      </p>
+    </div>
+
+    <!-- ============================================================
+         2. CC1 — Control Environment
+         ============================================================ -->
+    <h1 id="cc1">2. CC1 &mdash; Control Environment</h1>
+
+    <!-- CC1.1 -->
+    <section class="allow-break" id="cc1-1">
+      <h2>CC1.1 &mdash; Commitment to Integrity and Ethical Values</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity demonstrates a commitment to integrity and ethical values. Management sets the
+        tone at the top, establishing standards of conduct that are understood and followed throughout
+        the organization.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Existence of a Code of Conduct or Code of Ethics applicable to all personnel</li>
+        <li>Communication and enforcement of ethical standards, including disciplinary measures for violations</li>
+        <li>Assessment of adherence to standards of conduct as part of performance evaluations</li>
+        <li>Processes for addressing deviations from established standards in a timely manner</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a formal Code of Conduct that articulates expected ethical
+        behaviour for all employees, contractors, and third-party personnel. The Code of Conduct
+        shall be provided to every new joiner during onboarding and acknowledged in writing.
+        Management shall reinforce ethical expectations through periodic communications and shall
+        include adherence to ethical standards as a factor in annual performance reviews.
+        Violations shall be investigated and addressed through the organization's disciplinary
+        process, up to and including termination.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/code-of-conduct.html">Code of Conduct</a> (RS-GOV-001)</li>
+        <li><a href="../governance/disciplinary-policy.html">Disciplinary Policy</a> (RS-GOV-004)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Signed Code of Conduct acknowledgement forms for all current employees</li>
+        <li>Records of annual ethics training or awareness communications</li>
+        <li>Evidence of disciplinary action taken for code violations (redacted as appropriate)</li>
+        <li>Performance review templates showing ethical conduct as an evaluation criterion</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC1.2 -->
+    <section class="allow-break" id="cc1-2">
+      <h2>CC1.2 &mdash; Board Independence and Oversight</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The board of directors (or equivalent governing body) demonstrates independence from
+        management and exercises oversight of the development and performance of internal controls.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Establishment of oversight responsibilities, including governance committees where applicable</li>
+        <li>Independence of oversight members from day-to-day management functions</li>
+        <li>Regular reporting from management to the governing body on internal control matters</li>
+        <li>Governing body's involvement in evaluating management performance and integrity</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions' management team shall assume oversight responsibility for internal
+        controls. Given the organization's size and structure in India, <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe governing body structure, e.g. Board of Directors, Advisory Committee, or Managing Director oversight]</span>.
+        Management shall review internal control performance on a quarterly basis and shall maintain
+        meeting minutes documenting oversight activities. Where the organization does not maintain a
+        formal board, the Managing Director or equivalent shall fulfil oversight responsibilities
+        and shall engage external advisors as needed to ensure objectivity.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/corporate-governance-charter.html">Corporate Governance Charter</a> (RS-GOV-002)</li>
+        <li><a href="../governance/management-review-procedure.html">Management Review Procedure</a> (RS-GOV-005)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Governance charter or terms of reference for the oversight body</li>
+        <li>Meeting minutes from quarterly management review meetings</li>
+        <li>Evidence of external advisor engagement (if applicable)</li>
+        <li>Records of internal control reporting to the governing body</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- CC1.3 -->
+    <section class="allow-break" id="cc1-3">
+      <h2>CC1.3 &mdash; Management Authority and Responsibility</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        Management establishes, with board oversight, structures, reporting lines, and appropriate
+        authorities and responsibilities in the pursuit of objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Definition of organizational structure with clear reporting lines</li>
+        <li>Assignment of authority and responsibility for information security and internal controls</li>
+        <li>Establishment of key roles such as CISO, DPO, or equivalent where appropriate</li>
+        <li>Regular review and update of the organizational structure as the company evolves</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a documented organizational structure that defines reporting
+        lines, key responsibilities, and delegated authority for information security. The
+        organization shall designate an Information Security Officer (or equivalent) responsible for
+        overseeing the security programme. Roles and responsibilities shall be documented in job
+        descriptions and the RACI matrix maintained as part of the information security policy.
+        The organizational chart shall be reviewed at least annually and updated upon material
+        changes to the company's structure.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/organizational-chart.html">Organizational Chart</a> (RS-GOV-003)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+        <li><a href="../governance/roles-and-responsibilities.html">Roles and Responsibilities Matrix</a> (RS-GOV-006)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Current organizational chart</li>
+        <li>RACI matrix for information security responsibilities</li>
+        <li>Job descriptions for key security and management roles</li>
+        <li>Appointment letter or formal designation of Information Security Officer</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC1.4 -->
+    <section class="allow-break" id="cc1-4">
+      <h2>CC1.4 &mdash; Commitment to Competence</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity demonstrates a commitment to attract, develop, and retain competent individuals
+        in alignment with objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Competency requirements defined for key roles, especially those affecting security and controls</li>
+        <li>Recruitment and hiring practices that evaluate candidate qualifications</li>
+        <li>Ongoing training and professional development programmes</li>
+        <li>Performance evaluation processes that assess competency maintenance</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall define competency requirements for all roles that impact the security
+        and reliability of services. The hiring process shall include verification of qualifications,
+        background checks as permitted under Indian law, and assessment of technical competency.
+        All employees shall receive security awareness training upon onboarding and at least annually
+        thereafter. Specialized training shall be provided for personnel in security, DevOps, and
+        compliance roles. Competency assessments shall be incorporated into annual performance reviews.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/human-resources-policy.html">Human Resources Policy</a> (RS-GOV-007)</li>
+        <li><a href="../security/security-awareness-training.html">Security Awareness Training Programme</a> (RS-SEC-004)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Job descriptions with competency requirements</li>
+        <li>Background verification records for employees (as applicable)</li>
+        <li>Training attendance and completion records</li>
+        <li>Annual performance review records referencing competency assessment</li>
+        <li>Certifications held by security and compliance personnel</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC1.5 -->
+    <section class="allow-break" id="cc1-5">
+      <h2>CC1.5 &mdash; Accountability for Internal Control</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity holds individuals accountable for their internal control responsibilities in
+        pursuit of objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Clear assignment of internal control responsibilities to specific individuals</li>
+        <li>Performance measures and incentives that reinforce accountability for controls</li>
+        <li>Consequences for failure to discharge internal control responsibilities</li>
+        <li>Management's consideration of excessive pressures that may compromise controls</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall assign internal control responsibilities to named individuals
+        through formal role descriptions and the RACI matrix. Performance evaluations shall include
+        assessment of whether individuals have fulfilled their control responsibilities. The
+        disciplinary policy shall address failures in internal control duties. Management shall
+        monitor workload and resource allocation to ensure that personnel are not subjected to
+        excessive pressures that could lead to circumvention of controls.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/roles-and-responsibilities.html">Roles and Responsibilities Matrix</a> (RS-GOV-006)</li>
+        <li><a href="../governance/disciplinary-policy.html">Disciplinary Policy</a> (RS-GOV-004)</li>
+        <li><a href="../governance/management-review-procedure.html">Management Review Procedure</a> (RS-GOV-005)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>RACI matrix with named control owners</li>
+        <li>Performance review records referencing internal control accountability</li>
+        <li>Disciplinary records related to control failures (redacted)</li>
+        <li>Resource allocation and workload assessments</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         3. CC2 — Communication and Information
+         ============================================================ -->
+    <h1 id="cc2">3. CC2 &mdash; Communication and Information</h1>
+
+    <!-- CC2.1 -->
+    <section class="allow-break" id="cc2-1">
+      <h2>CC2.1 &mdash; Information Quality for Internal Control</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity obtains or generates and uses relevant, quality information to support the
+        functioning of internal controls.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Identification of information requirements for internal controls at each level of the organization</li>
+        <li>Processes for capturing information from internal and external sources</li>
+        <li>Data quality, completeness, accuracy, and timeliness of information used in control activities</li>
+        <li>Cost-benefit analysis of information processing and controls</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall identify the information requirements necessary for internal control
+        functioning, including system logs, access records, change management data, and incident
+        reports. Information systems shall be configured to capture relevant data with appropriate
+        timestamps and integrity protections. Data quality checks shall be built into automated
+        processes, and manual reviews shall be conducted where automated validation is not feasible.
+        Information shall be retained in accordance with the organization's data retention policy.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/logging-and-monitoring-policy.html">Logging and Monitoring Policy</a> (RS-SEC-007)</li>
+        <li><a href="../governance/data-retention-policy.html">Data Retention Policy</a> (RS-GOV-010)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Inventory of information sources used for internal control monitoring</li>
+        <li>Configuration records for logging and audit trail systems</li>
+        <li>Data quality validation procedures and exception reports</li>
+        <li>Data retention schedule</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC2.2 -->
+    <section class="allow-break" id="cc2-2">
+      <h2>CC2.2 &mdash; Internal Communication</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity internally communicates information, including objectives and responsibilities
+        for internal control, necessary to support the functioning of internal controls.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Communication of policies, procedures, and control responsibilities to all relevant personnel</li>
+        <li>Channels for reporting security issues, suspected violations, and internal control deficiencies</li>
+        <li>Communication between management and the board (or governing body) regarding control matters</li>
+        <li>Use of multiple communication channels to reach all personnel effectively</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain formal channels for communicating internal control
+        responsibilities, including an employee handbook, internal wiki or knowledge base, and
+        periodic all-hands meetings. Security policies shall be published on the organization's
+        internal documentation platform and shall be accessible to all employees. A confidential
+        reporting channel (whistleblower mechanism) shall be established to allow personnel to
+        report suspected violations without fear of retaliation. Management shall provide periodic
+        updates to the governing body on the state of internal controls.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/internal-communication-policy.html">Internal Communication Policy</a> (RS-GOV-008)</li>
+        <li><a href="../governance/whistleblower-policy.html">Whistleblower Policy</a> (RS-GOV-009)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Employee handbook distribution and acknowledgement records</li>
+        <li>Screenshots or access logs of internal documentation platform</li>
+        <li>Meeting minutes from all-hands or security awareness sessions</li>
+        <li>Whistleblower channel documentation and access details</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC2.3 -->
+    <section class="allow-break" id="cc2-3">
+      <h2>CC2.3 &mdash; External Communication</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity communicates with external parties regarding matters affecting the functioning
+        of internal controls.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Communication of security commitments and system requirements to clients and vendors</li>
+        <li>Channels for receiving and processing external reports of security issues</li>
+        <li>Notification processes for security incidents, breaches, or significant changes</li>
+        <li>Regulatory and contractual reporting obligations</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall communicate its security commitments to clients through service
+        agreements and published security documentation. A dedicated security contact
+        (<span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; e.g. security@ramdootsolutions.com]</span>)
+        shall be established for external parties to report security concerns. The incident response
+        plan shall define notification requirements for clients, regulatory authorities (including
+        CERT-In as required under Indian law), and other stakeholders in the event of a security
+        breach. Changes that materially affect service delivery or security shall be communicated
+        to affected clients in advance where feasible.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+        <li><a href="../governance/client-communication-procedure.html">Client Communication Procedure</a> (RS-GOV-011)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Service agreement templates with security clauses</li>
+        <li>Security contact page or published responsible disclosure process</li>
+        <li>Breach notification templates and escalation matrices</li>
+        <li>Records of CERT-In notifications (if any incidents have occurred)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         4. CC3 — Risk Assessment
+         ============================================================ -->
+    <h1 id="cc3">4. CC3 &mdash; Risk Assessment</h1>
+
+    <!-- CC3.1 -->
+    <section class="allow-break" id="cc3-1">
+      <h2>CC3.1 &mdash; Objective Specification</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity specifies objectives with sufficient clarity to enable the identification and
+        assessment of risks relating to objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Clear operational, reporting, and compliance objectives documented and communicated</li>
+        <li>Objectives aligned with the entity's risk appetite and tolerance levels</li>
+        <li>Consideration of external requirements such as regulatory obligations and industry standards</li>
+        <li>Regular review of objectives to ensure continued relevance</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall define security and operational objectives that are aligned with
+        business goals and documented in the information security policy. Objectives shall address
+        the security, availability, processing integrity, confidentiality, and privacy of systems
+        and data as applicable. Compliance obligations under Indian law (including the Information
+        Technology Act, 2000 and related rules, and the Digital Personal Data Protection Act, 2023)
+        shall be identified and incorporated into the objectives. Objectives shall be reviewed
+        annually as part of the management review process.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Documented security and operational objectives</li>
+        <li>Compliance obligation register referencing applicable Indian laws and regulations</li>
+        <li>Management review meeting minutes discussing objective alignment</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC3.2 -->
+    <section class="allow-break" id="cc3-2">
+      <h2>CC3.2 &mdash; Risk Identification and Analysis</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity identifies risks to the achievement of its objectives across the entity and
+        analyzes risks as a basis for determining how the risks should be managed.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Comprehensive risk identification covering internal and external threats</li>
+        <li>Risk analysis methodology including likelihood and impact assessment</li>
+        <li>Consideration of risks at different levels: entity, department, process, and system</li>
+        <li>Documentation of identified risks in a risk register</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall conduct a formal risk assessment at least annually and upon
+        significant changes to the business, technology, or threat landscape. The risk assessment
+        shall employ a structured methodology that evaluates the likelihood and impact of identified
+        risks. A risk register shall be maintained, documenting each identified risk, its current
+        rating, assigned owner, and treatment plan. Risks shall be categorized by domain (e.g.
+        technology, operational, compliance, reputational) and prioritized for treatment based on
+        the organization's risk appetite.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+        <li><a href="../security/risk-assessment-procedure.html">Risk Assessment Procedure</a> (RS-SEC-008)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Risk register with current ratings and treatment plans</li>
+        <li>Risk assessment methodology documentation</li>
+        <li>Annual risk assessment report</li>
+        <li>Records of risk assessment workshops or meetings</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- CC3.3 -->
+    <section class="allow-break" id="cc3-3">
+      <h2>CC3.3 &mdash; Fraud Risk Assessment</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity considers the potential for fraud in assessing risks to the achievement of
+        objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Assessment of incentives and pressures that could lead to fraudulent activity</li>
+        <li>Consideration of opportunities for unauthorized acquisition, use, or disposal of assets</li>
+        <li>Evaluation of management override risks</li>
+        <li>Assessment of fraud risk related to both financial reporting and technology</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall incorporate fraud risk considerations into the annual risk assessment
+        process. This shall include evaluation of opportunities for unauthorized data access,
+        manipulation of system configurations, fraudulent financial reporting, and misappropriation
+        of assets. Segregation of duties shall be implemented in critical processes to reduce the
+        opportunity for fraud. Management shall assess the risk of management override and implement
+        compensating controls such as peer review and audit logging. The whistleblower policy shall
+        provide an avenue for reporting suspected fraudulent activity.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+        <li><a href="../governance/anti-fraud-policy.html">Anti-Fraud Policy</a> (RS-GOV-013)</li>
+        <li><a href="../governance/whistleblower-policy.html">Whistleblower Policy</a> (RS-GOV-009)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Fraud risk assessment documentation (as part of annual risk assessment)</li>
+        <li>Segregation of duties matrix</li>
+        <li>Audit logs for privileged operations</li>
+        <li>Whistleblower reports summary (redacted)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- CC3.4 -->
+    <section class="allow-break" id="cc3-4">
+      <h2>CC3.4 &mdash; Change Impact Assessment</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity identifies and assesses changes that could significantly impact the system of
+        internal controls.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Assessment of changes in the external environment (regulatory, technology, market)</li>
+        <li>Assessment of changes in the business model, leadership, or organizational structure</li>
+        <li>Evaluation of changes in technology infrastructure or service providers</li>
+        <li>Trigger-based reassessment of risks when significant changes are identified</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a change impact assessment process that evaluates the
+        effect of significant internal and external changes on the internal control environment.
+        Triggers for reassessment shall include changes to Indian regulations (e.g. IT Act
+        amendments, DPDP Act rules), significant changes to the technology stack, organizational
+        restructuring, new service offerings, and changes to key third-party service providers.
+        The risk register shall be updated upon identification of material changes, and additional
+        controls shall be implemented where warranted.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+        <li><a href="../security/change-management-policy.html">Change Management Policy</a> (RS-SEC-010)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Change impact assessment records</li>
+        <li>Updated risk register entries triggered by change events</li>
+        <li>Management review minutes discussing significant changes</li>
+        <li>Regulatory change tracking log</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         5. CC4 — Monitoring Activities
+         ============================================================ -->
+    <h1 id="cc4">5. CC4 &mdash; Monitoring Activities</h1>
+
+    <!-- CC4.1 -->
+    <section class="allow-break" id="cc4-1">
+      <h2>CC4.1 &mdash; Ongoing and Separate Evaluations</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity selects, develops, and performs ongoing and/or separate evaluations to ascertain
+        whether the components of internal control are present and functioning.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Mix of ongoing monitoring activities and periodic separate evaluations</li>
+        <li>Automated monitoring through technical controls (log analysis, alerting, dashboards)</li>
+        <li>Periodic internal audits or self-assessments of control effectiveness</li>
+        <li>Use of external assessments (penetration testing, vulnerability scans) where appropriate</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement a combination of ongoing monitoring and periodic
+        evaluations to ensure internal controls remain effective. Ongoing monitoring shall include
+        automated log analysis, real-time alerting for security events, and continuous vulnerability
+        scanning. Periodic evaluations shall include quarterly internal control self-assessments,
+        annual internal audits, and annual external vulnerability assessments or penetration tests.
+        Results shall be documented, and identified deficiencies shall be tracked to remediation.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/logging-and-monitoring-policy.html">Logging and Monitoring Policy</a> (RS-SEC-007)</li>
+        <li><a href="../security/vulnerability-management-policy.html">Vulnerability Management Policy</a> (RS-SEC-009)</li>
+        <li><a href="../governance/internal-audit-procedure.html">Internal Audit Procedure</a> (RS-GOV-014)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Monitoring dashboard screenshots or configuration records</li>
+        <li>Vulnerability scan reports</li>
+        <li>Penetration test reports</li>
+        <li>Internal audit reports</li>
+        <li>Self-assessment checklists and results</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC4.2 -->
+    <section class="allow-break" id="cc4-2">
+      <h2>CC4.2 &mdash; Deficiency Communication</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity evaluates and communicates internal control deficiencies in a timely manner to
+        those parties responsible for taking corrective action, including senior management and the
+        board of directors as appropriate.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Defined process for evaluating the severity of identified control deficiencies</li>
+        <li>Timely communication of deficiencies to appropriate levels of management</li>
+        <li>Tracking of remediation actions and verification of closure</li>
+        <li>Escalation procedures for deficiencies that remain unresolved beyond defined timelines</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a formal deficiency tracking process. Identified control
+        deficiencies shall be classified by severity (Critical, High, Medium, Low) and communicated
+        to the responsible control owner within defined timeframes. Critical and High deficiencies
+        shall be escalated to the Managing Director or governing body within 48 hours of
+        identification. All deficiencies shall be logged in a corrective action tracker with
+        assigned owners, target remediation dates, and status updates. Deficiencies that remain
+        open beyond their target date shall be escalated to the next management level.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/corrective-action-procedure.html">Corrective Action Procedure</a> (RS-GOV-015)</li>
+        <li><a href="../governance/internal-audit-procedure.html">Internal Audit Procedure</a> (RS-GOV-014)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Corrective action tracker with open and closed deficiencies</li>
+        <li>Escalation records for overdue deficiencies</li>
+        <li>Management communication records regarding critical deficiencies</li>
+        <li>Verification records for closed deficiencies</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         6. CC5 — Control Activities
+         ============================================================ -->
+    <h1 id="cc5">6. CC5 &mdash; Control Activities</h1>
+
+    <!-- CC5.1 -->
+    <section class="allow-break" id="cc5-1">
+      <h2>CC5.1 &mdash; Control Selection and Development</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity selects and develops control activities that contribute to the mitigation of
+        risks to the achievement of objectives to acceptable levels.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Integration of control activities with the risk assessment process</li>
+        <li>Selection of appropriate control types (preventive, detective, corrective)</li>
+        <li>Consideration of the level of control granularity appropriate for the risk</li>
+        <li>Segregation of incompatible duties through control design</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall design control activities in direct response to identified risks
+        documented in the risk register. Controls shall be selected to provide a balanced mix of
+        preventive, detective, and corrective measures. The control design shall incorporate
+        segregation of duties, requiring separate individuals for authorization, processing,
+        recording, and review of transactions where feasible. Each control shall have a defined
+        owner, documented procedure, and expected operating frequency.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Risk-to-control mapping matrix</li>
+        <li>Control descriptions with owner, frequency, and type classification</li>
+        <li>Segregation of duties matrix</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC5.2 -->
+    <section class="allow-break" id="cc5-2">
+      <h2>CC5.2 &mdash; Technology General Controls</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity selects and develops general control activities over technology to support the
+        achievement of objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Controls over the technology infrastructure that supports business processes</li>
+        <li>Security management processes for technology resources</li>
+        <li>Technology acquisition, development, and maintenance controls</li>
+        <li>Automated application controls and their configuration management</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement IT general controls (ITGCs) covering access management,
+        change management, backup and recovery, and system operations. All production systems shall
+        be hardened in accordance with industry baselines (e.g. CIS Benchmarks). System
+        configurations shall be managed through infrastructure-as-code practices where applicable.
+        Automated controls within applications (input validations, access checks, audit trails)
+        shall be developed, tested, and maintained as part of the software development lifecycle.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/system-hardening-standard.html">System Hardening Standard</a> (RS-SEC-011)</li>
+        <li><a href="../security/change-management-policy.html">Change Management Policy</a> (RS-SEC-010)</li>
+        <li><a href="../security/backup-and-recovery-policy.html">Backup and Recovery Policy</a> (RS-SEC-012)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>System hardening checklists and configuration baselines</li>
+        <li>Infrastructure-as-code repository records</li>
+        <li>Application control design documentation</li>
+        <li>ITGC test results</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC5.3 -->
+    <section class="allow-break" id="cc5-3">
+      <h2>CC5.3 &mdash; Policy-Based Control Deployment</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity deploys control activities through policies that establish what is expected and
+        procedures that put policies into action.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Documented policies that communicate management's expectations for controls</li>
+        <li>Procedures that implement policy requirements in day-to-day operations</li>
+        <li>Regular review and update of policies and procedures</li>
+        <li>Assignment of responsibility for policy and procedure maintenance</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a comprehensive set of information security and governance
+        policies. Each policy shall have a defined owner, effective date, review cycle, and approval
+        authority. Policies shall be supported by detailed procedures that translate policy
+        requirements into actionable steps. All policies and procedures shall be reviewed at least
+        annually and updated as needed to reflect changes in the business, technology, or regulatory
+        environment. Version control shall be maintained for all policy documents.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/document-control-procedure.html">Document Control Procedure</a> (RS-GOV-016)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Policy inventory with owners, effective dates, and review dates</li>
+        <li>Version control records for policy updates</li>
+        <li>Policy acknowledgement records from employees</li>
+        <li>Annual policy review meeting minutes</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- ============================================================
+         7. CC6 — Logical and Physical Access
+         ============================================================ -->
+    <h1 id="cc6">7. CC6 &mdash; Logical and Physical Access</h1>
+
+    <!-- CC6.1 -->
+    <section class="allow-break" id="cc6-1">
+      <h2>CC6.1 &mdash; Logical Access Security</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements logical access security software, infrastructure, and architectures
+        over protected information assets to protect them from security events.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Identification and authentication mechanisms for all users and system accounts</li>
+        <li>Network security architecture including segmentation, firewalls, and intrusion detection</li>
+        <li>Encryption of data at rest and in transit</li>
+        <li>Protection of authentication credentials</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement layered logical access controls across all systems. All
+        users shall be uniquely identified and authenticated using strong authentication mechanisms,
+        including multi-factor authentication (MFA) for access to production systems and
+        administrative consoles. Network security shall be enforced through firewalls, network
+        segmentation, and intrusion detection/prevention systems. Data shall be encrypted in transit
+        using TLS 1.2 or higher and at rest using AES-256 or equivalent. Authentication credentials
+        shall be stored using industry-standard hashing algorithms and shall never be stored in
+        plaintext.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/access-control-policy.html">Access Control Policy</a> (RS-SEC-002)</li>
+        <li><a href="../security/encryption-policy.html">Encryption Policy</a> (RS-SEC-003)</li>
+        <li><a href="../security/network-security-policy.html">Network Security Policy</a> (RS-SEC-005)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>MFA configuration records for production and administrative access</li>
+        <li>Firewall rule sets and network architecture diagrams</li>
+        <li>TLS certificate inventory and configuration scan results</li>
+        <li>Encryption key management records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC6.2 -->
+    <section class="allow-break" id="cc6-2">
+      <h2>CC6.2 &mdash; User Registration and Authorization</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        Prior to issuing system credentials and granting system access, the entity registers and
+        authorizes new internal and external users whose access is administered by the entity.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Formal user registration process requiring management authorization before access is provisioned</li>
+        <li>Verification of user identity before credential issuance</li>
+        <li>Documented access request and approval workflows</li>
+        <li>Processes for granting access to external users (vendors, contractors, clients)</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall require formal authorization before any system access is provisioned.
+        All access requests shall be submitted through a documented workflow requiring approval from
+        the user's direct manager and the system owner or IT administrator. User identity shall be
+        verified through HR onboarding records for employees and through contractual documentation
+        for external users. Access provisioning shall follow the principle of least privilege, and
+        the basis for each access grant shall be recorded.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/access-control-policy.html">Access Control Policy</a> (RS-SEC-002)</li>
+        <li><a href="../security/user-provisioning-procedure.html">User Provisioning Procedure</a> (RS-SEC-013)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Access request and approval records</li>
+        <li>User provisioning workflow documentation</li>
+        <li>Identity verification records for new user accounts</li>
+        <li>Access provisioning logs from IT systems</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC6.3 -->
+    <section class="allow-break" id="cc6-3">
+      <h2>CC6.3 &mdash; Role-Based Access</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity authorizes, modifies, or removes access to data, software, functions, and other
+        protected information assets based on roles, responsibilities, or the system design and
+        changes, giving consideration to the concepts of least privilege and segregation of duties.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Role-based access control (RBAC) implementation across all critical systems</li>
+        <li>Access modification processes triggered by role changes (transfers, promotions)</li>
+        <li>Periodic access reviews to ensure access remains appropriate</li>
+        <li>Segregation of conflicting duties enforced through access controls</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement role-based access control across all production systems
+        and business applications. Access roles shall be defined based on job functions, and access
+        shall be granted strictly in accordance with the principle of least privilege. Access shall
+        be modified promptly upon changes in role or responsibility. Quarterly access reviews shall
+        be conducted by system owners to verify that all active user accounts and their associated
+        permissions remain appropriate. Segregation of duties shall be enforced through role design,
+        preventing any single individual from controlling all aspects of a critical process.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/access-control-policy.html">Access Control Policy</a> (RS-SEC-002)</li>
+        <li><a href="../security/user-provisioning-procedure.html">User Provisioning Procedure</a> (RS-SEC-013)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>RBAC role definitions and permission matrices</li>
+        <li>Quarterly access review reports</li>
+        <li>Access modification tickets for role changes</li>
+        <li>Segregation of duties conflict analysis</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC6.4 -->
+    <section class="allow-break" id="cc6-4">
+      <h2>CC6.4 &mdash; Physical Access Restrictions</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity restricts physical access to facilities and protected information assets to
+        authorized personnel to meet the entity's objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Physical access controls for office premises, server rooms, and data centres</li>
+        <li>Visitor management procedures</li>
+        <li>Environmental controls (HVAC, fire suppression, water detection) for critical infrastructure</li>
+        <li>Physical access logging and monitoring</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall restrict physical access to its office premises and any on-premises
+        server or networking equipment. Access to server rooms or restricted areas shall require
+        authorized key cards or biometric authentication. Visitors shall be required to sign in,
+        display visitor identification, and be escorted at all times within restricted areas. Where
+        Ramdoot Solutions uses cloud infrastructure or co-located data centres, the physical
+        security controls of the service provider shall be verified through SOC 2 reports or
+        equivalent attestations. <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe physical office and server room arrangements]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/physical-security-policy.html">Physical Security Policy</a> (RS-SEC-014)</li>
+        <li><a href="../security/visitor-management-procedure.html">Visitor Management Procedure</a> (RS-SEC-015)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Physical access control system configuration and logs</li>
+        <li>Visitor sign-in logs</li>
+        <li>Server room access logs</li>
+        <li>Cloud provider SOC 2 reports or physical security attestations</li>
+        <li>Environmental monitoring records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- CC6.5 -->
+    <section class="allow-break" id="cc6-5">
+      <h2>CC6.5 &mdash; Logical Access Deprovisioning</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity discontinues logical and physical access to protected information assets when
+        that access is no longer required.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Timely revocation of access upon employee termination or contract completion</li>
+        <li>Access removal triggered by internal transfers or role changes</li>
+        <li>Processes for disabling dormant or unused accounts</li>
+        <li>Return or destruction of physical access credentials (keys, badges, tokens)</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall revoke all system access within 24 hours of employee termination
+        or the conclusion of a contractor's engagement. The offboarding checklist shall include
+        revocation of all logical access (application accounts, VPN, email, cloud services) and
+        recovery of physical access materials (ID badges, keys, hardware tokens). For internal
+        transfers, access associated with the previous role shall be revoked within 5 business
+        days, and new access shall be provisioned as per the standard access request process.
+        Dormant accounts (no login for 90 days) shall be automatically disabled and reviewed for
+        removal.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/access-control-policy.html">Access Control Policy</a> (RS-SEC-002)</li>
+        <li><a href="../governance/offboarding-procedure.html">Offboarding Procedure</a> (RS-GOV-017)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Offboarding checklists with access revocation confirmation</li>
+        <li>Termination-to-deprovisioning time records</li>
+        <li>Dormant account reports and actions taken</li>
+        <li>Access review logs confirming removal of transferred employees' prior access</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC6.6 -->
+    <section class="allow-break" id="cc6-6">
+      <h2>CC6.6 &mdash; External Threat Mitigation</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements controls to prevent or detect and act upon the introduction of
+        unauthorized or malicious software or the occurrence of other external threats.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Boundary protection mechanisms (firewalls, WAFs, DDoS protection)</li>
+        <li>Threat intelligence and external threat monitoring</li>
+        <li>Controls to restrict unauthorized external connections</li>
+        <li>Regular testing of boundary defences</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall deploy boundary protection mechanisms including network firewalls,
+        web application firewalls (WAFs), and DDoS mitigation services for internet-facing systems.
+        External connections to the organization's network shall be restricted to authorized
+        channels. Threat intelligence feeds shall be utilized to update security controls proactively.
+        External-facing systems shall be regularly tested through vulnerability scans and penetration
+        tests to identify and remediate weaknesses before they can be exploited.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/network-security-policy.html">Network Security Policy</a> (RS-SEC-005)</li>
+        <li><a href="../security/vulnerability-management-policy.html">Vulnerability Management Policy</a> (RS-SEC-009)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Firewall and WAF configuration records</li>
+        <li>DDoS mitigation service documentation</li>
+        <li>Penetration test reports for external-facing systems</li>
+        <li>Threat intelligence subscription or feed documentation</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC6.7 -->
+    <section class="allow-break" id="cc6-7">
+      <h2>CC6.7 &mdash; Data Transmission Protection</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity restricts the transmission, movement, and removal of information to authorized
+        internal and external users and processes, and protects it during transmission, movement,
+        or removal to meet the entity's objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Encryption of data in transit across all communication channels</li>
+        <li>Controls over removable media and data export mechanisms</li>
+        <li>Secure file transfer processes for sharing data with external parties</li>
+        <li>Data loss prevention (DLP) mechanisms where appropriate</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall enforce encryption for all data in transit using TLS 1.2 or higher
+        for web communications and encrypted protocols (SSH, SFTP, VPN) for administrative and
+        file transfer operations. The use of removable media shall be restricted through endpoint
+        management policies. Data transfers to external parties shall follow approved secure
+        transfer mechanisms and shall be authorized by the data owner. Where applicable, data loss
+        prevention controls shall be implemented to detect and prevent unauthorized data exfiltration.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/encryption-policy.html">Encryption Policy</a> (RS-SEC-003)</li>
+        <li><a href="../security/data-handling-policy.html">Data Handling and Classification Policy</a> (RS-SEC-016)</li>
+        <li><a href="../security/acceptable-use-policy.html">Acceptable Use Policy</a> (RS-SEC-017)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>TLS configuration scan results for all public endpoints</li>
+        <li>Endpoint management policy enforcement records (removable media restrictions)</li>
+        <li>Secure file transfer logs</li>
+        <li>DLP configuration and alert records (if implemented)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC6.8 -->
+    <section class="allow-break" id="cc6-8">
+      <h2>CC6.8 &mdash; Malicious Software Prevention</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements controls to prevent or detect and act upon the introduction of
+        unauthorized or malicious software to meet the entity's objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Anti-malware and endpoint protection deployment across all endpoints</li>
+        <li>Regular signature and definition updates</li>
+        <li>Email and web filtering to block malicious content</li>
+        <li>Software installation restrictions and application whitelisting where feasible</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall deploy endpoint protection solutions on all company-managed
+        workstations and servers. Anti-malware definitions shall be updated automatically. Email
+        security controls shall include spam filtering, attachment scanning, and phishing detection.
+        Web filtering shall be implemented to block access to known malicious websites. Software
+        installation on endpoints shall be restricted to authorized applications. Security
+        awareness training shall educate employees on identifying and reporting suspicious content.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/endpoint-protection-policy.html">Endpoint Protection Policy</a> (RS-SEC-018)</li>
+        <li><a href="../security/acceptable-use-policy.html">Acceptable Use Policy</a> (RS-SEC-017)</li>
+        <li><a href="../security/security-awareness-training.html">Security Awareness Training Programme</a> (RS-SEC-004)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Endpoint protection deployment and coverage reports</li>
+        <li>Anti-malware definition update logs</li>
+        <li>Email security gateway configuration and reports</li>
+        <li>Web filtering configuration records</li>
+        <li>Software installation restriction policy enforcement records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         8. CC7 — System Operations
+         ============================================================ -->
+    <h1 id="cc7">8. CC7 &mdash; System Operations</h1>
+
+    <!-- CC7.1 -->
+    <section class="allow-break" id="cc7-1">
+      <h2>CC7.1 &mdash; Vulnerability Detection</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        To meet its objectives, the entity uses detection and monitoring procedures to identify
+        changes to configurations that result in the introduction of new vulnerabilities, and
+        susceptibilities to newly discovered vulnerabilities.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Regular vulnerability scanning of infrastructure and applications</li>
+        <li>Configuration change monitoring to detect unauthorized modifications</li>
+        <li>Subscription to vulnerability advisories and threat intelligence feeds</li>
+        <li>Patch management processes to remediate identified vulnerabilities</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall conduct automated vulnerability scans of all production systems at
+        least monthly, with critical and internet-facing systems scanned weekly. Configuration
+        management tools shall detect unauthorized changes to system configurations. The
+        organization shall subscribe to relevant vulnerability advisory sources (e.g. CERT-In
+        advisories, NVD, vendor security bulletins) and shall evaluate newly disclosed
+        vulnerabilities for applicability within 48 hours of publication. A formal patch management
+        process shall ensure that critical vulnerabilities are remediated within defined SLAs
+        (e.g. 72 hours for critical, 30 days for high).
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/vulnerability-management-policy.html">Vulnerability Management Policy</a> (RS-SEC-009)</li>
+        <li><a href="../security/patch-management-procedure.html">Patch Management Procedure</a> (RS-SEC-019)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Vulnerability scan reports with remediation tracking</li>
+        <li>Configuration monitoring tool logs</li>
+        <li>Patch deployment records and SLA compliance metrics</li>
+        <li>Vulnerability advisory review records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC7.2 -->
+    <section class="allow-break" id="cc7-2">
+      <h2>CC7.2 &mdash; Anomaly and Event Monitoring</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity monitors system components and the operation of those components for anomalies
+        that are indicative of malicious acts, natural disasters, and errors affecting the entity's
+        ability to meet its objectives; anomalies are analyzed to determine whether they represent
+        security events.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Implementation of centralized logging and security information and event management (SIEM)</li>
+        <li>Defined monitoring alerts for security-relevant events</li>
+        <li>Baseline establishment for normal system behaviour to detect anomalies</li>
+        <li>Correlation of events from multiple sources to identify patterns</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement centralized logging for all production systems, collecting
+        logs from servers, network devices, applications, and security tools. A SIEM solution or
+        equivalent log analysis platform shall be deployed to aggregate, correlate, and analyze
+        events. Alerting rules shall be configured for security-relevant events including
+        unauthorized access attempts, privilege escalations, configuration changes, and anomalous
+        network traffic. Baselines for normal system behaviour shall be established and refined
+        over time to improve detection accuracy.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/logging-and-monitoring-policy.html">Logging and Monitoring Policy</a> (RS-SEC-007)</li>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>SIEM deployment and configuration documentation</li>
+        <li>Alerting rule definitions and thresholds</li>
+        <li>Sample security event alerts and response actions</li>
+        <li>Log retention configuration records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- CC7.3 -->
+    <section class="allow-break" id="cc7-3">
+      <h2>CC7.3 &mdash; Incident Evaluation</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity evaluates security events to determine whether they could or have resulted in a
+        failure of the entity to meet its objectives (security incidents) and, if so, takes actions
+        to prevent or address such failures.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Defined criteria for classifying events as security incidents</li>
+        <li>Triage process with severity classification</li>
+        <li>Root cause analysis for confirmed incidents</li>
+        <li>Documentation of event evaluation and incident determination</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain defined criteria for classifying security events as
+        incidents based on their potential impact on confidentiality, integrity, and availability
+        of systems and data. A triage process shall be followed for all security events, with
+        severity levels (P1-Critical, P2-High, P3-Medium, P4-Low) determining response timelines
+        and escalation paths. All incident evaluations shall be documented, including the rationale
+        for classification decisions. Root cause analysis shall be conducted for all P1 and P2
+        incidents.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+        <li><a href="../security/incident-classification-guide.html">Incident Classification Guide</a> (RS-SEC-020)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Incident classification criteria documentation</li>
+        <li>Incident triage and evaluation records</li>
+        <li>Root cause analysis reports for P1/P2 incidents</li>
+        <li>Incident register or ticketing system records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC7.4 -->
+    <section class="allow-break" id="cc7-4">
+      <h2>CC7.4 &mdash; Incident Response</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity responds to identified security incidents by executing a defined incident
+        response programme to understand, contain, remediate, and communicate security incidents,
+        as appropriate.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Formal incident response plan with defined roles, responsibilities, and procedures</li>
+        <li>Containment, eradication, and recovery procedures</li>
+        <li>Internal and external communication during incidents</li>
+        <li>Incident response team training and simulation exercises</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a formal incident response plan that defines the
+        organization's approach to detecting, containing, eradicating, and recovering from security
+        incidents. The plan shall assign roles and responsibilities to an incident response team,
+        including a designated Incident Commander. Containment strategies shall be pre-defined for
+        common incident types. Communication procedures shall address internal stakeholders,
+        affected clients, regulatory authorities (CERT-In as required under Indian regulations),
+        and law enforcement where applicable. The incident response plan shall be tested through
+        tabletop exercises at least annually.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+        <li><a href="../governance/crisis-communication-plan.html">Crisis Communication Plan</a> (RS-GOV-018)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Incident response plan document</li>
+        <li>Incident response team roster and contact information</li>
+        <li>Tabletop exercise records and after-action reports</li>
+        <li>Incident response reports for actual incidents</li>
+        <li>CERT-In notification records (if applicable)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- CC7.5 -->
+    <section class="allow-break" id="cc7-5">
+      <h2>CC7.5 &mdash; Incident Recovery</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity identifies, develops, and implements activities to recover from identified
+        security incidents.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Recovery procedures that restore systems and data to normal operations</li>
+        <li>Post-incident review and lessons learned</li>
+        <li>Integration of lessons learned into the control environment</li>
+        <li>Communication of recovery status to relevant stakeholders</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain recovery procedures as part of the incident response plan,
+        addressing the restoration of affected systems and data to normal operational states. Backup
+        and disaster recovery capabilities shall support timely recovery within defined recovery
+        time objectives (RTOs) and recovery point objectives (RPOs). A post-incident review shall
+        be conducted for all significant incidents, documenting lessons learned, root cause, and
+        recommended improvements. Findings from post-incident reviews shall be incorporated into
+        updated policies, procedures, and controls.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+        <li><a href="../security/backup-and-recovery-policy.html">Backup and Recovery Policy</a> (RS-SEC-012)</li>
+        <li><a href="../security/business-continuity-plan.html">Business Continuity Plan</a> (RS-SEC-021)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Recovery procedure documentation</li>
+        <li>Backup test and restore records</li>
+        <li>Post-incident review reports with lessons learned</li>
+        <li>Updated controls or procedures resulting from incident reviews</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- ============================================================
+         9. CC8 — Change Management
+         ============================================================ -->
+    <h1 id="cc8">9. CC8 &mdash; Change Management</h1>
+
+    <!-- CC8.1 -->
+    <section class="allow-break" id="cc8-1">
+      <h2>CC8.1 &mdash; Managed Changes</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity authorizes, designs, develops or acquires, configures, documents, tests, approves,
+        and implements changes to infrastructure, data, software, and procedures to meet its objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Formal change management process with documented request, review, approval, and implementation stages</li>
+        <li>Separation of development, testing, and production environments</li>
+        <li>Change testing and validation prior to deployment to production</li>
+        <li>Rollback procedures for failed changes</li>
+        <li>Emergency change procedures with retrospective approval</li>
+        <li>Change documentation including impact analysis and approval records</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a formal change management process for all changes to
+        production infrastructure, applications, databases, and configurations. All changes shall
+        follow a defined lifecycle: request, impact assessment, approval, development/configuration,
+        testing, deployment, and post-implementation review. Changes shall be tested in a staging
+        or pre-production environment before deployment to production. Rollback plans shall be
+        documented for all changes. Emergency changes shall follow an expedited approval process
+        with mandatory retrospective review and documentation within 48 hours. Development, testing,
+        and production environments shall be segregated, with access controls restricting direct
+        modifications to production.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/change-management-policy.html">Change Management Policy</a> (RS-SEC-010)</li>
+        <li><a href="../security/sdlc-policy.html">Software Development Lifecycle Policy</a> (RS-SEC-022)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Change request tickets with approval records</li>
+        <li>Impact assessment documentation for changes</li>
+        <li>Test plans and results for changes deployed to production</li>
+        <li>Deployment logs and rollback plan documentation</li>
+        <li>Emergency change records with retrospective approvals</li>
+        <li>Environment segregation configuration records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-partial">Partial</span></p>
+    </section>
+
+    <!-- ============================================================
+         10. CC9 — Risk Mitigation
+         ============================================================ -->
+    <h1 id="cc9">10. CC9 &mdash; Risk Mitigation</h1>
+
+    <!-- CC9.1 -->
+    <section class="allow-break" id="cc9-1">
+      <h2>CC9.1 &mdash; Risk Mitigation Activities</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity identifies, selects, and develops risk mitigation activities for risks arising
+        from potential business disruptions.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Business continuity planning to address potential service disruptions</li>
+        <li>Disaster recovery capabilities for critical systems</li>
+        <li>Insurance coverage for residual risks where appropriate</li>
+        <li>Regular testing of continuity and recovery plans</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a business continuity plan (BCP) and disaster recovery plan
+        (DRP) that address the organization's response to potential service disruptions. Critical
+        business processes and systems shall be identified through a business impact analysis (BIA),
+        with defined RTOs and RPOs. The DRP shall leverage cloud infrastructure capabilities for
+        redundancy and failover where applicable. BCP and DRP shall be tested at least annually
+        through simulation exercises, and test results shall be documented with improvements
+        identified and implemented. <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; confirm insurance coverage details]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/business-continuity-plan.html">Business Continuity Plan</a> (RS-SEC-021)</li>
+        <li><a href="../security/disaster-recovery-plan.html">Disaster Recovery Plan</a> (RS-SEC-023)</li>
+        <li><a href="../governance/risk-management-framework.html">Risk Management Framework</a> (RS-GOV-012)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Business impact analysis document</li>
+        <li>BCP and DRP documents</li>
+        <li>Annual BCP/DRP test records and results</li>
+        <li>RTO/RPO definitions for critical systems</li>
+        <li>Insurance policy documentation (if applicable)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- CC9.2 -->
+    <section class="allow-break" id="cc9-2">
+      <h2>CC9.2 &mdash; Vendor and Business Partner Risk</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity assesses and manages risks associated with vendors and business partners.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Vendor risk assessment process prior to engagement</li>
+        <li>Contractual security requirements and SLAs for critical vendors</li>
+        <li>Ongoing monitoring of vendor compliance and performance</li>
+        <li>Contingency planning for vendor service disruptions</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall conduct a risk assessment of all vendors and business partners that
+        have access to the organization's data, systems, or facilities. The assessment shall
+        evaluate the vendor's security posture, financial stability, and regulatory compliance.
+        Contracts with critical vendors shall include security requirements, data protection
+        obligations, right-to-audit clauses, and service level agreements. Vendor compliance shall
+        be monitored through periodic reviews, including review of vendor SOC reports or equivalent
+        attestations where available. Contingency plans shall be maintained for critical vendor
+        dependencies, including identification of alternative providers where feasible.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/vendor-management-policy.html">Vendor Management Policy</a> (RS-GOV-019)</li>
+        <li><a href="../governance/third-party-risk-assessment-procedure.html">Third-Party Risk Assessment Procedure</a> (RS-GOV-020)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Vendor inventory with risk classifications</li>
+        <li>Vendor risk assessment records</li>
+        <li>Contracts with security clauses and SLAs</li>
+        <li>Vendor SOC reports or security attestation reviews</li>
+        <li>Vendor performance review records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- ============================================================
+         11. Availability (A1) — Additional Trust Services Category
+         ============================================================ -->
+    <h1 id="availability">11. Availability (A1)</h1>
+
+    <div class="callout callout-warning">
+      <p><strong>Scope Confirmation Required:</strong> The Availability category is an optional
+      Trust Services Category. Inclusion in the organization's SOC 2 scope requires management
+      and/or auditor confirmation. The criteria below are documented for readiness purposes.</p>
+    </div>
+
+    <!-- A1.1 -->
+    <section class="allow-break" id="a1-1">
+      <h2>A1.1 &mdash; Capacity Management</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity maintains, monitors, and evaluates current processing capacity and use of system
+        components (infrastructure, data, and software) to manage capacity demand and to enable
+        the implementation of additional capacity to help meet its objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Capacity planning and forecasting for infrastructure resources</li>
+        <li>Monitoring of resource utilization (CPU, memory, storage, bandwidth)</li>
+        <li>Alerting for capacity thresholds and auto-scaling capabilities</li>
+        <li>Regular review of capacity against current and projected demand</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall monitor system resource utilization and implement capacity planning
+        processes to ensure that infrastructure can meet current and projected demand. Monitoring
+        tools shall track CPU, memory, disk, and network utilization with alerts configured for
+        predefined thresholds. Where cloud infrastructure is used, auto-scaling capabilities shall
+        be configured to handle demand spikes. Capacity reviews shall be conducted quarterly,
+        evaluating trends and forecasting future requirements.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; specify monitoring tools and cloud provider details]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/infrastructure-management-policy.html">Infrastructure Management Policy</a> (RS-SEC-024)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Capacity monitoring dashboard screenshots or reports</li>
+        <li>Auto-scaling configuration records</li>
+        <li>Quarterly capacity review reports</li>
+        <li>Alert configuration and threshold documentation</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- A1.2 -->
+    <section class="allow-break" id="a1-2">
+      <h2>A1.2 &mdash; Environmental Protections and Recovery</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity authorizes, designs, develops or acquires, implements, operates, approves,
+        maintains, and monitors environmental protections, software, data back-up processes, and
+        recovery infrastructure to meet its objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Backup strategy covering all critical data and configurations</li>
+        <li>Backup testing and validation through regular restore exercises</li>
+        <li>Geographic redundancy for critical data and systems</li>
+        <li>Environmental protections (power, cooling, fire suppression) for on-premises infrastructure</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement a comprehensive backup strategy covering all critical
+        data, system configurations, and application code. Backups shall be performed on a defined
+        schedule (e.g. daily incremental, weekly full) and stored in a geographically separate
+        location. Backup integrity shall be verified through regular restore tests conducted at
+        least quarterly. For on-premises infrastructure, environmental protections including
+        uninterruptible power supply (UPS), climate control, and fire detection/suppression shall
+        be maintained. Cloud-hosted systems shall leverage provider-managed environmental controls,
+        verified through the provider's SOC 2 report.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/backup-and-recovery-policy.html">Backup and Recovery Policy</a> (RS-SEC-012)</li>
+        <li><a href="../security/disaster-recovery-plan.html">Disaster Recovery Plan</a> (RS-SEC-023)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Backup schedule and configuration documentation</li>
+        <li>Backup restore test records</li>
+        <li>Geographic redundancy configuration (cloud region/zone details)</li>
+        <li>UPS and environmental monitoring records (for on-premises)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- A1.3 -->
+    <section class="allow-break" id="a1-3">
+      <h2>A1.3 &mdash; Recovery Plan Testing</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity tests recovery plan procedures supporting system recovery to meet its objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Regular testing of disaster recovery and business continuity procedures</li>
+        <li>Validation that recovery procedures achieve defined RTOs and RPOs</li>
+        <li>Documentation of test results and identified improvements</li>
+        <li>Incorporation of lessons learned into updated recovery plans</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall test its disaster recovery procedures at least annually through
+        simulated recovery exercises. Tests shall validate that critical systems can be restored
+        within the defined RTOs and RPOs. Test scenarios shall cover multiple failure modes,
+        including infrastructure failure, data corruption, and regional outage. Test results shall
+        be documented, including time-to-recovery measurements, identified gaps, and corrective
+        actions. Recovery plans shall be updated based on test findings.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/disaster-recovery-plan.html">Disaster Recovery Plan</a> (RS-SEC-023)</li>
+        <li><a href="../security/business-continuity-plan.html">Business Continuity Plan</a> (RS-SEC-021)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>DR test plans and schedules</li>
+        <li>DR test execution records with time-to-recovery metrics</li>
+        <li>Gap analysis and corrective action plans from test results</li>
+        <li>Updated recovery plan versions post-testing</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- ============================================================
+         12. Confidentiality (C1) — Additional Trust Services Category
+         ============================================================ -->
+    <h1 id="confidentiality">12. Confidentiality (C1)</h1>
+
+    <div class="callout callout-warning">
+      <p><strong>Scope Confirmation Required:</strong> The Confidentiality category is an optional
+      Trust Services Category. Inclusion in the organization's SOC 2 scope requires management
+      and/or auditor confirmation. The criteria below are documented for readiness purposes.</p>
+    </div>
+
+    <!-- C1.1 -->
+    <section class="allow-break" id="c1-1">
+      <h2>C1.1 &mdash; Confidential Information Identification</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity identifies and maintains confidential information to meet the entity's objectives
+        related to confidentiality.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Data classification scheme that identifies confidential information</li>
+        <li>Inventory of confidential data assets and their locations</li>
+        <li>Labelling and handling requirements for each classification level</li>
+        <li>Processes for identifying new confidential information as it is created or received</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall maintain a data classification scheme with defined levels (e.g.
+        Public, Internal, Confidential, Restricted). All data assets shall be classified by their
+        data owner, and handling requirements shall be defined for each classification level.
+        Client data shall be classified as Confidential or Restricted by default. An inventory
+        of confidential data assets shall be maintained, identifying the type, location, owner,
+        and applicable retention requirements. Personnel shall be trained on data classification
+        and handling procedures as part of security awareness training.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/data-handling-policy.html">Data Handling and Classification Policy</a> (RS-SEC-016)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data classification scheme document</li>
+        <li>Confidential data asset inventory</li>
+        <li>Data handling procedure documentation per classification level</li>
+        <li>Training records for data classification awareness</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-draft">Draft</span></p>
+    </section>
+
+    <!-- C1.2 -->
+    <section class="allow-break" id="c1-2">
+      <h2>C1.2 &mdash; Confidential Information Disposal</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity disposes of confidential information to meet the entity's objectives related to
+        confidentiality.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Defined retention periods for confidential information</li>
+        <li>Secure disposal methods for digital and physical media</li>
+        <li>Verification that disposal has been completed in accordance with policy</li>
+        <li>Compliance with contractual and regulatory retention obligations</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall define retention periods for all categories of confidential
+        information, considering contractual commitments and Indian regulatory requirements. Upon
+        expiry of the retention period, confidential data shall be securely disposed of using
+        methods appropriate to the medium: cryptographic erasure or multi-pass overwriting for
+        digital media, and cross-cut shredding for physical documents. Disposal activities shall
+        be logged, and certificates of destruction shall be obtained from third-party disposal
+        services where used. Compliance with retention and disposal requirements shall be reviewed
+        during internal audits.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/data-retention-policy.html">Data Retention Policy</a> (RS-GOV-010)</li>
+        <li><a href="../security/data-handling-policy.html">Data Handling and Classification Policy</a> (RS-SEC-016)</li>
+        <li><a href="../security/media-disposal-procedure.html">Media Disposal Procedure</a> (RS-SEC-025)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data retention schedule</li>
+        <li>Disposal logs and certificates of destruction</li>
+        <li>Media disposal procedure documentation</li>
+        <li>Audit records verifying disposal compliance</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- ============================================================
+         13. Processing Integrity (PI1) — Additional Trust Services Category
+         ============================================================ -->
+    <h1 id="processing-integrity">13. Processing Integrity (PI1)</h1>
+
+    <div class="callout callout-warning">
+      <p><strong>Scope Confirmation Required:</strong> The Processing Integrity category is an
+      optional Trust Services Category. Inclusion in the organization's SOC 2 scope requires
+      management and/or auditor confirmation. The criteria below are documented for readiness
+      purposes.</p>
+    </div>
+
+    <!-- PI1.1 -->
+    <section class="allow-break" id="pi1-1">
+      <h2>PI1.1 &mdash; Processing Accuracy, Completeness, and Timeliness</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements policies and procedures over system processing to result in products,
+        services, and reporting to meet the entity's objectives.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Input validation controls to ensure accuracy and completeness of data entering the system</li>
+        <li>Processing controls to ensure data is processed accurately and completely</li>
+        <li>Output reconciliation to verify processing results</li>
+        <li>Timeliness controls to ensure processing occurs within required timeframes</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement input validation, processing, and output controls across
+        its service delivery systems. Input validation shall include data type checks, range
+        validation, format verification, and duplicate detection. Processing controls shall include
+        transaction logging, checksum verification, and exception handling with alerts. Output
+        reconciliation shall be performed for critical business processes. Processing SLAs shall
+        be defined and monitored for key workflows.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe specific processing integrity controls for key service systems]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/sdlc-policy.html">Software Development Lifecycle Policy</a> (RS-SEC-022)</li>
+        <li><a href="../security/information-security-policy.html">Information Security Policy</a> (RS-SEC-001)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Input validation control documentation</li>
+        <li>Processing control descriptions and transaction logs</li>
+        <li>Output reconciliation reports</li>
+        <li>SLA monitoring records for processing timeliness</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- PI1.2 -->
+    <section class="allow-break" id="pi1-2">
+      <h2>PI1.2 &mdash; Error Detection and Correction</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements policies and procedures to enable the identification of errors in
+        system processing and their timely correction.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Error detection mechanisms in processing workflows</li>
+        <li>Error logging and notification procedures</li>
+        <li>Defined error correction and reprocessing procedures</li>
+        <li>Root cause analysis for recurring processing errors</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement error detection mechanisms within all critical processing
+        workflows, including exception handling, automated validation checks, and reconciliation
+        processes. Processing errors shall be logged with sufficient detail for diagnosis and
+        correction. Notifications shall be sent to responsible personnel when errors are detected.
+        Error correction procedures shall be documented, including reprocessing steps and
+        verification of corrected output. Recurring errors shall trigger root cause analysis and
+        corrective action to prevent recurrence.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/sdlc-policy.html">Software Development Lifecycle Policy</a> (RS-SEC-022)</li>
+        <li><a href="../governance/corrective-action-procedure.html">Corrective Action Procedure</a> (RS-GOV-015)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Error handling and logging configuration documentation</li>
+        <li>Error logs and resolution records</li>
+        <li>Root cause analysis reports for recurring errors</li>
+        <li>Corrective action records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- PI1.3 -->
+    <section class="allow-break" id="pi1-3">
+      <h2>PI1.3 &mdash; Processing Inputs and Outputs</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity implements policies and procedures over the inputs and outputs of system
+        processing to ensure completeness, accuracy, and validity.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Completeness checks on input data before processing</li>
+        <li>Authorization of inputs from external sources</li>
+        <li>Output distribution controls to ensure authorized recipients only</li>
+        <li>Retention of processing records for audit purposes</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement controls over system inputs and outputs to ensure data
+        completeness, accuracy, and validity. Inputs from external sources shall be validated and
+        authorized before processing. Outputs shall be distributed only to authorized recipients
+        through secured channels. Processing records shall be retained in accordance with the
+        organization's data retention policy for audit trail purposes.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe specific input/output controls per service]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../security/data-handling-policy.html">Data Handling and Classification Policy</a> (RS-SEC-016)</li>
+        <li><a href="../governance/data-retention-policy.html">Data Retention Policy</a> (RS-GOV-010)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Input validation and authorization procedures</li>
+        <li>Output distribution logs and access controls</li>
+        <li>Processing record retention logs</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- ============================================================
+         14. Privacy (P1) — Additional Trust Services Category
+         ============================================================ -->
+    <h1 id="privacy">14. Privacy (P1)</h1>
+
+    <div class="callout callout-warning">
+      <p><strong>Scope Confirmation Required:</strong> The Privacy category is an optional Trust
+      Services Category. Inclusion in the organization's SOC 2 scope requires management and/or
+      auditor confirmation. The criteria below are documented for readiness purposes. Note:
+      Ramdoot Solutions operates in India, where the Digital Personal Data Protection Act, 2023
+      (DPDP Act) governs personal data processing.</p>
+    </div>
+
+    <!-- P1.1 -->
+    <section class="allow-break" id="p1-1">
+      <h2>P1.1 &mdash; Privacy Notice and Consent</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity provides notice to data subjects about its privacy practices and obtains
+        consent where required.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Clear and accessible privacy notices describing data collection, use, and sharing practices</li>
+        <li>Consent mechanisms appropriate to the type and sensitivity of personal information</li>
+        <li>Notification of changes to privacy practices</li>
+        <li>Records of consent obtained from data subjects</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall publish a privacy notice that clearly describes the types of
+        personal data collected, the purposes of processing, data sharing arrangements, retention
+        periods, and data subject rights. Consent shall be obtained in accordance with the DPDP
+        Act, 2023 requirements, using clear and affirmative mechanisms. Consent records shall be
+        maintained. Data subjects shall be notified of material changes to privacy practices.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe specific privacy notice locations and consent mechanisms]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+        <li><a href="../governance/data-protection-procedure.html">Data Protection Procedure</a> (RS-GOV-022)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Published privacy notice</li>
+        <li>Consent collection mechanisms and records</li>
+        <li>Change notification records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.2 -->
+    <section class="allow-break" id="p1-2">
+      <h2>P1.2 &mdash; Choice and Consent Management</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity communicates choices available regarding the collection, use, retention, disclosure,
+        and disposal of personal information and obtains and documents consent.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Opt-in/opt-out mechanisms for optional data processing activities</li>
+        <li>Withdrawal of consent processes</li>
+        <li>Documentation of consent decisions</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall provide data subjects with clear choices regarding the processing
+        of their personal data, including the ability to withdraw consent. Consent withdrawal
+        mechanisms shall be as easy to use as the original consent mechanism, in compliance with
+        the DPDP Act, 2023. Consent records, including the scope of consent granted and any
+        subsequent modifications or withdrawals, shall be maintained in a centralized consent
+        management system or register.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe consent management system or process]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+        <li><a href="../governance/data-protection-procedure.html">Data Protection Procedure</a> (RS-GOV-022)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Consent management system or register records</li>
+        <li>Opt-in/opt-out mechanism documentation</li>
+        <li>Consent withdrawal logs</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.3 -->
+    <section class="allow-break" id="p1-3">
+      <h2>P1.3 &mdash; Personal Information Collection</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity collects personal information only for the purposes identified in the privacy
+        notice and with the consent of the data subject.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Collection limited to identified purposes (data minimization)</li>
+        <li>Validation that collection aligns with the stated privacy notice</li>
+        <li>Controls over collection from third-party sources</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall collect personal data only for the purposes stated in its privacy
+        notice and shall adhere to the principle of data minimization. Collection from third-party
+        sources shall be governed by contractual obligations ensuring lawful data sharing. Regular
+        reviews shall be conducted to verify that data collection practices remain aligned with
+        stated purposes.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe data collection points and minimization practices]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+        <li><a href="../security/data-handling-policy.html">Data Handling and Classification Policy</a> (RS-SEC-016)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data collection inventory with purpose mapping</li>
+        <li>Privacy notice and data collection point alignment review records</li>
+        <li>Third-party data sharing agreements</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.4 -->
+    <section class="allow-break" id="p1-4">
+      <h2>P1.4 &mdash; Use, Retention, and Disposal</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity limits the use of personal information to the purposes identified in the privacy
+        notice, retains it only as long as needed, and disposes of it securely.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Purpose limitation controls on personal data use</li>
+        <li>Defined retention periods for personal data</li>
+        <li>Secure disposal of personal data upon retention expiry</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall ensure that personal data is used only for the purposes for which
+        it was collected, as stated in the privacy notice. Retention periods for personal data
+        shall be defined in the data retention policy, considering the DPDP Act requirements and
+        contractual obligations. Personal data shall be securely disposed of upon expiry of the
+        retention period or upon request from the data subject (right to erasure), using methods
+        consistent with the organization's media disposal procedures.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/data-retention-policy.html">Data Retention Policy</a> (RS-GOV-010)</li>
+        <li><a href="../security/media-disposal-procedure.html">Media Disposal Procedure</a> (RS-SEC-025)</li>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data retention schedule for personal data categories</li>
+        <li>Data disposal records and certificates</li>
+        <li>Data subject erasure request logs and completion records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.5 -->
+    <section class="allow-break" id="p1-5">
+      <h2>P1.5 &mdash; Access and Correction</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity grants identified and authenticated data subjects the ability to access their
+        stored personal information for review and, upon request, provides physical or electronic
+        copies, and corrects, amends, or appends information as necessary.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Data subject access request (DSAR) process</li>
+        <li>Identity verification for access requests</li>
+        <li>Mechanisms for data correction and amendment</li>
+        <li>Response timelines in compliance with applicable regulations</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall provide data subjects with the ability to request access to their
+        personal data and to request correction of inaccurate or incomplete data. A data subject
+        access request (DSAR) process shall be established, including identity verification
+        procedures, response timelines compliant with the DPDP Act (and any subsequent rules),
+        and secure delivery mechanisms for personal data copies. Corrections shall be made promptly
+        upon verification of the request.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe DSAR submission mechanism, e.g. email, web form]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/data-protection-procedure.html">Data Protection Procedure</a> (RS-GOV-022)</li>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>DSAR process documentation</li>
+        <li>DSAR log with response timelines</li>
+        <li>Identity verification procedures for DSARs</li>
+        <li>Correction request records</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.6 -->
+    <section class="allow-break" id="p1-6">
+      <h2>P1.6 &mdash; Disclosure and Notification</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity discloses personal information to third parties only for the purposes identified
+        in the privacy notice and with the consent of the data subject, and notifies data subjects
+        in the event of a privacy breach.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Controls over third-party data sharing</li>
+        <li>Data processing agreements with third parties</li>
+        <li>Privacy breach notification procedures</li>
+        <li>Regulatory notification obligations (CERT-In, Data Protection Board of India)</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall disclose personal information to third parties only in accordance
+        with the stated purposes in its privacy notice and applicable consent. Data processing
+        agreements shall be executed with all third parties that process personal data on behalf
+        of the organization. In the event of a personal data breach, affected data subjects shall
+        be notified in accordance with the DPDP Act and applicable rules. Notifications to the
+        Data Protection Board of India and CERT-In shall be made as required under Indian
+        regulations.
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+        <li><a href="../security/incident-response-plan.html">Incident Response Plan</a> (RS-SEC-006)</li>
+        <li><a href="../governance/vendor-management-policy.html">Vendor Management Policy</a> (RS-GOV-019)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data processing agreements with third parties</li>
+        <li>Third-party data sharing inventory</li>
+        <li>Breach notification procedure documentation</li>
+        <li>Breach notification records (if applicable)</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.7 -->
+    <section class="allow-break" id="p1-7">
+      <h2>P1.7 &mdash; Quality of Personal Information</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity collects and maintains accurate, up-to-date, complete, and relevant personal
+        information for the purposes identified in the privacy notice.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Data quality controls for personal information</li>
+        <li>Processes for updating personal data</li>
+        <li>Verification of data accuracy at collection and during use</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall implement processes to maintain the accuracy and completeness of
+        personal data. Data subjects shall be provided with mechanisms to update their information.
+        Periodic data quality reviews shall be conducted for critical personal data repositories.
+        Data that is found to be inaccurate or incomplete shall be corrected or deleted as
+        appropriate.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; describe data quality processes for key systems containing personal data]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/data-protection-procedure.html">Data Protection Procedure</a> (RS-GOV-022)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Data quality review records</li>
+        <li>Data update mechanism documentation</li>
+        <li>Correction logs for inaccurate data</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- P1.8 -->
+    <section class="allow-break" id="p1-8">
+      <h2>P1.8 &mdash; Monitoring and Enforcement</h2>
+      <h4>Criteria Requirement</h4>
+      <p>
+        The entity monitors compliance with its privacy policies and procedures and has a process
+        to address privacy-related inquiries, complaints, and disputes.
+      </p>
+      <h4>Points of Focus</h4>
+      <ul>
+        <li>Privacy compliance monitoring processes</li>
+        <li>Complaint handling mechanisms for privacy concerns</li>
+        <li>Audit or review of privacy practices</li>
+        <li>Enforcement actions for privacy policy violations</li>
+      </ul>
+      <h4>Ramdoot Solutions Control Response</h4>
+      <p>
+        Ramdoot Solutions shall monitor compliance with its privacy policies through periodic
+        internal reviews and audits. A complaint handling process shall be established for
+        privacy-related inquiries and complaints, with defined response timelines. Privacy
+        policy violations shall be addressed through the organization's disciplinary process.
+        The organization shall designate a point of contact for privacy matters and shall
+        cooperate with regulatory authorities as required.
+        <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; designate privacy contact and complaint submission mechanism]</span>
+      </p>
+      <h4>Related Policies</h4>
+      <ul>
+        <li><a href="../governance/privacy-policy.html">Privacy Policy</a> (RS-GOV-021)</li>
+        <li><a href="../governance/complaint-handling-procedure.html">Complaint Handling Procedure</a> (RS-GOV-023)</li>
+        <li><a href="../governance/disciplinary-policy.html">Disciplinary Policy</a> (RS-GOV-004)</li>
+      </ul>
+      <h4>Required Evidence</h4>
+      <ul>
+        <li>Privacy compliance audit records</li>
+        <li>Complaint log with resolution records</li>
+        <li>Privacy contact designation documentation</li>
+        <li>Enforcement action records for privacy violations</li>
+      </ul>
+      <h4>Status</h4>
+      <p><span class="badge badge-required">Required</span></p>
+    </section>
+
+    <!-- ============================================================
+         15. Document Approval
+         ============================================================ -->
+    <h1 id="approval">15. Document Approval</h1>
+
+    <div class="approval-block">
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Name</th>
+            <th>Signature</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prepared By</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Reviewed By</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Approved By (Information Security Officer)</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Approved By (Managing Director)</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         16. Version History
+         ============================================================ -->
+    <h1 id="version-history">16. Version History</h1>
+
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td>04 September 2026</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial release &mdash; complete TSC mapping for Common Criteria (CC1-CC9), Availability (A1), Confidentiality (C1), Processing Integrity (PI1), and Privacy (P1)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <div class="doc-footer">
+      <span>RS-SOC2-003 &mdash; Trust Services Criteria Mapping v1.0</span>
+      <span>Ramdoot Solutions &mdash; Confidential</span>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+</body>
+</html>

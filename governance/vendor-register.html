@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Vendor Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-002</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Quarterly (Critical vendors) / Annually (all vendors)</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Vendor Register is a centralised inventory of all third-party vendors, service providers, and suppliers engaged by Ramdoot Solutions. It supports the Vendor Management Policy by providing visibility into vendor relationships, their criticality to operations, data access levels, contractual status, and compliance posture.</p>
+    <p>Effective vendor management is a key requirement under SOC 2 Trust Services Criteria (CC9.2) and is essential for managing supply chain risk, ensuring data protection, and maintaining compliance with the Digital Personal Data Protection Act, 2023 (DPDPA).</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Vendor Owners:</strong></p>
+      <ol>
+        <li><strong>New Vendor:</strong> Before engaging any new vendor, add an entry to this register. Assign a unique Vendor ID (format: VND-XXX).</li>
+        <li><strong>Criticality Assessment:</strong> Classify the vendor as Critical, Standard, or Low based on service dependency and data access.</li>
+        <li><strong>Data Access:</strong> Document whether the vendor has access to Ramdoot Solutions' data, client data, or personal data.</li>
+        <li><strong>Risk Assessment:</strong> Complete a vendor risk assessment using the Vendor Security Questionnaire before onboarding Critical and Standard vendors.</li>
+        <li><strong>Contract Review:</strong> Ensure contracts include appropriate security, confidentiality, data protection, and audit right clauses.</li>
+        <li><strong>Ongoing Monitoring:</strong> Review Critical vendors quarterly and all other vendors at least annually. Collect updated SOC reports or ISO certificates.</li>
+        <li><strong>Offboarding:</strong> When a vendor relationship ends, ensure access is revoked, data is returned/destroyed, and the register is updated.</li>
+      </ol>
+    </div>
+
+    <!-- Criticality Definitions -->
+    <h2>3. Criticality Definitions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Definition</th>
+          <th>Assessment Frequency</th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>Vendor failure would cause significant disruption to core business operations or expose sensitive data. Vendor has direct access to production systems or personal/confidential data.</td>
+          <td>Quarterly review, annual full reassessment</td>
+          <td>Cloud hosting provider, payment processor, core SaaS platform</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-medium">Standard</span></td>
+          <td>Vendor provides important services but short-term disruption is manageable. May have limited data access.</td>
+          <td>Annual review</td>
+          <td>Email service, project management tools, HR platform</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-low">Low</span></td>
+          <td>Vendor provides non-critical services with no data access. Disruption has minimal business impact.</td>
+          <td>Annual review</td>
+          <td>Office supplies, catering, general consultants</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Vendor Register Table -->
+    <h2>4. Vendor Register</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.78rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Vendor ID</th>
+          <th>Vendor Name</th>
+          <th>Service Category</th>
+          <th>Criticality</th>
+          <th>Data Access</th>
+          <th>Contract Expiry</th>
+          <th>SOC/ISO Report</th>
+          <th>Last Assessment</th>
+          <th>Status</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>VND-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Cloud Infrastructure / Hosting</td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>Yes &mdash; Production data, client data</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Assessment</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>VND-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Email / Communication Platform</td>
+          <td><span class="badge badge-medium">Standard</span></td>
+          <td>Yes &mdash; Employee communications, potentially client data in emails</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Assessment</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>VND-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Version Control / Code Repository</td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>Yes &mdash; Source code, CI/CD pipelines</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Assessment</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>VND-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Domain Registrar / DNS</td>
+          <td><span class="badge badge-medium">Standard</span></td>
+          <td>No &mdash; DNS configuration only</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Assessment</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>VND-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Accounting / Financial Software</td>
+          <td><span class="badge badge-medium">Standard</span></td>
+          <td>Yes &mdash; Financial records, employee payroll data</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Assessment</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Vendor Assessment Checklist -->
+    <h2>5. Vendor Assessment Checklist</h2>
+    <p>The following checklist should be completed for all Critical and Standard vendors during onboarding and at each reassessment cycle:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Assessment Area</th>
+          <th>Check Items</th>
+          <th>Evidence Required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Security Certifications</strong></td>
+          <td>Does the vendor hold SOC 2, ISO 27001, or equivalent certifications?</td>
+          <td>Current SOC 2 report, ISO certificate, or bridge letter</td>
+        </tr>
+        <tr>
+          <td><strong>Data Protection</strong></td>
+          <td>Does the vendor have adequate data protection controls? Is there a DPA in place?</td>
+          <td>Data Processing Agreement, privacy policy, encryption documentation</td>
+        </tr>
+        <tr>
+          <td><strong>Access Controls</strong></td>
+          <td>Does the vendor implement MFA, RBAC, and audit logging?</td>
+          <td>Security questionnaire response, access control documentation</td>
+        </tr>
+        <tr>
+          <td><strong>Incident Response</strong></td>
+          <td>Does the vendor have a documented incident response plan with notification timelines?</td>
+          <td>Incident response policy, notification SLAs in contract</td>
+        </tr>
+        <tr>
+          <td><strong>Business Continuity</strong></td>
+          <td>Does the vendor have BCP/DR capabilities? What are their RTO/RPO commitments?</td>
+          <td>BCP documentation, SLA, uptime commitments</td>
+        </tr>
+        <tr>
+          <td><strong>Sub-processors</strong></td>
+          <td>Does the vendor use sub-processors? Are they disclosed and assessed?</td>
+          <td>Sub-processor list, contractual flow-down provisions</td>
+        </tr>
+        <tr>
+          <td><strong>Data Location</strong></td>
+          <td>Where is data stored and processed? Any cross-border transfers?</td>
+          <td>Data residency documentation, transfer mechanisms (if applicable)</td>
+        </tr>
+        <tr>
+          <td><strong>Contract Terms</strong></td>
+          <td>Do contracts include security obligations, audit rights, and termination provisions?</td>
+          <td>Contract review checklist, signed agreement</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>6. Related Documents</h2>
+    <ul>
+      <li><a href="../procedures/vendor-management.html">RS-PROC-005 &mdash; Vendor Management Procedure</a></li>
+      <li><a href="./risk-register.html">RS-REG-001 &mdash; Risk Register</a></li>
+      <li><a href="./compliance-policy.html">RS-GOV-002 &mdash; Compliance Policy</a></li>
+      <li><a href="../security/information-security-policy.html">RS-SEC-001 &mdash; Information Security Policy</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with 5 placeholder vendor entries</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-002 &mdash; Vendor Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

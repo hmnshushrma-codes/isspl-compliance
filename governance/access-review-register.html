@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Review Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Access Review Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-004</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; IT / Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Quarterly</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Access Review Register tracks all periodic user access reviews conducted across Ramdoot Solutions' systems and applications. Regular access reviews are a critical control for ensuring that the principle of least privilege is maintained, orphaned accounts are identified, and access rights remain appropriate as personnel change roles or leave the organisation.</p>
+    <p>This register supports SOC 2 Trust Services Criteria CC6.1 (logical access security), CC6.2 (access provisioning), and CC6.3 (access removal), as well as the organisation's Access Control Policy (RS-SEC-002).</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Reviewers:</strong></p>
+      <ol>
+        <li><strong>Preparation:</strong> Before each review cycle, the IT Manager generates a current user access list from each in-scope system or application.</li>
+        <li><strong>Review Assignment:</strong> Each system/application is assigned a reviewer &mdash; typically the system owner or designated manager.</li>
+        <li><strong>Conduct Review:</strong> The reviewer examines each user's access against their current role and responsibilities. Flag any accounts that are excessive, dormant, or no longer needed.</li>
+        <li><strong>Document Findings:</strong> Record the number of users reviewed, changes made, and any exceptions found in this register.</li>
+        <li><strong>Remediation:</strong> Any identified exceptions must be remediated within the defined SLA (see Section 4). Record the remediation date.</li>
+        <li><strong>Sign-Off:</strong> The reviewer signs off on the completed review. Evidence (screenshots, export files) is retained in the Evidence Library.</li>
+        <li><strong>Escalation:</strong> Unresolved exceptions past the SLA deadline are escalated to the CISO/Security Officer and reported in the quarterly compliance report.</li>
+      </ol>
+    </div>
+
+    <!-- Quarterly Review Schedule -->
+    <h2>3. Quarterly Review Schedule</h2>
+    <div class="callout callout-warning">
+      <p><strong>Review Cadence:</strong> Access reviews are conducted quarterly, aligned with the following schedule. Ad-hoc reviews may be triggered by security incidents, audit findings, or significant organisational changes.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Quarter</th>
+          <th>Review Period</th>
+          <th>Review Start</th>
+          <th>Review Completion Deadline</th>
+          <th>Remediation Deadline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Q1</td>
+          <td>January &mdash; March</td>
+          <td>1st week of April</td>
+          <td>3rd week of April</td>
+          <td>End of April</td>
+        </tr>
+        <tr>
+          <td>Q2</td>
+          <td>April &mdash; June</td>
+          <td>1st week of July</td>
+          <td>3rd week of July</td>
+          <td>End of July</td>
+        </tr>
+        <tr>
+          <td>Q3</td>
+          <td>July &mdash; September</td>
+          <td>1st week of October</td>
+          <td>3rd week of October</td>
+          <td>End of October</td>
+        </tr>
+        <tr>
+          <td>Q4</td>
+          <td>October &mdash; December</td>
+          <td>1st week of January</td>
+          <td>3rd week of January</td>
+          <td>End of January</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Remediation SLAs -->
+    <h2>4. Remediation SLAs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Finding Type</th>
+          <th>Description</th>
+          <th>Remediation SLA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-critical">Orphaned Account</span></td>
+          <td>Active account for a terminated employee or contractor</td>
+          <td>Immediate (within 24 hours of discovery)</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-high">Excessive Privilege</span></td>
+          <td>User has admin or elevated access not required for their current role</td>
+          <td>5 business days</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-medium">Role Mismatch</span></td>
+          <td>Access permissions do not align with user's current department or role</td>
+          <td>10 business days</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-low">Dormant Account</span></td>
+          <td>Account with no login activity for 90+ days (but user is still active)</td>
+          <td>15 business days</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-low">Documentation Gap</span></td>
+          <td>Access granted but no corresponding access request or approval on file</td>
+          <td>15 business days (retroactive documentation or removal)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Systems in Scope -->
+    <h2>5. Systems and Applications in Scope</h2>
+    <div class="callout callout-info">
+      <p><strong>Note:</strong> The following list should be updated whenever new systems are deployed or existing systems are decommissioned. All systems that store, process, or transmit confidential or restricted data must be included.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>System / Application</th>
+          <th>Category</th>
+          <th>System Owner</th>
+          <th>Criticality</th>
+          <th>Review Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Production Application</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Database</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Cloud Infrastructure</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Source Code Repository</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Email / Communication</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-medium">Standard</span></td>
+          <td>Medium</td>
+        </tr>
+        <tr>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Project Management</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-low">Low</span></td>
+          <td>Low</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Access Review Log -->
+    <h2>6. Access Review Log</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.78rem; min-width: 1200px;">
+      <thead>
+        <tr>
+          <th>Review ID</th>
+          <th>System / Application</th>
+          <th>Review Date</th>
+          <th>Reviewer</th>
+          <th>Users Reviewed</th>
+          <th>Access Changes Made</th>
+          <th>Exceptions Found</th>
+          <th>Remediation Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AR-2026-Q1-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td>AR-2026-Q1-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td>AR-2026-Q1-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <p><strong>Review ID Format:</strong> <code>AR-[YEAR]-Q[QUARTER]-[SEQ]</code> &mdash; for example, <code>AR-2026-Q2-004</code> is the 4th review in Q2 of 2026. For ad-hoc reviews triggered by incidents, use <code>AR-[YEAR]-AH-[SEQ]</code>.</p>
+    </div>
+
+    <!-- Evidence Requirements -->
+    <h2>7. Evidence Requirements</h2>
+    <p>The following evidence must be retained for each access review cycle and stored in the Evidence Library:</p>
+    <ul>
+      <li><strong>User access list export:</strong> Screenshot or CSV export of all user accounts and their permission levels at the time of review</li>
+      <li><strong>Review worksheet:</strong> Documented decisions for each user (retain, modify, remove) with justification</li>
+      <li><strong>Change confirmation:</strong> Evidence that identified changes were implemented (e.g., access removal confirmation screenshot)</li>
+      <li><strong>Exception log:</strong> Detailed record of any exceptions found, including description and remediation plan</li>
+      <li><strong>Sign-off:</strong> Reviewer's acknowledgement that the review was completed accurately</li>
+    </ul>
+    <p>Evidence retention period: minimum <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> years, or as required by audit standards and contractual obligations.</p>
+
+    <!-- Related Documents -->
+    <h2>8. Related Documents</h2>
+    <ul>
+      <li><a href="../security/access-control-policy.html">RS-SEC-002 &mdash; Access Control Policy</a></li>
+      <li><a href="../procedures/access-management.html">RS-PROC-001 &mdash; Access Management Procedure</a></li>
+      <li><a href="../procedures/onboarding-offboarding.html">RS-PROC-002 &mdash; Onboarding and Offboarding Procedure</a></li>
+      <li><a href="./asset-register.html">RS-REG-003 &mdash; IT Asset Register</a></li>
+      <li><a href="./risk-register.html">RS-REG-001 &mdash; Risk Register</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with quarterly schedule template</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-004 &mdash; Access Review Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

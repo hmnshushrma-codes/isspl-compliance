@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-010 Patch Management Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Patch Management Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-010</td></tr>
+        <tr><td><strong>Title</strong></td><td>Patch Management Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy defines the requirements for the timely identification, evaluation, testing, and deployment of security and functional patches across all technology assets owned or managed by Ramdoot Solutions. Effective patch management reduces exposure to known vulnerabilities, maintains system stability, and supports regulatory and contractual compliance obligations.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All operating systems (Windows, Linux, macOS) deployed on servers, workstations, and mobile devices.</li>
+      <li>All commercial and open-source application software installed on Ramdoot Solutions systems.</li>
+      <li>Firmware on network devices (routers, switches, firewalls, load balancers, wireless access points).</li>
+      <li>Virtualization platforms and container runtimes (hypervisors, container engines, orchestration platforms).</li>
+      <li>Cloud-managed infrastructure components where Ramdoot Solutions retains patching responsibility.</li>
+      <li>Database management systems and middleware.</li>
+      <li>All employees, contractors, and third parties responsible for system administration or maintenance.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Ensure all systems are maintained at supported and patched versions to minimize vulnerability exposure.</li>
+      <li>Establish consistent, repeatable processes for patch identification, testing, and deployment.</li>
+      <li>Minimize service disruptions caused by patching through defined maintenance windows and testing procedures.</li>
+      <li>Provide traceability and auditability of all patching activities.</li>
+      <li>Align patch management practices with SOC 2 Trust Services Criteria and NISP requirements.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Patch</strong></td><td>A software update issued by a vendor to fix security vulnerabilities, bugs, or improve functionality.</td></tr>
+        <tr><td><strong>Hotfix</strong></td><td>An urgent patch released outside the normal patch cycle to address a critical issue.</td></tr>
+        <tr><td><strong>Service Pack</strong></td><td>A cumulative collection of patches and updates bundled into a single release.</td></tr>
+        <tr><td><strong>Firmware Update</strong></td><td>A software update applied to the embedded software of hardware devices.</td></tr>
+        <tr><td><strong>Maintenance Window</strong></td><td>A pre-approved time period during which system changes, including patch deployment, may be performed with minimal business impact.</td></tr>
+        <tr><td><strong>Rollback</strong></td><td>The process of reverting a system to its previous state after an unsuccessful or disruptive patch deployment.</td></tr>
+        <tr><td><strong>Emergency Patch</strong></td><td>A patch deployed outside the normal schedule due to active exploitation or critical vulnerability severity.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CISO</strong></td>
+          <td>Approves this policy; monitors overall patch compliance; authorizes emergency patch deployments outside normal windows.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Operations Manager</strong></td>
+          <td>Manages the patch management lifecycle; coordinates maintenance windows; reports patch compliance metrics.</td>
+        </tr>
+        <tr>
+          <td><strong>System Administrators</strong></td>
+          <td>Identify applicable patches; test patches in non-production environments; deploy patches; execute rollback if required.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Security Team</strong></td>
+          <td>Prioritizes patches based on vulnerability severity; validates patch effectiveness through post-deployment scanning; escalates non-compliance.</td>
+        </tr>
+        <tr>
+          <td><strong>Application Owners</strong></td>
+          <td>Validate application compatibility with patches; approve patching of application-specific components; coordinate user acceptance testing.</td>
+        </tr>
+        <tr>
+          <td><strong>Change Advisory Board (CAB)</strong></td>
+          <td>Reviews and approves patch deployment change requests for standard patching cycles; reviews post-implementation reports.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain a formal patch management process that covers all in-scope technology assets.</li>
+      <li>All security patches <strong>must</strong> be evaluated for applicability within 48 hours of vendor release.</li>
+      <li>Critical and High-severity security patches <strong>shall</strong> be deployed within the remediation SLAs defined in the Vulnerability Management Policy (RS-POL-009).</li>
+      <li>All patches <strong>must</strong> be tested in a non-production environment prior to production deployment, unless an emergency patch procedure is invoked.</li>
+      <li>Patch deployment to production systems <strong>shall</strong> occur during approved maintenance windows, except for emergency patches.</li>
+      <li>A rollback plan <strong>must</strong> be documented and validated before any patch is deployed to production.</li>
+      <li>Systems that cannot be patched <strong>shall</strong> have compensating controls documented and approved through the risk acceptance process.</li>
+      <li>End-of-life systems for which vendor patches are no longer available <strong>must</strong> be decommissioned or isolated with documented compensating controls within 90 days of end-of-support.</li>
+      <li>Patch compliance status <strong>shall</strong> be tracked and reported monthly.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Patch Classification</h3>
+    <table>
+      <thead>
+        <tr><th>Classification</th><th>Description</th><th>Deployment Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Emergency / Critical</strong></td><td>Addresses actively exploited vulnerabilities or CVSS 9.0+ severity; patch issued as a hotfix.</td><td>Within 48 hours of validation</td></tr>
+        <tr><td><strong>High Priority</strong></td><td>Addresses CVSS 7.0 &ndash; 8.9 vulnerabilities; no known active exploitation.</td><td>Within 7 calendar days</td></tr>
+        <tr><td><strong>Standard</strong></td><td>Addresses CVSS 4.0 &ndash; 6.9 vulnerabilities or functional fixes.</td><td>Within 30 calendar days (next scheduled maintenance window)</td></tr>
+        <tr><td><strong>Low / Routine</strong></td><td>Minor bug fixes, cosmetic updates, CVSS &lt; 4.0 vulnerabilities.</td><td>Within 90 calendar days (scheduled maintenance cycle)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>8.2 Patch Testing Requirements</h3>
+    <ol>
+      <li>All patches <strong>shall</strong> be tested in a non-production environment that mirrors the production configuration.</li>
+      <li>Testing <strong>must</strong> include:
+        <ul>
+          <li>Verification that the patch installs successfully without errors.</li>
+          <li>Functional testing to confirm that existing application and system functionality is unaffected.</li>
+          <li>Compatibility testing with critical business applications.</li>
+          <li>Rollback testing to confirm the system can be reverted to its pre-patch state.</li>
+        </ul>
+      </li>
+      <li>Test results <strong>shall</strong> be documented and approved by the responsible system administrator before production deployment.</li>
+      <li>For emergency patches where full testing is not feasible, abbreviated testing <strong>must</strong> be performed with documented justification, and a post-deployment validation <strong>shall</strong> be completed within 24 hours.</li>
+    </ol>
+
+    <h3>8.3 Deployment Windows</h3>
+    <ul>
+      <li>Standard maintenance windows <strong>shall</strong> be defined and communicated to all stakeholders. The default maintenance window is: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+      <li>Patches <strong>must</strong> be deployed in a phased approach (e.g., non-critical systems first, then critical systems) to limit blast radius.</li>
+      <li>Users and business units <strong>shall</strong> be notified at least 48 hours in advance of scheduled maintenance windows that may impact system availability.</li>
+      <li>Emergency patch deployments may occur outside standard windows with CISO or IT Operations Manager approval.</li>
+    </ul>
+
+    <h3>8.4 Emergency Patch Procedure</h3>
+    <ol>
+      <li>The IT Security Team identifies an emergency patching requirement and notifies the IT Operations Manager and CISO.</li>
+      <li>The CISO or delegate authorizes emergency deployment.</li>
+      <li>Abbreviated testing <strong>shall</strong> be performed on at least one representative system.</li>
+      <li>The patch is deployed with continuous monitoring during and after deployment.</li>
+      <li>A post-deployment review <strong>must</strong> be conducted within 24 hours to confirm stability.</li>
+      <li>An emergency change record <strong>shall</strong> be created retroactively and reviewed by the CAB at the next scheduled meeting.</li>
+    </ol>
+
+    <h3>8.5 Rollback Procedures</h3>
+    <ul>
+      <li>Before deploying any patch to production, a system backup or snapshot <strong>must</strong> be taken.</li>
+      <li>The rollback plan <strong>shall</strong> include step-by-step instructions for reverting the system to its pre-patch state.</li>
+      <li>Rollback <strong>must</strong> be executable within the maintenance window timeframe.</li>
+      <li>If a patch causes system instability or application failure, rollback <strong>shall</strong> be initiated immediately and the incident reported to the IT Security Team.</li>
+    </ul>
+
+    <h3>8.6 Compliance Tracking</h3>
+    <ul>
+      <li>Patch compliance <strong>shall</strong> be tracked using an automated patch management tool: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+      <li>A monthly Patch Compliance Report <strong>shall</strong> include:
+        <ul>
+          <li>Total number of applicable patches by classification.</li>
+          <li>Number and percentage of patches deployed within SLA.</li>
+          <li>List of systems not yet patched with remediation plans.</li>
+          <li>Risk acceptances for unpatched systems.</li>
+        </ul>
+      </li>
+      <li>Patch compliance targets: minimum 95% of Critical/High patches within SLA; minimum 90% of Standard patches within SLA.</li>
+    </ul>
+
+    <h3>8.7 Scope by Asset Type</h3>
+    <table>
+      <thead>
+        <tr><th>Asset Type</th><th>Patching Responsibility</th><th>Specific Considerations</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Operating Systems</td><td>IT Operations / System Administrators</td><td>Includes kernel updates, security patches, cumulative updates.</td></tr>
+        <tr><td>Applications</td><td>Application Owners / IT Operations</td><td>Vendor-released patches; open-source library updates; runtime updates.</td></tr>
+        <tr><td>Firmware</td><td>IT Operations / Network Team</td><td>Requires scheduled downtime; vendor compatibility verification required.</td></tr>
+        <tr><td>Databases</td><td>Database Administrators / IT Operations</td><td>Requires application compatibility testing; may need schema migration.</td></tr>
+        <tr><td>Virtualization / Containers</td><td>IT Operations</td><td>Hypervisor patches, container base image updates, orchestration platform patches.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be requested in writing and shall include:</p>
+    <ul>
+      <li>The specific systems and patches affected.</li>
+      <li>The business or technical justification for the exception.</li>
+      <li>Compensating controls that mitigate the associated risk.</li>
+      <li>A proposed timeline for achieving full compliance.</li>
+    </ul>
+    <p>Exceptions <strong>must</strong> be approved by the CISO and reviewed at least quarterly. All approved exceptions shall be recorded in the central exception register.</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>Automated patch management tools <strong>shall</strong> be used to detect missing patches and report compliance status.</li>
+      <li>The IT Security Team <strong>shall</strong> conduct monthly patch compliance reviews.</li>
+      <li>Internal Audit <strong>shall</strong> include patch management effectiveness in its annual audit plan.</li>
+      <li>Key metrics include:
+        <ul>
+          <li>Patch SLA adherence rate by severity.</li>
+          <li>Mean time to patch by severity.</li>
+          <li>Number of systems running unsupported or end-of-life software.</li>
+          <li>Number of emergency patches deployed per quarter.</li>
+          <li>Rollback rate.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <p>Non-compliance with this policy may result in:</p>
+    <ul>
+      <li>Escalation to the CISO and the responsible business unit head.</li>
+      <li>Mandatory remediation with increased monitoring and reporting.</li>
+      <li>Restriction or isolation of non-compliant systems from the network.</li>
+      <li>Disciplinary action for individuals who willfully ignore patching requirements, up to and including termination.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Patch deployment records and logs</td><td>3 years</td><td>IT Operations</td></tr>
+        <tr><td>Patch testing documentation</td><td>3 years</td><td>IT Operations</td></tr>
+        <tr><td>Monthly patch compliance reports</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Emergency patch authorization records</td><td>3 years</td><td>CISO Office</td></tr>
+        <tr><td>Rollback records</td><td>3 years</td><td>IT Operations</td></tr>
+        <tr><td>Exception records</td><td>3 years after expiry</td><td>CISO Office</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-009 — Vulnerability Management Policy</li>
+      <li>RS-POL-011 — Secure Development Policy</li>
+      <li>RS-POL-012 — Change Management Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>Ramdoot Solutions Asset Management Procedure</li>
+      <li>Ramdoot Solutions Configuration Management Procedure</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.1</td><td>To meet its objectives, the entity uses detection and monitoring procedures to identify changes to configurations that result in the introduction of new vulnerabilities.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>CC8.1</td><td>The entity authorizes, designs, develops or acquires, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>System Hardening</td><td>Organizations shall ensure systems are maintained at current patch levels and hardened against known vulnerabilities.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Change Management</td><td>All changes to information systems shall be managed through a controlled change management process.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Significant changes to the organization's technology infrastructure.</li>
+      <li>Major patching failures or incidents resulting from unpatched systems.</li>
+      <li>Findings from internal or external audits.</li>
+      <li>Changes in vendor support or end-of-life status for critical systems.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-010 Patch Management Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

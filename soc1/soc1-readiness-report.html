@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 1 Readiness Report — RS-SOC1-001 — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a> &nbsp;|&nbsp;
+      <a href="./index.html">SOC 1</a> &nbsp;|&nbsp;
+      <button class="btn-print" onclick="window.print()">Print / PDF</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ============================================================
+         COVER PAGE
+         ============================================================ -->
+    <div class="cover-page">
+      <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="doc-type">Internal Compliance Readiness Document</p>
+      <h1 class="cover-title">SOC 1 Readiness Report</h1>
+      <p class="cover-subtitle">Controls Relevant to User Entities' Internal Control over Financial Reporting (ICFR)</p>
+      <div class="cover-meta">
+        <p><strong>Document ID:</strong> RS-SOC1-001</p>
+        <p><strong>Version:</strong> 0.1 — Draft</p>
+        <p><strong>Classification:</strong> Confidential</p>
+        <p><strong>Prepared by:</strong> <span class="placeholder">[TO BE COMPLETED]</span></p>
+        <p><strong>Date:</strong> <span class="placeholder">[TO BE COMPLETED]</span></p>
+      </div>
+      <div class="cover-notice">
+        <strong>Disclaimer:</strong> This document is an internal readiness assessment prepared by Ramdoot Solutions. It is <strong>not</strong> a SOC 1 Type I or Type II attestation report and has not been issued by an independent auditor. No SOC 1 report (Type I or Type II) has been issued for Ramdoot Solutions as of the date of this document.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         DOCUMENT CONTROL
+         ============================================================ -->
+    <section>
+      <h2>Document Control</h2>
+      <table class="doc-control">
+        <tr><th>Document ID</th><td>RS-SOC1-001</td></tr>
+        <tr><th>Title</th><td>SOC 1 Readiness Report</td></tr>
+        <tr><th>Version</th><td>0.1 — Draft</td></tr>
+        <tr><th>Classification</th><td>Confidential</td></tr>
+        <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Reviewer</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Applicable Standard</th><td>SSAE 18 / ISAE 3402 (SOC 1)</td></tr>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#s1">Purpose</a></li>
+        <li><a href="#s2">Scope</a></li>
+        <li><a href="#s3">SOC 1 Type I vs Type II</a></li>
+        <li><a href="#s4">Applicability Assessment</a></li>
+        <li><a href="#s5">Control Environment</a></li>
+        <li><a href="#s6">Control Objectives</a></li>
+        <li><a href="#s7">Logical Access Controls</a></li>
+        <li><a href="#s8">Change Management Controls</a></li>
+        <li><a href="#s9">Operations &amp; Processing Controls</a></li>
+        <li><a href="#s10">Data Integrity Controls</a></li>
+        <li><a href="#s11">Incident Management</a></li>
+        <li><a href="#s12">Vendor Controls</a></li>
+        <li><a href="#s13">Complementary User Entity Controls (CUECs)</a></li>
+        <li><a href="#s14">Complementary Subservice Organization Controls (CSOCs)</a></li>
+        <li><a href="#s15">Control Testing Readiness</a></li>
+        <li><a href="#s16">Exceptions and Gaps</a></li>
+        <li><a href="#s17">Management Responsibilities</a></li>
+        <li><a href="#s18">Remediation Actions</a></li>
+        <li><a href="#s19">Related Documents</a></li>
+        <li><a href="#s20">Approval &amp; Version History</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         SECTIONS
+         ============================================================ -->
+    <div class="numbered-section">
+
+      <!-- Section 1 -->
+      <section id="s1">
+        <h2>1. Purpose</h2>
+        <p>This document assesses Ramdoot Solutions' readiness for a SOC 1 examination covering controls that are relevant to customer entities' Internal Control over Financial Reporting (ICFR). The purpose is to:</p>
+        <ul>
+          <li>Evaluate the current state of internal controls that may impact the financial reporting of Ramdoot Solutions' customers;</li>
+          <li>Identify control objectives relevant to ICFR and assess whether corresponding control activities are designed, documented, and operating effectively;</li>
+          <li>Highlight gaps, exceptions, and remediation actions necessary before engaging an independent service auditor;</li>
+          <li>Establish a baseline for ongoing SOC 1 compliance governance.</li>
+        </ul>
+        <div class="callout callout-info">
+          <p><strong>Note:</strong> This is an internal readiness document. No SOC 1 Type I or Type II report has been issued for Ramdoot Solutions. This assessment is intended to prepare the organisation for a potential future engagement with an independent service auditor under SSAE 18 (AT-C Section 320) or ISAE 3402.</p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="s2">
+        <h2>2. Scope</h2>
+        <p>The scope of this readiness assessment encompasses:</p>
+
+        <h3>2.1 In-Scope Services</h3>
+        <p>Services provided by Ramdoot Solutions that potentially affect customer financial reporting, including but not limited to:</p>
+        <ul>
+          <li><span class="placeholder">[TO BE COMPLETED — List specific services that process, store, or transmit data relevant to customers' financial reporting]</span></li>
+        </ul>
+
+        <h3>2.2 In-Scope Systems</h3>
+        <ul>
+          <li><span class="placeholder">[TO BE COMPLETED — List systems, applications, and infrastructure supporting in-scope services]</span></li>
+        </ul>
+
+        <h3>2.3 In-Scope Locations</h3>
+        <table>
+          <thead>
+            <tr><th>Location</th><th>Function</th><th>In Scope</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="placeholder">[Primary office address — TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[Cloud hosting provider — TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>2.4 Exclusions</h3>
+        <p>The following are explicitly out of scope for this readiness assessment:</p>
+        <ul>
+          <li>Services or systems not related to customer financial reporting;</li>
+          <li>Internal corporate functions (HR, payroll, internal accounting) unless they directly affect service delivery;</li>
+          <li><span class="placeholder">[TO BE COMPLETED — Additional exclusions as applicable]</span></li>
+        </ul>
+
+        <h3>2.5 Reporting Period</h3>
+        <p><span class="placeholder">[TO BE COMPLETED — Define the intended reporting period for a future SOC 1 engagement, e.g., "1 January 2027 to 31 December 2027"]</span></p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="s3">
+        <h2>3. SOC 1 Type I vs Type II</h2>
+        <p>SOC 1 reports are issued under SSAE 18 (United States) or ISAE 3402 (international). Two types exist:</p>
+
+        <table>
+          <thead>
+            <tr><th>Attribute</th><th>SOC 1 Type I</th><th>SOC 1 Type II</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Focus</strong></td>
+              <td>Design suitability of controls at a specific point in time</td>
+              <td>Design suitability <em>and</em> operating effectiveness of controls over a period of time</td>
+            </tr>
+            <tr>
+              <td><strong>Timeframe</strong></td>
+              <td>As of a specified date (point-in-time)</td>
+              <td>Throughout a specified period (typically 6 or 12 months)</td>
+            </tr>
+            <tr>
+              <td><strong>Auditor Testing</strong></td>
+              <td>Evaluates whether controls are suitably designed to achieve the stated control objectives</td>
+              <td>Evaluates design <em>and</em> tests whether controls operated effectively during the review period</td>
+            </tr>
+            <tr>
+              <td><strong>Report Contents</strong></td>
+              <td>Management's description, auditor's opinion on design, description of controls</td>
+              <td>Management's description, auditor's opinion on design and operating effectiveness, description of tests and results</td>
+            </tr>
+            <tr>
+              <td><strong>Common Use</strong></td>
+              <td>Initial SOC 1 engagement; baseline assessment</td>
+              <td>Ongoing annual engagement; required by most user entities and their auditors</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout-warning">
+          <p><strong>Current Status:</strong> Neither a SOC 1 Type I nor a SOC 1 Type II report has been issued for Ramdoot Solutions. This readiness assessment is an internal exercise to prepare for a potential future SOC 1 engagement.</p>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="s4">
+        <h2>4. Applicability Assessment</h2>
+
+        <div class="callout callout-danger">
+          <p><strong>Important:</strong> SOC 1 applicability requires confirmation based on the services provided to customers and their relationship to Internal Control over Financial Reporting (ICFR).</p>
+        </div>
+
+        <p>A SOC 1 report is applicable when a service organisation's controls may affect user entities' financial statements. The following factors determine applicability:</p>
+
+        <h3>4.1 Applicability Criteria</h3>
+        <table>
+          <thead>
+            <tr><th>Criterion</th><th>Description</th><th>Applicability Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Transaction Processing</td>
+              <td>Does Ramdoot Solutions process, initiate, or record financial transactions on behalf of customers?</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Financial Data Hosting</td>
+              <td>Does Ramdoot Solutions host or store data that feeds into customers' financial statements?</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Calculation / Valuation</td>
+              <td>Does Ramdoot Solutions perform calculations or valuations used in customers' financial reporting?</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Reporting / Reconciliation</td>
+              <td>Does Ramdoot Solutions generate reports or reconciliations relied upon by customer auditors?</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Custody of Assets</td>
+              <td>Does Ramdoot Solutions have custody of customer assets (funds, securities, etc.)?</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4.2 Determination</h3>
+        <p><span class="placeholder">[TO BE COMPLETED — Based on the assessment of the criteria above, management should document the determination of SOC 1 applicability, including the rationale and the specific services that fall within scope.]</span></p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="s5">
+        <h2>5. Control Environment</h2>
+        <p>The control environment sets the tone for the organisation and provides the foundation for all other components of internal control. The following elements are assessed:</p>
+
+        <h3>5.1 Governance Structure</h3>
+        <table>
+          <thead>
+            <tr><th>Element</th><th>Description</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Board / Management Oversight</td>
+              <td>The governing body or senior management provides oversight of internal controls relevant to ICFR-related services.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Organisational Structure</td>
+              <td>Defined reporting lines and areas of authority and responsibility for control functions.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Code of Conduct / Ethics</td>
+              <td>A formally documented code of conduct that sets behavioural expectations for personnel involved in service delivery.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>HR Policies</td>
+              <td>Hiring, onboarding, training, and performance management practices that support competent personnel.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>5.2 Management Oversight of Controls</h3>
+        <p>Management is responsible for:</p>
+        <ul>
+          <li>Establishing and maintaining a system of internal controls over the services provided;</li>
+          <li>Periodically evaluating the design and operating effectiveness of those controls;</li>
+          <li>Remediating identified control deficiencies in a timely manner;</li>
+          <li>Communicating with user entities regarding the scope of services and any material changes.</li>
+        </ul>
+        <p><strong>Current assessment:</strong> <span class="placeholder">[TO BE COMPLETED — Document current management oversight practices]</span></p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="s6">
+        <h2>6. Control Objectives</h2>
+        <p>Control objectives define what the controls are intended to achieve. For a SOC 1 engagement, control objectives are directly tied to the services that may affect customers' ICFR. The following control objectives are proposed pending applicability confirmation:</p>
+
+        <table>
+          <thead>
+            <tr><th>Ref</th><th>Control Objective</th><th>Domain</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CO-01</td>
+              <td>Controls provide reasonable assurance that logical access to systems and data relevant to financial reporting is restricted to authorised individuals.</td>
+              <td>Logical Access</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-02</td>
+              <td>Controls provide reasonable assurance that system changes affecting financial processing are authorised, tested, and approved before implementation.</td>
+              <td>Change Management</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-03</td>
+              <td>Controls provide reasonable assurance that transactions are processed completely, accurately, and in a timely manner.</td>
+              <td>Transaction Processing</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-04</td>
+              <td>Controls provide reasonable assurance that data is backed up and can be recovered to support continuity of financially relevant services.</td>
+              <td>Backup &amp; Recovery</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-05</td>
+              <td>Controls provide reasonable assurance that security incidents affecting financial data are identified, reported, and resolved in a timely manner.</td>
+              <td>Incident Management</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-06</td>
+              <td>Controls provide reasonable assurance that duties are appropriately segregated to prevent unauthorised or erroneous processing.</td>
+              <td>Segregation of Duties</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-07</td>
+              <td>Controls provide reasonable assurance that subservice organisations and vendors supporting in-scope services are monitored and managed.</td>
+              <td>Vendor Management</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CO-08</td>
+              <td>Controls provide reasonable assurance that the physical security of facilities housing in-scope systems is maintained.</td>
+              <td>Physical Security</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="s7" class="allow-break">
+        <h2>7. Logical Access Controls</h2>
+        <p>Logical access controls restrict system and data access to authorised individuals, protecting financial data processed on behalf of user entities.</p>
+
+        <h3>7.1 User Access Management</h3>
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account Provisioning</td>
+              <td>New user accounts for in-scope systems are created based on approved access requests that specify the role and level of access required.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Access Modification</td>
+              <td>Changes to user access (role changes, transfers) are processed through an approved request and review process.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Account De-provisioning</td>
+              <td>Access is revoked in a timely manner upon termination of employment or change in role that no longer requires access.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Periodic Access Reviews</td>
+              <td>Access to in-scope systems is reviewed periodically (at least quarterly) to ensure access remains appropriate.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>7.2 Authentication Controls</h3>
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Password Policy</td>
+              <td>Password policies enforce minimum length, complexity, expiration, and lockout thresholds for in-scope systems.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Multi-Factor Authentication</td>
+              <td>MFA is required for privileged accounts and remote access to in-scope systems.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Privileged Access</td>
+              <td>Administrative and privileged access is restricted to a limited set of personnel with documented justification.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>7.3 Logging and Monitoring</h3>
+        <p>Access logs for in-scope systems should be generated, retained, and reviewed to detect unauthorised access or anomalous activity.</p>
+        <p><strong>Current state:</strong> <span class="placeholder">[TO BE COMPLETED — Describe logging and monitoring capabilities for systems relevant to customer financial reporting]</span></p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="s8">
+        <h2>8. Change Management Controls</h2>
+        <p>Change management controls ensure that modifications to in-scope systems are authorised, tested, and documented before deployment to production.</p>
+
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Change Request</td>
+              <td>All changes to in-scope systems are initiated through a formal change request process that includes a description, risk assessment, and business justification.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Approval</td>
+              <td>Changes are reviewed and approved by an appropriate authority before implementation. Segregation of duties requires that the person approving is not the same as the person implementing.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Testing</td>
+              <td>Changes are tested in a non-production environment before deployment. Test results are documented.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Deployment</td>
+              <td>Deployment to production follows an approved process. Rollback procedures are documented.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Emergency Changes</td>
+              <td>Emergency changes follow an expedited process with post-implementation review and retrospective approval.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Segregation of Environments</td>
+              <td>Development, testing, and production environments are logically separated. Access to production is restricted.</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 9 -->
+      <section id="s9">
+        <h2>9. Operations &amp; Processing Controls</h2>
+        <p>Operational controls ensure that services affecting customer financial reporting are delivered accurately, completely, and in a timely manner.</p>
+
+        <h3>9.1 Transaction Processing</h3>
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Input Validation</td>
+              <td>Input controls verify the completeness and accuracy of data received for processing.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Processing Controls</td>
+              <td>Automated and manual controls ensure transactions are processed accurately and completely.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Output Controls</td>
+              <td>Output is reviewed and reconciled to ensure completeness and accuracy before delivery to user entities.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Error Handling</td>
+              <td>Errors and exceptions during processing are identified, logged, investigated, and resolved in a timely manner.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>9.2 Job Scheduling and Batch Processing</h3>
+        <p><span class="placeholder">[TO BE COMPLETED — Document scheduled jobs and batch processes that affect financial data, if applicable]</span></p>
+
+        <h3>9.3 Service Level Monitoring</h3>
+        <p><span class="placeholder">[TO BE COMPLETED — Describe monitoring for system availability, performance, and capacity for in-scope services]</span></p>
+      </section>
+
+      <!-- Section 10 -->
+      <section id="s10">
+        <h2>10. Data Integrity Controls</h2>
+        <p>Data integrity controls ensure the accuracy, completeness, and consistency of data throughout its lifecycle.</p>
+
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data Validation</td>
+              <td>Input data is validated against defined rules and formats before processing.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Reconciliation</td>
+              <td>Data reconciliations are performed at defined intervals to identify and resolve discrepancies.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Data Backup</td>
+              <td>Data backups are performed on a defined schedule, stored securely, and tested periodically for recoverability.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Disaster Recovery</td>
+              <td>A disaster recovery plan exists for in-scope systems, with defined RPO and RTO targets, and is tested at least annually.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Data Retention</td>
+              <td>Data retention policies define how long financial data is retained and how it is securely disposed of after the retention period.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 11 -->
+      <section id="s11">
+        <h2>11. Incident Management</h2>
+        <p>Incident management controls ensure that security incidents and operational disruptions affecting financial data or processing are promptly identified, communicated, and resolved.</p>
+
+        <h3>11.1 Incident Response Process</h3>
+        <table>
+          <thead>
+            <tr><th>Phase</th><th>Expected Activity</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Detection</td>
+              <td>Monitoring systems and personnel are in place to detect security incidents and operational anomalies affecting in-scope services.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Triage &amp; Classification</td>
+              <td>Incidents are classified by severity and impact to customer financial reporting.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Response</td>
+              <td>Defined response procedures exist, including escalation paths and roles and responsibilities.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Communication</td>
+              <td>Affected user entities are notified of incidents that may affect their financial reporting within a defined timeframe.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Root Cause &amp; Remediation</td>
+              <td>Root cause analysis is performed, and corrective actions are implemented and tracked to closure.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>11.2 Incident Log</h3>
+        <p><span class="placeholder">[TO BE COMPLETED — Reference to incident tracking system and retention of incident records]</span></p>
+      </section>
+
+      <!-- Section 12 -->
+      <section id="s12">
+        <h2>12. Vendor Controls</h2>
+        <p>Where Ramdoot Solutions relies on third-party vendors or subservice organisations to deliver in-scope services, controls must be in place to manage those relationships.</p>
+
+        <h3>12.1 Vendor Management</h3>
+        <table>
+          <thead>
+            <tr><th>Control Area</th><th>Expected Control</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vendor Due Diligence</td>
+              <td>Vendors supporting in-scope services undergo due diligence assessment before engagement, including evaluation of their control environment.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Contractual Requirements</td>
+              <td>Contracts with vendors include requirements for security controls, data handling, audit rights, and incident notification.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Ongoing Monitoring</td>
+              <td>Vendor performance and compliance are monitored on an ongoing basis, including review of SOC reports (if available) or equivalent assurance.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Risk Assessment</td>
+              <td>Vendor risk is assessed periodically, and vendors are categorised based on criticality to in-scope services.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>12.2 Subservice Organisation Model</h3>
+        <p>For the purposes of a future SOC 1 report, Ramdoot Solutions will need to determine whether to use the <strong>Inclusive Method</strong> (subservice organisation controls included in the report) or the <strong>Carve-Out Method</strong> (subservice organisation controls excluded, with a description of services provided). The model selection is:</p>
+        <p><span class="placeholder">[TO BE COMPLETED — Document the selected subservice model and rationale]</span></p>
+      </section>
+
+      <!-- Section 13 -->
+      <section id="s13">
+        <h2>13. Complementary User Entity Controls (CUECs)</h2>
+        <p>CUECs are controls that user entities (customers) are expected to implement at their end for the overall control objectives to be achieved. These are disclosed in a SOC 1 report to indicate shared responsibility.</p>
+
+        <div class="callout callout-info">
+          <p><strong>Note:</strong> CUECs must be clearly communicated to user entities so their auditors can evaluate the complete control environment.</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr><th>Ref</th><th>CUEC Description</th><th>Related Control Objective</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CUEC-01</td>
+              <td>User entities are responsible for managing the security and confidentiality of their own authentication credentials (passwords, API keys, tokens) used to access Ramdoot Solutions' systems.</td>
+              <td>CO-01 (Logical Access)</td>
+            </tr>
+            <tr>
+              <td>CUEC-02</td>
+              <td>User entities are responsible for promptly notifying Ramdoot Solutions when personnel who have been granted access are terminated or transferred.</td>
+              <td>CO-01 (Logical Access)</td>
+            </tr>
+            <tr>
+              <td>CUEC-03</td>
+              <td>User entities are responsible for reviewing and validating the accuracy and completeness of output received from Ramdoot Solutions before relying upon it for financial reporting purposes.</td>
+              <td>CO-03 (Transaction Processing)</td>
+            </tr>
+            <tr>
+              <td>CUEC-04</td>
+              <td>User entities are responsible for ensuring the accuracy and completeness of data submitted to Ramdoot Solutions for processing.</td>
+              <td>CO-03 (Transaction Processing)</td>
+            </tr>
+            <tr>
+              <td>CUEC-05</td>
+              <td>User entities are responsible for promptly reporting suspected security incidents or anomalies related to services provided by Ramdoot Solutions.</td>
+              <td>CO-05 (Incident Management)</td>
+            </tr>
+            <tr>
+              <td>CUEC-06</td>
+              <td><span class="placeholder">[TO BE COMPLETED — Additional CUECs as applicable]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 14 -->
+      <section id="s14">
+        <h2>14. Complementary Subservice Organisation Controls (CSOCs)</h2>
+        <p>CSOCs are controls that subservice organisations (e.g., cloud hosting providers, payment processors) are expected to have in place and that Ramdoot Solutions relies upon to achieve its control objectives.</p>
+
+        <table>
+          <thead>
+            <tr><th>Subservice Organisation</th><th>Services Provided</th><th>Expected Controls</th><th>Assurance</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED — e.g., cloud hosting provider]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED — e.g., infrastructure hosting, data storage]</span></td>
+              <td>Physical security, environmental controls, network security, data centre availability</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED — additional subservice organisations]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>For each subservice organisation, Ramdoot Solutions should obtain and review the following on at least an annual basis:</p>
+        <ul>
+          <li>SOC 1 or SOC 2 report (Type II preferred);</li>
+          <li>ISO 27001 certification (if SOC report is not available);</li>
+          <li>Bridge letter (for the period between the SOC report end date and the current reporting period end date);</li>
+          <li>Complementary subservice organisation controls matrix.</li>
+        </ul>
+      </section>
+
+      <!-- Section 15 -->
+      <section id="s15">
+        <h2>15. Control Testing Readiness</h2>
+        <p>Before engaging an independent service auditor, Ramdoot Solutions should ensure that controls have been operating for a sufficient period and that evidence of operation is available.</p>
+
+        <h3>15.1 Readiness Checklist</h3>
+        <table>
+          <thead>
+            <tr><th>Area</th><th>Requirement</th><th>Ready</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>System Description</td>
+              <td>Management has prepared a written description of the system (services, infrastructure, controls) in accordance with the applicable reporting criteria.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Control Documentation</td>
+              <td>Each control activity is formally documented with control owner, frequency, procedure, and evidence.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Operating Period</td>
+              <td>Controls have been operating for at least 6 months (for Type II) or are established as of the report date (for Type I).</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+            </tr>
+            <tr>
+              <td>Evidence Availability</td>
+              <td>Evidence of control operation (logs, approvals, screenshots, reports) is available and retrievable for the reporting period.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>Management Testing</td>
+              <td>Management has conducted its own testing of controls to identify and remediate gaps before the external audit.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+            <tr>
+              <td>CUECs / CSOCs</td>
+              <td>Complementary controls for user entities and subservice organisations have been identified and documented.</td>
+              <td><span class="badge badge-partial">Partial</span></td>
+            </tr>
+            <tr>
+              <td>Gap Remediation</td>
+              <td>Identified gaps have remediation plans with owners and target dates.</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 16 -->
+      <section id="s16">
+        <h2>16. Exceptions and Gaps</h2>
+        <p>The following exceptions and gaps have been identified during this readiness assessment. Each must be remediated before proceeding with a formal SOC 1 engagement.</p>
+
+        <table>
+          <thead>
+            <tr><th>Gap ID</th><th>Area</th><th>Description</th><th>Severity</th><th>Remediation Owner</th><th>Target Date</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GAP-001</td>
+              <td>Applicability</td>
+              <td>Formal determination of SOC 1 applicability has not been completed. Services impacting customer ICFR have not been formally identified.</td>
+              <td><span class="badge badge-critical">Critical</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-002</td>
+              <td>System Description</td>
+              <td>A formal system description in accordance with SSAE 18 / ISAE 3402 criteria has not been prepared.</td>
+              <td><span class="badge badge-high">High</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-003</td>
+              <td>Control Documentation</td>
+              <td>Control activities are not fully documented with control owners, frequencies, evidence requirements, and testing procedures.</td>
+              <td><span class="badge badge-high">High</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-004</td>
+              <td>Logical Access</td>
+              <td>Periodic user access reviews for in-scope systems have not been formalised or documented.</td>
+              <td><span class="badge badge-high">High</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-005</td>
+              <td>Change Management</td>
+              <td>Formal change management process documentation for in-scope systems is incomplete or absent.</td>
+              <td><span class="badge badge-medium">Medium</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-006</td>
+              <td>Vendor Management</td>
+              <td>Subservice organisation controls have not been assessed. SOC reports or equivalent assurance have not been obtained for all critical vendors.</td>
+              <td><span class="badge badge-medium">Medium</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+            <tr>
+              <td>GAP-007</td>
+              <td>Incident Management</td>
+              <td>Incident response procedures specific to incidents affecting customer financial data have not been formalised.</td>
+              <td><span class="badge badge-medium">Medium</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 17 -->
+      <section id="s17">
+        <h2>17. Management Responsibilities</h2>
+        <p>Under SSAE 18 / ISAE 3402, management of the service organisation bears the following responsibilities:</p>
+
+        <h3>17.1 Management's Assertion</h3>
+        <p>Management is required to provide a written assertion that:</p>
+        <ol>
+          <li>The description of the service organisation's system fairly presents the system as designed and implemented throughout the specified period (Type II) or as of a specified date (Type I);</li>
+          <li>The controls related to the control objectives stated in the description were suitably designed (Type I) or suitably designed and operating effectively (Type II) throughout the specified period;</li>
+          <li>The criteria used to make the assertion are the criteria set forth in the applicable trust services criteria or relevant framework.</li>
+        </ol>
+
+        <h3>17.2 Ongoing Responsibilities</h3>
+        <table>
+          <thead>
+            <tr><th>Responsibility</th><th>Owner</th><th>Frequency</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maintain and update the system description</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Annually and upon material change</td>
+            </tr>
+            <tr>
+              <td>Monitor control operating effectiveness</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Ongoing / Quarterly</td>
+            </tr>
+            <tr>
+              <td>Conduct internal control testing</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Annually, prior to external audit</td>
+            </tr>
+            <tr>
+              <td>Remediate identified gaps and exceptions</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>As identified</td>
+            </tr>
+            <tr>
+              <td>Communicate with user entities regarding material changes</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>As needed</td>
+            </tr>
+            <tr>
+              <td>Obtain and review subservice organisation assurance reports</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Annually</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 18 -->
+      <section id="s18">
+        <h2>18. Remediation Actions</h2>
+        <p>The following remediation actions are recommended based on the gaps identified in Section 16.</p>
+
+        <table>
+          <thead>
+            <tr><th>Priority</th><th>Action</th><th>Owner</th><th>Target Date</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-critical">P0</span></td>
+              <td>Complete SOC 1 applicability assessment — formally determine which services impact customer ICFR and whether a SOC 1 report is required.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-high">P1</span></td>
+              <td>Prepare formal system description in accordance with SSAE 18 / ISAE 3402 description criteria.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-high">P1</span></td>
+              <td>Document all control activities with owners, procedures, frequencies, and evidence requirements. Populate control matrix (RS-SOC1-003).</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-high">P1</span></td>
+              <td>Implement and document periodic user access review process for all in-scope systems.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-medium">P2</span></td>
+              <td>Formalise change management procedures for in-scope systems.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-medium">P2</span></td>
+              <td>Assess subservice organisations and obtain SOC reports or equivalent assurance.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-medium">P2</span></td>
+              <td>Formalise incident management procedures for incidents affecting customer financial data.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-low">P3</span></td>
+              <td>Select independent service auditor and establish engagement timeline.</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="badge badge-required">Not Started</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 19 -->
+      <section id="s19">
+        <h2>19. Related Documents</h2>
+        <table>
+          <thead>
+            <tr><th>Document ID</th><th>Title</th><th>Relevance</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RS-SOC1-002</td>
+              <td><a href="./internal-controls-framework.html">Internal Controls Framework</a></td>
+              <td>COSO-aligned framework for internal controls over financial reporting</td>
+            </tr>
+            <tr>
+              <td>RS-SOC1-003</td>
+              <td><a href="./control-matrix.html">SOC 1 Control Matrix</a></td>
+              <td>Detailed control activities, evidence, and testing approach</td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Information Security Policy</td>
+              <td>Overarching security policy governing access controls and data protection</td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Change Management Policy</td>
+              <td>Policy governing change requests, approvals, and deployment</td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Incident Response Plan</td>
+              <td>Plan for detecting, responding to, and recovering from security incidents</td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Business Continuity / Disaster Recovery Plan</td>
+              <td>Plan for maintaining service continuity and recovering from disruptions</td>
+            </tr>
+            <tr>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Vendor Management Policy</td>
+              <td>Policy for third-party risk assessment and ongoing monitoring</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 20 -->
+      <section id="s20">
+        <h2>20. Approval &amp; Version History</h2>
+
+        <h3>Approval Block</h3>
+        <div class="approval-block">
+          <table>
+            <tbody>
+              <tr>
+                <th>Prepared By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Prepared</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Reviewed By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Reviewed</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Approved By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Approved</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Version History</h3>
+        <table class="version-history">
+          <thead>
+            <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.1</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Initial draft — readiness assessment framework and gap identification</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div><!-- /numbered-section -->
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-SOC1-001 v0.1</span>
+    </div>
+
+  </div><!-- /page-wrapper -->
+</body>
+</html>

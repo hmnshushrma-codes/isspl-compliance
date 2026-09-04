@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-008: Backup &amp; Restore Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-008</td></tr>
+            <tr><th>Title</th><td>Backup &amp; Restore Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure defines the processes for backing up and restoring data and system configurations across Ramdoot Solutions' information systems. It ensures that critical data can be recovered in the event of hardware failure, software corruption, accidental deletion, cyber attack (including ransomware), or disaster, meeting the organization's Recovery Point Objectives (RPO) and Recovery Time Objectives (RTO).</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure covers:</p>
+        <ul>
+            <li>All production databases (relational, NoSQL, object storage).</li>
+            <li>Application server configurations and deployment artifacts.</li>
+            <li>Infrastructure configurations (network devices, firewall rules, cloud resource templates).</li>
+            <li>File shares and document repositories containing business-critical data.</li>
+            <li>Email systems and collaboration platform data.</li>
+            <li>Source code repositories (mirrored backups).</li>
+            <li>Certificates, keys, and secrets (encrypted backup).</li>
+        </ul>
+        <p>Individual endpoint (laptop/desktop) backups are the responsibility of each employee using the corporate endpoint backup agent; this procedure covers server-side and infrastructure backups.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>RPO (Recovery Point Objective)</td><td>The maximum acceptable amount of data loss measured in time. An RPO of 4 hours means backups must be frequent enough that no more than 4 hours of data is lost.</td></tr>
+                <tr><td>RTO (Recovery Time Objective)</td><td>The maximum acceptable time to restore a system to operational status after a disruption.</td></tr>
+                <tr><td>Full Backup</td><td>A complete copy of all data in the backup set.</td></tr>
+                <tr><td>Incremental Backup</td><td>A copy of only the data that has changed since the last backup (full or incremental).</td></tr>
+                <tr><td>Differential Backup</td><td>A copy of all data that has changed since the last full backup.</td></tr>
+                <tr><td>Offsite Replication</td><td>Copying backup data to a geographically separate location for disaster recovery.</td></tr>
+                <tr><td>Backup Integrity Check</td><td>Verification that backup data is complete, uncorrupted, and restorable.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>IT Operations / Backup Administrator</td><td>Configures, executes, and monitors backup jobs; performs integrity checks; manages backup storage; executes restore operations.</td></tr>
+                <tr><td>System/Application Owner</td><td>Defines RPO and RTO for their systems; authorizes restore requests; validates restored data.</td></tr>
+                <tr><td>Information Security Team</td><td>Ensures backups are encrypted; verifies offsite replication; reviews backup access controls.</td></tr>
+                <tr><td>DBA (Database Administrator)</td><td>Manages database-specific backup strategies (logical dumps, WAL archiving, snapshots); performs database restores.</td></tr>
+                <tr><td>Management</td><td>Approves RPO/RTO targets and allocates budget for backup infrastructure.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>Backup infrastructure (storage, software, network bandwidth) is provisioned and tested.</li>
+            <li>RPO and RTO targets are documented for each critical system.</li>
+            <li>Encryption keys for backup encryption are securely managed and escrowed.</li>
+            <li>Offsite/cloud backup storage is contracted and accessible.</li>
+            <li>Monitoring and alerting are configured for backup job success/failure.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>6A. Backup Procedure</h3>
+
+        <h4>Step 1: Schedule Verification</h4>
+        <p><strong>Performed by:</strong> IT Operations / Backup Administrator</p>
+        <ol>
+            <li>Review the backup schedule at the beginning of each month to ensure it aligns with current RPO requirements:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>Data Type</th><th>Backup Type</th><th>Frequency</th><th>Retention</th><th>RPO Target</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Production Databases</td><td>Full + WAL/Transaction Log</td><td>Full: Daily, WAL: Continuous</td><td>30 days (daily), 12 months (monthly)</td><td>&le; 1 hour</td></tr>
+                <tr><td>Application Configs</td><td>Full</td><td>Daily</td><td>30 days</td><td>&le; 24 hours</td></tr>
+                <tr><td>File Shares / Documents</td><td>Full + Incremental</td><td>Full: Weekly, Incr: Daily</td><td>30 days (daily), 12 months (monthly)</td><td>&le; 24 hours</td></tr>
+                <tr><td>Email / Collaboration</td><td>Incremental (SaaS-native)</td><td>Daily</td><td>Per SaaS provider retention + 90 days export</td><td>&le; 24 hours</td></tr>
+                <tr><td>Infrastructure Configs</td><td>Full (IaC export)</td><td>After every change + Weekly</td><td>90 days</td><td>&le; 24 hours</td></tr>
+                <tr><td>Secrets / Certificates</td><td>Full (encrypted)</td><td>After every change + Monthly</td><td>12 months</td><td>&le; 24 hours</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="2">
+            <li>Verify all backup jobs are enabled and scheduled correctly in the backup management console.</li>
+            <li>Confirm backup storage capacity is sufficient for the next 30 days of growth.</li>
+        </ol>
+
+        <h4>Step 2: Backup Execution</h4>
+        <p><strong>Performed by:</strong> Automated / Backup Administrator</p>
+        <ol>
+            <li>Backup jobs execute automatically per the defined schedule.</li>
+            <li>For database backups: full backups run during the designated maintenance window (off-peak hours); WAL/transaction log archiving runs continuously.</li>
+            <li>For file-level backups: incremental backups run nightly; full backups run weekly.</li>
+            <li>The backup system logs the start time, end time, data volume, and completion status for each job.</li>
+        </ol>
+
+        <h4>Step 3: Integrity Check</h4>
+        <p><strong>Performed by:</strong> Backup Administrator</p>
+        <ol>
+            <li>After each backup completes, verify the integrity:
+                <ul>
+                    <li>Check the backup log for errors or warnings.</li>
+                    <li>Validate checksum / hash of the backup file.</li>
+                    <li>For database backups: verify the backup can be listed and metadata is consistent.</li>
+                </ul>
+            </li>
+            <li>Monthly, perform a test restore of a randomly selected backup to an isolated environment to confirm recoverability (see Restore Step 3 below).</li>
+            <li>Document integrity check results in the Backup Log.</li>
+        </ol>
+
+        <h4>Step 4: Offsite Replication</h4>
+        <p><strong>Performed by:</strong> Automated / Backup Administrator</p>
+        <ol>
+            <li>All backups are replicated to the offsite/cloud storage location within 4 hours of completion.</li>
+            <li>Replication uses encrypted transfer (TLS in transit, AES-256 at rest).</li>
+            <li>Verify replication success by checking the offsite storage inventory against the primary backup log.</li>
+            <li>The offsite location is in a different geographic region from the primary data centre.</li>
+        </ol>
+
+        <h4>Step 5: Monitoring</h4>
+        <p><strong>Performed by:</strong> Backup Administrator / Monitoring System</p>
+        <ol>
+            <li>Monitor backup job status daily via the backup management dashboard.</li>
+            <li>Automated alerts are sent for:
+                <ul>
+                    <li>Backup job failure or partial completion.</li>
+                    <li>Backup storage reaching 80% capacity.</li>
+                    <li>Offsite replication failure or lag exceeding 8 hours.</li>
+                </ul>
+            </li>
+            <li>Investigate and resolve backup failures within 4 hours. If a backup cannot be completed, escalate to the IT Manager and re-run the backup manually.</li>
+            <li>Generate a weekly backup status report summarizing: jobs run, success rate, storage used, and any failures with resolution.</li>
+        </ol>
+
+        <h3>6B. Restore Procedure</h3>
+
+        <h4>Step 1: Request Authorization</h4>
+        <p><strong>Performed by:</strong> System/Application Owner / Requestor</p>
+        <ol>
+            <li>Submit a "Restore Request" ticket specifying:
+                <ul>
+                    <li>System/data to be restored.</li>
+                    <li>Reason for the restore (accidental deletion, corruption, disaster recovery, testing).</li>
+                    <li>Target restore point (date/time or specific backup ID).</li>
+                    <li>Target environment (production or isolated/test).</li>
+                </ul>
+            </li>
+            <li>The System/Application Owner approves the request. For production restores, the IT Manager must also approve.</li>
+        </ol>
+
+        <h4>Step 2: Backup Identification</h4>
+        <p><strong>Performed by:</strong> Backup Administrator</p>
+        <ol>
+            <li>Identify the appropriate backup based on the requested restore point.</li>
+            <li>Verify the backup integrity (checksum, completeness) before proceeding.</li>
+            <li>If the primary backup is unavailable or corrupt, use the offsite replica.</li>
+            <li>Document the selected backup (ID, date, location) in the restore ticket.</li>
+        </ol>
+
+        <h4>Step 3: Restore to Isolated Environment</h4>
+        <p><strong>Performed by:</strong> Backup Administrator / DBA</p>
+        <ol>
+            <li>Restore the backup to an isolated (non-production) environment first, unless this is an emergency production restore.</li>
+            <li>Execute the restore using the documented restore procedure for the specific system type (database restore, file restore, configuration restore).</li>
+            <li>Record the restore start time and monitor progress.</li>
+        </ol>
+
+        <h4>Step 4: Integrity Verification</h4>
+        <p><strong>Performed by:</strong> Backup Administrator / System Owner</p>
+        <ol>
+            <li>Verify the restored data:
+                <ul>
+                    <li>Database: check row counts, run consistency checks, verify recent transactions.</li>
+                    <li>Files: verify file counts, directory structure, and spot-check critical files.</li>
+                    <li>Configuration: verify settings match expected values and services start correctly.</li>
+                </ul>
+            </li>
+            <li>The System/Application Owner validates that the restored data meets their requirements.</li>
+            <li>Document the verification results in the restore ticket.</li>
+        </ol>
+
+        <h4>Step 5: Production Cutover</h4>
+        <p><strong>Performed by:</strong> IT Operations / DBA</p>
+        <ol>
+            <li>If the restore is destined for production:
+                <ul>
+                    <li>Follow the <a href="change-release-procedure.html">Change &amp; Release Procedure (RS-PRO-007)</a> &mdash; emergency change sub-procedure for urgent restores.</li>
+                    <li>Take a snapshot/backup of the current production state before overwriting.</li>
+                    <li>Execute the production restore or promote the verified restore from the isolated environment.</li>
+                    <li>Verify production system functionality and data integrity post-cutover.</li>
+                </ul>
+            </li>
+            <li>Notify affected stakeholders that the restore is complete.</li>
+        </ol>
+
+        <h4>Step 6: Documentation</h4>
+        <p><strong>Performed by:</strong> Backup Administrator</p>
+        <ol>
+            <li>Complete the restore ticket with: backup used, restore timeline, verification results, and any issues encountered.</li>
+            <li>Update the Backup Log with the restore event.</li>
+            <li>If the restore was triggered by a data loss incident, link the restore ticket to the incident ticket (<a href="incident-response-procedure.html">RS-PRO-005</a>).</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>All scheduled backups complete successfully with documented integrity checks.</li>
+            <li>Offsite replication is current (within 4 hours of the latest backup).</li>
+            <li>Monthly test restores are completed and documented, confirming data recoverability.</li>
+            <li>Backup failures are resolved within 4 hours and no RPO targets are breached.</li>
+            <li>Restore operations meet the defined RTO targets.</li>
+            <li>Weekly backup status reports are generated and reviewed.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Backup Job Logs</td><td>Backup Management Console</td><td>1 year</td></tr>
+                <tr><td>Weekly Backup Status Reports</td><td>IT Operations Repository</td><td>3 years</td></tr>
+                <tr><td>Monthly Test Restore Records</td><td>IT Operations Repository</td><td>3 years</td></tr>
+                <tr><td>Restore Request Tickets</td><td>IT Ticket System</td><td>3 years</td></tr>
+                <tr><td>Offsite Replication Logs</td><td>Backup Management Console / Cloud Provider</td><td>1 year</td></tr>
+                <tr><td>Backup Integrity Check Records</td><td>IT Operations Repository</td><td>1 year</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Non-Critical Development Data:</strong> Development and test databases that contain only synthetic data may have relaxed backup schedules (weekly full only) with documented approval from the System Owner.</li>
+            <li><strong>SaaS-Managed Backups:</strong> For SaaS platforms where the provider manages backups (e.g., Google Workspace, Microsoft 365), the provider's backup SLA is accepted, supplemented by periodic data exports stored in the organization's offsite storage.</li>
+            <li><strong>Temporary Backup Gaps:</strong> If backup infrastructure maintenance causes a gap exceeding 24 hours, the IT Manager must approve and a manual backup must be taken before and after the maintenance.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="change-release-procedure.html">RS-PRO-007: Change &amp; Release Procedure</a></li>
+            <li><a href="incident-response-procedure.html">RS-PRO-005: Incident Response Procedure</a></li>
+            <li>RS-POL-012: Business Continuity &amp; Disaster Recovery Policy</li>
+            <li>RS-POL-005: Data Classification &amp; Handling Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>A1.2</td><td>The entity authorizes, designs, develops or acquires, implements, operates, approves, maintains, and monitors environmental protections, software, data backup and recovery infrastructure, and recovery plan procedures to meet its objectives.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.13</td><td>Information backup &mdash; backup copies of information, software, and systems shall be maintained and regularly tested.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.14</td><td>Redundancy of information processing facilities.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.30</td><td>ICT readiness for business continuity.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

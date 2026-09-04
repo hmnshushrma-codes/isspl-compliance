@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-008 — Encryption Policy | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html">← Compliance Home</a>
+  <span class="nav-title">RS-POL-008 — Encryption Policy</span>
+</nav>
+
+<main class="policy-document">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. DOCUMENT CONTROL
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="document-control">
+    <h1>Document Control</h1>
+    <table class="doc-control">
+      <tr><th>Document Title</th><td>Encryption Policy</td></tr>
+      <tr><th>Document ID</th><td>RS-POL-008</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td>Draft for Management Approval</td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2. PURPOSE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="purpose">
+    <h2>2. Purpose</h2>
+    <p>This Encryption Policy defines the requirements for the use of cryptographic controls at Ramdoot Solutions to protect the confidentiality and integrity of information. The policy specifies approved algorithms, key lengths, key management practices, and encryption requirements for data at rest, data in transit, and certificate management.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. SCOPE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="scope">
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All data classified as Confidential or Restricted per the Data Classification Policy (RS-POL-006).</li>
+      <li>All information systems, applications, databases, storage systems, and communication channels owned or operated by Ramdoot Solutions.</li>
+      <li>All employees, contractors, and third parties who implement, manage, or use cryptographic controls on behalf of Ramdoot Solutions.</li>
+      <li>All environments — production, staging, development, and disaster recovery.</li>
+      <li>All cryptographic keys, digital certificates, and key management infrastructure.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4. OBJECTIVES
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="objectives">
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Define approved cryptographic algorithms and minimum key lengths for all use cases.</li>
+      <li>Mandate encryption for Confidential and Restricted data both at rest and in transit.</li>
+      <li>Establish a key management lifecycle covering generation, distribution, storage, rotation, and destruction.</li>
+      <li>Define requirements for digital certificate management, including procurement, deployment, monitoring, and renewal.</li>
+      <li>Ensure compliance with applicable Indian laws and industry standards regarding cryptographic controls.</li>
+      <li>Prohibit the use of weak, deprecated, or custom cryptographic algorithms.</li>
+    </ol>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. DEFINITIONS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="definitions">
+    <h2>5. Definitions</h2>
+    <table class="definitions">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td>Encryption</td><td>The process of converting plaintext into ciphertext using a cryptographic algorithm and key, rendering it unreadable without the corresponding decryption key.</td></tr>
+        <tr><td>Encryption at Rest</td><td>Encryption applied to data stored on disk, database, backup media, or other persistent storage.</td></tr>
+        <tr><td>Encryption in Transit</td><td>Encryption applied to data being transmitted across networks, including internal and external communication channels.</td></tr>
+        <tr><td>Symmetric Encryption</td><td>Encryption using a single key for both encryption and decryption (e.g., AES).</td></tr>
+        <tr><td>Asymmetric Encryption</td><td>Encryption using a key pair — a public key for encryption and a private key for decryption (e.g., RSA, ECC).</td></tr>
+        <tr><td>Key Management</td><td>The process of generating, distributing, storing, rotating, revoking, and destroying cryptographic keys.</td></tr>
+        <tr><td>Digital Certificate</td><td>An electronic document that uses a digital signature to bind a public key with an identity (person, organization, or server).</td></tr>
+        <tr><td>Certificate Authority (CA)</td><td>A trusted entity that issues and manages digital certificates.</td></tr>
+        <tr><td>TLS</td><td>Transport Layer Security — a cryptographic protocol providing secure communication over networks.</td></tr>
+        <tr><td>HSM</td><td>Hardware Security Module — a dedicated hardware device for secure cryptographic key storage and operations.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       6. ROLES AND RESPONSIBILITIES
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="roles">
+    <h2>6. Roles and Responsibilities</h2>
+
+    <h3>6.1 Information Security Officer</h3>
+    <p>The ISO shall approve cryptographic standards, review exceptions, and ensure compliance with this policy. The ISO shall monitor developments in cryptographic vulnerabilities and update approved algorithm lists as necessary.</p>
+
+    <h3>6.2 IT / Infrastructure Team</h3>
+    <p>IT shall implement encryption controls across systems and networks, manage TLS certificates, configure encryption at rest and in transit, and maintain key management infrastructure.</p>
+
+    <h3>6.3 Application Development Teams</h3>
+    <p>Developers shall use only approved cryptographic libraries and algorithms in application code. They shall not implement custom cryptographic algorithms. They shall integrate with the organization's key management practices and ensure secrets are not hardcoded in source code.</p>
+
+    <h3>6.4 Key Custodians</h3>
+    <p>Designated key custodians shall manage cryptographic keys in accordance with the key management lifecycle defined in this policy. Key custodian responsibilities shall require dual control for critical operations (e.g., master key generation, key recovery).</p>
+
+    <h3>6.5 All Employees</h3>
+    <p>Employees shall use encryption tools as provided and shall not disable, bypass, or circumvent encryption controls. They shall report suspected key compromises immediately.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. POLICY STATEMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="policy-statements">
+    <h2>7. Policy Statements</h2>
+
+    <h3>7.1 Approved Cryptographic Algorithms</h3>
+    <p>Only the following cryptographic algorithms and minimum key lengths are approved for use at Ramdoot Solutions:</p>
+
+    <h4>Symmetric Encryption</h4>
+    <table class="algo-table">
+      <thead><tr><th>Algorithm</th><th>Minimum Key Length</th><th>Approved Use</th></tr></thead>
+      <tbody>
+        <tr><td>AES (Advanced Encryption Standard)</td><td>256 bits</td><td>Data at rest, full-disk encryption, file-level encryption, database encryption</td></tr>
+        <tr><td>AES-GCM</td><td>256 bits</td><td>Authenticated encryption for data at rest and in transit</td></tr>
+        <tr><td>ChaCha20-Poly1305</td><td>256 bits</td><td>Authenticated encryption in transit (where AES hardware acceleration is unavailable)</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Asymmetric Encryption</h4>
+    <table class="algo-table">
+      <thead><tr><th>Algorithm</th><th>Minimum Key Length</th><th>Approved Use</th></tr></thead>
+      <tbody>
+        <tr><td>RSA</td><td>2048 bits (3072+ recommended for new deployments)</td><td>Key exchange, digital signatures, certificate signing</td></tr>
+        <tr><td>ECDSA (Elliptic Curve)</td><td>256 bits (P-256 curve or equivalent)</td><td>Digital signatures, TLS key exchange</td></tr>
+        <tr><td>ECDH (Elliptic Curve Diffie-Hellman)</td><td>256 bits (P-256 curve or equivalent)</td><td>Key agreement</td></tr>
+        <tr><td>Ed25519</td><td>256 bits</td><td>Digital signatures (SSH keys, code signing)</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Hashing Algorithms</h4>
+    <table class="algo-table">
+      <thead><tr><th>Algorithm</th><th>Approved Use</th></tr></thead>
+      <tbody>
+        <tr><td>SHA-256 / SHA-384 / SHA-512</td><td>Data integrity verification, digital signatures, certificate fingerprints</td></tr>
+        <tr><td>bcrypt / scrypt / Argon2id</td><td>Password hashing (see RS-POL-003)</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Prohibited Algorithms</h4>
+    <p>The following algorithms and configurations are prohibited and must not be used:</p>
+    <ul>
+      <li>DES, 3DES (Triple DES)</li>
+      <li>RC4</li>
+      <li>MD5 (for any security purpose)</li>
+      <li>SHA-1 (for signatures or certificates; acceptable only for non-security checksums)</li>
+      <li>RSA key lengths below 2048 bits</li>
+      <li>SSL 2.0, SSL 3.0, TLS 1.0, TLS 1.1</li>
+      <li>Custom or proprietary encryption algorithms</li>
+      <li>ECB mode for block ciphers</li>
+    </ul>
+
+    <h3>7.2 Encryption at Rest</h3>
+    <p>All data classified as Confidential or Restricted shall be encrypted at rest using AES-256 or equivalent approved algorithms. Encryption at rest requirements apply to:</p>
+    <ul>
+      <li>Database storage (transparent data encryption or column-level encryption).</li>
+      <li>File storage on servers, NAS, and SAN.</li>
+      <li>Cloud storage (S3, Azure Blob, GCS, etc.) — using server-side encryption with customer-managed keys where available.</li>
+      <li>Laptop and workstation full-disk encryption (BitLocker, FileVault, LUKS).</li>
+      <li>Backup media and archival storage.</li>
+      <li>Removable media containing Confidential or Restricted data.</li>
+      <li>Mobile devices used to access or store company data.</li>
+    </ul>
+
+    <h3>7.3 Encryption in Transit</h3>
+    <p>All data classified as Confidential or Restricted shall be encrypted in transit. Additionally, all external-facing services shall use encryption in transit regardless of data classification. Requirements:</p>
+    <ul>
+      <li>TLS 1.2 is the minimum acceptable version. TLS 1.3 is preferred for all new deployments.</li>
+      <li>Only approved cipher suites shall be configured. Weak cipher suites (NULL ciphers, export-grade, RC4, DES-based) shall be disabled.</li>
+      <li>Perfect Forward Secrecy (PFS) cipher suites (ECDHE, DHE) shall be preferred.</li>
+      <li>All web applications and APIs shall enforce HTTPS. HTTP-to-HTTPS redirection shall be configured. HSTS headers shall be enabled.</li>
+      <li>Internal service-to-service communication handling Confidential or Restricted data shall use mutual TLS (mTLS) or equivalent encryption.</li>
+      <li>Email containing Confidential or Restricted data shall use S/MIME, PGP, or an approved secure email gateway.</li>
+      <li>VPN connections shall use IPsec (IKEv2) or WireGuard with approved encryption parameters.</li>
+    </ul>
+
+    <h3>7.4 Key Management Lifecycle</h3>
+    <p>Cryptographic keys shall be managed throughout their lifecycle as follows:</p>
+
+    <h4>7.4.1 Key Generation</h4>
+    <p>Keys shall be generated using cryptographically secure random number generators (CSPRNGs). Key generation for Restricted data shall occur within an HSM or equivalent secure environment. Dual control and split knowledge shall be applied for master key generation.</p>
+
+    <h4>7.4.2 Key Distribution</h4>
+    <p>Keys shall be distributed through secure channels, separate from the encrypted data they protect. Keys shall never be transmitted in plaintext over networks or via email. Automated key distribution systems (e.g., KMS, secrets managers) are preferred.</p>
+
+    <h4>7.4.3 Key Storage</h4>
+    <p>Private keys and symmetric keys shall be stored in HSMs, secure key vaults (e.g., AWS KMS, Azure Key Vault, HashiCorp Vault), or encrypted key stores. Keys shall not be stored in source code, configuration files, environment variables in plaintext, or shared file systems. Access to key storage shall be restricted to authorized key custodians.</p>
+
+    <h4>7.4.4 Key Rotation</h4>
+    <p>Keys shall be rotated on a regular schedule:</p>
+    <ul>
+      <li>TLS certificates: annually (or upon compromise).</li>
+      <li>Symmetric data encryption keys: annually or as recommended by the algorithm's usage profile.</li>
+      <li>Asymmetric key pairs: every 2 years (or upon compromise).</li>
+      <li>SSH keys: annually.</li>
+      <li>API signing keys: every <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> months.</li>
+    </ul>
+    <p>Key rotation shall be automated where technically feasible. Previous key versions shall be retained in a secure archive for decryption of historical data until the data is re-encrypted or disposed of.</p>
+
+    <h4>7.4.5 Key Revocation and Destruction</h4>
+    <p>Compromised keys shall be revoked immediately and replaced. Expired or decommissioned keys shall be securely destroyed using approved methods (overwriting key material, HSM-based zeroization). Key destruction shall be logged and verified. Certificates corresponding to revoked keys shall be added to the Certificate Revocation List (CRL) or revoked via OCSP.</p>
+
+    <h3>7.5 Certificate Management</h3>
+    <ul>
+      <li>Digital certificates shall be procured only from trusted, publicly recognized Certificate Authorities or from Ramdoot Solutions' approved internal CA.</li>
+      <li>Self-signed certificates are prohibited in production environments.</li>
+      <li>Certificate inventory shall be maintained, including expiration dates, associated systems, and responsible owners.</li>
+      <li>Certificate expiration monitoring shall be implemented with alerts at 60, 30, and 7 days before expiry.</li>
+      <li>Wildcard certificates may be used but shall be carefully controlled; their private keys shall be stored in HSMs or secure key vaults.</li>
+      <li>Certificate pinning may be implemented for high-security mobile applications as approved by the ISO.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       8. DETAILED REQUIREMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="detailed-requirements">
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Development Standards</h3>
+    <p>Application developers shall use well-established, peer-reviewed cryptographic libraries (e.g., OpenSSL, libsodium, Bouncy Castle, the native crypto modules of Go, .NET, Java). Developers shall not implement cryptographic algorithms from scratch. Code reviews shall verify correct use of cryptographic APIs, including proper initialization vectors, nonces, padding, and mode of operation.</p>
+
+    <h3>8.2 Database Encryption</h3>
+    <p>Databases storing Confidential or Restricted data shall implement transparent data encryption (TDE) or column-level encryption for sensitive fields. Database connection strings shall use TLS encryption. Database backup files shall be encrypted.</p>
+
+    <h3>8.3 Cloud Encryption</h3>
+    <p>Cloud storage services shall be configured with server-side encryption enabled by default. Customer-managed encryption keys (CMEK) shall be used for Restricted data. Cloud provider key management services shall be evaluated for compliance with this policy before use.</p>
+
+    <h3>8.4 Endpoint Encryption</h3>
+    <p>All laptops and workstations issued by Ramdoot Solutions shall have full-disk encryption enabled. Recovery keys shall be stored securely and accessible to IT for authorized recovery. Encryption status shall be monitored and reported through endpoint management tools.</p>
+
+    <h3>8.5 Incident Response for Key Compromise</h3>
+    <p>Suspected key compromise shall be treated as a security incident. The response shall include: immediate revocation of the compromised key, generation and deployment of a replacement key, assessment of the scope of potential data exposure, re-encryption of affected data where feasible, and notification of affected parties if required by law or contract.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       9. EXCEPTIONS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="exceptions">
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to encryption requirements (e.g., legacy systems that cannot support approved algorithms) must be formally documented with a risk assessment, include compensating controls, be approved by the ISO, and be time-bound (maximum 12 months). The exception register shall be reviewed quarterly. Migration plans to bring excepted systems into compliance shall be documented and tracked.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       10. MONITORING AND COMPLIANCE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="monitoring">
+    <h2>10. Monitoring and Compliance</h2>
+    <ul>
+      <li>TLS configurations shall be scanned quarterly using automated tools (e.g., SSL Labs, testssl.sh) to verify compliance with approved cipher suites and protocol versions.</li>
+      <li>Certificate expiration shall be monitored continuously with automated alerting.</li>
+      <li>Endpoint encryption status shall be monitored through endpoint management tools.</li>
+      <li>Key rotation compliance shall be tracked and reported quarterly.</li>
+      <li>Annual penetration testing shall include testing of cryptographic implementations.</li>
+      <li>Internal audits shall verify encryption at rest and in transit configurations.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       11. VIOLATIONS / ENFORCEMENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="violations">
+    <h2>11. Violations and Enforcement</h2>
+    <p>Use of prohibited algorithms, disabling encryption on systems handling Confidential or Restricted data, improper storage of cryptographic keys, or failure to rotate keys as required constitutes a policy violation. Violations may result in disciplinary action up to and including termination. Systems found in violation shall be quarantined until remediated.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       12. RECORDS AND EVIDENCE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="records">
+    <h2>12. Records and Evidence</h2>
+    <ul>
+      <li>Certificate inventory and lifecycle records.</li>
+      <li>Key rotation logs.</li>
+      <li>Key generation and destruction records.</li>
+      <li>TLS scan reports.</li>
+      <li>Endpoint encryption compliance reports.</li>
+      <li>Exception request forms and approvals.</li>
+      <li>Penetration testing reports covering cryptographic controls.</li>
+    </ul>
+    <p>Records shall be retained in accordance with the Data Retention Policy (RS-POL-007).</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       13. RELATED DOCUMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="related-documents">
+    <h2>13. Related Documents</h2>
+    <table class="related-docs">
+      <thead><tr><th>Document ID</th><th>Title</th></tr></thead>
+      <tbody>
+        <tr><td>RS-POL-001</td><td>Information Security Policy</td></tr>
+        <tr><td>RS-POL-002</td><td>Access Control Policy</td></tr>
+        <tr><td>RS-POL-003</td><td>Password and Authentication Policy</td></tr>
+        <tr><td>RS-POL-006</td><td>Data Classification Policy</td></tr>
+        <tr><td>RS-POL-007</td><td>Data Retention Policy</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       14. FRAMEWORK MAPPING
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="framework-mapping">
+    <h2>14. Framework Mapping</h2>
+    <table class="framework-map">
+      <thead><tr><th>Framework</th><th>Reference</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>CC6.1</td><td>The entity implements logical access security software, infrastructure, and architectures over protected information assets — including cryptographic controls.</td></tr>
+        <tr><td>SOC 2</td><td>CC6.7</td><td>The entity restricts the transmission, movement, and removal of information to authorized internal and external users and processes, and protects it during transmission — encryption in transit requirements.</td></tr>
+        <tr><td>NISP</td><td>§10</td><td>Cryptography — Cryptographic controls and key management.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       15. REVIEW CYCLE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="review-cycle">
+    <h2>15. Review Cycle</h2>
+    <p>This policy shall be reviewed at least annually, or sooner upon:</p>
+    <ul>
+      <li>Discovery of vulnerabilities in currently approved algorithms.</li>
+      <li>Changes in industry best practices or regulatory requirements.</li>
+      <li>Key compromise incident.</li>
+      <li>Introduction of new systems or technologies requiring cryptographic controls.</li>
+      <li>Audit findings related to encryption or key management.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       16. APPROVAL BLOCK
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="approval">
+    <h2>16. Approval</h2>
+    <table class="approval-block">
+      <tr>
+        <th>Prepared By</th>
+        <td>Ramdoot Solutions</td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Reviewed By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Approved By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       17. VERSION HISTORY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="version-history">
+    <h2>17. Version History</h2>
+    <table class="version-history">
+      <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Ramdoot Solutions</td><td>Initial draft created for management review.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>

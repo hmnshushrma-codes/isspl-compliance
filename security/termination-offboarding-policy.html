@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-024 Termination &amp; Offboarding Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Termination &amp; Offboarding Policy</h1>
+    </div>
+
+    <!-- Document Control Table -->
+    <h2>Document Control</h2>
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-POL-024</td></tr>
+      <tr><th>Title</th><td>Termination &amp; Offboarding Policy</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Framework Mapping</th><td>SOC 2 — CC6.2, CC6.3; NISP — Access Control &amp; HR Security</td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>This policy defines the requirements and procedures for securely offboarding employees, contractors, and other personnel when they leave Ramdoot Solutions — whether through resignation, termination, contract completion, or other circumstances. It ensures that all access rights are revoked, organizational assets are returned, and knowledge is appropriately transferred to prevent security gaps and data loss.</p>
+    <p>Timely and thorough offboarding is critical to protecting Ramdoot Solutions' information assets and maintaining compliance with SOC 2 Trust Services Criteria (CC6.2, CC6.3) and NISP access control requirements.</p>
+
+    <!-- Scope -->
+    <h2>2. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All departing employees, regardless of reason for departure (resignation, termination, retirement, redundancy)</li>
+      <li>All departing contractors, consultants, and temporary workers</li>
+      <li>Interns and trainees completing their engagement</li>
+      <li>Employees transferring between departments or roles (partial offboarding for access adjustment)</li>
+      <li>All systems, accounts, physical assets, and data access associated with the departing individual</li>
+    </ul>
+
+    <!-- Objectives -->
+    <h2>3. Objectives</h2>
+    <ul>
+      <li>Revoke all access rights on the same day as departure to prevent unauthorized post-employment access</li>
+      <li>Recover all organizational assets (devices, badges, documents, keys) before or on the last working day</li>
+      <li>Conduct knowledge transfer to ensure business continuity</li>
+      <li>Handle email and account data in accordance with organizational and legal requirements</li>
+      <li>Revoke digital certificates, API keys, and cryptographic credentials</li>
+      <li>Perform a final access audit to verify complete access removal</li>
+      <li>Document the offboarding process for compliance and audit purposes</li>
+    </ul>
+
+    <!-- Definitions -->
+    <h2>4. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Offboarding</td><td>The process of managing the departure of an employee or contractor, including access revocation, asset return, and knowledge transfer.</td></tr>
+        <tr><td>Access Revocation</td><td>The process of disabling or removing a departing individual's access to all organizational systems, applications, and facilities.</td></tr>
+        <tr><td>Exit Interview</td><td>A structured interview conducted with the departing individual to gather feedback, remind them of ongoing obligations, and confirm completion of offboarding tasks.</td></tr>
+        <tr><td>Knowledge Transfer</td><td>The process of documenting and transferring job-related knowledge, processes, and information from the departing individual to their successor or team.</td></tr>
+        <tr><td>Same-Day Revocation</td><td>The requirement that all access rights be revoked on the individual's last working day (or immediately in cases of involuntary termination).</td></tr>
+        <tr><td>Final Access Audit</td><td>A post-offboarding verification that all access has been completely removed across all systems.</td></tr>
+        <tr><td>Involuntary Termination</td><td>Departure initiated by the organization (e.g., dismissal, redundancy) as opposed to voluntary resignation.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Roles & Responsibilities -->
+    <h2>5. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibility</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Human Resources (HR)</td><td>Initiate the offboarding process; conduct exit interviews; coordinate asset return; ensure final settlement; notify IT and Facilities of departure date; maintain offboarding records.</td></tr>
+        <tr><td>IT / DevOps Team</td><td>Execute access revocation across all systems; disable accounts; revoke certificates and keys; wipe company data from devices; complete the IT offboarding checklist; perform final access audit.</td></tr>
+        <tr><td>Facilities Manager</td><td>Revoke physical access (badge deactivation, biometric removal); collect keys and access cards; update visitor records if applicable.</td></tr>
+        <tr><td>Departing Individual's Manager</td><td>Initiate knowledge transfer; verify completion of handover documentation; confirm asset return; ensure team coverage.</td></tr>
+        <tr><td>Information Security Officer</td><td>Review and approve the offboarding checklist; verify final access audit completion; investigate any anomalies; approve exceptions.</td></tr>
+        <tr><td>Legal / Compliance</td><td>Advise on data retention obligations; review NDA re-acknowledgement; manage any legal holds on departing individual's data.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Policy Statements -->
+    <h2>6. Policy Statements</h2>
+    <ol>
+      <li>All access to Ramdoot Solutions' systems, applications, and facilities <strong>shall</strong> be revoked on the departing individual's last working day — or immediately in cases of involuntary termination for cause.</li>
+      <li>An exit interview <strong>must</strong> be conducted with every departing employee and contractor, covering security obligations, NDA re-acknowledgement, and asset return.</li>
+      <li>All organizational assets <strong>shall</strong> be returned before or on the last working day, using a documented asset return checklist.</li>
+      <li>Knowledge transfer <strong>must</strong> be initiated at least <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> weeks before the departure date for voluntary resignations.</li>
+      <li>Email accounts and cloud storage <strong>shall</strong> be handled according to the procedures in Section 7.5 to ensure no loss of business data.</li>
+      <li>All digital certificates, API keys, SSH keys, and cryptographic credentials associated with the departing individual <strong>must</strong> be revoked or rotated on the departure date.</li>
+      <li>A final access audit <strong>shall</strong> be completed within 5 business days of departure to verify that all access has been completely removed.</li>
+      <li>The offboarding process <strong>must</strong> be fully documented and retained for audit purposes.</li>
+    </ol>
+
+    <!-- Detailed Requirements -->
+    <h2>7. Detailed Requirements</h2>
+
+    <h3>7.1 Access Revocation Timeline</h3>
+    <div class="callout callout-danger">
+      <p><strong>Critical Requirement.</strong> All system access must be revoked on the same day as the individual's departure. For involuntary terminations, access must be revoked immediately — prior to or concurrent with the termination notification.</p>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Departure Type</th><th>Access Revocation Timing</th><th>Physical Access Revocation</th><th>Responsible Party</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Voluntary Resignation</td><td>End of last working day (COB)</td><td>End of last working day</td><td>IT + Facilities</td></tr>
+        <tr><td>Involuntary Termination (for cause)</td><td>Immediately upon notification</td><td>Immediately upon notification</td><td>IT + Facilities (pre-coordinated with HR)</td></tr>
+        <tr><td>Redundancy / Restructuring</td><td>End of last working day or as specified</td><td>End of last working day</td><td>IT + Facilities</td></tr>
+        <tr><td>Contract Completion (Contractor)</td><td>End of contract date (COB)</td><td>End of contract date</td><td>IT + Facilities</td></tr>
+        <tr><td>Internal Transfer (Role Change)</td><td>Within 24 hours of role change — remove old role access, grant new</td><td>Adjusted as needed</td><td>IT + Receiving Manager</td></tr>
+      </tbody>
+    </table>
+
+    <h4>7.1.1 Systems Requiring Access Revocation</h4>
+    <p>The following systems <strong>must</strong> be included in the access revocation process:</p>
+    <ul>
+      <li>Active Directory / Identity Provider (SSO) — primary account deactivation</li>
+      <li>Email system (organizational email account)</li>
+      <li>VPN and remote access services</li>
+      <li>Cloud services and SaaS applications (Google Workspace, Slack, GitHub, Jira, etc.)</li>
+      <li>Internal applications (CertFlow, CRM, ERP, etc.)</li>
+      <li>Database access and admin panels</li>
+      <li>Server access (SSH keys, RDP accounts)</li>
+      <li>Code repositories (GitHub, GitLab)</li>
+      <li>Cloud infrastructure consoles (AWS, GCP, Azure, VPS panels)</li>
+      <li>Physical access systems (badge, biometric)</li>
+      <li>Wi-Fi network access</li>
+      <li>Any shared or service accounts the individual had access to</li>
+    </ul>
+
+    <h3>7.2 Exit Interview</h3>
+    <p>HR <strong>shall</strong> conduct an exit interview with every departing individual, covering:</p>
+    <ol>
+      <li><strong>NDA Re-acknowledgement:</strong> Remind the departing individual of their ongoing confidentiality obligations under the NDA. Obtain a signed re-acknowledgement.</li>
+      <li><strong>Intellectual Property:</strong> Confirm that all organizational intellectual property has been returned and no copies are retained by the individual.</li>
+      <li><strong>Asset Return:</strong> Review the asset return checklist (Section 7.3) and confirm all items have been returned.</li>
+      <li><strong>Outstanding Access:</strong> Ask the departing individual to identify any systems, accounts, or access they may have that are not on the standard offboarding checklist.</li>
+      <li><strong>Feedback:</strong> Gather feedback on security practices and any concerns the individual may wish to raise.</li>
+      <li><strong>Contact Information:</strong> Collect forwarding contact information in case of follow-up questions.</li>
+    </ol>
+
+    <h3>7.3 Asset Return Checklist</h3>
+    <p>The following organizational assets <strong>must</strong> be returned before or on the last working day:</p>
+    <table>
+      <thead>
+        <tr><th>Asset Category</th><th>Items</th><th>Verified By</th><th>Returned</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Computing Equipment</td><td>Laptop, desktop, monitor, keyboard, mouse, docking station, charger</td><td>IT</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Mobile Devices</td><td>Company mobile phone, SIM card, tablet</td><td>IT</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Storage Media</td><td>USB drives, external hard drives, SD cards issued by the organization</td><td>IT</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Access Credentials</td><td>Access badges, key cards, physical keys, security tokens</td><td>Facilities</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Documents</td><td>Physical files, printed reports, client documents, compliance records</td><td>Manager</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Software Licences</td><td>Licensed software on personal devices, transferable licences</td><td>IT</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Company ID Card</td><td>Employee identification badge</td><td>HR</td><td><span class="placeholder">[checkbox]</span></td></tr>
+        <tr><td>Other</td><td>Parking pass, credit card, petty cash, any other organizational property</td><td>Finance / HR</td><td><span class="placeholder">[checkbox]</span></td></tr>
+      </tbody>
+    </table>
+    <p>Unreturned assets <strong>shall</strong> be reported to HR and may be deducted from the final settlement or pursued through legal means if necessary.</p>
+
+    <h3>7.4 Knowledge Transfer</h3>
+    <ul>
+      <li>The departing individual's manager <strong>shall</strong> initiate a knowledge transfer plan within 2 business days of receiving the resignation or termination notice.</li>
+      <li>The knowledge transfer <strong>must</strong> cover: current projects and their status, ongoing tasks and deadlines, critical processes owned by the individual, system administration credentials (to be transferred to a designated successor), client relationships and open items, and documentation of undocumented processes.</li>
+      <li>Knowledge transfer documentation <strong>shall</strong> be reviewed and approved by the manager before the individual's departure.</li>
+      <li>For involuntary terminations where knowledge transfer is not possible, the manager <strong>must</strong> assess and document the knowledge gap and create a remediation plan within 5 business days.</li>
+    </ul>
+
+    <h3>7.5 Email &amp; Account Handling</h3>
+    <table>
+      <thead>
+        <tr><th>Account Type</th><th>Action on Departure</th><th>Data Retention</th><th>Responsible</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Organizational Email</td><td>Disable login immediately; set auto-reply for 30 days; redirect to manager/successor for 90 days</td><td>Archive for 1 year, then delete unless legal hold</td><td>IT</td></tr>
+        <tr><td>Cloud Storage (personal workspace)</td><td>Transfer ownership of business files to manager; delete personal files after 30 days</td><td>Business files retained per data retention policy</td><td>IT</td></tr>
+        <tr><td>Chat / Messaging</td><td>Deactivate account; channels and DMs retained per platform policy</td><td>Per platform retention settings</td><td>IT</td></tr>
+        <tr><td>Code Repositories</td><td>Remove access; reassign ownership of owned repos to team lead</td><td>Repositories retained (code is organizational IP)</td><td>IT / DevOps</td></tr>
+        <tr><td>Shared / Service Accounts</td><td>Rotate passwords and credentials for any shared accounts the individual had access to</td><td>N/A — accounts persist; credentials rotated</td><td>IT / DevOps</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.6 Certificate &amp; Key Revocation</h3>
+    <ul>
+      <li>All SSH keys associated with the departing individual <strong>shall</strong> be removed from all servers and systems on the departure date.</li>
+      <li>Any personal TLS/SSL certificates issued to the individual <strong>must</strong> be revoked.</li>
+      <li>API keys and tokens created by the individual <strong>shall</strong> be rotated or revoked.</li>
+      <li>Code signing certificates associated with the individual <strong>must</strong> be revoked.</li>
+      <li>GPG/PGP keys used for organizational purposes <strong>shall</strong> be revoked from the organization's keyring.</li>
+      <li>Shared secrets or passwords known to the individual <strong>must</strong> be rotated within 24 hours of departure.</li>
+    </ul>
+
+    <h3>7.7 Final Access Audit</h3>
+    <p>Within 5 business days of departure, IT <strong>shall</strong> complete a final access audit to verify:</p>
+    <ol>
+      <li>The primary identity account (Active Directory / IdP) is disabled and cannot authenticate.</li>
+      <li>All application-specific accounts are disabled or removed.</li>
+      <li>VPN access is revoked and cannot be re-established.</li>
+      <li>Physical access badges and biometric data are deactivated and deleted.</li>
+      <li>All SSH keys, certificates, and API tokens have been revoked or rotated.</li>
+      <li>No orphaned accounts or access permissions remain.</li>
+    </ol>
+    <p>The final access audit <strong>must</strong> be documented on the offboarding checklist and signed off by the IT lead and Information Security Officer.</p>
+
+    <!-- Exceptions -->
+    <h2>8. Exceptions</h2>
+    <p>Exceptions to this policy are extremely limited given the security implications of incomplete offboarding. Any exceptions <strong>must</strong>:</p>
+    <ul>
+      <li>Be formally requested with detailed justification</li>
+      <li>Include a risk assessment and compensating controls</li>
+      <li>Be time-bound (maximum 30 days for access-related exceptions)</li>
+      <li>Be approved by the Information Security Officer and <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+    </ul>
+    <p>No exception shall be granted that permits continued system access after the departure date without explicit, documented approval.</p>
+
+    <!-- Monitoring & Compliance -->
+    <h2>9. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>IT <strong>shall</strong> generate a monthly report of departures in the past 30 days cross-referenced against access revocation records to ensure 100% completion.</li>
+      <li>The Information Security Officer <strong>shall</strong> audit a sample of offboarding records quarterly to verify completeness.</li>
+      <li>Key metrics include: percentage of departures with same-day access revocation, average time to complete final access audit, asset return completion rate, and offboarding checklist completion rate.</li>
+      <li>Any access found active after the departure date <strong>must</strong> be treated as a security incident and investigated immediately.</li>
+    </ul>
+
+    <!-- Violations / Enforcement -->
+    <h2>10. Violations &amp; Enforcement</h2>
+    <p>Violations of this policy may result in:</p>
+    <ul>
+      <li>Formal written warning for managers or IT personnel who fail to initiate or complete offboarding on time</li>
+      <li>Immediate remediation and incident reporting if access remains active post-departure</li>
+      <li>Disciplinary action for deliberate delays or obstruction of the offboarding process</li>
+      <li>Legal action against former personnel who retain unauthorized access or organizational data</li>
+    </ul>
+
+    <!-- Records & Evidence -->
+    <h2>11. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Offboarding checklist (completed)</td><td>3 years after departure</td><td>HR</td></tr>
+        <tr><td>Exit interview records</td><td>3 years after departure</td><td>HR</td></tr>
+        <tr><td>NDA re-acknowledgement (signed)</td><td>Duration of NDA survival period</td><td>Legal / HR</td></tr>
+        <tr><td>Asset return records</td><td>3 years after departure</td><td>IT / HR</td></tr>
+        <tr><td>Final access audit report</td><td>3 years after departure</td><td>IT / ISO</td></tr>
+        <tr><td>Knowledge transfer documentation</td><td>2 years after departure</td><td>Manager</td></tr>
+        <tr><td>Email archive (departed employee)</td><td>1 year (unless legal hold)</td><td>IT</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>12. Related Documents</h2>
+    <ul>
+      <li>RS-POL-023 — Employee Security Policy</li>
+      <li>RS-POL-021 — Physical Security Policy</li>
+      <li>RS-POL-022 — Remote Work Policy</li>
+      <li>RS-POL-020 — Privacy &amp; Data Protection Policy</li>
+      <li>Information Security Policy</li>
+      <li>Access Control Policy</li>
+      <li>Data Retention Policy</li>
+      <li>Incident Management Policy</li>
+    </ul>
+
+    <!-- Framework Mapping -->
+    <h2>13. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>CC6.2</td><td>Prior to issuing system credentials and granting system access, the entity registers and authorizes new internal and external users. For those users whose access is no longer required, the entity removes access.</td></tr>
+        <tr><td>SOC 2</td><td>CC6.3</td><td>The entity authorizes, modifies, or removes access to data, software, functions, and other protected information assets based on roles, responsibilities, or the system design and changes.</td></tr>
+        <tr><td>NISP</td><td>Access Control &amp; HR Security</td><td>Requirements for timely revocation of access upon personnel departure and secure handling of organizational assets.</td></tr>
+        <tr><td>ISO 27001</td><td>A.7.3.1</td><td>Termination or change of employment responsibilities — information security responsibilities and duties that remain valid after termination or change of employment shall be defined, communicated, and enforced.</td></tr>
+        <tr><td>ISO 27001</td><td>A.9.2.6</td><td>Removal or adjustment of access rights — the access rights of all employees and external party users to information and information processing facilities shall be removed upon termination.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Review Cycle -->
+    <h2>14. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed:</p>
+    <ul>
+      <li>At least annually, or</li>
+      <li>Following a security incident related to incomplete offboarding, or</li>
+      <li>Upon significant changes to systems or access management infrastructure, or</li>
+      <li>When required by changes in legal, regulatory, or contractual obligations</li>
+    </ul>
+    <p>Next scheduled review: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+    <!-- Approval Block -->
+    <h2>15. Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr><th>Prepared By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Reviewed By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approval Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Signature</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>16. Version History</h2>
+    <table class="version-history">
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial draft</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-024 — Termination &amp; Offboarding Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-013 Logging and Monitoring Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Logging and Monitoring Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-013</td></tr>
+        <tr><td><strong>Title</strong></td><td>Logging and Monitoring Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy defines the requirements for logging security-relevant events and monitoring information systems at Ramdoot Solutions. Effective logging and monitoring enable the organization to detect security incidents, support forensic investigations, meet regulatory obligations, and maintain operational visibility across all technology environments.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All production, staging, and disaster-recovery information systems, including servers, databases, applications, and network devices.</li>
+      <li>Cloud-hosted infrastructure and services under Ramdoot Solutions' operational control.</li>
+      <li>Security systems including firewalls, intrusion detection/prevention systems, VPN concentrators, and endpoint protection platforms.</li>
+      <li>Identity and access management systems.</li>
+      <li>All personnel responsible for system administration, security operations, and incident response.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Ensure all security-relevant events are captured in logs with sufficient detail for detection, investigation, and compliance purposes.</li>
+      <li>Establish centralized log collection and correlation to enable timely detection of suspicious activity.</li>
+      <li>Protect log integrity to ensure logs are reliable for forensic and audit purposes.</li>
+      <li>Define log retention periods that satisfy regulatory, contractual, and operational requirements.</li>
+      <li>Implement monitoring dashboards and alerting to enable proactive threat detection and response.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Security Event</strong></td><td>An occurrence in a system or network that is relevant to the security of the system, including successful and unsuccessful actions.</td></tr>
+        <tr><td><strong>Audit Log</strong></td><td>A chronological record of system activities that provides evidence of the sequence of actions performed by users, processes, or systems.</td></tr>
+        <tr><td><strong>SIEM</strong></td><td>Security Information and Event Management — a system that collects, correlates, and analyzes log data from multiple sources to detect security threats.</td></tr>
+        <tr><td><strong>Centralized Logging</strong></td><td>The practice of aggregating logs from multiple systems into a single repository for analysis and retention.</td></tr>
+        <tr><td><strong>Log Integrity</strong></td><td>Assurance that log data has not been altered, deleted, or tampered with after creation.</td></tr>
+        <tr><td><strong>Alerting Threshold</strong></td><td>A predefined condition or metric value that, when exceeded, triggers an automated notification to operations or security personnel.</td></tr>
+        <tr><td><strong>Correlation Rule</strong></td><td>A logic-based rule in a SIEM that identifies patterns across multiple log sources indicative of a security threat.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CISO</strong></td>
+          <td>Approves this policy; defines logging requirements; oversees monitoring effectiveness; receives escalated alerts.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Security Team / SOC</strong></td>
+          <td>Manages the SIEM platform; develops and tunes correlation rules; monitors dashboards; triages alerts; investigates anomalies; maintains log integrity controls.</td>
+        </tr>
+        <tr>
+          <td><strong>System Administrators</strong></td>
+          <td>Configure logging on systems under their management; ensure log forwarding to the centralized platform; maintain time synchronization.</td>
+        </tr>
+        <tr>
+          <td><strong>Application Developers</strong></td>
+          <td>Implement application-level logging per this policy; ensure sensitive data is not logged in clear text.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Operations</strong></td>
+          <td>Maintain log storage infrastructure; manage log retention and archival; ensure storage capacity.</td>
+        </tr>
+        <tr>
+          <td><strong>Internal Audit</strong></td>
+          <td>Reviews logging and monitoring effectiveness; verifies log integrity; audits retention compliance.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>All in-scope systems <strong>shall</strong> generate and retain logs of security-relevant events as defined in Section 8.</li>
+      <li>Logs from all systems <strong>must</strong> be forwarded to a centralized logging and SIEM platform.</li>
+      <li>Log data <strong>shall</strong> be retained for a minimum of twelve (12) months online and accessible, with extended archival as required by regulation or contract.</li>
+      <li>Log integrity <strong>must</strong> be protected through write-once storage, cryptographic hashing, or equivalent controls to prevent tampering.</li>
+      <li>Monitoring dashboards and automated alerting <strong>shall</strong> be implemented to enable real-time and near-real-time detection of security threats.</li>
+      <li>All system clocks <strong>must</strong> be synchronized to a common, authoritative time source (NTP) to ensure log correlation accuracy.</li>
+      <li>Logs <strong>must not</strong> contain plaintext passwords, authentication tokens, encryption keys, or other sensitive credentials.</li>
+      <li>Access to log data <strong>shall</strong> be restricted to authorized personnel on a need-to-know basis.</li>
+      <li>Logging configurations <strong>must not</strong> be disabled or modified without change management approval.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Events That Must Be Logged</h3>
+    <p>The following categories of events <strong>shall</strong> be logged across all in-scope systems:</p>
+
+    <h4>8.1.1 Authentication Events</h4>
+    <ul>
+      <li>Successful and failed login attempts (including source IP, username, timestamp).</li>
+      <li>Account lockouts and unlocks.</li>
+      <li>Password changes and resets.</li>
+      <li>Multi-factor authentication success and failure.</li>
+      <li>Session creation, termination, and timeout.</li>
+      <li>Single Sign-On (SSO) and federated authentication events.</li>
+    </ul>
+
+    <h4>8.1.2 Access Control Changes</h4>
+    <ul>
+      <li>User account creation, modification, and deletion.</li>
+      <li>Role and permission assignments and revocations.</li>
+      <li>Group membership changes.</li>
+      <li>Access control list (ACL) modifications.</li>
+      <li>Privilege escalation events.</li>
+    </ul>
+
+    <h4>8.1.3 Administrative Actions</h4>
+    <ul>
+      <li>System configuration changes.</li>
+      <li>Security policy changes.</li>
+      <li>Firewall rule modifications.</li>
+      <li>Service start, stop, and restart events.</li>
+      <li>Scheduled task and cron job creation or modification.</li>
+      <li>Software installation and removal.</li>
+      <li>Backup and restore operations.</li>
+    </ul>
+
+    <h4>8.1.4 Error and Exception Events</h4>
+    <ul>
+      <li>Application errors and unhandled exceptions.</li>
+      <li>System errors and warnings.</li>
+      <li>Resource exhaustion events (disk, memory, CPU).</li>
+      <li>Service failures and crash events.</li>
+      <li>Certificate expiration warnings and errors.</li>
+    </ul>
+
+    <h4>8.1.5 Data Access Events</h4>
+    <ul>
+      <li>Access to sensitive or classified data repositories.</li>
+      <li>Database queries involving personally identifiable information (PII) or financial data.</li>
+      <li>File access events on sensitive file shares and document management systems.</li>
+      <li>Data export and download events.</li>
+      <li>API calls to sensitive endpoints.</li>
+    </ul>
+
+    <h3>8.2 Log Retention</h3>
+    <table>
+      <thead>
+        <tr><th>Log Category</th><th>Online Retention</th><th>Archive Retention</th><th>Total Minimum</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Security event logs (authentication, access control, admin actions)</td><td>12 months</td><td>24 months</td><td>36 months</td></tr>
+        <tr><td>Application error logs</td><td>12 months</td><td>12 months</td><td>24 months</td></tr>
+        <tr><td>Network device logs (firewall, IDS/IPS)</td><td>12 months</td><td>24 months</td><td>36 months</td></tr>
+        <tr><td>Data access audit logs</td><td>12 months</td><td>24 months</td><td>36 months</td></tr>
+        <tr><td>System performance logs</td><td>6 months</td><td>6 months</td><td>12 months</td></tr>
+      </tbody>
+    </table>
+    <p>Retention periods may be extended where required by specific regulatory, contractual, or legal hold obligations.</p>
+
+    <h3>8.3 Centralized Logging Infrastructure</h3>
+    <ul>
+      <li>All in-scope systems <strong>shall</strong> forward logs to the centralized SIEM/log management platform: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+      <li>Log transmission <strong>must</strong> use encrypted channels (e.g., TLS) to protect log data in transit.</li>
+      <li>The centralized platform <strong>shall</strong> support ingestion from diverse log sources including syslog, Windows Event Logs, application logs, cloud service logs, and API-based log sources.</li>
+      <li>Log parsing and normalization <strong>shall</strong> be configured to enable consistent querying and correlation across all log sources.</li>
+      <li>Redundancy and high availability <strong>shall</strong> be implemented for the centralized logging infrastructure to prevent log loss.</li>
+    </ul>
+
+    <h3>8.4 Log Integrity</h3>
+    <ul>
+      <li>Logs stored in the centralized platform <strong>shall</strong> be protected against unauthorized modification or deletion.</li>
+      <li>Write-once storage, cryptographic hashing, or digital signatures <strong>shall</strong> be used to ensure log integrity.</li>
+      <li>Access to modify or delete log data <strong>must</strong> be restricted to a minimal set of authorized administrators, with all such actions logged separately.</li>
+      <li>Log integrity verification checks <strong>shall</strong> be performed at least quarterly.</li>
+    </ul>
+
+    <h3>8.5 Monitoring Dashboards</h3>
+    <p>The IT Security Team <strong>shall</strong> maintain monitoring dashboards that provide visibility into:</p>
+    <ul>
+      <li>Authentication activity (login volumes, failed login trends, geographic anomalies).</li>
+      <li>Privileged account usage.</li>
+      <li>Firewall and network security events.</li>
+      <li>Vulnerability scan findings and remediation status.</li>
+      <li>System health and resource utilization.</li>
+      <li>Data access patterns and anomalies.</li>
+    </ul>
+
+    <h3>8.6 Alerting Thresholds</h3>
+    <p>Automated alerts <strong>shall</strong> be configured for the following conditions (at minimum):</p>
+    <table>
+      <thead>
+        <tr><th>Alert Condition</th><th>Severity</th><th>Response Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Multiple failed login attempts (5+ within 10 minutes for a single account)</td><td>Medium</td><td>Investigate within 1 hour</td></tr>
+        <tr><td>Successful login from a new geographic location for a privileged account</td><td>High</td><td>Investigate within 30 minutes</td></tr>
+        <tr><td>Privilege escalation outside of change window</td><td>Critical</td><td>Investigate within 15 minutes</td></tr>
+        <tr><td>Firewall rule change outside of change window</td><td>Critical</td><td>Investigate within 15 minutes</td></tr>
+        <tr><td>Log forwarding failure from any source</td><td>High</td><td>Investigate within 1 hour</td></tr>
+        <tr><td>Mass data download or export exceeding baseline thresholds</td><td>High</td><td>Investigate within 30 minutes</td></tr>
+        <tr><td>System service stopped unexpectedly</td><td>Medium</td><td>Investigate within 1 hour</td></tr>
+        <tr><td>Malware detection alert from endpoint protection</td><td>High</td><td>Investigate within 30 minutes</td></tr>
+      </tbody>
+    </table>
+    <p>Alerting thresholds <strong>shall</strong> be tuned regularly to reduce false positives while maintaining detection effectiveness.</p>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be requested in writing and approved by the CISO. Systems that cannot meet logging requirements due to technical limitations <strong>shall</strong> have compensating controls documented and approved. All exceptions shall be recorded and reviewed at least annually.</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>The IT Security Team <strong>shall</strong> review logging coverage and completeness on a monthly basis.</li>
+      <li>Log integrity verification <strong>shall</strong> be performed quarterly.</li>
+      <li>Internal Audit <strong>shall</strong> assess logging and monitoring effectiveness at least annually.</li>
+      <li>Key metrics:
+        <ul>
+          <li>Percentage of in-scope systems forwarding logs to the centralized platform.</li>
+          <li>Mean time to detect (MTTD) for security events.</li>
+          <li>Alert volume and false positive rate.</li>
+          <li>Log retention compliance rate.</li>
+          <li>Number of log integrity verification failures.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Disabling or modifying logging configurations without authorization <strong>shall</strong> be treated as a security incident.</li>
+      <li>Tampering with or deleting log data <strong>shall</strong> be treated as a serious policy violation and may result in termination and legal action.</li>
+      <li>Failure to configure required logging on new systems <strong>shall</strong> result in the system being blocked from production deployment.</li>
+      <li>Non-compliant systems may be isolated from the network until logging requirements are met.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Centralized log data (all categories)</td><td>Per Section 8.2</td><td>IT Operations / IT Security Team</td></tr>
+        <tr><td>Log integrity verification records</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Alert investigation records</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>SIEM correlation rule change records</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Monthly logging compliance reports</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Exception records</td><td>3 years after expiry</td><td>CISO Office</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-009 — Vulnerability Management Policy</li>
+      <li>RS-POL-012 — Change Management Policy</li>
+      <li>RS-POL-014 — Incident Response Policy</li>
+      <li>RS-POL-015 — Business Continuity Policy</li>
+      <li>Ramdoot Solutions Data Classification Policy</li>
+      <li>Ramdoot Solutions Access Control Policy</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC4.1</td><td>COSO Principle 16 — The entity selects, develops, and performs ongoing and/or separate evaluations to ascertain whether the components of internal control are present and functioning.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.1</td><td>To meet its objectives, the entity uses detection and monitoring procedures to identify changes to configurations that result in the introduction of new vulnerabilities.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.2</td><td>The entity monitors system components and the operation of those components for anomalies that are indicative of malicious acts, natural disasters, and errors affecting the entity's ability to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Logging and Monitoring</td><td>Organizations shall implement centralized logging and continuous monitoring to detect and respond to security events.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Audit Trail</td><td>Audit trails shall be maintained for all critical system and user activities, with integrity protections and defined retention.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Security incidents where logging gaps were identified.</li>
+      <li>Changes to regulatory or contractual logging requirements.</li>
+      <li>Significant changes to the technology environment or SIEM platform.</li>
+      <li>Findings from internal or external audits.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-013 Logging and Monitoring Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

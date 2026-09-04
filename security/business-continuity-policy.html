@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-015 Business Continuity Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Business Continuity Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-015</td></tr>
+        <tr><td><strong>Title</strong></td><td>Business Continuity Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy establishes the framework for Business Continuity Planning (BCP) at Ramdoot Solutions, ensuring that the organization can continue to deliver critical services and functions during and after disruptive events. It defines the governance structure, Business Impact Analysis (BIA) methodology, recovery strategies, testing requirements, and crisis communication protocols necessary to maintain organizational resilience.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All business functions, processes, and services provided by Ramdoot Solutions.</li>
+      <li>All information systems, technology infrastructure, and supporting utilities.</li>
+      <li>All physical premises, including offices and data center facilities.</li>
+      <li>All personnel, including employees, contractors, and critical third-party service providers.</li>
+      <li>Disruption scenarios including but not limited to: natural disasters, pandemics, cyber-attacks, infrastructure failures, supply chain disruptions, and civil disturbances.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Identify critical business functions and their dependencies through Business Impact Analysis.</li>
+      <li>Define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) for all critical functions.</li>
+      <li>Develop and maintain recovery strategies that enable resumption of critical functions within defined RTOs.</li>
+      <li>Establish clear governance and escalation structures for BCP activation and management.</li>
+      <li>Test BCP plans at least annually and incorporate lessons learned.</li>
+      <li>Ensure effective crisis communication with all stakeholders during disruption events.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Business Continuity Plan (BCP)</strong></td><td>A documented set of procedures and information that guides the organization in responding to, recovering from, and restoring operations after a disruption.</td></tr>
+        <tr><td><strong>Business Impact Analysis (BIA)</strong></td><td>A systematic process to determine and evaluate the potential effects of disruption on critical business functions.</td></tr>
+        <tr><td><strong>Recovery Time Objective (RTO)</strong></td><td>The maximum tolerable duration that a business function can be disrupted before unacceptable consequences result.</td></tr>
+        <tr><td><strong>Recovery Point Objective (RPO)</strong></td><td>The maximum tolerable amount of data loss measured in time — the point in time to which data must be recovered.</td></tr>
+        <tr><td><strong>Maximum Tolerable Downtime (MTD)</strong></td><td>The absolute maximum time a business function can be unavailable before the organization suffers severe or irrecoverable damage.</td></tr>
+        <tr><td><strong>Critical Business Function</strong></td><td>A business function whose disruption would have a significant adverse impact on the organization's ability to deliver services or meet obligations.</td></tr>
+        <tr><td><strong>Crisis Management Team (CMT)</strong></td><td>The senior leadership team responsible for strategic decision-making during a major disruption.</td></tr>
+        <tr><td><strong>Pandemic</strong></td><td>An epidemic of an infectious disease that has spread across a large region or worldwide, significantly impacting workforce availability.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Senior Management / CEO</strong></td>
+          <td>Sponsors the BCP program; approves BCP policy and plans; allocates resources; makes strategic decisions during crises.</td>
+        </tr>
+        <tr>
+          <td><strong>BCP Coordinator</strong></td>
+          <td>Manages the BCP lifecycle; coordinates BIA activities; maintains BCP documentation; plans and facilitates BCP tests; reports on BCP readiness.</td>
+        </tr>
+        <tr>
+          <td><strong>Crisis Management Team (CMT)</strong></td>
+          <td>Activates BCP when required; directs crisis response; authorizes expenditures; manages external communications; declares return to normal.</td>
+        </tr>
+        <tr>
+          <td><strong>Business Unit Heads</strong></td>
+          <td>Identify critical functions within their units; participate in BIA; develop unit-level recovery procedures; ensure staff awareness and training.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Department / CISO</strong></td>
+          <td>Develop and maintain the Disaster Recovery Plan (RS-POL-016); ensure technology recovery capabilities; support BCP testing.</td>
+        </tr>
+        <tr>
+          <td><strong>HR</strong></td>
+          <td>Manage personnel-related aspects of BCP (contact lists, relocation, remote work enablement, welfare); coordinate pandemic response.</td>
+        </tr>
+        <tr>
+          <td><strong>All Personnel</strong></td>
+          <td>Familiarize themselves with BCP procedures relevant to their role; participate in BCP tests; report to designated assembly points during emergencies.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain a Business Continuity Management program that is proportionate to the size and complexity of the organization.</li>
+      <li>A Business Impact Analysis <strong>must</strong> be conducted at least annually to identify critical business functions, dependencies, and acceptable recovery parameters.</li>
+      <li>Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) <strong>shall</strong> be defined for all critical business functions and approved by senior management.</li>
+      <li>Business Continuity Plans <strong>must</strong> be developed and maintained for all critical business functions.</li>
+      <li>BCP plans <strong>shall</strong> be tested at least annually through tabletop exercises, simulations, or full failover tests.</li>
+      <li>A Crisis Management Team <strong>shall</strong> be established with clear authority and decision-making protocols.</li>
+      <li>Crisis communication procedures <strong>must</strong> be documented, covering internal personnel, customers, partners, regulators, and media.</li>
+      <li>Third-party service providers critical to business operations <strong>shall</strong> demonstrate adequate business continuity capabilities.</li>
+      <li>BCP documentation <strong>shall</strong> be reviewed and updated following any significant organizational change, test, or actual invocation.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 BCP Governance</h3>
+    <ul>
+      <li>The BCP program <strong>shall</strong> have a designated sponsor at the senior management level.</li>
+      <li>A BCP Coordinator <strong>shall</strong> be appointed with responsibility for day-to-day program management.</li>
+      <li>BCP governance <strong>shall</strong> include quarterly status reporting to senior management on program readiness, test results, and outstanding corrective actions.</li>
+      <li>BCP budget and resources <strong>shall</strong> be reviewed and approved annually as part of the organizational budget cycle.</li>
+    </ul>
+
+    <h3>8.2 Business Impact Analysis (BIA) Methodology</h3>
+    <p>The BIA <strong>shall</strong> follow these steps:</p>
+    <ol>
+      <li><strong>Function Identification:</strong> Inventory all business functions and map dependencies (people, technology, facilities, third parties).</li>
+      <li><strong>Impact Assessment:</strong> Evaluate the financial, operational, legal, regulatory, and reputational impact of disruption at defined intervals (e.g., 1 hour, 4 hours, 1 day, 3 days, 1 week, 1 month).</li>
+      <li><strong>Criticality Rating:</strong> Classify each function as Critical, Important, or Supportive based on impact analysis.</li>
+      <li><strong>RTO/RPO Definition:</strong> Assign RTO and RPO for each critical function based on impact tolerance.</li>
+      <li><strong>Dependency Mapping:</strong> Identify technology systems, applications, data, personnel, and third-party services required for each critical function.</li>
+      <li><strong>Gap Analysis:</strong> Compare current recovery capabilities against defined RTOs/RPOs and identify gaps.</li>
+    </ol>
+
+    <h3>8.3 Critical Function Identification</h3>
+    <p>Critical business functions for Ramdoot Solutions include (at minimum):</p>
+    <ul>
+      <li>Customer-facing service delivery (application platforms, SaaS products).</li>
+      <li>Customer support and communication.</li>
+      <li>Financial operations (billing, payments, payroll).</li>
+      <li>Core IT infrastructure (servers, networking, security systems).</li>
+      <li>Data storage and backup systems.</li>
+      <li>Regulatory compliance and reporting functions.</li>
+    </ul>
+    <p>The complete list of critical functions and their RTO/RPO values shall be maintained as an appendix to the BCP: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+
+    <h3>8.4 Recovery Strategies</h3>
+    <table>
+      <thead>
+        <tr><th>Disruption Category</th><th>Recovery Strategy</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Technology Failure</strong></td>
+          <td>Refer to Disaster Recovery Policy (RS-POL-016); failover to secondary infrastructure; restore from backups.</td>
+        </tr>
+        <tr>
+          <td><strong>Facility Loss</strong></td>
+          <td>Activate remote work procedures; relocate to alternate site: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>; redirect mail and deliveries.</td>
+        </tr>
+        <tr>
+          <td><strong>Workforce Disruption</strong></td>
+          <td>Cross-training and succession planning; contractor augmentation; remote work enablement; shift redistribution.</td>
+        </tr>
+        <tr>
+          <td><strong>Supply Chain Disruption</strong></td>
+          <td>Maintain alternate supplier relationships; stockpile critical supplies; invoke contractual escalation clauses.</td>
+        </tr>
+        <tr>
+          <td><strong>Cyber Attack</strong></td>
+          <td>Invoke Incident Response Policy (RS-POL-014); isolate affected systems; restore from clean backups; activate DR site if needed.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.5 RTO and RPO Definitions</h3>
+    <table>
+      <thead>
+        <tr><th>Criticality Tier</th><th>RTO</th><th>RPO</th><th>MTD</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Tier 1 — Critical</strong></td><td>4 hours</td><td>1 hour</td><td>24 hours</td></tr>
+        <tr><td><strong>Tier 2 — Important</strong></td><td>24 hours</td><td>4 hours</td><td>72 hours</td></tr>
+        <tr><td><strong>Tier 3 — Supportive</strong></td><td>72 hours</td><td>24 hours</td><td>2 weeks</td></tr>
+      </tbody>
+    </table>
+    <p>Specific RTO/RPO assignments for individual business functions shall be documented in the BIA report.</p>
+
+    <h3>8.6 BCP Testing</h3>
+    <ul>
+      <li>BCP plans <strong>shall</strong> be tested at least annually using one or more of the following methods:
+        <ul>
+          <li><strong>Tabletop Exercise:</strong> Facilitated walkthrough of a disruption scenario with key personnel to validate decision-making processes and communication flows.</li>
+          <li><strong>Simulation:</strong> Scenario-based exercise that activates BCP procedures without actual system failover.</li>
+          <li><strong>Full Failover Test:</strong> Actual invocation of recovery procedures, including technology failover, to validate end-to-end recovery capability (coordinated with DR testing per RS-POL-016).</li>
+        </ul>
+      </li>
+      <li>Test results <strong>shall</strong> be documented, including lessons learned and corrective actions.</li>
+      <li>Corrective actions from BCP tests <strong>must</strong> be tracked and resolved within defined timelines.</li>
+      <li>New employees <strong>shall</strong> receive BCP awareness training within 30 days of joining.</li>
+    </ul>
+
+    <h3>8.7 Crisis Communication</h3>
+    <ul>
+      <li>A Crisis Communication Plan <strong>shall</strong> be maintained as part of the BCP, defining:
+        <ul>
+          <li>Communication roles and spokespersons.</li>
+          <li>Internal communication channels (email, phone tree, messaging platform).</li>
+          <li>External communication templates for customers, partners, and regulators.</li>
+          <li>Media handling procedures and approved spokespersons.</li>
+          <li>Escalation procedures and decision authority.</li>
+        </ul>
+      </li>
+      <li>Emergency contact lists <strong>shall</strong> be maintained and updated at least quarterly.</li>
+      <li>At least two independent communication channels <strong>shall</strong> be available during a crisis (e.g., phone + email, or phone + messaging platform).</li>
+    </ul>
+
+    <h3>8.8 Pandemic and Natural Disaster Scenarios</h3>
+
+    <h4>8.8.1 Pandemic Response</h4>
+    <ul>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain a Pandemic Response Plan that includes:
+        <ul>
+          <li>Remote work enablement for all critical function personnel.</li>
+          <li>Health and safety measures for on-site essential workers.</li>
+          <li>Workforce availability planning for absenteeism rates of 30%, 50%, and 70%.</li>
+          <li>Communication protocols for health advisories and operational updates.</li>
+          <li>Technology provisioning for remote work (VPN capacity, collaboration tools, endpoint security).</li>
+          <li>Contractual and regulatory compliance during extended remote operations.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>8.8.2 Natural Disaster Response</h4>
+    <ul>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain response plans for natural disasters relevant to its geographic locations, including:
+        <ul>
+          <li>Earthquakes, floods, cyclones, and severe weather events.</li>
+          <li>Evacuation procedures and assembly points for each facility.</li>
+          <li>Activation of alternate work locations and DR sites.</li>
+          <li>Safety checks and welfare accounting for all personnel.</li>
+          <li>Assessment of facility damage before reoccupation.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to BCP requirements <strong>must</strong> be approved by the CEO or designated senior management sponsor. All exceptions shall be documented with a risk assessment, compensating controls, and a review date not exceeding 12 months.</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>BCP readiness status <strong>shall</strong> be reported to senior management quarterly.</li>
+      <li>BIA <strong>shall</strong> be updated at least annually or when significant organizational changes occur.</li>
+      <li>Internal Audit <strong>shall</strong> review BCP program effectiveness at least annually.</li>
+      <li>Key metrics:
+        <ul>
+          <li>BCP test completion rate (annual target: 100%).</li>
+          <li>Corrective action closure rate from BCP tests.</li>
+          <li>BIA currency (last update date).</li>
+          <li>Emergency contact list currency (last update date).</li>
+          <li>Third-party BCP compliance rate.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Business units that fail to participate in BCP activities (BIA, testing, training) <strong>shall</strong> be escalated to senior management.</li>
+      <li>Failure to maintain current BCP documentation may result in non-compliance findings during audits.</li>
+      <li>Personnel who fail to follow BCP procedures during an actual disruption may face disciplinary action.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Business Impact Analysis reports</td><td>3 years (current + 2 prior versions)</td><td>BCP Coordinator</td></tr>
+        <tr><td>Business Continuity Plans</td><td>3 years (current + 2 prior versions)</td><td>BCP Coordinator</td></tr>
+        <tr><td>BCP test plans and results</td><td>3 years</td><td>BCP Coordinator</td></tr>
+        <tr><td>Crisis communication records</td><td>5 years</td><td>CMT / Communications</td></tr>
+        <tr><td>BCP invocation records (actual events)</td><td>5 years</td><td>BCP Coordinator</td></tr>
+        <tr><td>BCP training and awareness records</td><td>3 years</td><td>HR / BCP Coordinator</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-014 — Incident Response Policy</li>
+      <li>RS-POL-016 — Disaster Recovery Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>Ramdoot Solutions Risk Management Framework</li>
+      <li>Ramdoot Solutions Emergency Evacuation Plan</li>
+      <li>Ramdoot Solutions Pandemic Response Plan</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.5</td><td>The entity identifies, develops, and implements activities to recover from identified security incidents.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>A1.2</td><td>The entity authorizes, designs, develops or acquires, implements, operates, approves, maintains, and monitors environmental protections, software, data back-up processes, and recovery infrastructure to meet its objectives.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>A1.3</td><td>The entity tests recovery plan procedures supporting system recovery to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Business Continuity</td><td>Organizations shall establish, implement, and maintain a business continuity management program to ensure continuity of critical operations during disruptive events.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Crisis Management</td><td>Organizations shall establish crisis management capabilities with defined roles, communication protocols, and decision-making authority.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Actual invocation of the BCP.</li>
+      <li>Significant organizational changes (mergers, acquisitions, new service lines, office relocations).</li>
+      <li>Findings from BCP tests or internal/external audits.</li>
+      <li>Changes in regulatory or contractual requirements.</li>
+      <li>Major changes to the threat landscape (e.g., new pandemic, regional disaster risk changes).</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CEO / Managing Director</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-015 Business Continuity Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

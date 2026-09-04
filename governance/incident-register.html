@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Incident Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Security Incident Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-005</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; Security / Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>After each incident / Monthly summary / Quarterly analysis</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Security Incident Register is the authoritative log of all security incidents detected, reported, and managed at Ramdoot Solutions. It captures the full lifecycle of each incident from initial detection through containment, eradication, recovery, and post-incident review. The register enables trending, root cause analysis, and continuous improvement of the organisation's security posture.</p>
+    <p>This register supports the Incident Response Plan (RS-SEC-004), SOC 2 Trust Services Criteria CC7.2 (monitoring for anomalies), CC7.3 (security incidents), CC7.4 (incident response), and CC7.5 (incident recovery), as well as CERT-In notification requirements under Indian IT Act provisions.</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Incident Managers:</strong></p>
+      <ol>
+        <li><strong>Detection:</strong> When a security incident is detected or reported, create a new entry immediately. Assign a unique Incident ID (format: INC-YYYY-NNN).</li>
+        <li><strong>Triage:</strong> Assess the severity (P1-P4) and assign the incident to the appropriate response team.</li>
+        <li><strong>Containment:</strong> Document all containment actions taken, including timestamps.</li>
+        <li><strong>Investigation:</strong> Record investigation findings, systems affected, and scope of impact.</li>
+        <li><strong>Resolution:</strong> Document the resolution steps and confirm the incident is fully resolved.</li>
+        <li><strong>Root Cause:</strong> Conduct root cause analysis (RCA) for all P1 and P2 incidents. Optionally for P3/P4.</li>
+        <li><strong>Lessons Learned:</strong> Document lessons learned and recommendations. Update controls, policies, or procedures as needed.</li>
+        <li><strong>Closure:</strong> Mark the incident as Closed only after all remediation actions are complete and verified.</li>
+        <li><strong>Reporting:</strong> P1 incidents must be reported to senior management within 1 hour. Incidents involving personal data breach must be reported to CERT-In within 6 hours as per CERT-In Direction of April 2022.</li>
+      </ol>
+    </div>
+
+    <!-- Severity Definitions -->
+    <h2>3. Severity Classification</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Severity</th>
+          <th>Description</th>
+          <th>Examples</th>
+          <th>Response Time</th>
+          <th>Escalation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-critical">P1 &mdash; Critical</span></td>
+          <td>Severe impact on business operations, data integrity, or confidentiality. Active ongoing threat. Service outage affecting clients.</td>
+          <td>Active data breach, ransomware attack, production system compromise, critical data exfiltration</td>
+          <td>Immediate response (within 15 minutes)</td>
+          <td>CISO, Senior Management, Legal &mdash; within 1 hour. CERT-In within 6 hours if data breach.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-high">P2 &mdash; High</span></td>
+          <td>Significant impact on security or operations. Threat is contained but unresolved. Potential for escalation.</td>
+          <td>Successful phishing (credentials exposed), unauthorised access detected, malware on endpoint, partial service degradation</td>
+          <td>Response within 1 hour</td>
+          <td>CISO, IT Manager &mdash; within 4 hours</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-medium">P3 &mdash; Medium</span></td>
+          <td>Moderate impact. No confirmed data exposure. Limited operational effect.</td>
+          <td>Phishing email received (not clicked), policy violation detected, suspicious login attempt, vulnerability discovered</td>
+          <td>Response within 4 hours</td>
+          <td>IT Manager &mdash; within 24 hours</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-low">P4 &mdash; Low</span></td>
+          <td>Minor issue with negligible impact. Informational or precautionary.</td>
+          <td>Failed login attempts, spam increase, minor configuration drift, security scan false positive</td>
+          <td>Response within 1 business day</td>
+          <td>IT Manager &mdash; at next scheduled review</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Incident Register Table -->
+    <h2>4. Incident Register</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1400px;">
+      <thead>
+        <tr>
+          <th>Incident ID</th>
+          <th>Date / Time</th>
+          <th>Reporter</th>
+          <th>Severity</th>
+          <th>Description</th>
+          <th>Systems Affected</th>
+          <th>Containment Actions</th>
+          <th>Resolution</th>
+          <th>Root Cause</th>
+          <th>Lessons Learned</th>
+          <th>Status</th>
+          <th>Review Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="12" style="text-align: center; padding: 2rem; color: var(--rs-muted); font-style: italic;">
+            No incidents recorded. This register will be populated as security incidents are detected and reported. The absence of recorded incidents does not imply the absence of risk &mdash; the register should be maintained as a living document.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <p><strong>Incident ID Format:</strong> <code>INC-[YEAR]-[SEQ]</code> &mdash; for example, <code>INC-2026-001</code> is the first incident recorded in 2026. Sequence numbers are assigned chronologically and never reused.</p>
+    </div>
+
+    <!-- Incident Lifecycle -->
+    <h2>5. Incident Lifecycle</h2>
+    <p>Each incident progresses through the following stages. The current stage should be reflected in the Status column of the register.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Status Value</th>
+          <th>Description</th>
+          <th>Key Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Detection</td>
+          <td><span class="badge badge-draft">New</span></td>
+          <td>Incident reported or detected by monitoring systems</td>
+          <td>Create register entry, assign ID, notify incident manager</td>
+        </tr>
+        <tr>
+          <td>2. Triage</td>
+          <td><span class="badge badge-pending">Triaging</span></td>
+          <td>Initial assessment of severity, scope, and impact</td>
+          <td>Classify severity (P1-P4), assign response team, initiate escalation if needed</td>
+        </tr>
+        <tr>
+          <td>3. Containment</td>
+          <td><span class="badge badge-medium">Containing</span></td>
+          <td>Actions taken to limit the spread and impact of the incident</td>
+          <td>Isolate affected systems, block malicious IPs, disable compromised accounts, preserve evidence</td>
+        </tr>
+        <tr>
+          <td>4. Eradication</td>
+          <td><span class="badge badge-medium">Eradicating</span></td>
+          <td>Remove the root cause of the incident</td>
+          <td>Remove malware, patch vulnerabilities, close attack vectors, restore from clean backups</td>
+        </tr>
+        <tr>
+          <td>5. Recovery</td>
+          <td><span class="badge badge-implemented">Recovering</span></td>
+          <td>Restore systems and services to normal operation</td>
+          <td>Restore services, verify system integrity, monitor for recurrence, communicate with stakeholders</td>
+        </tr>
+        <tr>
+          <td>6. Post-Incident Review</td>
+          <td><span class="badge badge-implemented">Under Review</span></td>
+          <td>Analyse the incident, identify root cause, and document lessons learned</td>
+          <td>Conduct RCA, document timeline, update risk register, implement improvements</td>
+        </tr>
+        <tr>
+          <td>7. Closed</td>
+          <td><span class="badge badge-implemented">Closed</span></td>
+          <td>All actions complete, lessons documented, register entry finalised</td>
+          <td>Archive evidence, update policies/controls as needed, close register entry</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Notification Requirements -->
+    <h2>6. Notification Requirements</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Trigger</th>
+          <th>Notify</th>
+          <th>Timeline</th>
+          <th>Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>All P1 incidents</td>
+          <td>CISO, Senior Management, Board (if material)</td>
+          <td>Within 1 hour</td>
+          <td>Phone/instant message + email</td>
+        </tr>
+        <tr>
+          <td>Personal data breach (any severity)</td>
+          <td>CERT-In, Data Protection Officer, Legal</td>
+          <td>Within 6 hours (CERT-In); as applicable under DPDPA</td>
+          <td>CERT-In portal, email, formal notification</td>
+        </tr>
+        <tr>
+          <td>Client data involved</td>
+          <td>Affected clients (per contractual obligations)</td>
+          <td>As per SLA (typically 24-72 hours)</td>
+          <td>Written notification per contract terms</td>
+        </tr>
+        <tr>
+          <td>P2 incidents</td>
+          <td>CISO, IT Manager</td>
+          <td>Within 4 hours</td>
+          <td>Email + incident tracking system</td>
+        </tr>
+        <tr>
+          <td>Monthly summary</td>
+          <td>Security and Compliance Committee</td>
+          <td>Monthly</td>
+          <td>Incident summary report</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Metrics and Reporting -->
+    <h2>7. Metrics and Reporting</h2>
+    <p>The following metrics are derived from this register and reported quarterly to the Security and Compliance Committee:</p>
+    <ul>
+      <li><strong>Total incidents by severity:</strong> Count of P1, P2, P3, P4 incidents per quarter</li>
+      <li><strong>Mean Time to Detect (MTTD):</strong> Average time from incident occurrence to detection</li>
+      <li><strong>Mean Time to Contain (MTTC):</strong> Average time from detection to containment</li>
+      <li><strong>Mean Time to Resolve (MTTR):</strong> Average time from detection to full resolution</li>
+      <li><strong>Incident categories:</strong> Breakdown by type (malware, phishing, unauthorised access, data loss, etc.)</li>
+      <li><strong>Repeat incidents:</strong> Count of incidents with the same root cause as a prior incident</li>
+      <li><strong>Overdue incidents:</strong> Incidents exceeding their response or resolution SLAs</li>
+    </ul>
+
+    <!-- Related Documents -->
+    <h2>8. Related Documents</h2>
+    <ul>
+      <li><a href="../security/incident-response-plan.html">RS-SEC-004 &mdash; Incident Response Plan</a></li>
+      <li><a href="./risk-register.html">RS-REG-001 &mdash; Risk Register</a></li>
+      <li><a href="./change-register.html">RS-REG-006 &mdash; Change Register</a></li>
+      <li><a href="../procedures/incident-management.html">RS-PROC-003 &mdash; Incident Management Procedure</a></li>
+      <li><a href="./compliance-policy.html">RS-GOV-002 &mdash; Compliance Policy</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with severity definitions and lifecycle stages</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-005 &mdash; Security Incident Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

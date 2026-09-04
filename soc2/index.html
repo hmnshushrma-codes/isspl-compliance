@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 2 Documentation — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="doc-nav no-print">
+  <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+  <div>
+    <a href="../soc1/index.html">SOC 1</a> &nbsp;|&nbsp;
+    <a href="../nisp/nisp.html">NISP</a> &nbsp;|&nbsp;
+    <a href="../gap-analysis.html">Gap Analysis</a> &nbsp;|&nbsp;
+    <a href="../index.html">Home</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <div class="doc-header">
+    <div class="org-name">RAMDOOT SOLUTIONS</div>
+    <div class="org-sub">Compliance &amp; Information Security</div>
+    <h1 class="doc-title">SOC 2 Readiness Documentation</h1>
+  </div>
+
+  <div class="callout callout-info">
+    <strong>Note:</strong> This documentation is part of Ramdoot Solutions' internal compliance and security governance program. It does not constitute or represent an independent SOC 2 attestation report.
+  </div>
+
+  <h2>SOC 2 Documents</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>SOC 2 Readiness Report</h3>
+      <p>Overall readiness assessment against Trust Services Criteria with gap analysis and remediation roadmap.</p>
+      <div class="card-meta">RS-SOC2-001 &nbsp;|&nbsp; v1.0 &nbsp;|&nbsp; <span class="badge badge-draft">Draft</span></div>
+      <a href="soc2-readiness-report.html" class="card-link">Open Document &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>System Description</h3>
+      <p>Detailed description of system boundaries, infrastructure, software, people, procedures, and data.</p>
+      <div class="card-meta">RS-SOC2-002 &nbsp;|&nbsp; v1.0 &nbsp;|&nbsp; <span class="badge badge-draft">Draft</span></div>
+      <a href="system-description.html" class="card-link">Open Document &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Trust Services Criteria</h3>
+      <p>Mapping of each AICPA Trust Services Criterion (CC1–CC9, A1, C1) to Ramdoot Solutions' controls.</p>
+      <div class="card-meta">RS-SOC2-003 &nbsp;|&nbsp; v1.0 &nbsp;|&nbsp; <span class="badge badge-draft">Draft</span></div>
+      <a href="trust-services-criteria.html" class="card-link">Open Document &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Control Matrix</h3>
+      <p>Comprehensive matrix of 40+ internal controls with TSC mapping, evidence requirements, and implementation status.</p>
+      <div class="card-meta">RS-SOC2-004 &nbsp;|&nbsp; v1.0 &nbsp;|&nbsp; <span class="badge badge-draft">Draft</span></div>
+      <a href="control-matrix.html" class="card-link">Open Document &rarr;</a>
+    </div>
+
+    <div class="card">
+      <h3>Evidence Register</h3>
+      <p>Register of 80+ evidence items required for SOC 2 assessment, mapped to criteria and controls.</p>
+      <div class="card-meta">RS-SOC2-005 &nbsp;|&nbsp; v1.0 &nbsp;|&nbsp; <span class="badge badge-draft">Draft</span></div>
+      <a href="evidence-register.html" class="card-link">Open Document &rarr;</a>
+    </div>
+  </div>
+
+  <h2>Related Documentation</h2>
+  <table>
+    <thead>
+      <tr><th>Document</th><th>ID</th><th>Relevance</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gap Analysis</td><td>RS-GAP-001</td><td>Identifies gaps against SOC 2 criteria</td><td><a href="../gap-analysis.html">gap-analysis.html</a></td></tr>
+      <tr><td>NISP</td><td>RS-NISP-001</td><td>Overarching security policy aligned with TSC</td><td><a href="../nisp/nisp.html">nisp/nisp.html</a></td></tr>
+      <tr><td>Information Security Policy</td><td>RS-POL-001</td><td>Foundation for CC1, CC5 controls</td><td><a href="../security/information-security-policy.html">security/information-security-policy.html</a></td></tr>
+      <tr><td>Access Control Policy</td><td>RS-POL-002</td><td>Supports CC6 logical access criteria</td><td><a href="../security/access-control-policy.html">security/access-control-policy.html</a></td></tr>
+      <tr><td>Incident Response Policy</td><td>RS-POL-014</td><td>Supports CC7.3–CC7.5 criteria</td><td><a href="../security/incident-response-policy.html">security/incident-response-policy.html</a></td></tr>
+      <tr><td>Change Management Policy</td><td>RS-POL-012</td><td>Supports CC8.1 criteria</td><td><a href="../security/change-management-policy.html">security/change-management-policy.html</a></td></tr>
+      <tr><td>Vendor Management Policy</td><td>RS-POL-018</td><td>Supports CC9.1–CC9.2 criteria</td><td><a href="../security/vendor-management-policy.html">security/vendor-management-policy.html</a></td></tr>
+      <tr><td>Evidence Request List</td><td>RS-EV-REQ-001</td><td>Comprehensive list of evidence to collect</td><td><a href="../evidence/evidence-request-list.html">evidence/evidence-request-list.html</a></td></tr>
+      <tr><td>Management Decisions</td><td>RS-MGT-001</td><td>Unresolved decisions impacting SOC 2 scope</td><td><a href="../management-decisions-required.html">management-decisions-required.html</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Trust Services Categories in Scope</h2>
+  <table>
+    <thead><tr><th>Category</th><th>Status</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Security</strong> (Common Criteria CC1–CC9)</td><td><span class="badge badge-implemented">Baseline — In Scope</span></td><td>Required for all SOC 2 engagements</td></tr>
+      <tr><td>Availability (A1)</td><td><span class="badge badge-pending">Requires Scope Confirmation</span></td><td>Recommended if SLAs exist with customers</td></tr>
+      <tr><td>Confidentiality (C1)</td><td><span class="badge badge-pending">Requires Scope Confirmation</span></td><td>Recommended if handling confidential customer data</td></tr>
+      <tr><td>Processing Integrity</td><td><span class="badge badge-pending">Requires Scope Confirmation</span></td><td>Applicable if processing transactions for customers</td></tr>
+      <tr><td>Privacy</td><td><span class="badge badge-pending">Requires Scope Confirmation</span></td><td>Applicable if processing personal information per DPDP Act</td></tr>
+    </tbody>
+  </table>
+
+  <div class="doc-footer">
+    <span>Ramdoot Solutions &mdash; Confidential</span>
+    <span>SOC 2 Readiness Documentation</span>
+  </div>
+
+</div>
+</body>
+</html>

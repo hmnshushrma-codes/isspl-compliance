@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-014 Incident Response Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Incident Response Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-014</td></tr>
+        <tr><td><strong>Title</strong></td><td>Incident Response Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy establishes the framework for detecting, reporting, assessing, responding to, and recovering from information security incidents at Ramdoot Solutions. It defines the incident classification methodology, response team structure, escalation paths, communication protocols, and regulatory notification obligations (including CERT-In requirements) to ensure a coordinated and effective response that minimizes damage and supports rapid recovery.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All information security incidents affecting Ramdoot Solutions' systems, data, networks, or personnel.</li>
+      <li>All production, staging, development, and disaster-recovery environments.</li>
+      <li>Incidents involving third-party service providers that process or store Ramdoot Solutions data.</li>
+      <li>All employees, contractors, consultants, and temporary personnel.</li>
+      <li>Physical security incidents that may impact information assets.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Detect and report security incidents promptly through defined channels.</li>
+      <li>Classify incidents accurately to ensure appropriate response effort and escalation.</li>
+      <li>Contain incidents rapidly to prevent further damage.</li>
+      <li>Eradicate the root cause and recover affected systems to normal operations.</li>
+      <li>Preserve evidence for forensic analysis and potential legal proceedings.</li>
+      <li>Comply with regulatory notification requirements, including CERT-In's 6-hour reporting mandate.</li>
+      <li>Conduct post-incident reviews to identify improvements and prevent recurrence.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Security Incident</strong></td><td>An event that actually or potentially jeopardizes the confidentiality, integrity, or availability of an information system or the information it processes, stores, or transmits, or constitutes a violation of security policies or procedures.</td></tr>
+        <tr><td><strong>Security Event</strong></td><td>An observable occurrence in a system or network. Not all events are incidents.</td></tr>
+        <tr><td><strong>Incident Response Team (IRT)</strong></td><td>The cross-functional team responsible for managing the response to security incidents.</td></tr>
+        <tr><td><strong>Containment</strong></td><td>Actions taken to limit the scope and impact of a security incident.</td></tr>
+        <tr><td><strong>Eradication</strong></td><td>The process of eliminating the root cause of a security incident from the environment.</td></tr>
+        <tr><td><strong>CERT-In</strong></td><td>Indian Computer Emergency Response Team — the national agency for responding to computer security incidents in India.</td></tr>
+        <tr><td><strong>Chain of Custody</strong></td><td>The documented and unbroken transfer of evidence from collection to presentation, maintaining evidence integrity.</td></tr>
+        <tr><td><strong>Post-Incident Review (PIR)</strong></td><td>A structured review conducted after incident closure to identify root causes, lessons learned, and improvement actions.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Incident Commander</strong></td>
+          <td>Leads the incident response; makes containment and escalation decisions; coordinates team activities; authorizes communications; reports to senior leadership.</td>
+        </tr>
+        <tr>
+          <td><strong>CISO</strong></td>
+          <td>Assumes Incident Commander role for P1 incidents; liaises with senior management and legal counsel; authorizes regulatory notifications.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Security Analysts</strong></td>
+          <td>Perform initial triage and classification; conduct technical investigation; implement containment measures; collect and preserve evidence.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Operations</strong></td>
+          <td>Support containment and eradication actions; perform system recovery; restore services; implement infrastructure-level changes.</td>
+        </tr>
+        <tr>
+          <td><strong>Legal / Compliance</strong></td>
+          <td>Advise on regulatory notification obligations; manage legal holds; coordinate with external counsel if needed.</td>
+        </tr>
+        <tr>
+          <td><strong>Communications / PR</strong></td>
+          <td>Draft external communications; manage customer and media communications as directed by the Incident Commander.</td>
+        </tr>
+        <tr>
+          <td><strong>HR</strong></td>
+          <td>Support investigations involving insider threats; manage disciplinary actions resulting from incidents.</td>
+        </tr>
+        <tr>
+          <td><strong>All Personnel</strong></td>
+          <td>Report suspected security incidents immediately through designated channels; preserve evidence; cooperate with investigations.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain a documented Incident Response Plan that is tested at least annually.</li>
+      <li>All security incidents <strong>must</strong> be reported to the IT Security Team within one (1) hour of detection.</li>
+      <li>Incidents <strong>shall</strong> be classified using the priority system defined in Section 8.1 (P1 through P4).</li>
+      <li>The Incident Response Team <strong>must</strong> be activated for all P1 and P2 incidents.</li>
+      <li>CERT-In <strong>shall</strong> be notified within six (6) hours of discovery for incidents meeting the mandatory reporting criteria as per the Information Technology (The Indian Computer Emergency Response Team and Manner of Performing Functions and Duties) Rules, 2013 and subsequent directives.</li>
+      <li>Evidence <strong>must</strong> be collected, preserved, and handled following chain-of-custody procedures.</li>
+      <li>A Post-Incident Review <strong>shall</strong> be conducted for all P1 and P2 incidents, and optionally for P3 incidents.</li>
+      <li>Incident response capabilities <strong>shall</strong> be tested through tabletop exercises or simulations at least annually.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Incident Classification</h3>
+    <table>
+      <thead>
+        <tr><th>Priority</th><th>Severity</th><th>Description</th><th>Examples</th><th>Response Time</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>P1</strong></td>
+          <td>Critical</td>
+          <td>Confirmed breach of sensitive data; complete service outage; active exploitation with widespread impact.</td>
+          <td>Data breach involving PII/financial data; ransomware attack; complete infrastructure compromise.</td>
+          <td>Immediate (within 15 minutes)</td>
+        </tr>
+        <tr>
+          <td><strong>P2</strong></td>
+          <td>High</td>
+          <td>Significant security event with potential for data loss or service disruption; active threat requiring urgent response.</td>
+          <td>Malware outbreak on multiple systems; unauthorized access to production systems; significant DDoS attack.</td>
+          <td>Within 1 hour</td>
+        </tr>
+        <tr>
+          <td><strong>P3</strong></td>
+          <td>Medium</td>
+          <td>Security event with limited scope; potential threat that is contained or under investigation.</td>
+          <td>Phishing campaign targeting employees; single system compromise; unauthorized access attempt blocked.</td>
+          <td>Within 4 hours</td>
+        </tr>
+        <tr>
+          <td><strong>P4</strong></td>
+          <td>Low</td>
+          <td>Minor security event; policy violation; informational security alert with no immediate impact.</td>
+          <td>Single failed social engineering attempt; minor policy violation; informational scanning activity.</td>
+          <td>Within 24 hours</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.2 Incident Response Phases</h3>
+
+    <h4>8.2.1 Detection and Reporting</h4>
+    <ul>
+      <li>Security incidents may be detected through automated monitoring (SIEM alerts, IDS/IPS, endpoint protection), user reports, third-party notifications, or threat intelligence feeds.</li>
+      <li>All personnel <strong>shall</strong> report suspected incidents to the IT Security Team via email (<span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>) or phone (<span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>).</li>
+      <li>The IT Security Team <strong>shall</strong> perform initial triage within the response times defined in Section 8.1.</li>
+    </ul>
+
+    <h4>8.2.2 Containment</h4>
+    <ul>
+      <li>Short-term containment <strong>shall</strong> be implemented immediately to limit incident scope (e.g., isolating affected systems, blocking malicious IPs, disabling compromised accounts).</li>
+      <li>Long-term containment <strong>shall</strong> be implemented to allow continued operations while eradication is planned (e.g., deploying temporary fixes, increasing monitoring on affected systems).</li>
+      <li>Containment decisions <strong>shall</strong> balance the need to preserve evidence with the need to limit damage.</li>
+      <li>The Incident Commander <strong>shall</strong> authorize containment actions for P1 and P2 incidents.</li>
+    </ul>
+
+    <h4>8.2.3 Eradication</h4>
+    <ul>
+      <li>Root cause analysis <strong>shall</strong> be performed to identify the underlying vulnerability or attack vector.</li>
+      <li>The threat <strong>must</strong> be completely removed from the environment (e.g., removing malware, patching vulnerabilities, closing unauthorized access paths).</li>
+      <li>All compromised credentials <strong>shall</strong> be reset.</li>
+      <li>Affected systems <strong>shall</strong> be rebuilt or restored from known-clean backups where complete eradication cannot be verified.</li>
+    </ul>
+
+    <h4>8.2.4 Recovery</h4>
+    <ul>
+      <li>Affected systems <strong>shall</strong> be restored to normal operations following a phased approach.</li>
+      <li>Systems <strong>must</strong> be validated as clean and properly configured before being returned to production.</li>
+      <li>Enhanced monitoring <strong>shall</strong> be maintained on recovered systems for a minimum of 30 days to detect any recurrence.</li>
+      <li>Users and business units <strong>shall</strong> be notified when services are restored.</li>
+    </ul>
+
+    <h3>8.3 Communication Plan</h3>
+    <table>
+      <thead>
+        <tr><th>Audience</th><th>Communication Method</th><th>Timing</th><th>Responsible Party</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IT Security Team</td>
+          <td>Email, phone, incident management system</td>
+          <td>Immediately upon detection</td>
+          <td>Reporting individual</td>
+        </tr>
+        <tr>
+          <td>Senior Management</td>
+          <td>Email briefing, phone call for P1</td>
+          <td>P1: within 30 minutes; P2: within 2 hours</td>
+          <td>CISO / Incident Commander</td>
+        </tr>
+        <tr>
+          <td>Affected Customers</td>
+          <td>Email notification, dedicated communications page</td>
+          <td>As determined by Legal/CISO; within regulatory timelines</td>
+          <td>Communications / CISO</td>
+        </tr>
+        <tr>
+          <td>CERT-In</td>
+          <td>CERT-In reporting portal / email</td>
+          <td>Within 6 hours of incident discovery</td>
+          <td>CISO / Legal</td>
+        </tr>
+        <tr>
+          <td>Regulatory Authorities</td>
+          <td>As required by applicable regulations</td>
+          <td>Per regulatory timelines</td>
+          <td>Legal / CISO</td>
+        </tr>
+        <tr>
+          <td>Law Enforcement</td>
+          <td>As directed by Legal counsel</td>
+          <td>When criminal activity is suspected</td>
+          <td>Legal / CISO</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.4 Regulatory Notification — CERT-In</h3>
+    <p>In accordance with the directions issued by CERT-In under the Information Technology Act, 2000, Ramdoot Solutions <strong>shall</strong> report the following types of incidents within <strong>six (6) hours</strong> of noticing or being brought to notice:</p>
+    <ul>
+      <li>Targeted scanning/probing of critical networks/systems.</li>
+      <li>Compromise of critical systems/information.</li>
+      <li>Unauthorized access of IT systems/data.</li>
+      <li>Defacement of websites or intrusion into websites.</li>
+      <li>Malicious code attacks such as spreading of virus/worm/Trojan/botnets/spyware/ransomware/cryptominers.</li>
+      <li>Attack on servers (database, mail, DNS) and network devices (routers).</li>
+      <li>Identity theft, spoofing and phishing attacks.</li>
+      <li>Denial of Service (DoS) and Distributed Denial of Service (DDoS) attacks.</li>
+      <li>Attacks on critical infrastructure, SCADA, and operational technology systems and wireless networks.</li>
+      <li>Attacks on applications such as e-governance, e-commerce, etc.</li>
+      <li>Data breach or data leak.</li>
+      <li>Attacks or incidents affecting cloud computing systems/servers/software/applications.</li>
+      <li>Attacks or malicious/suspicious activities affecting systems/servers/networks/software/applications related to Big Data, Blockchain, virtual assets, virtual asset exchanges, custodian wallets, robotics, 3D and 4D printing, additive manufacturing, and drones.</li>
+      <li>Attacks or malicious/suspicious activities affecting systems/servers/software/applications related to Artificial Intelligence and Machine Learning.</li>
+    </ul>
+    <p>The CISO <strong>shall</strong> ensure that incident notification procedures and contact details for CERT-In are current and readily accessible.</p>
+
+    <h3>8.5 Post-Incident Review</h3>
+    <ul>
+      <li>A Post-Incident Review (PIR) <strong>shall</strong> be conducted within ten (10) business days of incident closure for all P1 and P2 incidents.</li>
+      <li>The PIR <strong>must</strong> document:
+        <ul>
+          <li>Incident timeline — from detection through closure.</li>
+          <li>Root cause analysis.</li>
+          <li>Effectiveness of response actions.</li>
+          <li>Gaps identified in detection, response, or communication.</li>
+          <li>Corrective actions with owners and target dates.</li>
+          <li>Recommendations for preventing recurrence.</li>
+        </ul>
+      </li>
+      <li>PIR findings <strong>shall</strong> be tracked in the organization's corrective action register and reported to senior management.</li>
+    </ul>
+
+    <h3>8.6 Evidence Preservation</h3>
+    <ul>
+      <li>All digital evidence <strong>shall</strong> be collected and preserved following forensically sound procedures.</li>
+      <li>Chain of custody <strong>must</strong> be maintained for all evidence, documenting who collected it, when, where, and how it was stored.</li>
+      <li>Evidence <strong>shall</strong> include (as applicable): system logs, memory dumps, disk images, network captures, malware samples, and screenshots.</li>
+      <li>Evidence storage <strong>must</strong> be secure, with access restricted to authorized incident response personnel and legal counsel.</li>
+      <li>Evidence <strong>shall</strong> be retained for the duration of any investigation, legal proceedings, or regulatory inquiry, and for a minimum of three (3) years after incident closure.</li>
+    </ul>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>No exceptions to CERT-In notification requirements are permitted. Exceptions to other provisions of this policy <strong>must</strong> be approved in writing by the CISO and documented in the exception register.</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>Incident response metrics <strong>shall</strong> be reported to the CISO monthly and to senior leadership quarterly.</li>
+      <li>Incident response plan testing <strong>shall</strong> be conducted at least annually through tabletop exercises or simulations.</li>
+      <li>Key metrics:
+        <ul>
+          <li>Mean time to detect (MTTD).</li>
+          <li>Mean time to respond (MTTR).</li>
+          <li>Mean time to contain (MTTC).</li>
+          <li>Number of incidents by classification (P1-P4).</li>
+          <li>CERT-In notification compliance rate (within 6 hours).</li>
+          <li>PIR completion rate for P1/P2 incidents.</li>
+          <li>Number and status of corrective actions from PIRs.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Failure to report a suspected security incident within the required timeframe may result in disciplinary action.</li>
+      <li>Deliberately concealing or destroying evidence related to a security incident shall be treated as gross misconduct.</li>
+      <li>Failure to comply with CERT-In notification requirements may result in legal penalties under the Information Technology Act, 2000.</li>
+      <li>Personnel who fail to cooperate with incident investigations may face disciplinary action, up to and including termination.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Incident reports and investigation records</td><td>5 years</td><td>IT Security Team</td></tr>
+        <tr><td>CERT-In notification records</td><td>5 years</td><td>CISO Office / Legal</td></tr>
+        <tr><td>Post-Incident Review reports</td><td>5 years</td><td>IT Security Team</td></tr>
+        <tr><td>Digital forensic evidence</td><td>Duration of investigation + 3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Incident response plan test records</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Communication records (notifications sent)</td><td>5 years</td><td>CISO Office</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-009 — Vulnerability Management Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>RS-POL-015 — Business Continuity Policy</li>
+      <li>RS-POL-016 — Disaster Recovery Policy</li>
+      <li>Ramdoot Solutions Data Breach Notification Procedure</li>
+      <li>Ramdoot Solutions Forensic Investigation Procedure</li>
+      <li>CERT-In Directions dated 28 April 2022 (and subsequent amendments)</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.3</td><td>The entity evaluates security events to determine whether they could or have resulted in a failure of the entity to meet its objectives (security incidents) and, if so, takes actions to prevent or address such failures.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.4</td><td>The entity responds to identified security incidents by executing a defined incident response program to understand, contain, remediate, and communicate security incidents, as appropriate.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Incident Management</td><td>Organizations shall establish and maintain incident response capabilities to detect, respond to, and recover from security incidents.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Regulatory Reporting</td><td>Organizations shall comply with CERT-In incident reporting requirements within the mandated timelines.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Major security incidents that revealed gaps in the response process.</li>
+      <li>Changes to CERT-In reporting requirements or other regulatory obligations.</li>
+      <li>Organizational changes affecting the Incident Response Team structure.</li>
+      <li>Findings from incident response plan tests or external audits.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-014 Incident Response Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

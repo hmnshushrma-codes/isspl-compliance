@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Management Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Change Management Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-006</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Internal &mdash; IT / Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Ongoing (per change) / Monthly summary review</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Change Management Register tracks all changes to production IT systems, infrastructure, applications, and configurations at Ramdoot Solutions. Effective change management reduces the risk of unplanned outages, security vulnerabilities, and service degradation by ensuring all changes are assessed, approved, tested, and documented before implementation.</p>
+    <p>This register supports the Change Management Procedure (RS-PROC-004), SOC 2 Trust Services Criteria CC8.1 (change management), and aligns with ITIL change management best practices.</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Change Requesters:</strong></p>
+      <ol>
+        <li><strong>Submit:</strong> Create a new entry with a unique Change ID (format: CHG-YYYY-NNN). Describe the change, its business justification, and systems affected.</li>
+        <li><strong>Risk Assessment:</strong> Evaluate the risk level (Low/Medium/High/Critical) based on scope of impact, complexity, and reversibility.</li>
+        <li><strong>Approval:</strong> Route the change for approval based on its risk level (see Section 3). No changes should be implemented without documented approval.</li>
+        <li><strong>Testing:</strong> Where feasible, test the change in a non-production environment before implementation. Document test results.</li>
+        <li><strong>Rollback Plan:</strong> Every change must have a documented rollback plan. If the change cannot be safely rolled back, this must be explicitly noted and approved.</li>
+        <li><strong>Implementation:</strong> Implement the change during the approved maintenance window. Follow the implementation plan.</li>
+        <li><strong>Post-Implementation Review:</strong> After implementation, verify the change was successful. Document any issues encountered.</li>
+        <li><strong>Closure:</strong> Update the register with the final status and close the change request.</li>
+      </ol>
+    </div>
+
+    <!-- Change Categories -->
+    <h2>3. Change Categories and Approval Requirements</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Risk Level</th>
+          <th>Approver</th>
+          <th>Lead Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Standard</strong></td>
+          <td>Pre-approved, routine changes with well-understood risk and established procedures (e.g., regular patching, user account creation)</td>
+          <td><span class="badge badge-low">Low</span></td>
+          <td>IT Manager (pre-approved)</td>
+          <td>As per schedule</td>
+        </tr>
+        <tr>
+          <td><strong>Normal</strong></td>
+          <td>Non-routine changes requiring individual assessment and approval (e.g., application deployment, configuration change, infrastructure upgrade)</td>
+          <td><span class="badge badge-medium">Medium</span></td>
+          <td>IT Manager + CISO review</td>
+          <td>Minimum 3 business days</td>
+        </tr>
+        <tr>
+          <td><strong>Major</strong></td>
+          <td>High-impact changes affecting critical systems or multiple services (e.g., database migration, architecture change, new system deployment)</td>
+          <td><span class="badge badge-high">High</span></td>
+          <td>Change Advisory Board (CAB)</td>
+          <td>Minimum 5 business days</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency</strong></td>
+          <td>Urgent changes required to resolve a critical incident or address an immediate security vulnerability. Bypasses normal approval timelines.</td>
+          <td><span class="badge badge-critical">Critical</span></td>
+          <td>CISO or Senior Management (verbal, with retrospective documentation)</td>
+          <td>Immediate (post-approval within 48 hours)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Change Advisory Board -->
+    <h2>4. Change Advisory Board (CAB)</h2>
+    <p>The CAB reviews and approves Major changes and provides oversight of the change management process. The CAB meets <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> or on an ad-hoc basis for urgent reviews.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Name</th>
+          <th>Responsibility</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chair</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Leads CAB meetings, makes final approval decisions</td>
+        </tr>
+        <tr>
+          <td>Security Representative</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Assesses security implications of proposed changes</td>
+        </tr>
+        <tr>
+          <td>Technical Lead</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Evaluates technical feasibility and implementation approach</td>
+        </tr>
+        <tr>
+          <td>Operations Representative</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Assesses operational impact and scheduling</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Change Register Table -->
+    <h2>5. Change Register</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1400px;">
+      <thead>
+        <tr>
+          <th>Change ID</th>
+          <th>Date Submitted</th>
+          <th>Requester</th>
+          <th>Change Description</th>
+          <th>Systems Affected</th>
+          <th>Risk Assessment</th>
+          <th>Approver</th>
+          <th>Implementation Date</th>
+          <th>Rollback Plan</th>
+          <th>Post-Impl Review</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="11" style="text-align: center; padding: 2rem; color: var(--rs-muted); font-style: italic;">
+            No changes recorded. This register will be populated as change requests are submitted. All changes to production systems must be documented here before implementation.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout callout-warning">
+      <p><strong>Change ID Format:</strong> <code>CHG-[YEAR]-[SEQ]</code> &mdash; for example, <code>CHG-2026-001</code> is the first change request in 2026. For emergency changes, append <code>-E</code> (e.g., <code>CHG-2026-005-E</code>).</p>
+    </div>
+
+    <!-- Change Status Values -->
+    <h2>6. Change Status Definitions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-draft">Submitted</span></td><td>Change request created and pending review/approval</td></tr>
+        <tr><td><span class="badge badge-pending">Under Review</span></td><td>Change is being assessed by approver(s) or CAB</td></tr>
+        <tr><td><span class="badge badge-implemented">Approved</span></td><td>Change approved and scheduled for implementation</td></tr>
+        <tr><td><span class="badge badge-required">Rejected</span></td><td>Change request denied; reasons documented</td></tr>
+        <tr><td><span class="badge badge-medium">In Progress</span></td><td>Change is being implemented</td></tr>
+        <tr><td><span class="badge badge-implemented">Completed</span></td><td>Change successfully implemented and verified</td></tr>
+        <tr><td><span class="badge badge-required">Rolled Back</span></td><td>Change was implemented but rolled back due to issues</td></tr>
+        <tr><td><span class="badge badge-required">Failed</span></td><td>Implementation failed; rollback executed or remediation in progress</td></tr>
+        <tr><td><span class="badge badge-not-applicable">Cancelled</span></td><td>Change request withdrawn before implementation</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Maintenance Windows -->
+    <h2>7. Maintenance Windows</h2>
+    <p>Standard and Normal changes should be scheduled during approved maintenance windows to minimise client impact.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Window</th>
+          <th>Schedule</th>
+          <th>Applicable Changes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Weekly Maintenance</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Standard changes, minor patches, configuration updates</td>
+        </tr>
+        <tr>
+          <td>Monthly Maintenance</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Normal changes, feature deployments, security patches</td>
+        </tr>
+        <tr>
+          <td>Quarterly Maintenance</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Major changes, infrastructure upgrades, OS updates</td>
+        </tr>
+        <tr>
+          <td>Emergency</td>
+          <td>As needed (no fixed schedule)</td>
+          <td>Emergency changes only &mdash; requires CISO or Senior Management approval</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Metrics -->
+    <h2>8. Metrics and Reporting</h2>
+    <p>The following metrics are derived from this register and reported monthly to the IT Manager and quarterly to the Security and Compliance Committee:</p>
+    <ul>
+      <li><strong>Total changes by category:</strong> Count of Standard, Normal, Major, Emergency changes per period</li>
+      <li><strong>Change success rate:</strong> Percentage of changes completed successfully without rollback</li>
+      <li><strong>Emergency change ratio:</strong> Percentage of emergency changes vs. total changes (target: below 10%)</li>
+      <li><strong>Failed changes:</strong> Count and details of changes that were rolled back or failed</li>
+      <li><strong>Unauthorised changes:</strong> Changes implemented without proper approval (should be zero)</li>
+      <li><strong>Average lead time:</strong> Average time from submission to implementation</li>
+    </ul>
+
+    <!-- Related Documents -->
+    <h2>9. Related Documents</h2>
+    <ul>
+      <li><a href="../procedures/change-management.html">RS-PROC-004 &mdash; Change Management Procedure</a></li>
+      <li><a href="./incident-register.html">RS-REG-005 &mdash; Security Incident Register</a></li>
+      <li><a href="./risk-register.html">RS-REG-001 &mdash; Risk Register</a></li>
+      <li><a href="./asset-register.html">RS-REG-003 &mdash; IT Asset Register</a></li>
+      <li><a href="../security/information-security-policy.html">RS-SEC-001 &mdash; Information Security Policy</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with categories and CAB structure</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-006 &mdash; Change Management Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

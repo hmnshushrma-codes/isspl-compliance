@@ -1,0 +1,170 @@
+/* ============================================================
+   Ramdoot Solutions — Compliance Documentation Suite
+   Print Stylesheet — A4 Optimized
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 22mm 16mm;
+
+  @bottom-center {
+    content: "Ramdoot Solutions — Confidential";
+    font-size: 8pt;
+    color: #999;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  @bottom-right {
+    content: "Page " counter(page);
+    font-size: 8pt;
+    color: #999;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+}
+
+@media print {
+  /* --- Hide screen-only elements --- */
+  .doc-nav,
+  .btn-print,
+  .no-print { display: none !important; }
+
+  /* --- Base --- */
+  body {
+    font-size: 10pt;
+    color: #000;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .page-wrapper {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* --- Links --- */
+  a { color: #000; text-decoration: none; }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+    word-break: break-all;
+  }
+  /* Don't show href for internal links */
+  a[href^="#"]::after,
+  a[href^="./"]::after,
+  a[href^="../"]::after { content: ""; }
+
+  /* --- Page Breaks --- */
+  h1, h2 { page-break-after: avoid; }
+  h1, h2, h3, h4 { page-break-after: avoid; }
+
+  .cover-page { page-break-after: always; }
+  .toc { page-break-after: always; }
+
+  section { page-break-inside: avoid; }
+  section.allow-break { page-break-inside: auto; }
+
+  table { page-break-inside: auto; }
+  tr { page-break-inside: avoid; page-break-after: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+
+  .callout { page-break-inside: avoid; }
+  .approval-block { page-break-inside: avoid; }
+  .doc-control { page-break-inside: avoid; }
+
+  blockquote, pre, figure {
+    page-break-inside: avoid;
+  }
+
+  /* Prevent orphan headings */
+  h1, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  p {
+    orphans: 2;
+    widows: 2;
+  }
+
+  /* --- Tables --- */
+  table {
+    font-size: 9pt;
+    border: 1px solid #ccc;
+  }
+
+  thead th {
+    background: #1a2744 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  td, th {
+    border: 1px solid #ddd;
+    padding: 4pt 6pt;
+  }
+
+  /* Ensure tables don't overflow */
+  table { width: 100%; table-layout: fixed; }
+  td, th { word-wrap: break-word; overflow-wrap: break-word; }
+
+  /* --- Badges --- */
+  .badge {
+    border: 1px solid #999;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Callouts --- */
+  .callout {
+    border: 1px solid #ccc;
+    border-left-width: 4px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* --- Cover Page --- */
+  .cover-page {
+    padding-top: 80mm;
+  }
+
+  .cover-page .cover-notice {
+    border: 1px solid #ccc;
+  }
+
+  /* --- Footer --- */
+  .doc-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 8pt;
+  }
+
+  /* --- Cards (flatten for print) --- */
+  .card-grid {
+    display: block;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  /* --- Code --- */
+  code {
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

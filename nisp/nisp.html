@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-NISP-001 — Network &amp; Information Security Policy | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       Navigation Bar
+       ============================================================ -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <button class="btn-print" onclick="window.print()">Print / PDF</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       Cover Page
+       ============================================================ -->
+  <div class="cover-page">
+    <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions Logo" class="org-logo">
+    <div class="org-name">RAMDOOT SOLUTIONS</div>
+    <div class="doc-type">Network &amp; Information Security Policy &mdash; NISP</div>
+
+    <h1 class="cover-title">RAMDOOT SOLUTIONS &mdash; NETWORK &amp; INFORMATION SECURITY POLICY &mdash; NISP</h1>
+    <p class="cover-subtitle">Overarching Information Security Governance Policy</p>
+
+    <div class="cover-meta">
+      <p><strong>Document ID:</strong> RS-NISP-001</p>
+      <p><strong>Version:</strong> 1.0</p>
+      <p><strong>Status:</strong> <span class="badge badge-draft">Draft for Management Approval</span></p>
+      <p><strong>Classification:</strong> <span class="badge badge-critical">Confidential</span></p>
+      <p><strong>Effective Date:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+      <p><strong>Last Reviewed:</strong> &mdash;</p>
+    </div>
+
+    <div class="cover-notice">
+      <strong>Notice:</strong> This document is part of Ramdoot Solutions' internal compliance and security governance program.
+      It contains confidential information and is intended solely for authorized personnel. Unauthorized reproduction,
+      distribution, or disclosure of this document is strictly prohibited. All recipients shall treat this document in
+      accordance with the data classification and handling rules defined herein.
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Document Body
+       ============================================================ -->
+  <div class="page-wrapper">
+
+    <!-- --- Document Control --- -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-NISP-001</td></tr>
+      <tr><th>Title</th><td>Network &amp; Information Security Policy (NISP)</td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td>Draft for Management Approval</td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Applicable Standards</th><td>SOC 2 Type II, ISO 27001 (aligned), IT Act 2000, CERT-In 2022, DPDP Act 2023</td></tr>
+    </table>
+
+    <!-- ============================================================
+         Table of Contents
+         ============================================================ -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#s1">Governance &amp; Objectives</a></li>
+        <li><a href="#s2">Information Security Roles</a></li>
+        <li><a href="#s3">Risk Management</a></li>
+        <li><a href="#s4">Asset Management</a></li>
+        <li><a href="#s5">Data Classification</a></li>
+        <li><a href="#s6">Acceptable Use</a></li>
+        <li><a href="#s7">Identity &amp; Access Management</a></li>
+        <li><a href="#s8">Privileged Access</a></li>
+        <li><a href="#s9">Authentication</a></li>
+        <li><a href="#s10">Network Security</a></li>
+        <li><a href="#s11">Endpoint Security</a></li>
+        <li><a href="#s12">Cloud Security</a></li>
+        <li><a href="#s13">Application Security</a></li>
+        <li><a href="#s14">Secure Development Lifecycle</a></li>
+        <li><a href="#s15">Source Code Security</a></li>
+        <li><a href="#s16">Cryptography</a></li>
+        <li><a href="#s17">Encryption in Transit</a></li>
+        <li><a href="#s18">Encryption at Rest</a></li>
+        <li><a href="#s19">Vulnerability Management</a></li>
+        <li><a href="#s20">Patch Management</a></li>
+        <li><a href="#s21">Malware Protection</a></li>
+        <li><a href="#s22">Logging &amp; Monitoring</a></li>
+        <li><a href="#s23">Security Alerting</a></li>
+        <li><a href="#s24">Incident Response</a></li>
+        <li><a href="#s25">Evidence Preservation</a></li>
+        <li><a href="#s26">Backup &amp; Recovery</a></li>
+        <li><a href="#s27">Disaster Recovery</a></li>
+        <li><a href="#s28">Business Continuity</a></li>
+        <li><a href="#s29">Vendor Risk Management</a></li>
+        <li><a href="#s30">Third-Party Access</a></li>
+        <li><a href="#s31">Data Retention &amp; Disposal</a></li>
+        <li><a href="#s32">Personnel Security</a></li>
+        <li><a href="#s33">Employee Onboarding</a></li>
+        <li><a href="#s34">Employee Offboarding</a></li>
+        <li><a href="#s35">Security Awareness Training</a></li>
+        <li><a href="#s36">Remote Working</a></li>
+        <li><a href="#s37">Mobile Devices</a></li>
+        <li><a href="#s38">Physical Security</a></li>
+        <li><a href="#s39">Exceptions</a></li>
+        <li><a href="#s40">Compliance</a></li>
+        <li><a href="#s41">Disciplinary Consequences</a></li>
+        <li><a href="#s42">Policy Review</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         1. Governance & Objectives
+         ============================================================ -->
+    <section id="s1">
+      <h1>1. Governance &amp; Objectives</h1>
+
+      <h3>1.1 Purpose</h3>
+      <p>
+        This Network &amp; Information Security Policy (&ldquo;NISP&rdquo; or &ldquo;Policy&rdquo;) establishes the
+        overarching security governance framework for Ramdoot Solutions (&ldquo;the Organization&rdquo;). It defines
+        management direction, principles, and mandatory controls to protect the confidentiality, integrity, and
+        availability of information assets owned, processed, or managed by the Organization.
+      </p>
+
+      <h3>1.2 Scope</h3>
+      <p>
+        This Policy shall apply to all employees, contractors, consultants, temporary workers, and third-party personnel
+        who access, process, store, or transmit Ramdoot Solutions' information assets. It covers all technology
+        environments including on-premises infrastructure, cloud services, remote working environments, mobile devices,
+        and third-party hosted systems.
+      </p>
+
+      <h3>1.3 Security Objectives</h3>
+      <p>The Organization shall pursue the following security objectives:</p>
+      <ul>
+        <li>Protect information assets against unauthorized access, disclosure, modification, destruction, or interference.</li>
+        <li>Ensure compliance with applicable Indian laws, regulatory requirements, and contractual obligations.</li>
+        <li>Maintain a risk-based approach to information security aligned with the Organization's business objectives.</li>
+        <li>Promote a culture of security awareness across all levels of the Organization.</li>
+        <li>Establish and maintain incident response capabilities to detect, contain, and recover from security events.</li>
+        <li>Enable business continuity through resilient infrastructure and documented recovery procedures.</li>
+        <li>Continuously improve the information security management framework through periodic review and audit.</li>
+      </ul>
+
+      <h3>1.4 Security Governance Structure</h3>
+      <p>
+        The Organization shall establish and maintain a security governance structure comprising the following bodies:
+      </p>
+      <ul>
+        <li><strong>Management / Board:</strong> Shall provide strategic direction, approve this Policy, allocate resources, and bear ultimate accountability for information security.</li>
+        <li><strong>Information Security Officer (ISO) / CISO:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> shall be designated as the Information Security Officer. This individual shall be responsible for the day-to-day management of the security program, policy enforcement, risk assessment coordination, and regulatory compliance monitoring.</li>
+        <li><strong>Information Security Committee:</strong> A cross-functional committee comprising representatives from Engineering, Operations, HR, Legal, and Management shall convene at least quarterly to review security posture, risk register, incidents, and policy effectiveness.</li>
+        <li><strong>Department Heads:</strong> Shall be accountable for implementing security controls within their departments and ensuring staff compliance with this Policy.</li>
+      </ul>
+
+      <h3>1.5 Policy Authority</h3>
+      <p>
+        This Policy is approved by the Management of Ramdoot Solutions and shall take precedence over any conflicting
+        departmental procedure or guideline. All subsidiary policies, standards, procedures, and guidelines must be
+        consistent with the principles and requirements stated herein.
+      </p>
+
+      <div class="callout callout-info">
+        <strong>Alignment Note:</strong> This Policy is aligned with the SOC 2 Trust Services Criteria (Security,
+        Availability, Processing Integrity, Confidentiality, Privacy) and ISO/IEC 27001:2022 Annex A controls. The
+        Organization does not claim ISO 27001 certification unless explicitly stated in a separate certification document.
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. Information Security Roles
+         ============================================================ -->
+    <section id="s2">
+      <h1>2. Information Security Roles</h1>
+
+      <h3>2.1 Role Definitions</h3>
+      <p>The following roles shall be defined and assigned within the information security program:</p>
+      <table>
+        <thead>
+          <tr><th>Role</th><th>Responsibilities</th><th>Assigned To</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Information Security Officer (ISO)</strong></td><td>Overall security program management, policy maintenance, risk coordination, compliance reporting, incident oversight</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>Data Protection Officer</strong></td><td>Personal data protection, DPDP Act compliance, data subject rights management, privacy impact assessments</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>IT Operations Lead</strong></td><td>Infrastructure management, patch deployment, backup operations, system monitoring</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>Application Security Lead</strong></td><td>Secure SDLC enforcement, code review oversight, vulnerability remediation coordination</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>Incident Response Coordinator</strong></td><td>Incident triage, escalation management, evidence preservation, post-incident review</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>HR Security Liaison</strong></td><td>Pre-employment screening, onboarding/offboarding security tasks, security training coordination</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td><strong>Asset Owner</strong></td><td>Classification of assigned information assets, access authorization, risk acceptance for owned assets</td><td>Per-asset assignment</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2.2 RACI Matrix</h3>
+      <p>
+        The following RACI matrix defines responsibility assignment for key security activities.
+        <strong>R</strong> = Responsible, <strong>A</strong> = Accountable, <strong>C</strong> = Consulted, <strong>I</strong> = Informed.
+      </p>
+      <table class="raci-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Activity</th>
+            <th>Mgmt / Board</th>
+            <th>ISO / CISO</th>
+            <th>IT Ops</th>
+            <th>Dev Team</th>
+            <th>HR</th>
+            <th>All Staff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Policy approval</td><td>A</td><td>R</td><td>C</td><td>C</td><td>C</td><td>I</td></tr>
+          <tr><td>Risk assessment</td><td>I</td><td>A/R</td><td>C</td><td>C</td><td>C</td><td>I</td></tr>
+          <tr><td>Access provisioning</td><td>I</td><td>A</td><td>R</td><td>C</td><td>C</td><td>I</td></tr>
+          <tr><td>Patch management</td><td>I</td><td>A</td><td>R</td><td>C</td><td>&mdash;</td><td>I</td></tr>
+          <tr><td>Incident response</td><td>I</td><td>A</td><td>R</td><td>R</td><td>C</td><td>I</td></tr>
+          <tr><td>Security training</td><td>I</td><td>A</td><td>C</td><td>C</td><td>R</td><td>R</td></tr>
+          <tr><td>Vulnerability scanning</td><td>I</td><td>A</td><td>R</td><td>R</td><td>&mdash;</td><td>I</td></tr>
+          <tr><td>Backup operations</td><td>I</td><td>A</td><td>R</td><td>C</td><td>&mdash;</td><td>I</td></tr>
+          <tr><td>Business continuity planning</td><td>A</td><td>R</td><td>R</td><td>C</td><td>C</td><td>I</td></tr>
+          <tr><td>Vendor risk assessment</td><td>A</td><td>R</td><td>C</td><td>C</td><td>C</td><td>I</td></tr>
+          <tr><td>Employee onboarding (security)</td><td>I</td><td>C</td><td>R</td><td>&mdash;</td><td>A/R</td><td>I</td></tr>
+          <tr><td>Employee offboarding (security)</td><td>I</td><td>C</td><td>R</td><td>&mdash;</td><td>A/R</td><td>I</td></tr>
+          <tr><td>Physical security</td><td>A</td><td>R</td><td>C</td><td>&mdash;</td><td>&mdash;</td><td>I</td></tr>
+          <tr><td>Compliance monitoring</td><td>A</td><td>R</td><td>C</td><td>C</td><td>C</td><td>I</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         3. Risk Management
+         ============================================================ -->
+    <section id="s3">
+      <h1>3. Risk Management</h1>
+
+      <h3>3.1 Risk Assessment Methodology</h3>
+      <p>
+        The Organization shall adopt a structured risk assessment methodology to identify, analyze, evaluate, and treat
+        information security risks. Risk assessments shall be conducted:
+      </p>
+      <ul>
+        <li>At least annually as part of the security program review cycle.</li>
+        <li>Prior to the introduction of significant new systems, services, or business processes.</li>
+        <li>Following a significant security incident or material change in the threat landscape.</li>
+        <li>When required by contractual or regulatory obligations.</li>
+      </ul>
+
+      <h3>3.2 Risk Identification &amp; Analysis</h3>
+      <p>Each risk shall be evaluated based on the following dimensions:</p>
+      <ul>
+        <li><strong>Likelihood:</strong> The probability of the threat exploiting a vulnerability (rated 1&ndash;5: Rare, Unlikely, Possible, Likely, Almost Certain).</li>
+        <li><strong>Impact:</strong> The potential consequence to the Organization's operations, finances, reputation, or legal standing (rated 1&ndash;5: Negligible, Minor, Moderate, Major, Catastrophic).</li>
+        <li><strong>Risk Score:</strong> Likelihood &times; Impact, yielding a score from 1 to 25.</li>
+      </ul>
+      <table>
+        <thead><tr><th>Risk Level</th><th>Score Range</th><th>Treatment Requirement</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge badge-critical">Critical</span></td><td>20 &ndash; 25</td><td>Immediate action required; must be escalated to Management within 24 hours</td></tr>
+          <tr><td><span class="badge badge-high">High</span></td><td>12 &ndash; 19</td><td>Treatment plan required within 7 business days; ISO approval required</td></tr>
+          <tr><td><span class="badge badge-medium">Medium</span></td><td>6 &ndash; 11</td><td>Treatment plan required within 30 business days</td></tr>
+          <tr><td><span class="badge badge-low">Low</span></td><td>1 &ndash; 5</td><td>Accept or monitor; document acceptance rationale</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.3 Risk Appetite</h3>
+      <p>
+        The Organization's risk appetite is defined as follows: Ramdoot Solutions shall not accept any <em>Critical</em>
+        or <em>High</em> residual risk without explicit, documented approval from Management. Medium risks may be accepted
+        by the ISO with documented justification. Low risks may be accepted by the relevant Asset Owner.
+      </p>
+
+      <h3>3.4 Risk Treatment Options</h3>
+      <p>For each identified risk, one of the following treatment options shall be selected:</p>
+      <ul>
+        <li><strong>Mitigate:</strong> Implement controls to reduce likelihood and/or impact to an acceptable level.</li>
+        <li><strong>Transfer:</strong> Transfer the risk to a third party (e.g., insurance, outsourcing with SLAs).</li>
+        <li><strong>Avoid:</strong> Eliminate the risk by discontinuing the activity or removing the asset.</li>
+        <li><strong>Accept:</strong> Acknowledge and accept the residual risk with documented approval at the appropriate authority level.</li>
+      </ul>
+
+      <h3>3.5 Risk Register</h3>
+      <p>
+        The ISO shall maintain a Risk Register documenting all identified risks, their current scores, treatment plans,
+        responsible owners, and review dates. The Risk Register shall be reviewed by the Information Security Committee
+        at least quarterly.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         4. Asset Management
+         ============================================================ -->
+    <section id="s4">
+      <h1>4. Asset Management</h1>
+
+      <h3>4.1 Asset Inventory</h3>
+      <p>
+        The Organization shall maintain a comprehensive inventory of all information assets including hardware, software,
+        data repositories, network components, cloud services, and intellectual property. The inventory shall be updated
+        at least quarterly and upon any significant change.
+      </p>
+
+      <h3>4.2 Asset Classification</h3>
+      <p>All information assets shall be classified according to the data classification scheme defined in Section 5 of this Policy. Asset classification shall determine the minimum security controls applied to the asset.</p>
+
+      <h3>4.3 Asset Ownership</h3>
+      <p>
+        Every information asset shall have a designated Asset Owner who is responsible for:
+      </p>
+      <ul>
+        <li>Ensuring the asset is properly classified and the classification is reviewed periodically.</li>
+        <li>Authorizing access to the asset based on business need and least privilege principles.</li>
+        <li>Ensuring appropriate security controls are applied commensurate with the asset's classification.</li>
+        <li>Participating in risk assessments related to the asset.</li>
+        <li>Approving the decommissioning and secure disposal of the asset at end of life.</li>
+      </ul>
+
+      <h3>4.4 Asset Lifecycle Management</h3>
+      <p>Assets shall be managed throughout their lifecycle: procurement, deployment, operation, maintenance, and disposal. At each stage:</p>
+      <ul>
+        <li><strong>Procurement:</strong> Security requirements shall be evaluated before acquisition. Vendor security assessments shall be performed for third-party software and services.</li>
+        <li><strong>Deployment:</strong> Assets shall be hardened according to approved baseline configurations before being placed into production.</li>
+        <li><strong>Operation:</strong> Assets shall be patched, monitored, and subject to periodic security review.</li>
+        <li><strong>Disposal:</strong> Assets shall be decommissioned and disposed of securely in accordance with Section 31 (Data Retention &amp; Disposal).</li>
+      </ul>
+
+      <h3>4.5 Removable Media</h3>
+      <p>
+        The use of removable media (USB drives, external hard drives, optical discs) is prohibited unless explicitly
+        authorized by the ISO. Where authorized, all data on removable media must be encrypted using approved
+        cryptographic methods (see Section 16). Removable media containing Confidential or Restricted data shall be
+        tracked in the asset inventory and securely destroyed when no longer required.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         5. Data Classification
+         ============================================================ -->
+    <section id="s5">
+      <h1>5. Data Classification</h1>
+
+      <h3>5.1 Classification Levels</h3>
+      <p>All information created, received, processed, or stored by the Organization shall be classified into one of the following levels:</p>
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Definition</th><th>Examples</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Restricted</strong></td>
+            <td>Highest sensitivity. Unauthorized disclosure would cause severe harm to the Organization, its clients, or individuals. Access limited to named individuals on a strict need-to-know basis.</td>
+            <td>Encryption keys, authentication credentials, financial account details, personal data under DPDP Act, security audit reports</td>
+          </tr>
+          <tr>
+            <td><strong>Confidential</strong></td>
+            <td>Sensitive business information. Unauthorized disclosure could cause significant financial, legal, or reputational damage. Access limited to authorized personnel.</td>
+            <td>Source code, client contracts, employee records, internal security policies, strategic plans, this Policy document</td>
+          </tr>
+          <tr>
+            <td><strong>Internal</strong></td>
+            <td>Information intended for internal use only. Unauthorized disclosure could cause minor inconvenience or limited harm.</td>
+            <td>Internal communications, process documentation, meeting minutes, organizational charts</td>
+          </tr>
+          <tr>
+            <td><strong>Public</strong></td>
+            <td>Information approved for public disclosure. No business harm from disclosure.</td>
+            <td>Published marketing materials, public website content, press releases, published open-source code</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.2 Handling Rules</h3>
+      <table>
+        <thead>
+          <tr><th>Control</th><th>Restricted</th><th>Confidential</th><th>Internal</th><th>Public</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Encryption at rest</strong></td><td>Required (AES-256)</td><td>Required (AES-256)</td><td>Recommended</td><td>Not required</td></tr>
+          <tr><td><strong>Encryption in transit</strong></td><td>Required (TLS 1.2+)</td><td>Required (TLS 1.2+)</td><td>Required (TLS 1.2+)</td><td>Recommended</td></tr>
+          <tr><td><strong>Access control</strong></td><td>Named individuals, MFA required</td><td>Role-based, MFA required</td><td>Role-based</td><td>No restriction</td></tr>
+          <tr><td><strong>Labeling</strong></td><td>Mandatory on all documents and files</td><td>Mandatory on all documents and files</td><td>Recommended</td><td>Not required</td></tr>
+          <tr><td><strong>Sharing externally</strong></td><td>Prohibited without Management approval and encryption</td><td>Requires ISO approval and NDA</td><td>Requires manager approval</td><td>Permitted</td></tr>
+          <tr><td><strong>Printing</strong></td><td>Prohibited unless explicitly authorized</td><td>Secure print only; retrieve immediately</td><td>No restriction</td><td>No restriction</td></tr>
+          <tr><td><strong>Disposal</strong></td><td>Cryptographic erasure or physical destruction</td><td>Secure deletion (overwrite)</td><td>Standard deletion</td><td>Standard deletion</td></tr>
+          <tr><td><strong>Backup</strong></td><td>Encrypted backups, restricted access</td><td>Encrypted backups</td><td>Standard backup</td><td>Optional</td></tr>
+        </tbody>
+      </table>
+
+      <h3>5.3 Default Classification</h3>
+      <p>
+        Any information that has not been explicitly classified shall be treated as <strong>Confidential</strong> until a
+        formal classification is assigned by the Asset Owner. All personnel are required to err on the side of higher
+        classification when uncertain.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         6. Acceptable Use
+         ============================================================ -->
+    <section id="s6">
+      <h1>6. Acceptable Use</h1>
+
+      <h3>6.1 General Principles</h3>
+      <p>
+        All IT resources provided by the Organization (including computers, networks, email, internet access, cloud services,
+        and software) are the property of Ramdoot Solutions and are provided for authorized business purposes. Limited
+        personal use is permitted provided it does not interfere with work duties, consume excessive resources, or violate
+        any provision of this Policy.
+      </p>
+
+      <h3>6.2 Acceptable Use</h3>
+      <p>Personnel are authorized to use IT resources for:</p>
+      <ul>
+        <li>Business-related activities within the scope of their role.</li>
+        <li>Authorized research, training, and professional development.</li>
+        <li>Brief, incidental personal use that does not violate any other policy provision.</li>
+      </ul>
+
+      <h3>6.3 Prohibited Activities</h3>
+      <p>The following activities are strictly prohibited:</p>
+      <ul>
+        <li>Accessing, downloading, storing, or distributing illegal, obscene, offensive, or discriminatory material.</li>
+        <li>Unauthorized access to systems, applications, or data not required for the individual's role.</li>
+        <li>Sharing credentials, authentication tokens, or access keys with any other person.</li>
+        <li>Installing unauthorized software, browser extensions, or hardware on Organization-owned devices.</li>
+        <li>Circumventing or attempting to circumvent security controls, firewalls, content filters, or access restrictions.</li>
+        <li>Using Organization resources for personal commercial activities, political campaigning, or cryptocurrency mining.</li>
+        <li>Sending unsolicited bulk communications (spam) from Organization systems.</li>
+        <li>Connecting unauthorized devices to the corporate network without IT Operations approval.</li>
+        <li>Storing Restricted or Confidential data on personal devices or unapproved cloud services.</li>
+        <li>Disabling or tampering with endpoint security software (antivirus, EDR, firewall).</li>
+      </ul>
+
+      <h3>6.4 Internet &amp; Email Use</h3>
+      <p>
+        Internet and email usage shall be monitored by the Organization for security purposes. Personnel shall not have an
+        expectation of privacy when using Organization-provided communication systems. All email communications must comply
+        with the Organization's data classification rules. Auto-forwarding of Organization email to personal accounts is
+        prohibited.
+      </p>
+
+      <h3>6.5 Personal Devices</h3>
+      <p>
+        Personal devices used to access Organization data or systems must comply with Section 37 (Mobile Devices) and be
+        enrolled in the Organization's Mobile Device Management (MDM) solution. The Organization reserves the right to
+        remotely wipe Organization data from personal devices upon employee separation or device loss.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         7. Identity & Access Management
+         ============================================================ -->
+    <section id="s7">
+      <h1>7. Identity &amp; Access Management</h1>
+
+      <h3>7.1 Principles</h3>
+      <p>Access to all information systems shall be governed by the following principles:</p>
+      <ul>
+        <li><strong>Least Privilege:</strong> Users shall be granted the minimum level of access necessary to perform their job functions.</li>
+        <li><strong>Need-to-Know:</strong> Access to information shall be restricted to individuals who require it for legitimate business purposes.</li>
+        <li><strong>Separation of Duties:</strong> Critical functions shall be divided among different individuals to prevent fraud or error.</li>
+        <li><strong>Default Deny:</strong> Access shall be denied by default; all access must be explicitly granted through an approved process.</li>
+      </ul>
+
+      <h3>7.2 Role-Based Access Control (RBAC)</h3>
+      <p>
+        The Organization shall implement role-based access control for all production systems and applications. Access
+        roles shall be defined based on job functions and approved by the relevant Asset Owner and department manager.
+        Role definitions shall be reviewed at least semi-annually.
+      </p>
+
+      <h3>7.3 Access Provisioning</h3>
+      <p>Access shall be provisioned only upon receipt of a formal, documented access request that includes:</p>
+      <ul>
+        <li>Identification of the requesting individual and their role.</li>
+        <li>Specific systems, applications, and access levels requested.</li>
+        <li>Business justification for the access.</li>
+        <li>Approval from the individual's manager and the Asset Owner (for Confidential/Restricted resources).</li>
+      </ul>
+
+      <h3>7.4 Access Reviews</h3>
+      <p>
+        Access rights shall be reviewed at least quarterly for all systems containing Confidential or Restricted data,
+        and at least semi-annually for all other systems. Access reviews shall verify that each user's access remains
+        appropriate for their current role and that no unauthorized accounts exist.
+      </p>
+
+      <h3>7.5 Access Deprovisioning</h3>
+      <p>
+        Access shall be revoked immediately (within 4 business hours) upon termination of employment or contract. Access
+        shall be modified within 2 business days upon role change or transfer. See Section 34 (Employee Offboarding)
+        for detailed procedures.
+      </p>
+
+      <h3>7.6 Service Accounts</h3>
+      <p>
+        Service accounts shall be inventoried, assigned an owner, and subject to the same access review requirements as
+        user accounts. Service account credentials shall be stored in an approved secrets management solution and rotated
+        at least every 90 days.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         8. Privileged Access
+         ============================================================ -->
+    <section id="s8">
+      <h1>8. Privileged Access</h1>
+
+      <h3>8.1 Scope</h3>
+      <p>
+        Privileged access includes administrator accounts, root accounts, database administrator accounts, cloud
+        management console access, and any access that grants the ability to modify system configurations, security
+        controls, or access controls.
+      </p>
+
+      <h3>8.2 Authorization</h3>
+      <p>
+        Privileged access shall require separate, documented authorization from the ISO and the individual's line
+        manager. Privileged accounts shall be separate from standard user accounts; administrators must use their
+        standard account for day-to-day activities and elevate to the privileged account only when performing
+        administrative tasks.
+      </p>
+
+      <h3>8.3 Controls</h3>
+      <ul>
+        <li>All privileged access sessions shall be logged and monitored. Logs shall be protected from tampering and retained for a minimum of 12 months.</li>
+        <li>Multi-factor authentication (MFA) is mandatory for all privileged access.</li>
+        <li>Privileged access shall be time-limited where technically feasible. Just-in-time (JIT) access provisioning shall be implemented for production environments.</li>
+        <li>The number of privileged accounts shall be minimized and reviewed monthly by the ISO.</li>
+        <li>Privileged account credentials shall be stored in an approved privileged access management (PAM) solution or secrets vault.</li>
+        <li>Shared privileged accounts are prohibited unless a documented exception is approved by the ISO. Where shared accounts exist, all individual actions must be attributable through session logging.</li>
+      </ul>
+
+      <h3>8.4 Emergency Access</h3>
+      <p>
+        Break-glass (emergency) access procedures shall be documented and tested annually. Emergency access shall
+        require post-access review within 24 hours. All actions performed under emergency access shall be fully audited.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         9. Authentication
+         ============================================================ -->
+    <section id="s9">
+      <h1>9. Authentication</h1>
+
+      <h3>9.1 Password Requirements</h3>
+      <table>
+        <thead><tr><th>Requirement</th><th>Standard Accounts</th><th>Privileged Accounts</th></tr></thead>
+        <tbody>
+          <tr><td>Minimum length</td><td>12 characters</td><td>16 characters</td></tr>
+          <tr><td>Complexity</td><td>At least 3 of: uppercase, lowercase, digits, special characters</td><td>All 4 character types required</td></tr>
+          <tr><td>Maximum age</td><td>90 days</td><td>60 days</td></tr>
+          <tr><td>History</td><td>Last 12 passwords cannot be reused</td><td>Last 24 passwords cannot be reused</td></tr>
+          <tr><td>Lockout threshold</td><td>5 consecutive failed attempts</td><td>3 consecutive failed attempts</td></tr>
+          <tr><td>Lockout duration</td><td>30 minutes or manual unlock</td><td>Manual unlock by ISO only</td></tr>
+          <tr><td>Dictionary check</td><td>Required (common password lists)</td><td>Required (common password lists)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>9.2 Multi-Factor Authentication (MFA)</h3>
+      <p>MFA shall be required for the following:</p>
+      <ul>
+        <li>All access to production systems and environments.</li>
+        <li>All privileged / administrative access.</li>
+        <li>Remote access to the corporate network (VPN).</li>
+        <li>Cloud management consoles (AWS, Azure, GCP, etc.).</li>
+        <li>Email and collaboration platforms accessed from outside the corporate network.</li>
+        <li>Access to any system containing Restricted or Confidential data.</li>
+      </ul>
+      <p>Acceptable MFA factors include TOTP authenticator applications, hardware security keys (FIDO2/WebAuthn), and push notifications from approved authenticator apps. SMS-based OTP is discouraged and shall be used only as a fallback where no other option is available.</p>
+
+      <h3>9.3 Single Sign-On (SSO)</h3>
+      <p>
+        The Organization shall implement SSO where technically feasible to reduce password fatigue and centralize
+        authentication control. All SSO-integrated applications shall enforce the MFA requirements specified above.
+      </p>
+
+      <h3>9.4 Credential Storage</h3>
+      <p>
+        Passwords shall never be stored in plaintext. Application systems shall use approved hashing algorithms (bcrypt,
+        scrypt, or Argon2id) with appropriate salt and work factor. API keys, tokens, and secrets shall be stored in an
+        approved secrets management solution and shall not be hardcoded in source code or configuration files.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         10. Network Security
+         ============================================================ -->
+    <section id="s10">
+      <h1>10. Network Security</h1>
+
+      <h3>10.1 Network Architecture</h3>
+      <p>
+        The Organization's network shall be designed with defense-in-depth principles. Network segmentation shall be
+        implemented to isolate environments with different security requirements (e.g., production, development, staging,
+        guest, management).
+      </p>
+
+      <h3>10.2 Firewalls</h3>
+      <ul>
+        <li>Firewalls shall be deployed at all network perimeter points and between security zones.</li>
+        <li>Firewall rules shall follow a default-deny policy: all traffic is blocked unless explicitly permitted.</li>
+        <li>Firewall rules shall be reviewed at least quarterly and after any significant network change.</li>
+        <li>Unused or obsolete rules shall be removed promptly.</li>
+        <li>All firewall configuration changes shall be documented, approved by the IT Operations Lead, and logged.</li>
+      </ul>
+
+      <h3>10.3 Network Segmentation</h3>
+      <p>The following network zones shall be maintained:</p>
+      <ul>
+        <li><strong>DMZ:</strong> Public-facing services shall be deployed in a demilitarized zone separated from internal networks.</li>
+        <li><strong>Production Zone:</strong> Production servers and databases shall be in a restricted network segment accessible only through controlled entry points.</li>
+        <li><strong>Development/Staging Zone:</strong> Development and staging environments shall be segregated from production. Production data shall not be used in non-production environments without anonymization.</li>
+        <li><strong>Management Zone:</strong> Administrative interfaces and management tools shall be accessible only from a dedicated management network.</li>
+        <li><strong>Guest Network:</strong> A separate, isolated network shall be provided for guest and visitor devices with no access to internal resources.</li>
+      </ul>
+
+      <h3>10.4 VPN</h3>
+      <p>
+        Remote access to internal network resources shall be permitted only through an Organization-approved VPN solution.
+        VPN connections shall use strong encryption (AES-256 or equivalent), enforce MFA, and be logged. Split tunneling
+        is prohibited for VPN connections accessing Confidential or Restricted resources.
+      </p>
+
+      <h3>10.5 Wireless Security</h3>
+      <ul>
+        <li>Corporate wireless networks shall use WPA3 (or WPA2-Enterprise as minimum) with 802.1X authentication.</li>
+        <li>Unauthorized wireless access points are prohibited and shall be detected through periodic wireless scanning.</li>
+        <li>Guest wireless shall be isolated and shall not provide access to internal network resources.</li>
+      </ul>
+
+      <h3>10.6 Intrusion Detection / Prevention</h3>
+      <p>
+        Network intrusion detection/prevention systems (IDS/IPS) shall be deployed at network perimeter points and
+        within critical network segments. Signatures and rulesets shall be updated at least daily. Alerts shall be
+        routed to the security monitoring team for investigation.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         11. Endpoint Security
+         ============================================================ -->
+    <section id="s11">
+      <h1>11. Endpoint Security</h1>
+
+      <h3>11.1 Antivirus &amp; Endpoint Detection and Response (EDR)</h3>
+      <p>
+        All Organization-owned endpoints (desktops, laptops, servers) shall have approved antivirus and/or EDR software
+        installed and actively running. Endpoint protection software shall not be disabled, paused, or uninstalled by
+        end users. Signature databases shall be updated automatically at least daily.
+      </p>
+
+      <h3>11.2 Endpoint Hardening</h3>
+      <p>All endpoints shall be configured according to approved hardening baselines that include:</p>
+      <ul>
+        <li>Disabling unnecessary services, protocols, and ports.</li>
+        <li>Removing or disabling default accounts and changing default passwords.</li>
+        <li>Enabling host-based firewalls.</li>
+        <li>Enabling full-disk encryption (BitLocker on Windows, FileVault on macOS, LUKS on Linux).</li>
+        <li>Enabling automatic screen lock after a maximum of 10 minutes of inactivity.</li>
+        <li>Restricting local administrator privileges to authorized personnel only.</li>
+      </ul>
+
+      <h3>11.3 Patch Management (Endpoints)</h3>
+      <p>
+        All endpoints shall receive operating system and application patches in accordance with Section 20 (Patch
+        Management). Endpoints that are not compliant with patching requirements within the defined timelines shall
+        be quarantined from the network until remediated.
+      </p>
+
+      <h3>11.4 Software Inventory</h3>
+      <p>
+        Only authorized software shall be installed on Organization endpoints. An approved software list shall be
+        maintained by IT Operations. Unauthorized software shall be detected and removed. Application whitelisting
+        shall be implemented where technically feasible for critical systems.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         12. Cloud Security
+         ============================================================ -->
+    <section id="s12">
+      <h1>12. Cloud Security</h1>
+
+      <h3>12.1 Approved Cloud Providers</h3>
+      <p>
+        The Organization shall maintain a list of approved cloud service providers. Only approved providers shall be
+        used for hosting Organization data or services. Approval requires a vendor risk assessment (see Section 29).
+      </p>
+      <p>Current approved providers: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+      <h3>12.2 Shared Responsibility Model</h3>
+      <p>
+        The Organization shall document and understand the shared responsibility model for each cloud service used,
+        clearly delineating the security responsibilities of the cloud provider and the Organization. The ISO shall
+        ensure that the Organization fulfills all customer-side security responsibilities.
+      </p>
+
+      <h3>12.3 Cloud Configuration Requirements</h3>
+      <ul>
+        <li>All cloud resources shall be deployed using infrastructure-as-code (IaC) or documented, repeatable processes.</li>
+        <li>Cloud storage buckets and objects shall not be publicly accessible unless explicitly required and approved.</li>
+        <li>Cloud security groups and access control lists shall follow the principle of least privilege.</li>
+        <li>Cloud management console access shall require MFA and shall be restricted to authorized personnel.</li>
+        <li>Cloud configuration shall be continuously monitored using cloud security posture management (CSPM) tools or equivalent periodic review.</li>
+        <li>Data residency requirements shall be enforced; Organization data shall not be stored in jurisdictions that conflict with applicable Indian regulations without documented legal review.</li>
+      </ul>
+
+      <h3>12.4 Shadow IT</h3>
+      <p>
+        The use of unapproved cloud services (&ldquo;shadow IT&rdquo;) for processing or storing Organization data is
+        prohibited. Personnel shall report any discovered use of unapproved cloud services to the ISO.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         13. Application Security
+         ============================================================ -->
+    <section id="s13">
+      <h1>13. Application Security</h1>
+
+      <h3>13.1 Secure Development Principles</h3>
+      <p>
+        All applications developed by or for the Organization shall adhere to secure development principles throughout
+        the software development lifecycle. Security shall be integrated into every phase: requirements, design,
+        implementation, testing, deployment, and maintenance.
+      </p>
+
+      <h3>13.2 OWASP Top 10</h3>
+      <p>
+        Development teams shall be trained on and shall implement controls to mitigate the current OWASP Top 10 risks.
+        At minimum, applications must address:
+      </p>
+      <ul>
+        <li><strong>Broken Access Control:</strong> Implement server-side access control enforcement; deny by default.</li>
+        <li><strong>Cryptographic Failures:</strong> Encrypt sensitive data in transit and at rest; do not use deprecated algorithms.</li>
+        <li><strong>Injection:</strong> Use parameterized queries, prepared statements, and ORM frameworks; validate all input.</li>
+        <li><strong>Insecure Design:</strong> Conduct threat modeling during design phase; implement defense-in-depth.</li>
+        <li><strong>Security Misconfiguration:</strong> Harden all environments; remove default credentials and unnecessary features.</li>
+        <li><strong>Vulnerable and Outdated Components:</strong> Maintain dependency inventories; patch promptly.</li>
+        <li><strong>Identification and Authentication Failures:</strong> Implement strong authentication; protect against credential stuffing.</li>
+        <li><strong>Software and Data Integrity Failures:</strong> Verify integrity of updates and CI/CD pipelines.</li>
+        <li><strong>Security Logging and Monitoring Failures:</strong> Log security-relevant events; ensure alerts are actionable.</li>
+        <li><strong>Server-Side Request Forgery (SSRF):</strong> Validate and sanitize all URLs; restrict outbound network access.</li>
+      </ul>
+
+      <h3>13.3 Input Validation &amp; Output Encoding</h3>
+      <p>
+        All user-supplied input shall be validated on the server side against expected formats, lengths, and data types.
+        All output rendered to users shall be encoded appropriately for the output context (HTML, JavaScript, URL, CSS)
+        to prevent cross-site scripting (XSS) attacks.
+      </p>
+
+      <h3>13.4 API Security</h3>
+      <p>All APIs shall implement authentication, authorization, rate limiting, input validation, and logging. API keys and tokens shall be transmitted only over encrypted channels (TLS 1.2+). API documentation shall not be publicly accessible for internal APIs.</p>
+    </section>
+
+    <!-- ============================================================
+         14. Secure Development Lifecycle
+         ============================================================ -->
+    <section id="s14">
+      <h1>14. Secure Development Lifecycle</h1>
+
+      <h3>14.1 Requirements Phase</h3>
+      <p>Security requirements shall be defined alongside functional requirements for every project. Threat modeling shall be performed for all projects involving new external-facing functionality or changes to authentication, authorization, or data handling.</p>
+
+      <h3>14.2 Code Review</h3>
+      <p>
+        All code changes shall undergo peer review by at least one other developer before being merged to the main
+        branch. Security-critical code (authentication, authorization, cryptography, input handling) shall require
+        review by a designated security-aware reviewer.
+      </p>
+
+      <h3>14.3 Static Application Security Testing (SAST)</h3>
+      <p>
+        Automated SAST tools shall be integrated into the CI/CD pipeline. All code shall be scanned before deployment
+        to production. Critical and High severity findings shall block deployment until resolved. Medium findings shall
+        be tracked and resolved within the next sprint.
+      </p>
+
+      <h3>14.4 Dynamic Application Security Testing (DAST)</h3>
+      <p>
+        DAST scans shall be performed against staging environments at least monthly and before major releases. Findings
+        shall be triaged, prioritized, and remediated according to the vulnerability management SLAs in Section 19.
+      </p>
+
+      <h3>14.5 Dependency Scanning</h3>
+      <p>
+        Software Composition Analysis (SCA) tools shall be used to identify known vulnerabilities in third-party
+        libraries and dependencies. Dependency scans shall run automatically in the CI/CD pipeline. Dependencies with
+        known Critical or High vulnerabilities shall be updated or replaced before production deployment.
+      </p>
+
+      <h3>14.6 Secrets Detection</h3>
+      <p>
+        Automated secrets detection tools shall be integrated into the CI/CD pipeline and pre-commit hooks to prevent
+        accidental commits of credentials, API keys, tokens, or certificates. Any detected secret shall trigger an
+        immediate pipeline failure and the compromised credential shall be rotated.
+      </p>
+
+      <h3>14.7 Environment Separation</h3>
+      <p>
+        Development, staging, and production environments shall be logically separated. Production credentials and data
+        shall not be used in development or staging environments. Deployment to production shall follow a controlled,
+        documented release process.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         15. Source Code Security
+         ============================================================ -->
+    <section id="s15">
+      <h1>15. Source Code Security</h1>
+
+      <h3>15.1 Repository Access</h3>
+      <p>
+        Source code repositories shall be hosted on an approved platform (<span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>).
+        Access to repositories shall be granted on a need-to-know basis using role-based permissions. All repository
+        access shall require authentication via SSO and MFA.
+      </p>
+
+      <h3>15.2 Branch Protection</h3>
+      <ul>
+        <li>The <code>main</code> (or <code>master</code>) branch shall be protected: direct pushes are prohibited.</li>
+        <li>All changes to protected branches shall require a pull request with at least one approved review.</li>
+        <li>CI checks (build, tests, SAST, secrets detection) shall pass before merge is permitted.</li>
+        <li>Force-pushes to protected branches are prohibited.</li>
+        <li>Branch protection rules shall not be bypassed without ISO approval and documented justification.</li>
+      </ul>
+
+      <h3>15.3 Secrets Management</h3>
+      <p>
+        Source code and configuration files shall not contain hardcoded secrets, passwords, API keys, or encryption keys.
+        Secrets shall be managed through an approved secrets management solution (e.g., HashiCorp Vault, AWS Secrets
+        Manager, environment-specific secret stores). Pre-commit hooks shall scan for potential secrets.
+      </p>
+
+      <h3>15.4 Third-Party Code</h3>
+      <p>
+        Third-party libraries and open-source components shall be evaluated for security, license compliance, and
+        maintenance status before inclusion. A software bill of materials (SBOM) shall be maintained for all production
+        applications.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         16. Cryptography
+         ============================================================ -->
+    <section id="s16">
+      <h1>16. Cryptography</h1>
+
+      <h3>16.1 Approved Algorithms</h3>
+      <table>
+        <thead><tr><th>Purpose</th><th>Approved Algorithm(s)</th><th>Minimum Key Length</th></tr></thead>
+        <tbody>
+          <tr><td>Symmetric encryption</td><td>AES (GCM mode preferred)</td><td>256 bits</td></tr>
+          <tr><td>Asymmetric encryption</td><td>RSA, ECDSA, Ed25519</td><td>RSA 2048+ / ECDSA P-256+</td></tr>
+          <tr><td>Hashing (integrity)</td><td>SHA-256, SHA-384, SHA-512</td><td>256 bits</td></tr>
+          <tr><td>Password hashing</td><td>Argon2id, bcrypt, scrypt</td><td>Per algorithm recommendation</td></tr>
+          <tr><td>Key exchange</td><td>ECDHE, DHE</td><td>ECDHE P-256+ / DHE 2048+</td></tr>
+          <tr><td>Digital signatures</td><td>RSA-PSS, ECDSA, Ed25519</td><td>RSA 2048+ / ECDSA P-256+</td></tr>
+        </tbody>
+      </table>
+
+      <h3>16.2 Prohibited Algorithms</h3>
+      <p>The following algorithms are prohibited for any use: DES, 3DES, RC4, MD5 (for security purposes), SHA-1 (for security purposes), RSA with key length less than 2048 bits.</p>
+
+      <h3>16.3 Key Management</h3>
+      <ul>
+        <li>Cryptographic keys shall be generated using cryptographically secure random number generators.</li>
+        <li>Key generation, storage, distribution, rotation, and destruction shall be documented and controlled.</li>
+        <li>Private keys shall be stored in hardware security modules (HSMs), approved key management services, or encrypted key stores with restricted access.</li>
+        <li>Symmetric encryption keys shall be rotated at least annually, or upon suspected compromise.</li>
+        <li>Key destruction shall use approved methods that prevent recovery.</li>
+      </ul>
+
+      <h3>16.4 Certificate Management</h3>
+      <p>
+        TLS/SSL certificates shall be obtained from trusted Certificate Authorities. Certificate expiration shall be
+        monitored, and renewal shall be initiated at least 30 days before expiry. Automated certificate management
+        (e.g., ACME/Let's Encrypt with auto-renewal) is encouraged. Revoked or expired certificates shall be replaced
+        immediately.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         17. Encryption in Transit
+         ============================================================ -->
+    <section id="s17">
+      <h1>17. Encryption in Transit</h1>
+
+      <h3>17.1 TLS Requirements</h3>
+      <ul>
+        <li>All data transmitted over public or untrusted networks shall be encrypted using TLS 1.2 or TLS 1.3.</li>
+        <li>TLS 1.0 and TLS 1.1 are prohibited and shall be disabled on all systems.</li>
+        <li>SSL (all versions) is prohibited.</li>
+        <li>HTTP Strict Transport Security (HSTS) shall be enabled on all web applications with a minimum max-age of 31536000 seconds (1 year) and the <code>includeSubDomains</code> directive.</li>
+      </ul>
+
+      <h3>17.2 Cipher Suites</h3>
+      <p>Only cipher suites providing forward secrecy shall be used. Approved cipher suites include:</p>
+      <ul>
+        <li><code>TLS_AES_256_GCM_SHA384</code> (TLS 1.3)</li>
+        <li><code>TLS_AES_128_GCM_SHA256</code> (TLS 1.3)</li>
+        <li><code>TLS_CHACHA20_POLY1305_SHA256</code> (TLS 1.3)</li>
+        <li><code>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</code> (TLS 1.2)</li>
+        <li><code>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</code> (TLS 1.2)</li>
+        <li><code>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</code> (TLS 1.2)</li>
+      </ul>
+      <p>Cipher suites using NULL encryption, RC4, DES, 3DES, or export-grade cryptography are prohibited.</p>
+
+      <h3>17.3 Internal Communications</h3>
+      <p>
+        Encryption in transit is required for all internal service-to-service communication that traverses network
+        segment boundaries. Mutual TLS (mTLS) is recommended for service-to-service communication in production
+        environments.
+      </p>
+
+      <h3>17.4 Email Encryption</h3>
+      <p>
+        Emails containing Restricted or Confidential data shall be encrypted using S/MIME, PGP, or the Organization's
+        approved email encryption solution. Where end-to-end email encryption is not feasible, such data shall be
+        transmitted as an encrypted attachment with the decryption key shared via a separate channel.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         18. Encryption at Rest
+         ============================================================ -->
+    <section id="s18">
+      <h1>18. Encryption at Rest</h1>
+
+      <h3>18.1 Database Encryption</h3>
+      <p>
+        All databases containing Confidential or Restricted data shall implement encryption at rest using AES-256 or
+        equivalent. Transparent Data Encryption (TDE) or full-disk encryption of the underlying storage is required
+        at minimum. Column-level encryption shall be applied to highly sensitive fields (e.g., personal identification
+        numbers, financial data, health data).
+      </p>
+
+      <h3>18.2 File &amp; Object Storage Encryption</h3>
+      <p>
+        All files and objects stored on servers, network-attached storage (NAS), or cloud storage shall be encrypted at
+        rest. Server-side encryption with customer-managed keys (SSE-CMK) is preferred for cloud storage. Encryption
+        keys shall be managed in accordance with Section 16.3.
+      </p>
+
+      <h3>18.3 Backup Encryption</h3>
+      <p>
+        All backup media (tapes, disks, cloud backups) shall be encrypted using AES-256. Backup encryption keys shall
+        be stored separately from the backup media and managed through the Organization's key management procedures.
+        Unencrypted backups are prohibited.
+      </p>
+
+      <h3>18.4 Endpoint Encryption</h3>
+      <p>
+        Full-disk encryption shall be enabled on all Organization-owned laptops, desktops, and mobile devices. Recovery
+        keys shall be escrowed centrally and accessible only by IT Operations and the ISO.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         19. Vulnerability Management
+         ============================================================ -->
+    <section id="s19">
+      <h1>19. Vulnerability Management</h1>
+
+      <h3>19.1 Vulnerability Scanning</h3>
+      <p>The Organization shall perform vulnerability scanning according to the following schedule:</p>
+      <table>
+        <thead><tr><th>Target</th><th>Scan Frequency</th><th>Tool / Method</th></tr></thead>
+        <tbody>
+          <tr><td>External-facing systems</td><td>Weekly (automated)</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td>Internal network</td><td>Monthly (automated)</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td>Web applications</td><td>Monthly (DAST) + per release (SAST)</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td>Cloud infrastructure</td><td>Continuous (CSPM) or weekly</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+          <tr><td>Container images</td><td>Per build (CI/CD) + weekly registry scan</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3>19.2 Remediation SLAs</h3>
+      <table>
+        <thead><tr><th>Severity (CVSS)</th><th>Remediation Deadline</th><th>Escalation If Missed</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge badge-critical">Critical (9.0&ndash;10.0)</span></td><td>48 hours</td><td>Immediate escalation to ISO and Management</td></tr>
+          <tr><td><span class="badge badge-high">High (7.0&ndash;8.9)</span></td><td>7 calendar days</td><td>Escalation to ISO</td></tr>
+          <tr><td><span class="badge badge-medium">Medium (4.0&ndash;6.9)</span></td><td>30 calendar days</td><td>Included in next patch cycle</td></tr>
+          <tr><td><span class="badge badge-low">Low (0.1&ndash;3.9)</span></td><td>90 calendar days</td><td>Tracked in vulnerability register</td></tr>
+        </tbody>
+      </table>
+
+      <h3>19.3 Penetration Testing</h3>
+      <p>
+        External penetration testing shall be conducted at least annually by a qualified, independent third party.
+        Internal penetration testing shall be conducted at least annually. Results shall be documented and remediation
+        tracked through the vulnerability management process. Re-testing shall confirm remediation of Critical and High
+        findings.
+      </p>
+
+      <h3>19.4 Vulnerability Disclosure</h3>
+      <p>
+        The Organization shall maintain a responsible vulnerability disclosure process. Security researchers who report
+        vulnerabilities in good faith shall be acknowledged. Disclosed vulnerabilities shall be triaged within 2
+        business days.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         20. Patch Management
+         ============================================================ -->
+    <section id="s20">
+      <h1>20. Patch Management</h1>
+
+      <h3>20.1 Patching Timelines</h3>
+      <table>
+        <thead><tr><th>Severity</th><th>Timeline</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge badge-critical">Critical</span></td><td>48 hours from release</td><td>Emergency change process; may require out-of-cycle deployment</td></tr>
+          <tr><td><span class="badge badge-high">High</span></td><td>7 calendar days</td><td>Standard change process with expedited review</td></tr>
+          <tr><td><span class="badge badge-medium">Medium</span></td><td>30 calendar days</td><td>Included in the next scheduled patch window</td></tr>
+          <tr><td><span class="badge badge-low">Low</span></td><td>90 calendar days</td><td>Included in the next scheduled patch window</td></tr>
+        </tbody>
+      </table>
+
+      <h3>20.2 Patch Management Process</h3>
+      <ol>
+        <li><strong>Identification:</strong> IT Operations shall monitor vendor advisories, CVE databases, and security mailing lists for applicable patches.</li>
+        <li><strong>Assessment:</strong> Each patch shall be assessed for applicability, severity, and potential impact on business operations.</li>
+        <li><strong>Testing:</strong> Patches shall be tested in a non-production environment before deployment to production (except for critical zero-day patches where the risk of delay exceeds the risk of untested deployment).</li>
+        <li><strong>Deployment:</strong> Approved patches shall be deployed to production within the timelines specified above.</li>
+        <li><strong>Verification:</strong> Post-deployment verification shall confirm the patch was successfully applied and no adverse effects occurred.</li>
+        <li><strong>Documentation:</strong> All patching activities shall be documented, including patch identity, affected systems, deployment date, and verification results.</li>
+      </ol>
+
+      <h3>20.3 Unsupported Software</h3>
+      <p>
+        Software that is no longer supported by the vendor (end-of-life) shall be replaced or upgraded within 90 days
+        of end-of-support. Where immediate replacement is not feasible, a documented risk exception shall be obtained
+        per Section 39 (Exceptions), and compensating controls shall be implemented.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         21. Malware Protection
+         ============================================================ -->
+    <section id="s21">
+      <h1>21. Malware Protection</h1>
+
+      <h3>21.1 Antivirus / Anti-Malware</h3>
+      <p>
+        All endpoints and servers shall have approved anti-malware software installed and enabled. Real-time scanning
+        shall be active at all times. Signature updates shall be applied automatically at least daily. Full system
+        scans shall be performed at least weekly.
+      </p>
+
+      <h3>21.2 Email Filtering</h3>
+      <p>
+        All inbound and outbound email shall pass through the Organization's email security gateway, which shall
+        provide: spam filtering, malware attachment scanning, URL rewriting and sandboxing, and protection against
+        phishing and business email compromise (BEC) attacks. Executable attachments shall be blocked by default.
+      </p>
+
+      <h3>21.3 Web Filtering</h3>
+      <p>
+        Web traffic shall be filtered to block access to known malicious domains, command-and-control servers, and
+        categories of websites that pose a security risk (e.g., malware distribution, phishing). DNS-level filtering
+        shall be applied across all network segments.
+      </p>
+
+      <h3>21.4 Removable Media Scanning</h3>
+      <p>
+        Where removable media use is authorized (see Section 4.5), all removable media shall be automatically scanned
+        for malware upon connection to any Organization endpoint.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         22. Logging & Monitoring
+         ============================================================ -->
+    <section id="s22">
+      <h1>22. Logging &amp; Monitoring</h1>
+
+      <h3>22.1 Mandatory Logging</h3>
+      <p>The following events shall be logged across all systems:</p>
+      <ul>
+        <li>Authentication events (successful and failed login attempts, logouts, account lockouts).</li>
+        <li>Authorization events (access granted, access denied, privilege escalation).</li>
+        <li>Administrative actions (user creation/deletion, permission changes, configuration changes).</li>
+        <li>Data access events for Restricted and Confidential data (read, modify, delete, export).</li>
+        <li>System events (startup, shutdown, errors, service restarts).</li>
+        <li>Network events (firewall allow/deny, VPN connections, IDS/IPS alerts).</li>
+        <li>Application events (errors, exceptions, security-relevant transactions).</li>
+        <li>Changes to security configurations and audit logs.</li>
+      </ul>
+
+      <h3>22.2 Log Content</h3>
+      <p>Each log entry shall contain, at minimum: timestamp (UTC, ISO 8601 format), event type, source system, user identity (where applicable), source IP address, action performed, outcome (success/failure), and target resource.</p>
+
+      <h3>22.3 Log Protection</h3>
+      <p>
+        Logs shall be protected from unauthorized access, modification, and deletion. Log data shall be transmitted to
+        the centralized logging system over encrypted channels. Access to log data shall be restricted to authorized
+        security and operations personnel. Log integrity shall be verifiable (e.g., through log signing or write-once
+        storage).
+      </p>
+
+      <h3>22.4 Centralized Logging</h3>
+      <p>
+        All logs shall be forwarded to a centralized log management / SIEM platform. The SIEM shall aggregate, correlate,
+        and analyze log data to detect anomalies and potential security incidents.
+      </p>
+      <p>SIEM platform: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+      <h3>22.5 Log Retention</h3>
+      <table>
+        <thead><tr><th>Log Type</th><th>Minimum Retention</th></tr></thead>
+        <tbody>
+          <tr><td>Security / authentication logs</td><td>12 months (online), 36 months (archived)</td></tr>
+          <tr><td>Application logs</td><td>6 months (online), 12 months (archived)</td></tr>
+          <tr><td>Network / firewall logs</td><td>6 months (online), 12 months (archived)</td></tr>
+          <tr><td>Administrative / audit logs</td><td>12 months (online), 60 months (archived)</td></tr>
+          <tr><td>Privileged access session logs</td><td>12 months (online), 60 months (archived)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <strong>CERT-In Compliance:</strong> Per CERT-In directions dated 28 April 2022, logs of ICT systems shall be
+        maintained for a rolling period of 180 days and shall be maintained within Indian jurisdiction. The Organization
+        shall ensure log retention complies with these requirements.
+      </div>
+    </section>
+
+    <!-- ============================================================
+         23. Security Alerting
+         ============================================================ -->
+    <section id="s23">
+      <h1>23. Security Alerting</h1>
+
+      <h3>23.1 Alert Categories</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Severity</th><th>Response Time</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><strong>P1 &mdash; Critical</strong></td><td><span class="badge badge-critical">Critical</span></td><td>Immediate (within 15 minutes)</td><td>Active data breach, ransomware, unauthorized access to Restricted data, system compromise</td></tr>
+          <tr><td><strong>P2 &mdash; High</strong></td><td><span class="badge badge-high">High</span></td><td>Within 1 hour</td><td>Multiple failed authentication attempts, malware detection on server, unauthorized privilege escalation</td></tr>
+          <tr><td><strong>P3 &mdash; Medium</strong></td><td><span class="badge badge-medium">Medium</span></td><td>Within 4 hours</td><td>Policy violation, suspicious outbound traffic, failed vulnerability scan</td></tr>
+          <tr><td><strong>P4 &mdash; Low</strong></td><td><span class="badge badge-low">Low</span></td><td>Next business day</td><td>Informational alerts, minor policy deviations, configuration drift</td></tr>
+        </tbody>
+      </table>
+
+      <h3>23.2 Escalation Procedures</h3>
+      <ol>
+        <li>All alerts shall be initially triaged by IT Operations or the on-call security responder.</li>
+        <li>P1 alerts shall be immediately escalated to the Incident Response Coordinator and the ISO. Management shall be notified within 30 minutes.</li>
+        <li>P2 alerts shall be escalated to the ISO within 1 hour if not resolved.</li>
+        <li>Alerts that remain unresolved beyond their response time shall be automatically escalated to the next level.</li>
+        <li>The escalation chain shall be documented and accessible to all on-call personnel: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></li>
+      </ol>
+
+      <h3>23.3 Alerting Infrastructure</h3>
+      <p>
+        Alert notifications shall be delivered through multiple channels (email, messaging platform, phone) to ensure
+        timely receipt. On-call schedules shall be maintained with designated primary and secondary responders for
+        after-hours coverage.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         24. Incident Response
+         ============================================================ -->
+    <section id="s24">
+      <h1>24. Incident Response</h1>
+
+      <h3>24.1 Incident Classification</h3>
+      <table>
+        <thead><tr><th>Severity</th><th>Definition</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge badge-critical">SEV-1 (Critical)</span></td><td>Active breach, data exfiltration, complete service outage affecting clients, or regulatory-reportable event</td><td>Ransomware attack, confirmed data breach, complete infrastructure compromise</td></tr>
+          <tr><td><span class="badge badge-high">SEV-2 (High)</span></td><td>Significant security event with potential for data exposure or major service degradation</td><td>Unauthorized access to production systems, malware spread across endpoints, partial service outage</td></tr>
+          <tr><td><span class="badge badge-medium">SEV-3 (Medium)</span></td><td>Security event requiring investigation with limited immediate impact</td><td>Phishing email delivered, unauthorized software installation, policy violation</td></tr>
+          <tr><td><span class="badge badge-low">SEV-4 (Low)</span></td><td>Minor security event with negligible impact</td><td>Blocked malware detection, failed brute-force attempt, minor misconfiguration</td></tr>
+        </tbody>
+      </table>
+
+      <h3>24.2 Response Phases</h3>
+      <ol>
+        <li><strong>Detection &amp; Identification:</strong> Detect the incident through monitoring, alerts, or reports. Assign initial severity. Notify the Incident Response Coordinator.</li>
+        <li><strong>Containment:</strong> Implement immediate measures to limit the scope and impact of the incident. Short-term containment (isolate affected systems) followed by long-term containment (apply temporary fixes while maintaining evidence).</li>
+        <li><strong>Eradication:</strong> Remove the root cause of the incident (malware, compromised accounts, vulnerable components). Verify eradication through scanning and review.</li>
+        <li><strong>Recovery:</strong> Restore affected systems to normal operation from clean backups or verified clean state. Monitor for signs of recurring compromise.</li>
+        <li><strong>Post-Incident Review:</strong> Conduct a post-mortem within 5 business days of incident closure. Document lessons learned, root cause, timeline, impact, and corrective actions. Update controls and procedures as needed.</li>
+      </ol>
+
+      <h3>24.3 Communication</h3>
+      <ul>
+        <li>Internal communication during active incidents shall use a designated secure channel.</li>
+        <li>External communication (clients, regulators, media) shall be coordinated through Management and Legal. No personnel shall disclose incident details externally without authorization.</li>
+        <li>CERT-In shall be notified of reportable cyber security incidents within 6 hours of detection, as required by CERT-In directions (2022).</li>
+        <li>Affected data principals (individuals) shall be notified in accordance with the DPDP Act, 2023 requirements.</li>
+      </ul>
+
+      <h3>24.4 Incident Log</h3>
+      <p>
+        All incidents shall be logged in the Organization's incident tracking system with: incident ID, detection time,
+        classification, affected systems, timeline of actions, responsible parties, resolution, and post-mortem reference.
+        Incident records shall be retained for a minimum of 5 years.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         25. Evidence Preservation
+         ============================================================ -->
+    <section id="s25">
+      <h1>25. Evidence Preservation</h1>
+
+      <h3>25.1 Chain of Custody</h3>
+      <p>
+        When a security incident requires evidence preservation, a formal chain of custody shall be established and
+        maintained. The chain of custody log shall record: description of the evidence, date/time of collection,
+        identity of the collecting individual, storage location, and every transfer of custody.
+      </p>
+
+      <h3>25.2 Forensic Procedures</h3>
+      <ul>
+        <li>Evidence shall be collected by trained personnel or a qualified external forensic specialist.</li>
+        <li>Original evidence shall be preserved in an unmodified state. Analysis shall be performed on forensic copies.</li>
+        <li>Forensic images shall be created using write-blocking tools and verified using cryptographic hashes (SHA-256).</li>
+        <li>Volatile evidence (memory, running processes, network connections) shall be captured before shutting down affected systems.</li>
+        <li>All forensic activities shall be documented in detail, including tools used, commands executed, and findings.</li>
+      </ul>
+
+      <h3>25.3 Evidence Storage</h3>
+      <p>
+        Digital evidence shall be stored on encrypted, access-controlled media. Physical evidence shall be stored in a
+        secured, access-controlled location. Evidence shall be retained for the duration of any investigation or legal
+        proceeding, plus an additional period as directed by Legal.
+      </p>
+
+      <h3>25.4 Law Enforcement Cooperation</h3>
+      <p>
+        Cooperation with law enforcement agencies shall be coordinated through the Organization's Legal counsel.
+        Evidence shall be disclosed to law enforcement only through proper legal channels and with Legal approval.
+        Compliance with orders from CERT-In and other authorized government agencies shall be ensured as required
+        by the Information Technology Act, 2000.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         26. Backup & Recovery
+         ============================================================ -->
+    <section id="s26">
+      <h1>26. Backup &amp; Recovery</h1>
+
+      <h3>26.1 Backup Schedule</h3>
+      <table>
+        <thead><tr><th>Data Type</th><th>Frequency</th><th>Retention</th><th>Storage</th></tr></thead>
+        <tbody>
+          <tr><td>Production databases</td><td>Daily full + continuous WAL/transaction log</td><td>30 days (daily), 12 months (monthly)</td><td>Offsite / cloud (encrypted)</td></tr>
+          <tr><td>Application data &amp; files</td><td>Daily incremental, weekly full</td><td>30 days (daily), 6 months (weekly)</td><td>Offsite / cloud (encrypted)</td></tr>
+          <tr><td>System configurations</td><td>Upon change + weekly</td><td>12 months</td><td>Version control + offsite</td></tr>
+          <tr><td>Email &amp; collaboration data</td><td>Per provider SLA + daily export</td><td>12 months</td><td>Cloud (encrypted)</td></tr>
+          <tr><td>Source code repositories</td><td>Continuous (Git), daily mirror</td><td>Indefinite</td><td>Multiple remotes</td></tr>
+        </tbody>
+      </table>
+
+      <h3>26.2 Backup Testing</h3>
+      <p>
+        Backup restoration shall be tested at least quarterly. Tests shall verify: data integrity, restoration procedure
+        accuracy, and compliance with Recovery Time Objective (RTO) and Recovery Point Objective (RPO) targets. Test
+        results shall be documented and reviewed by the ISO.
+      </p>
+
+      <h3>26.3 Offsite Storage</h3>
+      <p>
+        Backup copies shall be stored at a geographically separate location from the primary data center. Offsite backup
+        storage shall comply with all encryption and access control requirements specified in this Policy. Cloud-based
+        backup storage shall use approved providers and regions within Indian jurisdiction unless documented legal review
+        permits otherwise.
+      </p>
+
+      <h3>26.4 Backup Access Control</h3>
+      <p>
+        Access to backup media and restoration procedures shall be restricted to authorized IT Operations personnel.
+        Restoration of data from backups shall require documented authorization from the data owner and the ISO (for
+        Restricted data).
+      </p>
+    </section>
+
+    <!-- ============================================================
+         27. Disaster Recovery
+         ============================================================ -->
+    <section id="s27">
+      <h1>27. Disaster Recovery</h1>
+
+      <h3>27.1 DR Objectives</h3>
+      <table>
+        <thead><tr><th>Service Tier</th><th>RTO (Recovery Time Objective)</th><th>RPO (Recovery Point Objective)</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tier 1 &mdash; Mission Critical</strong></td><td>4 hours</td><td>1 hour</td><td>Production applications, client-facing services, authentication systems</td></tr>
+          <tr><td><strong>Tier 2 &mdash; Business Critical</strong></td><td>24 hours</td><td>4 hours</td><td>Internal business applications, email, collaboration tools</td></tr>
+          <tr><td><strong>Tier 3 &mdash; Standard</strong></td><td>72 hours</td><td>24 hours</td><td>Development environments, non-critical internal tools</td></tr>
+          <tr><td><strong>Tier 4 &mdash; Low Priority</strong></td><td>1 week</td><td>1 week</td><td>Archive systems, historical data</td></tr>
+        </tbody>
+      </table>
+
+      <h3>27.2 DR Plan</h3>
+      <p>
+        The Organization shall maintain a documented Disaster Recovery Plan that covers: critical system inventory and
+        dependencies, recovery procedures for each service tier, communication plan, roles and responsibilities,
+        alternative processing sites or cloud failover configurations, and vendor contact information.
+      </p>
+      <p>DR Plan document reference: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+      <h3>27.3 DR Testing</h3>
+      <p>The DR Plan shall be tested at least annually through one or more of the following methods:</p>
+      <ul>
+        <li><strong>Tabletop Exercise:</strong> Walkthrough of DR scenarios with key personnel (at least annually).</li>
+        <li><strong>Partial Failover Test:</strong> Simulated recovery of selected Tier 1 systems (at least annually).</li>
+        <li><strong>Full Failover Test:</strong> Complete activation of the DR environment (at least every 2 years).</li>
+      </ul>
+      <p>Test results shall be documented, and identified gaps shall be remediated within 30 days.</p>
+    </section>
+
+    <!-- ============================================================
+         28. Business Continuity
+         ============================================================ -->
+    <section id="s28">
+      <h1>28. Business Continuity</h1>
+
+      <h3>28.1 BCP Overview</h3>
+      <p>
+        The Organization shall maintain a Business Continuity Plan (BCP) to ensure the continuation of critical business
+        functions during and after a disruptive event. The BCP shall be reviewed and updated at least annually and after
+        any significant organizational or infrastructure change.
+      </p>
+      <p>BCP document reference: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+      <h3>28.2 Critical Business Functions</h3>
+      <p>The following functions are classified as critical and shall be prioritized for recovery:</p>
+      <ul>
+        <li>Client service delivery and production application availability.</li>
+        <li>Financial operations (payroll, invoicing, payments).</li>
+        <li>Communication systems (email, messaging, telephony).</li>
+        <li>Security operations (monitoring, incident response, access management).</li>
+        <li><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; additional critical functions]</span></li>
+      </ul>
+
+      <h3>28.3 Recovery Priorities</h3>
+      <p>
+        Recovery efforts shall be prioritized according to the service tier classification in Section 27.1. Within each
+        tier, priority shall be given to functions that directly impact client commitments and contractual SLAs.
+      </p>
+
+      <h3>28.4 Alternate Work Arrangements</h3>
+      <p>
+        The BCP shall include provisions for alternate work locations and remote working arrangements. All employees
+        whose roles permit remote work shall maintain the capability to work remotely on short notice. Requirements for
+        remote working security are defined in Section 36.
+      </p>
+
+      <h3>28.5 BCP Testing &amp; Maintenance</h3>
+      <p>
+        The BCP shall be tested at least annually through tabletop exercises or simulation drills. Contact lists,
+        escalation procedures, and vendor information shall be reviewed quarterly. All employees shall be informed
+        of their roles and responsibilities in the BCP.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         29. Vendor Risk Management
+         ============================================================ -->
+    <section id="s29">
+      <h1>29. Vendor Risk Management</h1>
+
+      <h3>29.1 Vendor Assessment</h3>
+      <p>
+        All third-party vendors who access, process, store, or transmit Organization data shall undergo a security risk
+        assessment before engagement and periodically thereafter (at least annually for critical vendors). The assessment
+        shall evaluate:
+      </p>
+      <ul>
+        <li>Security certifications and attestations (SOC 2, ISO 27001, etc.).</li>
+        <li>Data handling and protection practices.</li>
+        <li>Incident response capabilities and notification commitments.</li>
+        <li>Business continuity and disaster recovery capabilities.</li>
+        <li>Subprocessor management and data residency.</li>
+        <li>Compliance with applicable Indian regulations (IT Act, DPDP Act).</li>
+      </ul>
+
+      <h3>29.2 Vendor Risk Classification</h3>
+      <table>
+        <thead><tr><th>Risk Tier</th><th>Criteria</th><th>Assessment Frequency</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Critical</strong></td><td>Processes Restricted/Confidential data, provides critical infrastructure, has privileged access</td><td>Annually + upon significant change</td></tr>
+          <tr><td><strong>High</strong></td><td>Processes Internal data, provides business-critical services</td><td>Annually</td></tr>
+          <tr><td><strong>Standard</strong></td><td>Limited data access, non-critical services</td><td>Every 2 years</td></tr>
+        </tbody>
+      </table>
+
+      <h3>29.3 Contractual Requirements</h3>
+      <p>Contracts with vendors shall include the following security provisions:</p>
+      <ul>
+        <li>Data protection obligations aligned with this Policy and applicable law.</li>
+        <li>Right-to-audit clause permitting the Organization to assess vendor security practices.</li>
+        <li>Incident notification requirements (within 24 hours of discovery for Critical vendors).</li>
+        <li>Data return and secure deletion upon contract termination.</li>
+        <li>Confidentiality and non-disclosure provisions.</li>
+        <li>Compliance with applicable Indian data protection regulations.</li>
+        <li>Liability and indemnification for security breaches caused by the vendor.</li>
+      </ul>
+
+      <h3>29.4 Ongoing Monitoring</h3>
+      <p>
+        Critical vendors shall be subject to ongoing monitoring, including review of SOC reports, security scorecards,
+        incident notifications, and compliance attestations. Material changes in vendor security posture shall trigger
+        a re-assessment.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         30. Third-Party Access
+         ============================================================ -->
+    <section id="s30">
+      <h1>30. Third-Party Access</h1>
+
+      <h3>30.1 Access Requirements</h3>
+      <p>Third-party access to Organization systems and data shall be granted only when:</p>
+      <ul>
+        <li>A documented business justification exists and is approved by the Asset Owner and the ISO.</li>
+        <li>A signed confidentiality/NDA agreement is in place.</li>
+        <li>The vendor has been assessed per Section 29.</li>
+        <li>Access is limited to the minimum scope and duration required.</li>
+        <li>The third party agrees to comply with this Policy and applicable security requirements.</li>
+      </ul>
+
+      <h3>30.2 Access Controls</h3>
+      <ul>
+        <li>Third-party accounts shall be distinctly identifiable (e.g., naming convention <code>ext-vendorname-user</code>).</li>
+        <li>Third-party access shall use dedicated accounts; sharing of employee accounts is prohibited.</li>
+        <li>MFA shall be required for all third-party remote access.</li>
+        <li>Third-party access shall be time-limited and automatically expire. Extensions require re-approval.</li>
+        <li>Third-party activities shall be logged and monitored.</li>
+      </ul>
+
+      <h3>30.3 Access Termination</h3>
+      <p>
+        Third-party access shall be revoked immediately upon contract termination, project completion, or when the
+        business justification no longer exists. IT Operations shall verify access revocation within 24 hours of
+        the termination trigger.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         31. Data Retention & Disposal
+         ============================================================ -->
+    <section id="s31">
+      <h1>31. Data Retention &amp; Disposal</h1>
+
+      <h3>31.1 Retention Schedule</h3>
+      <table>
+        <thead><tr><th>Data Category</th><th>Retention Period</th><th>Legal / Regulatory Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Financial records</td><td>8 years after financial year end</td><td>Companies Act 2013, Income Tax Act</td></tr>
+          <tr><td>Employee records</td><td>Duration of employment + 7 years</td><td>Labour laws, IT Act</td></tr>
+          <tr><td>Client contracts</td><td>Duration of contract + 7 years</td><td>Indian Contract Act, Limitation Act</td></tr>
+          <tr><td>Security / audit logs</td><td>Per Section 22.5</td><td>CERT-In directions, SOC 2 requirements</td></tr>
+          <tr><td>Personal data (DPDP Act scope)</td><td>Only as long as necessary for the purpose for which it was collected; delete upon fulfillment</td><td>Digital Personal Data Protection Act, 2023</td></tr>
+          <tr><td>Incident records</td><td>5 years from closure</td><td>Internal governance, potential litigation</td></tr>
+          <tr><td>Source code</td><td>Indefinite (version controlled)</td><td>Business requirement</td></tr>
+          <tr><td>Backup data</td><td>Per Section 26.1</td><td>Business continuity requirements</td></tr>
+        </tbody>
+      </table>
+
+      <h3>31.2 Secure Disposal Methods</h3>
+      <table>
+        <thead><tr><th>Media Type</th><th>Disposal Method</th></tr></thead>
+        <tbody>
+          <tr><td>Hard drives (HDD)</td><td>NIST SP 800-88 compliant degaussing or physical destruction (shredding)</td></tr>
+          <tr><td>Solid-state drives (SSD)</td><td>Cryptographic erasure (AES encryption + key destruction) or physical destruction</td></tr>
+          <tr><td>Paper documents</td><td>Cross-cut shredding (DIN 66399 Level P-4 or higher for Confidential/Restricted)</td></tr>
+          <tr><td>Optical media (CD/DVD)</td><td>Physical destruction (shredding)</td></tr>
+          <tr><td>Cloud-hosted data</td><td>Secure deletion via provider API + verification; request provider certificate of destruction for Critical vendors</td></tr>
+          <tr><td>Removable media (USB)</td><td>Cryptographic erasure + physical destruction</td></tr>
+        </tbody>
+      </table>
+
+      <h3>31.3 Disposal Documentation</h3>
+      <p>
+        All disposal activities for assets containing Confidential or Restricted data shall be documented, including:
+        asset identifier, data classification, disposal method, date, responsible individual, and witness (for physical
+        destruction). Certificates of destruction shall be obtained from third-party disposal vendors.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         32. Personnel Security
+         ============================================================ -->
+    <section id="s32">
+      <h1>32. Personnel Security</h1>
+
+      <h3>32.1 Pre-Employment Screening</h3>
+      <p>All prospective employees and contractors shall undergo background verification before being granted access to Organization systems. Screening shall include, subject to applicable law:</p>
+      <ul>
+        <li>Identity verification (government-issued photo ID, Aadhaar verification as permitted).</li>
+        <li>Employment history verification (previous 3 employers or 5 years, whichever is longer).</li>
+        <li>Educational qualification verification.</li>
+        <li>Criminal background check (as permitted by applicable Indian law).</li>
+        <li>Reference checks (minimum 2 professional references).</li>
+      </ul>
+      <p>The depth of screening shall be commensurate with the sensitivity of the role and data access level.</p>
+
+      <h3>32.2 Security Agreements</h3>
+      <p>All employees and contractors shall sign the following before being granted system access:</p>
+      <ul>
+        <li>Confidentiality / Non-Disclosure Agreement (NDA).</li>
+        <li>Acceptable Use Policy acknowledgement.</li>
+        <li>Information Security Policy acknowledgement (this Policy).</li>
+        <li>Data protection agreement (where applicable under DPDP Act).</li>
+      </ul>
+
+      <h3>32.3 Ongoing Obligations</h3>
+      <p>
+        Personnel shall comply with all security policies and procedures throughout their engagement with the Organization.
+        Security obligations shall survive termination as specified in the signed agreements. Material changes in an
+        individual's circumstances that may affect their security clearance (e.g., criminal charges) shall be reported
+        to HR and the ISO.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         33. Employee Onboarding
+         ============================================================ -->
+    <section id="s33">
+      <h1>33. Employee Onboarding</h1>
+
+      <h3>33.1 Security Orientation</h3>
+      <p>All new employees and contractors shall complete a security orientation within their first week that covers:</p>
+      <ul>
+        <li>Overview of the Organization's information security program and this Policy.</li>
+        <li>Data classification and handling rules.</li>
+        <li>Acceptable use of IT resources.</li>
+        <li>Password and authentication requirements.</li>
+        <li>Phishing awareness and social engineering recognition.</li>
+        <li>Incident reporting procedures.</li>
+        <li>Physical security and clean desk requirements.</li>
+        <li>Remote working security requirements (where applicable).</li>
+      </ul>
+
+      <h3>33.2 Access Provisioning</h3>
+      <p>
+        Access provisioning for new employees shall follow the process defined in Section 7.3. Access shall be provisioned
+        based on the role profile approved by the department manager. No access shall be granted until security orientation
+        is completed and all required security agreements are signed.
+      </p>
+
+      <h3>33.3 Equipment Issuance</h3>
+      <p>
+        Organization-owned equipment issued to new employees shall be configured according to the approved hardening
+        baseline (Section 11.2), registered in the asset inventory (Section 4), and have full-disk encryption enabled
+        before handover. The employee shall acknowledge receipt of equipment and their responsibility for its security.
+      </p>
+
+      <h3>33.4 Onboarding Checklist</h3>
+      <p>
+        HR and IT Operations shall maintain and follow a documented onboarding checklist that tracks completion of all
+        security-related onboarding tasks. The completed checklist shall be retained in the employee's personnel file.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         34. Employee Offboarding
+         ============================================================ -->
+    <section id="s34">
+      <h1>34. Employee Offboarding</h1>
+
+      <h3>34.1 Access Revocation</h3>
+      <p>
+        Upon notification of an employee's departure (resignation, termination, or contract end), the following actions
+        shall be completed:
+      </p>
+      <table>
+        <thead><tr><th>Action</th><th>Timeline</th><th>Responsible</th></tr></thead>
+        <tbody>
+          <tr><td>Disable all system accounts (Active Directory, email, applications)</td><td>Within 4 hours of departure (immediate for termination)</td><td>IT Operations</td></tr>
+          <tr><td>Revoke VPN and remote access</td><td>Within 4 hours</td><td>IT Operations</td></tr>
+          <tr><td>Revoke cloud service access (SaaS, IaaS)</td><td>Within 4 hours</td><td>IT Operations</td></tr>
+          <tr><td>Revoke source code repository access</td><td>Within 4 hours</td><td>IT Operations / Dev Lead</td></tr>
+          <tr><td>Revoke physical access (badges, keys)</td><td>On last working day</td><td>HR / Facilities</td></tr>
+          <tr><td>Rotate shared secrets the individual had access to</td><td>Within 24 hours</td><td>IT Operations</td></tr>
+          <tr><td>Review and reassign data/asset ownership</td><td>Within 5 business days</td><td>Department Manager</td></tr>
+        </tbody>
+      </table>
+
+      <h3>34.2 Asset Return</h3>
+      <p>
+        All Organization-owned equipment (laptops, phones, access badges, tokens, keys) shall be returned on or before
+        the last working day. IT Operations shall verify the return and condition of each asset against the inventory
+        record. Returned devices shall be securely wiped before reassignment.
+      </p>
+
+      <h3>34.3 Knowledge Transfer</h3>
+      <p>
+        Department managers shall ensure that departing employees complete necessary knowledge transfer, including
+        documentation of system access, processes, and critical information within their responsibility. Shared
+        credentials or secrets known to the departing individual shall be rotated.
+      </p>
+
+      <h3>34.4 Offboarding Checklist</h3>
+      <p>
+        HR and IT Operations shall maintain and follow a documented offboarding checklist. Completion of all security-
+        related offboarding tasks shall be verified and documented. The ISO shall perform a monthly audit of recent
+        offboarding completeness.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         35. Security Awareness Training
+         ============================================================ -->
+    <section id="s35">
+      <h1>35. Security Awareness Training</h1>
+
+      <h3>35.1 Annual Training</h3>
+      <p>
+        All employees and contractors with access to Organization systems shall complete security awareness training at
+        least annually. Training shall cover: current threat landscape, phishing recognition, password security, data
+        handling, incident reporting, social engineering, physical security, and remote working security.
+      </p>
+
+      <h3>35.2 Role-Based Training</h3>
+      <p>Employees in the following roles shall receive additional, specialized security training:</p>
+      <ul>
+        <li><strong>Developers:</strong> Secure coding practices, OWASP Top 10, SAST/DAST tool usage (annually).</li>
+        <li><strong>System Administrators:</strong> Secure system configuration, privilege management, incident response (annually).</li>
+        <li><strong>Managers:</strong> Security governance, risk management, compliance obligations (annually).</li>
+        <li><strong>Incident Responders:</strong> Forensic procedures, evidence preservation, communication protocols (semi-annually).</li>
+      </ul>
+
+      <h3>35.3 Phishing Simulations</h3>
+      <p>
+        The Organization shall conduct phishing simulation exercises at least quarterly. Personnel who fail simulations
+        shall receive immediate remedial training. Repeat failures within a 12-month period shall be escalated to the
+        individual's manager and the ISO for additional corrective action.
+      </p>
+
+      <h3>35.4 Training Records</h3>
+      <p>
+        Completion records for all security training shall be maintained by HR for a minimum of 3 years. Training
+        completion rates shall be reported to the Information Security Committee quarterly. A minimum completion rate
+        of 95% shall be targeted across the Organization.
+      </p>
+
+      <h3>35.5 New Threat Briefings</h3>
+      <p>
+        The ISO shall issue ad-hoc security advisories to all personnel when significant new threats are identified that
+        are relevant to the Organization (e.g., active phishing campaigns targeting the industry, newly disclosed critical
+        vulnerabilities in widely used software).
+      </p>
+    </section>
+
+    <!-- ============================================================
+         36. Remote Working
+         ============================================================ -->
+    <section id="s36">
+      <h1>36. Remote Working</h1>
+
+      <h3>36.1 VPN Requirements</h3>
+      <p>
+        All remote access to Organization internal systems shall be conducted through the approved VPN solution.
+        Personnel shall connect to the VPN before accessing any internal application, file share, or management console.
+        The VPN connection shall enforce MFA at each session initiation.
+      </p>
+
+      <h3>36.2 Device Security</h3>
+      <p>Devices used for remote work shall meet the following requirements:</p>
+      <ul>
+        <li>Full-disk encryption must be enabled.</li>
+        <li>Anti-malware/EDR software must be installed, active, and up to date.</li>
+        <li>Operating system and applications must be patched and up to date.</li>
+        <li>Automatic screen lock must be configured (maximum 10 minutes of inactivity).</li>
+        <li>Personal devices used for work (BYOD) must be enrolled in the Organization's MDM solution.</li>
+      </ul>
+
+      <h3>36.3 Data Handling</h3>
+      <ul>
+        <li>Restricted data shall not be stored locally on remote devices unless absolutely necessary and encrypted.</li>
+        <li>Personnel shall not use public Wi-Fi networks for accessing Organization resources without VPN protection.</li>
+        <li>Work-related documents shall be stored in the Organization's approved cloud storage; local copies should be minimized.</li>
+        <li>Printing of Confidential or Restricted data at home or in public locations is prohibited without ISO approval.</li>
+      </ul>
+
+      <h3>36.4 Physical Environment</h3>
+      <p>
+        Remote workers shall ensure their workspace provides reasonable physical security: screens shall not be visible
+        to unauthorized individuals, confidential conversations shall not be held within earshot of unauthorized persons,
+        and Organization equipment shall be secured when unattended.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         37. Mobile Devices
+         ============================================================ -->
+    <section id="s37">
+      <h1>37. Mobile Devices</h1>
+
+      <h3>37.1 Mobile Device Management (MDM)</h3>
+      <p>
+        All mobile devices (smartphones, tablets) that access Organization email, data, or applications shall be enrolled
+        in the Organization's approved MDM solution. The MDM solution shall enforce the following minimum controls:
+      </p>
+      <ul>
+        <li>Device passcode/biometric lock (minimum 6-digit PIN or biometric).</li>
+        <li>Encryption of device storage.</li>
+        <li>Remote wipe capability.</li>
+        <li>Jailbreak/root detection (non-compliant devices shall be blocked).</li>
+        <li>Enforcement of OS version minimums and security patch levels.</li>
+        <li>Containerization of Organization data (separation from personal data).</li>
+      </ul>
+
+      <h3>37.2 Approved Devices</h3>
+      <p>
+        The Organization shall maintain a list of approved mobile device platforms and minimum OS versions. Devices that
+        do not meet minimum requirements shall be blocked from accessing Organization resources.
+      </p>
+      <p>Approved platforms and minimum versions: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+      <h3>37.3 BYOD Policy</h3>
+      <p>
+        Personal devices (Bring Your Own Device) may be used to access Organization data only if enrolled in MDM and
+        compliant with all requirements stated above. The Organization reserves the right to remotely wipe Organization
+        data (containerized wipe) from personal devices. Employees shall accept the BYOD terms before enrollment.
+      </p>
+
+      <h3>37.4 Lost or Stolen Devices</h3>
+      <p>
+        Personnel shall report lost or stolen devices to IT Operations and the ISO within 1 hour of discovery. IT
+        Operations shall initiate a remote wipe of the device immediately upon notification. The incident shall be
+        logged and assessed for data breach implications.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         38. Physical Security
+         ============================================================ -->
+    <section id="s38">
+      <h1>38. Physical Security</h1>
+
+      <h3>38.1 Facility Access</h3>
+      <ul>
+        <li>Access to Organization premises shall be controlled through electronic access control systems (card readers, biometric scanners, or equivalent).</li>
+        <li>Access shall be granted based on role and business need.</li>
+        <li>Server rooms, network equipment rooms, and other sensitive areas shall have additional access restrictions limited to authorized IT personnel.</li>
+        <li>All access events shall be logged and retained for a minimum of 90 days.</li>
+        <li>Access badges shall not be shared or lent to others. Tailgating is prohibited.</li>
+      </ul>
+
+      <h3>38.2 Visitor Management</h3>
+      <ul>
+        <li>All visitors shall sign in at reception, present valid identification, and receive a visitor badge.</li>
+        <li>Visitors shall be escorted at all times within the facility unless visiting designated public areas.</li>
+        <li>Visitors shall not be permitted in server rooms or other restricted areas without prior authorization from the ISO and escort by authorized personnel.</li>
+        <li>Visitor logs shall be maintained and retained for a minimum of 90 days.</li>
+      </ul>
+
+      <h3>38.3 Environmental Controls</h3>
+      <p>Server rooms and data processing facilities shall be equipped with:</p>
+      <ul>
+        <li>Temperature and humidity monitoring and control systems.</li>
+        <li>Fire detection and suppression systems appropriate for electronic equipment.</li>
+        <li>Uninterruptible Power Supply (UPS) systems to provide emergency power.</li>
+        <li>Water leak detection systems.</li>
+        <li>CCTV surveillance at entry/exit points and within server rooms, with footage retained for a minimum of 90 days.</li>
+      </ul>
+
+      <h3>38.4 Clean Desk Policy</h3>
+      <p>
+        All personnel shall maintain a clean desk at the end of each working day. Confidential and Restricted documents
+        shall be locked in drawers or cabinets when not in active use. Whiteboards containing sensitive information
+        shall be erased after meetings. Screens shall be locked when leaving the workstation unattended.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         39. Exceptions
+         ============================================================ -->
+    <section id="s39">
+      <h1>39. Exceptions</h1>
+
+      <h3>39.1 Exception Request Process</h3>
+      <p>
+        Any request for an exception to this Policy or any subordinate security policy shall be submitted through the
+        formal exception request process. Exception requests shall include:
+      </p>
+      <ul>
+        <li>Specific policy section(s) for which the exception is requested.</li>
+        <li>Detailed business justification explaining why compliance is not feasible.</li>
+        <li>Risk assessment of the exception, including potential impact and likelihood.</li>
+        <li>Proposed compensating controls to mitigate the risk introduced by the exception.</li>
+        <li>Requested duration of the exception (exceptions shall not be granted indefinitely).</li>
+        <li>Remediation plan and timeline to achieve full compliance.</li>
+      </ul>
+
+      <h3>39.2 Approval Authority</h3>
+      <table>
+        <thead><tr><th>Risk Level of Exception</th><th>Approval Required From</th></tr></thead>
+        <tbody>
+          <tr><td>Low risk</td><td>Information Security Officer</td></tr>
+          <tr><td>Medium risk</td><td>ISO + Department Head</td></tr>
+          <tr><td>High / Critical risk</td><td>ISO + Management</td></tr>
+        </tbody>
+      </table>
+
+      <h3>39.3 Documentation &amp; Tracking</h3>
+      <p>
+        All approved exceptions shall be documented in the Exception Register maintained by the ISO. Each exception
+        record shall include: exception ID, requestor, approval authority, date approved, expiration date, risk
+        assessment, compensating controls, and review schedule. The Exception Register shall be reviewed quarterly
+        by the Information Security Committee.
+      </p>
+
+      <h3>39.4 Renewal &amp; Expiry</h3>
+      <p>
+        Exceptions shall be granted for a maximum of 12 months. Renewal requires a new request and re-assessment.
+        Expired exceptions that have not been renewed shall be treated as policy violations.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         40. Compliance
+         ============================================================ -->
+    <section id="s40">
+      <h1>40. Compliance</h1>
+
+      <h3>40.1 Regulatory Alignment</h3>
+      <p>This Policy is designed to align with the following regulatory and standards frameworks:</p>
+
+      <h4>40.1.1 Indian Legislation</h4>
+      <ul>
+        <li><strong>Information Technology Act, 2000</strong> (and amendments, including IT Amendment Act, 2008): Governs electronic transactions, cybercrime, data protection under Section 43A, and intermediary obligations. The Organization shall implement reasonable security practices and procedures as prescribed under the IT Act and IT (Reasonable Security Practices and Procedures) Rules, 2011.</li>
+        <li><strong>CERT-In Directions (28 April 2022):</strong> Mandates reporting of cyber security incidents to CERT-In within 6 hours, maintaining ICT system logs for 180 days within Indian jurisdiction, synchronization of system clocks with NTP servers of NIC or NPLI, and other operational requirements. The Organization shall comply with all applicable CERT-In directions.</li>
+        <li><strong>Digital Personal Data Protection Act, 2023 (DPDP Act):</strong> Governs the processing of digital personal data, including consent requirements, data principal rights, obligations of data fiduciaries, and cross-border data transfer rules. The Organization shall implement appropriate technical and organizational measures to comply with the DPDP Act once the rules are notified and effective.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <strong>Legal Disclaimer:</strong> Applicability of specific regulatory requirements should be validated by Ramdoot
+        Solutions' legal/compliance advisor. The regulatory landscape in India is evolving; the Organization shall monitor
+        legislative developments and update this Policy as necessary.
+      </div>
+
+      <h4>40.1.2 SOC 2 Trust Services Criteria</h4>
+      <p>This Policy addresses the following SOC 2 Trust Services Criteria:</p>
+      <ul>
+        <li><strong>CC1 (Control Environment):</strong> Sections 1, 2, 32, 35 &mdash; governance, roles, personnel security, training.</li>
+        <li><strong>CC2 (Communication and Information):</strong> Sections 22, 23, 24 &mdash; logging, alerting, incident communication.</li>
+        <li><strong>CC3 (Risk Assessment):</strong> Section 3 &mdash; risk management framework.</li>
+        <li><strong>CC4 (Monitoring Activities):</strong> Sections 19, 22, 23, 42 &mdash; vulnerability management, monitoring, policy review.</li>
+        <li><strong>CC5 (Control Activities):</strong> Sections 7&ndash;21 &mdash; access control, network security, change management, cryptography.</li>
+        <li><strong>CC6 (Logical and Physical Access):</strong> Sections 7, 8, 9, 30, 38 &mdash; IAM, privileged access, authentication, physical security.</li>
+        <li><strong>CC7 (System Operations):</strong> Sections 19, 20, 21, 22, 24 &mdash; vulnerability management, patching, malware, incident response.</li>
+        <li><strong>CC8 (Change Management):</strong> Sections 13, 14, 15, 20 &mdash; SDLC, source code, patch management.</li>
+        <li><strong>CC9 (Risk Mitigation):</strong> Sections 3, 29, 30, 39 &mdash; risk treatment, vendor risk, third-party access, exceptions.</li>
+      </ul>
+
+      <h4>40.1.3 ISO/IEC 27001:2022 Alignment</h4>
+      <p>
+        This Policy aligns with ISO/IEC 27001:2022 Annex A controls. The Organization does not claim ISO 27001
+        certification unless separately attested. Key Annex A control families addressed by this Policy include:
+        A.5 (Organizational Controls), A.6 (People Controls), A.7 (Physical Controls), and A.8 (Technological Controls).
+      </p>
+
+      <h3>40.2 Internal Compliance Monitoring</h3>
+      <p>
+        The ISO shall conduct internal compliance reviews at least semi-annually to assess adherence to this Policy.
+        Findings shall be documented, assigned remediation owners, and tracked to closure. Significant non-compliance
+        shall be reported to the Information Security Committee and Management.
+      </p>
+
+      <h3>40.3 External Audits</h3>
+      <p>
+        The Organization shall undergo external security audits (e.g., SOC 2 Type II) as required by contractual
+        obligations or management direction. Audit findings shall be remediated according to the agreed timelines, and
+        the ISO shall track remediation progress.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         41. Disciplinary Consequences
+         ============================================================ -->
+    <section id="s41">
+      <h1>41. Disciplinary Consequences</h1>
+
+      <h3>41.1 Violation Handling</h3>
+      <p>
+        Violations of this Policy may result in disciplinary action, up to and including termination of employment or
+        contract, and legal action where applicable. The severity of disciplinary action shall be proportionate to
+        the nature and impact of the violation.
+      </p>
+
+      <h3>41.2 Violation Categories</h3>
+      <table>
+        <thead><tr><th>Category</th><th>Examples</th><th>Potential Consequences</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Minor / First-Time</strong></td>
+            <td>Failure to lock screen, minor clean desk violation, late completion of security training</td>
+            <td>Verbal warning, mandatory remedial training</td>
+          </tr>
+          <tr>
+            <td><strong>Moderate / Repeated</strong></td>
+            <td>Sharing credentials, installing unauthorized software, repeated failure of phishing simulations, unauthorized data storage</td>
+            <td>Written warning, access restriction, mandatory retraining, performance impact</td>
+          </tr>
+          <tr>
+            <td><strong>Severe / Intentional</strong></td>
+            <td>Unauthorized access to Restricted data, circumventing security controls, data theft, sabotage, failure to report a known incident</td>
+            <td>Suspension, termination of employment/contract, legal action, reporting to authorities</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>41.3 Escalation</h3>
+      <p>
+        All suspected violations shall be reported to the ISO. The ISO shall investigate in coordination with HR and,
+        where appropriate, Legal. Confirmed violations shall be documented and retained in the individual's personnel
+        file. Violations involving potential criminal activity shall be reported to the appropriate Indian law enforcement
+        authorities through the Organization's Legal counsel.
+      </p>
+
+      <h3>41.4 Non-Retaliation</h3>
+      <p>
+        The Organization prohibits retaliation against any individual who reports a security concern or policy violation
+        in good faith. Reports may be made through the ISO, HR, or the Organization's designated reporting channel.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         42. Policy Review
+         ============================================================ -->
+    <section id="s42">
+      <h1>42. Policy Review</h1>
+
+      <h3>42.1 Review Cycle</h3>
+      <p>
+        This Policy shall be reviewed and, if necessary, updated at least annually. The annual review shall be
+        coordinated by the ISO and approved by Management. The next scheduled review date shall be recorded in
+        the document control table.
+      </p>
+
+      <h3>42.2 Triggers for Out-of-Cycle Review</h3>
+      <p>This Policy shall be reviewed outside the annual cycle upon any of the following events:</p>
+      <ul>
+        <li>A significant security incident.</li>
+        <li>Material changes in the Organization's business operations, technology environment, or organizational structure.</li>
+        <li>Changes in applicable laws, regulations, or regulatory guidance (e.g., new CERT-In directions, DPDP Act rules).</li>
+        <li>Findings from internal or external audits that indicate policy deficiencies.</li>
+        <li>Significant changes in the threat landscape.</li>
+        <li>Acquisition, merger, or significant partnership agreements.</li>
+      </ul>
+
+      <h3>42.3 Change Management</h3>
+      <p>
+        All changes to this Policy shall be documented in the version history table. Changes shall be reviewed by the
+        Information Security Committee and approved by Management before publication. All personnel shall be notified
+        of material changes and required to review the updated Policy.
+      </p>
+
+      <h3>42.4 Subordinate Policies &amp; Procedures</h3>
+      <p>
+        This NISP is the parent policy. The following subordinate policies and procedures support implementation of
+        this Policy and shall be maintained and reviewed alongside it:
+      </p>
+      <ul>
+        <li>Incident Response Plan</li>
+        <li>Business Continuity Plan</li>
+        <li>Disaster Recovery Plan</li>
+        <li>Data Protection &amp; Privacy Policy</li>
+        <li>Vendor Risk Management Procedure</li>
+        <li>Change Management Procedure</li>
+        <li>Access Control Procedure</li>
+        <li>Backup &amp; Recovery Procedure</li>
+        <li><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS &mdash; additional subordinate documents]</span></li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         Approval Block
+         ============================================================ -->
+    <div class="approval-block">
+      <h2 style="padding: 0.8rem; margin: 0; font-size: 1.1rem; background: var(--rs-light-gray); border-bottom: 1px solid var(--rs-border);">Document Approval</h2>
+      <table>
+        <thead>
+          <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Prepared By</strong></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Reviewed By (ISO / CISO)</strong></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Approved By (Management)</strong></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         Version History
+         ============================================================ -->
+    <div class="version-history">
+      <h2>Version History</h2>
+      <table>
+        <thead>
+          <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial release &mdash; Draft for Management Approval</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <div class="doc-footer">
+      <span>RS-NISP-001 &mdash; Network &amp; Information Security Policy &mdash; v1.0</span>
+      <span>&copy; Ramdoot Solutions. Confidential.</span>
+    </div>
+
+  </div><!-- /.page-wrapper -->
+
+</body>
+</html>

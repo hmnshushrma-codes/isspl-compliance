@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-005: Incident Response Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-005</td></tr>
+            <tr><th>Title</th><td>Incident Response Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure provides a structured, repeatable approach for detecting, reporting, triaging, containing, eradicating, and recovering from security incidents at Ramdoot Solutions. It ensures that incidents are handled consistently, impact is minimized, evidence is preserved for investigation, and regulatory notification obligations &mdash; including CERT-In's 6-hour reporting requirement for cyber incidents &mdash; are met.</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure applies to all information security incidents affecting Ramdoot Solutions, including but not limited to:</p>
+        <ul>
+            <li>Unauthorized access to systems, applications, or data.</li>
+            <li>Malware infections, ransomware attacks, and phishing compromises.</li>
+            <li>Data breaches or suspected data exfiltration.</li>
+            <li>Denial-of-service attacks.</li>
+            <li>Insider threats and policy violations with security implications.</li>
+            <li>Physical security breaches affecting information assets.</li>
+            <li>Third-party/vendor security incidents affecting Ramdoot Solutions data.</li>
+        </ul>
+        <p>This covers all employees, contractors, systems, and environments (production, staging, corporate).</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Security Incident</td><td>An event that actually or potentially jeopardizes the confidentiality, integrity, or availability of an information system or the information it processes, stores, or transmits.</td></tr>
+                <tr><td>Security Event</td><td>An observable occurrence in a system or network that may indicate a security incident.</td></tr>
+                <tr><td>CSIRT</td><td>Computer Security Incident Response Team &mdash; the designated team responsible for coordinating incident response.</td></tr>
+                <tr><td>Incident Commander (IC)</td><td>The individual leading the incident response effort for a specific incident.</td></tr>
+                <tr><td>CERT-In</td><td>Indian Computer Emergency Response Team &mdash; the national nodal agency for responding to computer security incidents. Mandatory 6-hour reporting for specified cyber incidents under CERT-In Directions (April 2022).</td></tr>
+                <tr><td>SIEM</td><td>Security Information and Event Management &mdash; centralized log aggregation and threat detection platform.</td></tr>
+                <tr><td>IoC</td><td>Indicator of Compromise &mdash; forensic artefacts that indicate a system has been compromised.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>All Employees</td><td>Report suspected security incidents immediately via the designated reporting channel.</td></tr>
+                <tr><td>IT Help Desk</td><td>Receives initial reports, logs the incident ticket, and escalates to the CSIRT.</td></tr>
+                <tr><td>CSIRT</td><td>Triages incidents, leads containment and eradication, coordinates recovery, preserves evidence, and manages communication.</td></tr>
+                <tr><td>Incident Commander</td><td>Takes overall command of the incident response; makes decisions on containment strategy, resource allocation, and external communication.</td></tr>
+                <tr><td>IT Operations</td><td>Executes containment and recovery actions under CSIRT direction (network isolation, system restoration, patching).</td></tr>
+                <tr><td>Legal / Compliance</td><td>Advises on regulatory notification requirements, engages law enforcement if needed, and reviews external communications.</td></tr>
+                <tr><td>Management / CTO</td><td>Authorizes major containment decisions (e.g., shutting down production systems), approves external communications, and receives status updates.</td></tr>
+                <tr><td>Communications / PR</td><td>Handles external communications to customers, media, and partners under Legal guidance.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>CSIRT members are designated and trained, with current contact information maintained.</li>
+            <li>SIEM platform is operational and receiving logs from all critical systems.</li>
+            <li>Incident response communication channels (dedicated Slack/Teams channel, bridge line) are established.</li>
+            <li>Forensic toolkit (disk imaging tools, network capture tools, chain-of-custody forms) is available.</li>
+            <li>CERT-In reporting templates and contact information are documented and accessible.</li>
+            <li>All employees have completed security awareness training covering incident reporting.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>Step 1: Detection &amp; Reporting</h3>
+        <p><strong>Performed by:</strong> All Employees / SIEM / IT Help Desk</p>
+        <ol>
+            <li>Security incidents may be detected through:
+                <ul>
+                    <li>Employee observation and reporting (phishing emails, suspicious behaviour, lost devices).</li>
+                    <li>Automated SIEM alerts and correlation rules.</li>
+                    <li>Endpoint detection and response (EDR) alerts.</li>
+                    <li>Third-party notifications (vendor, CERT-In advisory, customer report).</li>
+                    <li>Vulnerability scan findings indicating active exploitation.</li>
+                </ul>
+            </li>
+            <li>The reporter submits an incident report via email to <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> or the IT Help Desk portal, including: what was observed, when, affected system(s), and any actions already taken.</li>
+            <li>The IT Help Desk logs the incident ticket and immediately escalates to the CSIRT on-call member.</li>
+        </ol>
+
+        <h3>Step 2: Triage &amp; Classification</h3>
+        <p><strong>Performed by:</strong> CSIRT</p>
+        <ol>
+            <li>The CSIRT on-call member performs an initial assessment within 30 minutes of notification.</li>
+            <li>Classify the incident by priority:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>Priority</th><th>Description</th><th>Examples</th><th>Response Time</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>P1 &mdash; Critical</strong></td><td>Active breach, data exfiltration, ransomware, or complete service outage.</td><td>Confirmed data breach, ransomware encryption in progress, production down.</td><td>Immediate (within 15 min)</td></tr>
+                <tr><td><strong>P2 &mdash; High</strong></td><td>Significant threat with potential for major impact; containment needed urgently.</td><td>Compromised privileged account, malware spreading on network, targeted phishing campaign.</td><td>Within 1 hour</td></tr>
+                <tr><td><strong>P3 &mdash; Medium</strong></td><td>Confirmed incident with limited scope; no active data loss.</td><td>Single endpoint malware, unauthorized access attempt blocked, policy violation.</td><td>Within 4 hours</td></tr>
+                <tr><td><strong>P4 &mdash; Low</strong></td><td>Minor event; informational or low-risk.</td><td>Failed login attempts below threshold, phishing email reported but not clicked, false positive alert.</td><td>Within 24 hours</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="3">
+            <li>Assign an Incident Commander for P1 and P2 incidents.</li>
+            <li>Activate the incident response communication channel for P1/P2.</li>
+            <li>Begin the incident timeline log documenting all actions and findings with timestamps.</li>
+        </ol>
+
+        <h3>Step 3: Containment</h3>
+        <p><strong>Performed by:</strong> CSIRT / IT Operations</p>
+        <ol>
+            <li><strong>Short-term containment</strong> (stop the bleeding):
+                <ul>
+                    <li>Isolate affected systems from the network (disable network port, move to quarantine VLAN).</li>
+                    <li>Block malicious IPs, domains, or email addresses at the firewall/proxy/email gateway.</li>
+                    <li>Disable compromised user accounts.</li>
+                    <li>Revoke compromised API keys, tokens, or certificates.</li>
+                </ul>
+            </li>
+            <li><strong>Evidence preservation</strong> (before any destructive actions):
+                <ul>
+                    <li>Capture memory dumps of affected systems.</li>
+                    <li>Create forensic disk images before any remediation.</li>
+                    <li>Preserve relevant log files (system, application, network, SIEM).</li>
+                    <li>Document chain of custody for all evidence collected.</li>
+                </ul>
+            </li>
+            <li><strong>Long-term containment</strong> (if systems must remain operational):
+                <ul>
+                    <li>Apply temporary patches or configuration changes to prevent further exploitation.</li>
+                    <li>Increase monitoring and logging on affected and adjacent systems.</li>
+                    <li>Implement additional network segmentation if needed.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Step 4: Eradication</h3>
+        <p><strong>Performed by:</strong> CSIRT / IT Operations</p>
+        <ol>
+            <li>Identify and eliminate the root cause:
+                <ul>
+                    <li>Remove malware, backdoors, and unauthorized accounts.</li>
+                    <li>Patch the exploited vulnerability.</li>
+                    <li>Reset credentials for all potentially compromised accounts.</li>
+                    <li>Rebuild compromised systems from known-good images if integrity cannot be assured.</li>
+                </ul>
+            </li>
+            <li>Verify eradication through scanning and monitoring before proceeding to recovery.</li>
+            <li>Update IoCs in security tools (SIEM rules, firewall blocklists, EDR signatures).</li>
+        </ol>
+
+        <h3>Step 5: Recovery</h3>
+        <p><strong>Performed by:</strong> IT Operations / CSIRT</p>
+        <ol>
+            <li>Restore affected systems to normal operation:
+                <ul>
+                    <li>Restore from verified clean backups if systems were rebuilt.</li>
+                    <li>Reconnect isolated systems to the network in a controlled manner.</li>
+                    <li>Re-enable disabled accounts after credential reset and MFA verification.</li>
+                </ul>
+            </li>
+            <li>Implement enhanced monitoring for a minimum of 30 days post-recovery to detect any recurrence.</li>
+            <li>Validate that all business functions are restored and operating normally.</li>
+            <li>Communicate restoration status to affected stakeholders.</li>
+        </ol>
+
+        <h3>Step 6: Post-Incident Review</h3>
+        <p><strong>Performed by:</strong> CSIRT / Incident Commander</p>
+        <ol>
+            <li>Conduct a post-incident review (blameless post-mortem) within 5 business days of incident closure for P1/P2 incidents, 10 business days for P3.</li>
+            <li>Review the complete incident timeline and document:
+                <ul>
+                    <li>What happened (root cause, attack vector, timeline).</li>
+                    <li>What went well in the response.</li>
+                    <li>What could be improved.</li>
+                    <li>Action items with owners and deadlines.</li>
+                </ul>
+            </li>
+            <li>Update the incident response procedure, runbooks, and detection rules based on lessons learned.</li>
+            <li>Share sanitized lessons learned with the broader organization where appropriate.</li>
+        </ol>
+
+        <h3>Step 7: Reporting</h3>
+        <p><strong>Performed by:</strong> CSIRT / Legal / Compliance</p>
+        <ol>
+            <li><strong>Internal reporting:</strong> Provide a written incident report to Management within 5 business days of closure.</li>
+            <li><strong>CERT-In notification</strong> (mandatory for qualifying cyber incidents):
+                <ul>
+                    <li>Report to CERT-In within <strong>6 hours</strong> of becoming aware of the incident, as per CERT-In Directions dated 28 April 2022.</li>
+                    <li>Qualifying incidents include: targeted scanning/probing, compromise of systems, data breaches, ransomware attacks, attacks on critical infrastructure, and identity theft/phishing attacks.</li>
+                    <li>Use CERT-In's designated reporting portal or email (<span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>).</li>
+                    <li>Provide follow-up reports as required by CERT-In.</li>
+                </ul>
+            </li>
+            <li><strong>Data breach notification:</strong> If personal data is compromised, notify affected data subjects and the relevant Data Protection Authority as required by applicable law.</li>
+            <li><strong>Customer notification:</strong> If client data is affected, notify impacted clients per contractual SLA and regulatory requirements. Legal must review all external communications before release.</li>
+        </ol>
+    </section>
+
+    <!-- Escalation Matrix -->
+    <section id="escalation-matrix">
+        <h2>6A. Escalation Matrix</h2>
+        <table class="data-table">
+            <thead>
+                <tr><th>Condition</th><th>Escalate To</th><th>Timeline</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>P1 incident detected</td><td>Incident Commander + CTO + Legal</td><td>Immediately</td></tr>
+                <tr><td>Data breach confirmed</td><td>CTO + Legal + DPO + CERT-In</td><td>Within 1 hour (internal) / 6 hours (CERT-In)</td></tr>
+                <tr><td>P2 incident not contained within 2 hours</td><td>CTO</td><td>At the 2-hour mark</td></tr>
+                <tr><td>Third-party/vendor data involved</td><td>Legal + Vendor Management</td><td>Within 2 hours</td></tr>
+                <tr><td>Media inquiry received</td><td>CTO + Communications/PR</td><td>Immediately</td></tr>
+                <tr><td>Law enforcement involvement needed</td><td>Legal + CTO</td><td>As determined by Legal</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Communication Templates -->
+    <section id="communication-templates">
+        <h2>6B. Communication Templates</h2>
+
+        <h3>Internal Status Update (Slack/Email)</h3>
+        <div class="template-block">
+            <p><strong>Subject:</strong> [INCIDENT-{ID}] Status Update &mdash; {P1/P2/P3/P4}</p>
+            <p><strong>Current Status:</strong> {Investigating / Contained / Eradicated / Recovered / Closed}</p>
+            <p><strong>Summary:</strong> {Brief description of the incident}</p>
+            <p><strong>Impact:</strong> {Systems/services affected, number of users impacted}</p>
+            <p><strong>Actions Taken:</strong> {Key actions completed}</p>
+            <p><strong>Next Steps:</strong> {Planned actions and ETA}</p>
+            <p><strong>Incident Commander:</strong> {Name}</p>
+        </div>
+
+        <h3>CERT-In Initial Report (Within 6 Hours)</h3>
+        <div class="template-block">
+            <p><strong>Organization:</strong> Ramdoot Solutions</p>
+            <p><strong>Contact Person:</strong> <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+            <p><strong>Date &amp; Time of Detection:</strong> {DD-MM-YYYY HH:MM IST}</p>
+            <p><strong>Type of Incident:</strong> {Category per CERT-In classification}</p>
+            <p><strong>Systems Affected:</strong> {IP addresses, hostnames, services}</p>
+            <p><strong>Description:</strong> {Factual summary of the incident}</p>
+            <p><strong>Immediate Actions Taken:</strong> {Containment measures}</p>
+            <p><strong>Estimated Impact:</strong> {Data/systems/users affected}</p>
+        </div>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>The incident is fully contained, root cause identified, and affected systems restored.</li>
+            <li>All evidence is preserved and chain of custody documented.</li>
+            <li>CERT-In notification submitted within 6 hours (for qualifying incidents).</li>
+            <li>Post-incident review completed with action items assigned.</li>
+            <li>Incident report filed and distributed to relevant stakeholders.</li>
+            <li>Detection rules and response runbooks updated with lessons learned.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Incident Tickets</td><td>IT Ticket System</td><td>5 years</td></tr>
+                <tr><td>Incident Timeline Logs</td><td>CSIRT Repository</td><td>5 years</td></tr>
+                <tr><td>Forensic Evidence (disk images, memory dumps)</td><td>Secure Evidence Locker (encrypted)</td><td>5 years or as required by legal proceedings</td></tr>
+                <tr><td>CERT-In Notification Records</td><td>Legal / Compliance Repository</td><td>5 years</td></tr>
+                <tr><td>Post-Incident Review Reports</td><td>CSIRT Repository</td><td>5 years</td></tr>
+                <tr><td>Communication Logs (internal &amp; external)</td><td>CSIRT Repository</td><td>5 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Simulated Incidents:</strong> Planned red-team exercises and tabletop drills follow a pre-approved test plan and do not trigger CERT-In reporting. They must be clearly marked as exercises in all communications.</li>
+            <li><strong>False Positives:</strong> Events confirmed as false positives after initial triage may be closed with a brief justification note. They do not require full incident response lifecycle execution but must still be logged.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="vulnerability-remediation-procedure.html">RS-PRO-006: Vulnerability Remediation Procedure</a></li>
+            <li><a href="backup-restore-procedure.html">RS-PRO-008: Backup &amp; Restore Procedure</a></li>
+            <li><a href="change-release-procedure.html">RS-PRO-007: Change &amp; Release Procedure</a></li>
+            <li>RS-POL-008: Incident Management Policy</li>
+            <li>RS-POL-010: Logging &amp; Monitoring Policy</li>
+            <li>RS-POL-012: Business Continuity &amp; Disaster Recovery Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC7.3</td><td>The entity evaluates security events to determine whether they could or have resulted in a failure to meet objectives (security incidents).</td></tr>
+                <tr><td>SOC 2 (TSC)</td><td>CC7.4</td><td>The entity responds to identified security incidents by executing a defined incident response program.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.24</td><td>Information security incident management planning and preparation.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.25</td><td>Assessment and decision on information security events.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.26</td><td>Response to information security incidents.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.27</td><td>Learning from information security incidents.</td></tr>
+                <tr><td>CERT-In Directions</td><td>Direction 4</td><td>Mandatory reporting of cyber incidents to CERT-In within 6 hours of noticing or being notified.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

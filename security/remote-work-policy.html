@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-022 Remote Work Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Remote Work Policy</h1>
+    </div>
+
+    <!-- Document Control Table -->
+    <h2>Document Control</h2>
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-POL-022</td></tr>
+      <tr><th>Title</th><td>Remote Work Policy</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Framework Mapping</th><td>SOC 2 — CC6.6; NISP — Remote Access &amp; Teleworking</td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>This policy defines the security requirements and controls for employees and contractors working remotely (from home, co-working spaces, client sites, or while travelling). It ensures that remote work arrangements maintain the same level of information security as on-premises operations.</p>
+    <p>As Ramdoot Solutions supports flexible work arrangements, this policy ensures that remote access to organizational resources does not introduce unacceptable security risks, in compliance with SOC 2 Trust Services Criteria (CC6.6) and NISP remote access requirements.</p>
+
+    <!-- Scope -->
+    <h2>2. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All Ramdoot Solutions employees and contractors who work remotely, whether full-time, part-time, or occasionally</li>
+      <li>All devices — company-issued and approved personal devices — used to access organizational systems and data from remote locations</li>
+      <li>All remote access methods including VPN, cloud-based applications, and remote desktop services</li>
+      <li>All locations outside Ramdoot Solutions' controlled office premises, including home offices, co-working spaces, client sites, public locations, and travel</li>
+    </ul>
+
+    <!-- Objectives -->
+    <h2>3. Objectives</h2>
+    <ul>
+      <li>Ensure secure connectivity between remote workers and organizational resources</li>
+      <li>Protect organizational data on devices and networks outside the corporate perimeter</li>
+      <li>Define acceptable tools, platforms, and practices for remote collaboration</li>
+      <li>Mitigate risks specific to remote work environments (unsecured networks, shared spaces, physical theft)</li>
+      <li>Maintain compliance with SOC 2 CC6.6 and NISP requirements for remote access security</li>
+    </ul>
+
+    <!-- Definitions -->
+    <h2>4. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Remote Work</td><td>Any work performed outside of Ramdoot Solutions' controlled office premises, including from home, co-working spaces, client sites, or while travelling.</td></tr>
+        <tr><td>VPN (Virtual Private Network)</td><td>An encrypted network connection that creates a secure tunnel between the remote device and Ramdoot Solutions' network.</td></tr>
+        <tr><td>Company-Issued Device</td><td>A laptop, desktop, tablet, or mobile device owned and managed by Ramdoot Solutions.</td></tr>
+        <tr><td>BYOD (Bring Your Own Device)</td><td>A personal device approved for use to access Ramdoot Solutions' systems and data, subject to security requirements.</td></tr>
+        <tr><td>MFA (Multi-Factor Authentication)</td><td>Authentication requiring two or more verification factors (something you know, have, or are).</td></tr>
+        <tr><td>Screen Lock</td><td>An automatic mechanism that locks the device screen after a period of inactivity, requiring re-authentication to unlock.</td></tr>
+        <tr><td>Split Tunnelling</td><td>A VPN configuration where some traffic goes through the VPN while other traffic goes directly to the internet. Not permitted by this policy.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Roles & Responsibilities -->
+    <h2>5. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibility</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Information Security Officer</td><td>Define remote work security requirements; approve remote access tools; audit compliance; investigate remote work security incidents.</td></tr>
+        <tr><td>IT / DevOps Team</td><td>Provision and manage VPN infrastructure; configure device security policies; provide remote technical support; monitor remote access logs.</td></tr>
+        <tr><td>Department Heads / Managers</td><td>Approve remote work arrangements for their teams; ensure team members understand and comply with this policy.</td></tr>
+        <tr><td>HR</td><td>Coordinate remote work agreements; ensure remote work policies are included in onboarding; manage remote work eligibility.</td></tr>
+        <tr><td>All Remote Workers</td><td>Comply with all requirements in this policy; maintain the security of their remote work environment; report incidents immediately.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Policy Statements -->
+    <h2>6. Policy Statements</h2>
+    <ol>
+      <li>All remote access to Ramdoot Solutions' internal systems <strong>shall</strong> use the organization's approved VPN with full-tunnel encryption.</li>
+      <li>Multi-factor authentication (MFA) <strong>must</strong> be enabled for all remote access to organizational systems and cloud services.</li>
+      <li>Remote workers <strong>shall</strong> ensure their home network meets the minimum security requirements defined in this policy.</li>
+      <li>All devices used for remote work <strong>must</strong> comply with the organization's device security standards, including encryption, screen lock, and current antivirus.</li>
+      <li>Split tunnelling <strong>shall not</strong> be permitted on VPN connections.</li>
+      <li>Organizational data <strong>must not</strong> be stored on unapproved personal devices or cloud services.</li>
+      <li>Remote workers <strong>shall</strong> use only approved collaboration tools for business communications.</li>
+      <li>Physical documents containing confidential information <strong>must</strong> be secured at the remote work location and not left visible or accessible to unauthorized persons.</li>
+    </ol>
+
+    <!-- Detailed Requirements -->
+    <h2>7. Detailed Requirements</h2>
+
+    <h3>7.1 VPN Requirements</h3>
+    <ul>
+      <li>All remote access to internal networks, databases, and administrative interfaces <strong>shall</strong> be conducted through the organization's approved VPN.</li>
+      <li>The VPN <strong>must</strong> use strong encryption (AES-256 or equivalent) with secure protocols (WireGuard, OpenVPN, or IPSec).</li>
+      <li>Split tunnelling <strong>shall not</strong> be enabled — all traffic must route through the VPN when connected.</li>
+      <li>VPN sessions <strong>shall</strong> automatically disconnect after <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> minutes of inactivity.</li>
+      <li>VPN access credentials <strong>must not</strong> be shared with any other person, including family members.</li>
+      <li>VPN client software <strong>shall</strong> be kept up to date with the latest security patches.</li>
+      <li>Access to the VPN from untrusted or public computers (e.g., internet cafes, hotel business centres) is prohibited.</li>
+    </ul>
+
+    <h3>7.2 Home Network Security</h3>
+    <p>Remote workers <strong>shall</strong> ensure their home network meets the following minimum requirements:</p>
+    <ul>
+      <li>Wi-Fi networks <strong>must</strong> use WPA3 or WPA2 encryption — WEP and open networks are prohibited.</li>
+      <li>The default router administrator password <strong>shall</strong> be changed from the factory default to a strong, unique password.</li>
+      <li>Router firmware <strong>should</strong> be updated to the latest available version.</li>
+      <li>The Wi-Fi network name (SSID) <strong>should not</strong> reveal the employee's name or organization.</li>
+      <li>Where possible, a dedicated Wi-Fi network or VLAN <strong>should</strong> be used to separate work devices from personal and IoT devices.</li>
+      <li>Remote workers <strong>shall</strong> complete a home network security self-assessment checklist annually, provided by the IT team.</li>
+    </ul>
+
+    <h3>7.3 Device Security</h3>
+    <table>
+      <thead>
+        <tr><th>Requirement</th><th>Company-Issued Device</th><th>Approved BYOD</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Full disk encryption</td><td>Required (BitLocker/FileVault/LUKS)</td><td>Required</td></tr>
+        <tr><td>Antivirus / Endpoint protection</td><td>Managed by IT; always active</td><td>Required (approved product list)</td></tr>
+        <tr><td>OS &amp; software updates</td><td>Automatic updates enforced</td><td>Must be current (within 7 days of release)</td></tr>
+        <tr><td>Screen lock</td><td>Automatic after 5 minutes of inactivity</td><td>Automatic after 5 minutes of inactivity</td></tr>
+        <tr><td>Strong password / biometric</td><td>Enforced by policy</td><td>Required (minimum 12 characters)</td></tr>
+        <tr><td>Firewall</td><td>Enabled and managed by IT</td><td>Enabled (OS-native or approved third-party)</td></tr>
+        <tr><td>Remote wipe capability</td><td>Enabled</td><td>Required for devices accessing email/data</td></tr>
+        <tr><td>Unauthorized software</td><td>Blocked by policy</td><td>Must not install unauthorized software that accesses corporate data</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.4 Screen Lock &amp; Visual Privacy</h3>
+    <ul>
+      <li>Devices <strong>shall</strong> be configured to automatically lock after a maximum of 5 minutes of inactivity.</li>
+      <li>Employees <strong>must</strong> manually lock their screen (Win+L / Ctrl+Cmd+Q) whenever stepping away from their device, even briefly.</li>
+      <li>When working in shared or public spaces, employees <strong>shall</strong> use a privacy screen filter to prevent visual eavesdropping.</li>
+      <li>Video calls <strong>must</strong> be conducted in a private area where conversations cannot be overheard by unauthorized persons. Virtual backgrounds <strong>should</strong> be used when the physical background may reveal sensitive information.</li>
+    </ul>
+
+    <h3>7.5 Data Handling on Personal Devices</h3>
+    <ul>
+      <li>Organizational data <strong>shall not</strong> be downloaded or stored locally on personal devices unless the device is enrolled in the approved BYOD programme.</li>
+      <li>Confidential data <strong>must not</strong> be transferred to personal USB drives, personal cloud storage, or personal email accounts.</li>
+      <li>If BYOD is approved, organizational data <strong>shall</strong> be segregated from personal data using a managed container or workspace application.</li>
+      <li>Upon termination of the remote work arrangement or employment, all organizational data on personal devices <strong>must</strong> be securely removed within 24 hours.</li>
+      <li>Personal devices used for BYOD <strong>must</strong> consent to remote wipe of the managed workspace/container.</li>
+    </ul>
+
+    <h3>7.6 Approved Collaboration Tools</h3>
+    <p>Remote workers <strong>shall</strong> use only the following approved tools for business communications and collaboration:</p>
+    <table>
+      <thead>
+        <tr><th>Category</th><th>Approved Tools</th><th>Prohibited Alternatives</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Instant Messaging / Chat</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Personal WhatsApp, Telegram for business data</td></tr>
+        <tr><td>Video Conferencing</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Unapproved platforms</td></tr>
+        <tr><td>File Sharing / Storage</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Personal Google Drive, Dropbox for business data</td></tr>
+        <tr><td>Email</td><td>Organizational email system</td><td>Personal email for business communications</td></tr>
+        <tr><td>Project Management</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Unapproved platforms</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.7 Physical Document Security at Home</h3>
+    <ul>
+      <li>Printing of confidential documents at home <strong>should</strong> be avoided wherever possible — digital formats are preferred.</li>
+      <li>If printed, confidential documents <strong>must</strong> be stored in a locked drawer or cabinet when not in active use.</li>
+      <li>Confidential documents <strong>shall not</strong> be disposed of in household waste — they must be shredded using a cross-cut shredder or returned to the office for secure destruction.</li>
+      <li>Remote workers <strong>must not</strong> leave confidential documents visible or accessible to family members, housemates, or visitors.</li>
+      <li>At the end of a remote work arrangement, all physical documents containing organizational information <strong>shall</strong> be returned to the office or securely destroyed.</li>
+    </ul>
+
+    <h3>7.8 Public/Shared Workspaces &amp; Travel</h3>
+    <ul>
+      <li>When working from co-working spaces, cafes, or while travelling, employees <strong>must</strong> use the VPN for all network activity.</li>
+      <li>Employees <strong>shall not</strong> connect to open/unsecured Wi-Fi networks — mobile hotspot is preferred over untrusted public Wi-Fi.</li>
+      <li>Devices <strong>must not</strong> be left unattended in public spaces, even briefly.</li>
+      <li>Sensitive phone calls and video conferences <strong>shall not</strong> be conducted in public spaces where conversations can be overheard.</li>
+      <li>Employees <strong>should</strong> enable device tracking (Find My Device) and have remote wipe capability active while travelling.</li>
+    </ul>
+
+    <!-- Exceptions -->
+    <h2>8. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be formally requested and approved. Each request shall include:</p>
+    <ul>
+      <li>Justification for the exception and specific requirement being waived</li>
+      <li>Risk assessment of the security implications</li>
+      <li>Compensating controls to be implemented</li>
+      <li>Duration of the exception (maximum 6 months before re-evaluation)</li>
+    </ul>
+    <p>Exceptions <strong>shall</strong> be approved by the Information Security Officer and <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+
+    <!-- Monitoring & Compliance -->
+    <h2>9. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>VPN access logs <strong>shall</strong> be monitored for anomalous activity (unusual hours, geographic anomalies, excessive failed attempts).</li>
+      <li>Device compliance <strong>must</strong> be verified through endpoint management tools, with non-compliant devices blocked from accessing organizational resources.</li>
+      <li>Home network security self-assessments <strong>shall</strong> be collected and reviewed annually.</li>
+      <li>Remote work security awareness <strong>must</strong> be included in the annual security training programme.</li>
+      <li>The Information Security Officer <strong>shall</strong> conduct periodic audits of remote work compliance.</li>
+    </ul>
+
+    <!-- Violations / Enforcement -->
+    <h2>10. Violations &amp; Enforcement</h2>
+    <p>Violations of this policy may result in:</p>
+    <ul>
+      <li>Immediate suspension of remote access privileges pending investigation</li>
+      <li>Mandatory security retraining</li>
+      <li>Revocation of remote work privileges for repeated violations</li>
+      <li>Formal disciplinary action, up to and including termination, for deliberate or serious violations that result in data exposure</li>
+    </ul>
+
+    <!-- Records & Evidence -->
+    <h2>11. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VPN access logs</td><td>1 year</td><td>IT / DevOps</td></tr>
+        <tr><td>Remote work agreements</td><td>Duration of employment + 1 year</td><td>HR</td></tr>
+        <tr><td>Home network self-assessment checklists</td><td>2 years</td><td>Information Security Officer</td></tr>
+        <tr><td>Device compliance reports</td><td>1 year</td><td>IT</td></tr>
+        <tr><td>Remote work security incident reports</td><td>3 years</td><td>Information Security Officer</td></tr>
+        <tr><td>Exception requests and approvals</td><td>3 years</td><td>Information Security Officer</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>12. Related Documents</h2>
+    <ul>
+      <li>RS-POL-021 — Physical Security Policy</li>
+      <li>RS-POL-023 — Employee Security Policy</li>
+      <li>RS-POL-020 — Privacy &amp; Data Protection Policy</li>
+      <li>Information Security Policy</li>
+      <li>Acceptable Use Policy</li>
+      <li>Data Classification Policy</li>
+      <li>Incident Management Policy</li>
+    </ul>
+
+    <!-- Framework Mapping -->
+    <h2>13. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>CC6.6</td><td>The entity implements logical access security measures to protect against threats from sources outside its system boundaries.</td></tr>
+        <tr><td>NISP</td><td>Remote Access &amp; Teleworking</td><td>Requirements for securing remote access connections and teleworking arrangements.</td></tr>
+        <tr><td>ISO 27001</td><td>A.6.2.2</td><td>Teleworking — a policy and supporting security measures shall be implemented to protect information accessed, processed, or stored at teleworking sites.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Review Cycle -->
+    <h2>14. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed:</p>
+    <ul>
+      <li>At least annually, or</li>
+      <li>Upon significant changes to remote work technologies or VPN infrastructure, or</li>
+      <li>Following a remote work-related security incident, or</li>
+      <li>When required by changes in legal, regulatory, or contractual obligations</li>
+    </ul>
+    <p>Next scheduled review: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+    <!-- Approval Block -->
+    <h2>15. Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr><th>Prepared By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Reviewed By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approval Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Signature</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>16. Version History</h2>
+    <table class="version-history">
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial draft</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-022 — Remote Work Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

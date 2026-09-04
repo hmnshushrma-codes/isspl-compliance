@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-016 Disaster Recovery Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Disaster Recovery Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-016</td></tr>
+        <tr><td><strong>Title</strong></td><td>Disaster Recovery Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy establishes the requirements for disaster recovery (DR) planning, testing, and execution at Ramdoot Solutions. It ensures that critical information systems and technology infrastructure can be recovered within defined timeframes following a major disruption or disaster, minimizing data loss and enabling the organization to resume normal operations. This policy operates in conjunction with the Business Continuity Policy (RS-POL-015) and provides the technology-focused recovery component of the broader business continuity framework.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All production information systems, including servers, databases, applications, and network infrastructure.</li>
+      <li>Cloud-hosted services and infrastructure under Ramdoot Solutions' operational control.</li>
+      <li>Data storage systems, backup infrastructure, and replication mechanisms.</li>
+      <li>Communication systems required for DR coordination.</li>
+      <li>All personnel involved in DR planning, testing, and execution, including IT Operations, IT Security, application teams, and designated DR coordinators.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Ensure recovery of critical information systems within defined Recovery Time Objectives (RTO).</li>
+      <li>Limit data loss to within defined Recovery Point Objectives (RPO).</li>
+      <li>Maintain documented, tested, and current DR procedures for all critical systems.</li>
+      <li>Establish recovery site capabilities that support failover and sustained operations.</li>
+      <li>Test DR plans regularly and incorporate lessons learned to improve recovery capabilities.</li>
+      <li>Define clear procedures for communication, failover, failback, and return to normal operations.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Disaster</strong></td><td>An event that causes significant disruption to IT services, rendering the primary site or systems unable to function for an extended period, requiring activation of DR procedures.</td></tr>
+        <tr><td><strong>Disaster Recovery Plan (DRP)</strong></td><td>A documented set of procedures to recover and restore IT systems and data following a disaster.</td></tr>
+        <tr><td><strong>Recovery Site</strong></td><td>An alternate location or environment where IT systems can be recovered and operated during and after a disaster.</td></tr>
+        <tr><td><strong>Hot Site</strong></td><td>A fully equipped recovery site with real-time or near-real-time data replication, capable of immediate failover.</td></tr>
+        <tr><td><strong>Warm Site</strong></td><td>A recovery site with hardware infrastructure provisioned but requiring data restoration and configuration before use.</td></tr>
+        <tr><td><strong>Cold Site</strong></td><td>A recovery site with basic infrastructure (power, cooling, connectivity) but requiring full system and data deployment.</td></tr>
+        <tr><td><strong>Failover</strong></td><td>The process of switching operations from the primary site/system to the recovery site/system.</td></tr>
+        <tr><td><strong>Failback</strong></td><td>The process of returning operations from the recovery site/system to the restored primary site/system.</td></tr>
+        <tr><td><strong>Data Replication</strong></td><td>The continuous or scheduled copying of data from the primary site to the recovery site to maintain data currency.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CISO / IT Director</strong></td>
+          <td>Overall accountability for DR program; authorizes DR activation; reports DR readiness to senior management.</td>
+        </tr>
+        <tr>
+          <td><strong>DR Coordinator</strong></td>
+          <td>Manages the DR lifecycle; maintains DR documentation; plans and executes DR tests; coordinates failover/failback activities.</td>
+        </tr>
+        <tr>
+          <td><strong>IT Operations</strong></td>
+          <td>Execute failover and failback procedures; manage recovery site infrastructure; perform system restoration; manage backups and replication.</td>
+        </tr>
+        <tr>
+          <td><strong>Database Administrators</strong></td>
+          <td>Execute database recovery procedures; validate data integrity post-recovery; manage database replication.</td>
+        </tr>
+        <tr>
+          <td><strong>Application Teams</strong></td>
+          <td>Validate application functionality post-failover; perform application-level recovery steps; support DR testing.</td>
+        </tr>
+        <tr>
+          <td><strong>Network Team</strong></td>
+          <td>Manage DNS changes, network failover, and connectivity to recovery site; ensure network security during DR operations.</td>
+        </tr>
+        <tr>
+          <td><strong>BCP Coordinator</strong></td>
+          <td>Coordinate DR activities with the broader BCP; ensure DR capabilities align with BIA-defined RTOs and RPOs.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>Ramdoot Solutions <strong>shall</strong> maintain a documented Disaster Recovery Plan for all critical information systems.</li>
+      <li>DR plans <strong>must</strong> be aligned with the RTO and RPO values defined in the Business Impact Analysis.</li>
+      <li>Data backup and replication <strong>shall</strong> be implemented to ensure data recovery within defined RPOs.</li>
+      <li>A recovery site <strong>must</strong> be maintained with sufficient capacity to run critical systems during a disaster.</li>
+      <li>DR plans <strong>shall</strong> be tested at least annually, with testing scope and methodology appropriate to the criticality of the systems involved.</li>
+      <li>Failover and failback procedures <strong>must</strong> be documented, tested, and validated.</li>
+      <li>Communication procedures during DR events <strong>shall</strong> be documented and include internal teams, management, customers, and service providers.</li>
+      <li>A post-DR review <strong>shall</strong> be conducted after every DR invocation and test to capture lessons learned and drive improvements.</li>
+      <li>DR documentation <strong>must</strong> be updated within 30 days of any significant infrastructure change.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 DR Objectives by System Tier</h3>
+    <table>
+      <thead>
+        <tr><th>System Tier</th><th>RTO</th><th>RPO</th><th>Recovery Site Type</th><th>Replication Method</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tier 1 — Mission Critical</strong></td>
+          <td>4 hours</td>
+          <td>1 hour</td>
+          <td>Hot Site</td>
+          <td>Synchronous or near-synchronous replication</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Business Critical</strong></td>
+          <td>24 hours</td>
+          <td>4 hours</td>
+          <td>Warm Site</td>
+          <td>Asynchronous replication (at least every 4 hours)</td>
+        </tr>
+        <tr>
+          <td><strong>Tier 3 — Business Support</strong></td>
+          <td>72 hours</td>
+          <td>24 hours</td>
+          <td>Warm/Cold Site</td>
+          <td>Daily backup replication</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The classification of individual systems into tiers shall be maintained in the DR Plan appendix: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+
+    <h3>8.2 Recovery Site Requirements</h3>
+    <ul>
+      <li>The recovery site <strong>shall</strong> be geographically separated from the primary site by a minimum distance sufficient to avoid common-cause disasters: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+      <li>The recovery site <strong>must</strong> have:
+        <ul>
+          <li>Sufficient compute, storage, and network capacity to run all Tier 1 and Tier 2 systems simultaneously.</li>
+          <li>Redundant power supply (UPS and generator backup).</li>
+          <li>Redundant network connectivity from at least two independent ISPs.</li>
+          <li>Physical security controls equivalent to the primary site.</li>
+          <li>Environmental controls (cooling, fire suppression) appropriate for the equipment hosted.</li>
+        </ul>
+      </li>
+      <li>For cloud-based recovery sites, the cloud region <strong>shall</strong> be in a different geographic zone from the primary region.</li>
+      <li>Recovery site readiness <strong>shall</strong> be verified at least quarterly.</li>
+    </ul>
+
+    <h3>8.3 Failover Procedures</h3>
+    <ol>
+      <li><strong>DR Activation Decision:</strong> The CISO or IT Director, in consultation with the Crisis Management Team, determines that a disaster has occurred and authorizes DR activation.</li>
+      <li><strong>Notification:</strong> The DR Coordinator notifies all DR team members and relevant stakeholders via the communication plan.</li>
+      <li><strong>Assessment:</strong> The DR team assesses the scope of the disaster and identifies affected systems.</li>
+      <li><strong>Failover Execution:</strong>
+        <ul>
+          <li>DNS changes are executed to redirect traffic to the recovery site.</li>
+          <li>Database failover is initiated to the replicated standby databases.</li>
+          <li>Application services are started on the recovery infrastructure.</li>
+          <li>Network configurations are updated to route traffic appropriately.</li>
+          <li>Load balancer configurations are adjusted for the recovery environment.</li>
+        </ul>
+      </li>
+      <li><strong>Validation:</strong> Application teams validate functionality, data integrity, and connectivity on the recovery site.</li>
+      <li><strong>Declaration:</strong> The DR Coordinator declares successful failover and notifies stakeholders.</li>
+    </ol>
+
+    <h3>8.4 DR Testing Schedule</h3>
+    <table>
+      <thead>
+        <tr><th>Test Type</th><th>Frequency</th><th>Scope</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tabletop Exercise</strong></td>
+          <td>Bi-annually</td>
+          <td>Walk-through of DR procedures with all DR team members; validate communication plan and decision-making processes.</td>
+        </tr>
+        <tr>
+          <td><strong>Component Test</strong></td>
+          <td>Quarterly</td>
+          <td>Test individual DR components: backup restoration, database failover, network failover, application recovery.</td>
+        </tr>
+        <tr>
+          <td><strong>Full Failover Test</strong></td>
+          <td>Annually</td>
+          <td>Complete failover of Tier 1 systems to the recovery site; validate RTO/RPO achievement; run production workloads from DR site for a defined period.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.5 Data Replication</h3>
+    <ul>
+      <li>Data replication <strong>shall</strong> be implemented for all Tier 1 and Tier 2 systems to the recovery site.</li>
+      <li>Replication method and frequency <strong>must</strong> be consistent with the RPO defined for each system tier.</li>
+      <li>Replication health <strong>shall</strong> be monitored continuously, with alerts configured for replication lag or failure.</li>
+      <li>Data integrity checks <strong>shall</strong> be performed on replicated data at least monthly to verify consistency with the primary site.</li>
+      <li>Backup copies <strong>shall</strong> also be maintained independently of replication to protect against logical corruption propagation.</li>
+      <li>Backup testing (restore verification) <strong>shall</strong> be performed at least quarterly for Tier 1 systems and semi-annually for Tier 2/3 systems.</li>
+    </ul>
+
+    <h3>8.6 Communication During DR</h3>
+    <table>
+      <thead>
+        <tr><th>Phase</th><th>Audience</th><th>Communication</th><th>Method</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DR Activation</td>
+          <td>DR Team, Management</td>
+          <td>Disaster declared; DR activated; initial assessment summary</td>
+          <td>Phone, email, messaging platform</td>
+        </tr>
+        <tr>
+          <td>During Recovery</td>
+          <td>DR Team, Management, Customers</td>
+          <td>Progress updates every 2 hours; ETA for service restoration</td>
+          <td>Email, status page, phone for critical customers</td>
+        </tr>
+        <tr>
+          <td>Failover Complete</td>
+          <td>All stakeholders</td>
+          <td>Services restored at DR site; any known limitations or workarounds</td>
+          <td>Email, status page</td>
+        </tr>
+        <tr>
+          <td>Return to Normal</td>
+          <td>All stakeholders</td>
+          <td>Failback complete; normal operations resumed; post-DR review scheduled</td>
+          <td>Email, status page</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.7 Return to Normal Operations</h3>
+    <ol>
+      <li>Before failback, the primary site <strong>must</strong> be fully restored and validated as operational, including:
+        <ul>
+          <li>Infrastructure hardware and network connectivity verified.</li>
+          <li>Operating systems and applications reinstalled/restored and patched to current levels.</li>
+          <li>Security controls verified and operational.</li>
+          <li>Data synchronization from DR site to primary site completed and verified.</li>
+        </ul>
+      </li>
+      <li>Failback <strong>shall</strong> be scheduled during a maintenance window to minimize service disruption.</li>
+      <li>The failback procedure mirrors the failover process in reverse: DNS redirection, database failback, application restart at primary, network reconfiguration.</li>
+      <li>Post-failback validation <strong>must</strong> confirm that all systems are operational, data is consistent, and performance is normal.</li>
+      <li>Enhanced monitoring <strong>shall</strong> be maintained for 72 hours following failback.</li>
+    </ol>
+
+    <h3>8.8 Post-DR Review</h3>
+    <ul>
+      <li>A Post-DR Review <strong>shall</strong> be conducted within ten (10) business days of completing DR operations (whether test or actual invocation).</li>
+      <li>The review <strong>must</strong> document:
+        <ul>
+          <li>Timeline of events from disaster detection through return to normal.</li>
+          <li>Actual RTO and RPO achieved versus defined targets.</li>
+          <li>Issues encountered during failover, DR operations, and failback.</li>
+          <li>Communication effectiveness.</li>
+          <li>Corrective actions with owners and target dates.</li>
+          <li>Recommendations for DR plan improvements.</li>
+        </ul>
+      </li>
+      <li>Corrective actions <strong>shall</strong> be tracked to closure and reported to management.</li>
+    </ul>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to DR requirements <strong>must</strong> be approved by the CISO and documented with a risk assessment, compensating controls, and a review date not exceeding 12 months. Systems without DR capability <strong>shall</strong> be flagged as a risk in the organizational risk register.</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>DR readiness status <strong>shall</strong> be reported to the CISO monthly and to senior management quarterly.</li>
+      <li>Data replication health <strong>shall</strong> be monitored continuously with automated alerting.</li>
+      <li>Backup success rates <strong>shall</strong> be reported weekly.</li>
+      <li>Internal Audit <strong>shall</strong> review DR program effectiveness at least annually.</li>
+      <li>Key metrics:
+        <ul>
+          <li>DR test completion rate (annual target: 100%).</li>
+          <li>RTO/RPO achievement rate during tests.</li>
+          <li>Backup success rate (target: 99.5%).</li>
+          <li>Replication lag (target: within RPO).</li>
+          <li>Corrective action closure rate from DR reviews.</li>
+          <li>DR plan currency (last update date).</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Failure to maintain current DR documentation <strong>shall</strong> result in escalation to the CISO.</li>
+      <li>Systems deployed to production without documented DR plans <strong>shall</strong> be flagged as non-compliant and the risk recorded.</li>
+      <li>Failure to participate in or complete DR testing <strong>shall</strong> be escalated to management.</li>
+      <li>Personnel who disable or interfere with backup or replication processes without authorization may face disciplinary action.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Disaster Recovery Plans (current and prior versions)</td><td>3 years</td><td>DR Coordinator</td></tr>
+        <tr><td>DR test plans and results</td><td>3 years</td><td>DR Coordinator</td></tr>
+        <tr><td>Post-DR review reports</td><td>3 years</td><td>DR Coordinator</td></tr>
+        <tr><td>Backup and replication monitoring records</td><td>1 year</td><td>IT Operations</td></tr>
+        <tr><td>DR activation and communication records (actual events)</td><td>5 years</td><td>DR Coordinator / CISO Office</td></tr>
+        <tr><td>Recovery site readiness verification records</td><td>3 years</td><td>DR Coordinator</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-014 — Incident Response Policy</li>
+      <li>RS-POL-015 — Business Continuity Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>Ramdoot Solutions Backup and Restoration Procedure</li>
+      <li>Ramdoot Solutions Data Classification Policy</li>
+      <li>Ramdoot Solutions Infrastructure Architecture Documentation</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC7.5</td><td>The entity identifies, develops, and implements activities to recover from identified security incidents.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>A1.2</td><td>The entity authorizes, designs, develops or acquires, implements, operates, approves, maintains, and monitors environmental protections, software, data back-up processes, and recovery infrastructure to meet its objectives.</td></tr>
+        <tr><td><strong>SOC 2</strong></td><td>A1.3</td><td>The entity tests recovery plan procedures supporting system recovery to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Disaster Recovery</td><td>Organizations shall establish and maintain disaster recovery capabilities to restore critical information systems within defined recovery objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Data Backup</td><td>Organizations shall implement data backup and replication mechanisms consistent with defined recovery point objectives.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Actual DR invocation (test or real event).</li>
+      <li>Significant infrastructure changes (e.g., cloud migration, data center relocation, new critical systems).</li>
+      <li>Findings from DR tests or internal/external audits.</li>
+      <li>Changes to RTO/RPO requirements from updated BIA.</li>
+      <li>Changes in regulatory or contractual requirements.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-016 Disaster Recovery Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

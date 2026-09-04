@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-017 Backup Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Backup Policy</h1>
+    </div>
+
+    <!-- Document Control Table -->
+    <h2>Document Control</h2>
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-POL-017</td></tr>
+      <tr><th>Title</th><td>Backup Policy</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Framework Mapping</th><td>SOC 2 — A1.2; NISP — Backup &amp; Recovery Controls</td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>This policy establishes the requirements for backup and recovery of Ramdoot Solutions' information systems, data, and configurations. It ensures that critical business data can be restored in a timely manner following data loss, corruption, hardware failure, or disaster events.</p>
+    <p>The policy supports the organization's business continuity objectives and ensures compliance with SOC 2 Availability criteria (A1.2) and NISP backup and recovery controls.</p>
+
+    <!-- Scope -->
+    <h2>2. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All production databases, including relational databases (PostgreSQL, MySQL) and NoSQL datastores</li>
+      <li>Application source code repositories and build artifacts</li>
+      <li>System and application configuration files, including infrastructure-as-code definitions</li>
+      <li>Business documents, contracts, certificates, and compliance evidence</li>
+      <li>Email systems and collaboration platform data</li>
+      <li>User-generated content and uploaded files (e.g., MinIO/S3 object storage)</li>
+      <li>All environments: production, staging, and disaster recovery</li>
+      <li>All personnel responsible for system administration, DevOps, and IT operations at Ramdoot Solutions</li>
+    </ul>
+
+    <!-- Objectives -->
+    <h2>3. Objectives</h2>
+    <ul>
+      <li>Ensure all critical data is backed up according to defined schedules and retention requirements</li>
+      <li>Minimize data loss by maintaining Recovery Point Objectives (RPO) appropriate to business criticality</li>
+      <li>Enable timely restoration of systems within defined Recovery Time Objectives (RTO)</li>
+      <li>Protect backup data from unauthorized access, modification, and destruction</li>
+      <li>Validate backup integrity through regular testing and verification</li>
+      <li>Maintain compliance with SOC 2 A1.2 and NISP requirements</li>
+    </ul>
+
+    <!-- Definitions -->
+    <h2>4. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Full Backup</td><td>A complete copy of all data within the defined backup scope at a specific point in time.</td></tr>
+        <tr><td>Incremental Backup</td><td>A backup that captures only data that has changed since the last backup (full or incremental).</td></tr>
+        <tr><td>Differential Backup</td><td>A backup that captures all data changed since the last full backup.</td></tr>
+        <tr><td>RPO (Recovery Point Objective)</td><td>The maximum acceptable amount of data loss measured in time.</td></tr>
+        <tr><td>RTO (Recovery Time Objective)</td><td>The maximum acceptable time to restore a system or data after a disruption.</td></tr>
+        <tr><td>Offsite Storage</td><td>A geographically separate location where backup copies are stored for disaster recovery purposes.</td></tr>
+        <tr><td>Backup Encryption</td><td>The process of encoding backup data to prevent unauthorized access during storage and transit.</td></tr>
+        <tr><td>Retention Period</td><td>The duration for which backup copies must be maintained before they may be securely deleted.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Roles & Responsibilities -->
+    <h2>5. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibility</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>IT Operations / DevOps Team</td><td>Configure, execute, and monitor backup jobs; perform restore operations; maintain backup infrastructure; report failures to management.</td></tr>
+        <tr><td>Information Security Officer</td><td>Define backup security requirements; review and approve backup encryption standards; audit compliance with this policy.</td></tr>
+        <tr><td>System Owners</td><td>Identify critical data within their systems; define RPO/RTO requirements; validate successful restores during testing.</td></tr>
+        <tr><td>Management</td><td>Approve this policy; allocate resources for backup infrastructure; review quarterly backup compliance reports.</td></tr>
+        <tr><td>All Employees</td><td>Store business data in designated locations (not local drives) to ensure inclusion in backup scope.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Policy Statements -->
+    <h2>6. Policy Statements</h2>
+    <ol>
+      <li>All production systems and critical business data <strong>shall</strong> be backed up according to the schedules defined in this policy.</li>
+      <li>Backup processes <strong>must</strong> be automated, monitored, and produce verifiable logs of success or failure.</li>
+      <li>All backup media and data <strong>shall</strong> be encrypted using AES-256 or equivalent encryption, both at rest and in transit.</li>
+      <li>Backup copies <strong>must</strong> be stored in at least two geographically separate locations.</li>
+      <li>Backup integrity <strong>shall</strong> be verified through quarterly restore testing.</li>
+      <li>Backup failures <strong>must</strong> be reported, investigated, and resolved within 24 hours.</li>
+      <li>Access to backup systems and backup data <strong>shall</strong> be restricted to authorized personnel only, using the principle of least privilege.</li>
+      <li>Backup retention periods <strong>must</strong> comply with legal, regulatory, and contractual obligations.</li>
+    </ol>
+
+    <!-- Detailed Requirements -->
+    <h2>7. Detailed Requirements</h2>
+
+    <h3>7.1 Backup Scope</h3>
+    <p>The following data categories <strong>must</strong> be included in the backup scope:</p>
+    <table>
+      <thead>
+        <tr><th>Data Category</th><th>Examples</th><th>Criticality</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Databases</td><td>PostgreSQL production databases, Redis persistent stores</td><td>Critical</td></tr>
+        <tr><td>Application Configurations</td><td>Environment files, Docker Compose configs, Nginx configs, TLS certificates</td><td>Critical</td></tr>
+        <tr><td>Source Code</td><td>Git repositories (mirrored backups)</td><td>High</td></tr>
+        <tr><td>Business Documents</td><td>Contracts, audit reports, compliance evidence, certificates</td><td>High</td></tr>
+        <tr><td>Object Storage</td><td>MinIO/S3 buckets — uploaded files, PDF reports</td><td>High</td></tr>
+        <tr><td>Email &amp; Communication</td><td>Mailbox archives, collaboration tool exports</td><td>Medium</td></tr>
+        <tr><td>Logs</td><td>Application logs, access logs, audit trails</td><td>Medium</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 Backup Schedule</h3>
+    <table>
+      <thead>
+        <tr><th>Backup Type</th><th>Frequency</th><th>Window</th><th>Target Systems</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Daily Incremental</td><td>Every day at <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Off-peak hours</td><td>All production databases, configs, object storage</td></tr>
+        <tr><td>Weekly Full</td><td>Every Sunday at <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Maintenance window</td><td>All systems in backup scope</td></tr>
+        <tr><td>Monthly Full Archive</td><td>First Sunday of each month</td><td>Extended maintenance</td><td>Complete system snapshot including OS images</td></tr>
+        <tr><td>Transaction Log Backup</td><td>Every 15 minutes</td><td>Continuous</td><td>Production databases (WAL/binlog shipping)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.3 Retention Requirements</h3>
+    <table>
+      <thead>
+        <tr><th>Backup Type</th><th>Online Retention</th><th>Archive Retention</th><th>Storage Location</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Daily Incremental</td><td>30 days</td><td>N/A</td><td>Primary backup server</td></tr>
+        <tr><td>Weekly Full</td><td>30 days</td><td>6 months</td><td>Primary + offsite</td></tr>
+        <tr><td>Monthly Full Archive</td><td>30 days</td><td>1 year</td><td>Primary + offsite + cold storage</td></tr>
+        <tr><td>Transaction Logs</td><td>7 days</td><td>30 days</td><td>Primary backup server</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.4 Offsite Storage</h3>
+    <ul>
+      <li>Offsite backup copies <strong>shall</strong> be stored at a geographically separate facility, at least <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> kilometres from the primary data centre.</li>
+      <li>Cloud-based offsite storage <strong>must</strong> use services that comply with SOC 2 Type II requirements and provide data residency within India unless otherwise approved.</li>
+      <li>Transfer of backup data to offsite locations <strong>shall</strong> use encrypted channels (TLS 1.2 or higher).</li>
+      <li>Offsite storage access <strong>must</strong> be restricted and audited with the same rigour as primary backup systems.</li>
+    </ul>
+
+    <h3>7.5 Backup Encryption</h3>
+    <ul>
+      <li>All backup data <strong>shall</strong> be encrypted at rest using AES-256 encryption.</li>
+      <li>Encryption keys <strong>must</strong> be managed separately from the backup data, following the organization's key management procedures.</li>
+      <li>Backup encryption keys <strong>shall</strong> be rotated annually or upon suspected compromise.</li>
+      <li>Key recovery procedures <strong>must</strong> be documented and tested to ensure backups can be decrypted when needed.</li>
+    </ul>
+
+    <h3>7.6 Integrity Testing</h3>
+    <ul>
+      <li>Backup integrity checks <strong>shall</strong> be performed on every backup job using checksums (SHA-256).</li>
+      <li>Quarterly restore tests <strong>must</strong> be conducted to verify that backup data can be successfully restored to a functional state.</li>
+      <li>Restore tests <strong>shall</strong> include at least one full database restore and one file-level restore per quarter.</li>
+      <li>Test results <strong>must</strong> be documented, including time to restore, data integrity verification, and any issues encountered.</li>
+      <li>Annual disaster recovery drills <strong>shall</strong> include a full system restore from offsite backups.</li>
+    </ul>
+
+    <h3>7.7 Restore Procedures</h3>
+    <ol>
+      <li><strong>Request:</strong> A restore request <strong>must</strong> be submitted via the IT service management system, specifying the data, system, and point-in-time required.</li>
+      <li><strong>Authorization:</strong> Restore requests <strong>shall</strong> be approved by the system owner and IT Operations lead before execution.</li>
+      <li><strong>Execution:</strong> The DevOps team <strong>shall</strong> perform the restore in an isolated environment first, verify data integrity, then apply to the target system.</li>
+      <li><strong>Verification:</strong> The requesting system owner <strong>must</strong> verify the restored data before the restore is considered complete.</li>
+      <li><strong>Documentation:</strong> All restore activities <strong>shall</strong> be logged, including requestor, approver, restore time, data restored, and outcome.</li>
+    </ol>
+
+    <h3>7.8 Monitoring &amp; Alerting</h3>
+    <ul>
+      <li>Automated monitoring <strong>shall</strong> be configured for all backup jobs, with alerts sent on failure or warning conditions.</li>
+      <li>Backup job status <strong>must</strong> be reviewed by IT Operations daily.</li>
+      <li>A monthly backup compliance report <strong>shall</strong> be produced summarizing success rates, failures, storage utilization, and any deviations from schedule.</li>
+    </ul>
+
+    <!-- Exceptions -->
+    <h2>8. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be formally requested using the Ramdoot Solutions exception request process. Each exception request shall include:</p>
+    <ul>
+      <li>Justification for the exception</li>
+      <li>Risk assessment of granting the exception</li>
+      <li>Compensating controls to be implemented</li>
+      <li>Duration of the exception (maximum 12 months before re-evaluation)</li>
+    </ul>
+    <p>Exceptions <strong>shall</strong> be approved by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> and documented in the exception register.</p>
+
+    <!-- Monitoring & Compliance -->
+    <h2>9. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>The Information Security Officer <strong>shall</strong> audit backup processes at least annually to verify compliance with this policy.</li>
+      <li>Key metrics to be tracked include: backup success rate (target: 99.5%), restore test pass rate, RPO/RTO adherence, and encryption compliance.</li>
+      <li>Non-compliance findings <strong>must</strong> be reported to management and tracked to remediation.</li>
+      <li>Backup compliance status <strong>shall</strong> be included in quarterly management security reviews.</li>
+    </ul>
+
+    <!-- Violations / Enforcement -->
+    <h2>10. Violations &amp; Enforcement</h2>
+    <p>Violations of this policy may result in:</p>
+    <ul>
+      <li>Verbal or written warning for first-time unintentional violations</li>
+      <li>Mandatory retraining on backup procedures</li>
+      <li>Formal disciplinary action, up to and including termination of employment, for repeated or deliberate violations</li>
+      <li>Civil or criminal liability if the violation results in data loss affecting clients or regulatory non-compliance</li>
+    </ul>
+    <p>All violations <strong>shall</strong> be reported to the Information Security Officer and documented in the incident management system.</p>
+
+    <!-- Records & Evidence -->
+    <h2>11. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Backup job logs</td><td>1 year</td><td>IT Operations</td></tr>
+        <tr><td>Restore test reports</td><td>3 years</td><td>IT Operations</td></tr>
+        <tr><td>Monthly backup compliance reports</td><td>3 years</td><td>Information Security Officer</td></tr>
+        <tr><td>Exception requests and approvals</td><td>3 years</td><td>Information Security Officer</td></tr>
+        <tr><td>Backup encryption key audit logs</td><td>3 years</td><td>IT Operations</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>12. Related Documents</h2>
+    <ul>
+      <li>RS-POL-019 — Risk Management Policy</li>
+      <li>Business Continuity Plan</li>
+      <li>Disaster Recovery Plan</li>
+      <li>Incident Management Policy</li>
+      <li>Data Classification Policy</li>
+      <li>Encryption &amp; Key Management Policy</li>
+      <li>Change Management Policy</li>
+    </ul>
+
+    <!-- Framework Mapping -->
+    <h2>13. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>A1.2</td><td>The entity authorizes, designs, develops or acquires, implements, operates, approves, maintains, and monitors environmental protections, software, data backup processes, and recovery infrastructure to meet its objectives.</td></tr>
+        <tr><td>SOC 2</td><td>A1.3</td><td>The entity tests recovery plan procedures supporting system recovery to meet its objectives.</td></tr>
+        <tr><td>NISP</td><td>Backup &amp; Recovery Controls</td><td>Requirements for data backup, secure storage, and verified recovery capabilities.</td></tr>
+        <tr><td>ISO 27001</td><td>A.12.3</td><td>Backup — information backup copies shall be taken and tested regularly.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Review Cycle -->
+    <h2>14. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed:</p>
+    <ul>
+      <li>At least annually, or</li>
+      <li>Upon significant changes to IT infrastructure or backup technology, or</li>
+      <li>Following a major incident involving data loss, or</li>
+      <li>When required by changes in legal, regulatory, or contractual obligations</li>
+    </ul>
+    <p>Next scheduled review: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+    <!-- Approval Block -->
+    <h2>15. Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr><th>Prepared By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Reviewed By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approval Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Signature</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>16. Version History</h2>
+    <table class="version-history">
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial draft</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-017 — Backup Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

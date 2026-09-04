@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-011 Secure Development Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Secure Development Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-011</td></tr>
+        <tr><td><strong>Title</strong></td><td>Secure Development Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy establishes the requirements for integrating security into every phase of the Software Development Life Cycle (SDLC) at Ramdoot Solutions. It ensures that applications and systems are designed, developed, tested, and deployed with security as a foundational principle, reducing the risk of security vulnerabilities in production systems and protecting organizational and customer data.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All software developed internally by Ramdoot Solutions, including web applications, APIs, backend services, and mobile applications.</li>
+      <li>All development, staging, testing, and production environments.</li>
+      <li>Open-source and third-party libraries and frameworks integrated into Ramdoot Solutions products.</li>
+      <li>All developers, QA engineers, DevOps engineers, architects, and development managers.</li>
+      <li>Contractor and outsourced development teams working on Ramdoot Solutions projects.</li>
+      <li>CI/CD pipelines, source code repositories, and associated tooling.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Embed security into every phase of the SDLC — from requirements through deployment and maintenance.</li>
+      <li>Prevent common application security vulnerabilities as defined by OWASP Top 10.</li>
+      <li>Ensure all code is reviewed for security before merging to protected branches.</li>
+      <li>Automate security testing through static analysis, dynamic analysis, and dependency scanning.</li>
+      <li>Protect secrets, credentials, and sensitive configuration from exposure.</li>
+      <li>Maintain clear separation between development, testing, and production environments.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SDLC</strong></td><td>Software Development Life Cycle — the structured process for planning, creating, testing, and deploying software.</td></tr>
+        <tr><td><strong>SAST</strong></td><td>Static Application Security Testing — analysis of source code or compiled versions of code to identify vulnerabilities without executing the program.</td></tr>
+        <tr><td><strong>DAST</strong></td><td>Dynamic Application Security Testing — testing of a running application to identify vulnerabilities by simulating external attacks.</td></tr>
+        <tr><td><strong>SCA</strong></td><td>Software Composition Analysis — the process of identifying known vulnerabilities in third-party and open-source libraries.</td></tr>
+        <tr><td><strong>OWASP</strong></td><td>Open Worldwide Application Security Project — a nonprofit foundation that works to improve the security of software.</td></tr>
+        <tr><td><strong>Branch Protection</strong></td><td>Version control rules that prevent direct commits to specific branches (e.g., main/master) and require code review before merging.</td></tr>
+        <tr><td><strong>Secrets Management</strong></td><td>The practice of securely storing, distributing, and rotating credentials, API keys, tokens, and certificates.</td></tr>
+        <tr><td><strong>Environment Separation</strong></td><td>The logical and/or physical isolation of development, testing, staging, and production environments.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CISO / Security Lead</strong></td>
+          <td>Defines secure development standards; approves security tooling; reviews security testing results; provides security training.</td>
+        </tr>
+        <tr>
+          <td><strong>Development Manager / Tech Lead</strong></td>
+          <td>Ensures development teams comply with this policy; enforces code review requirements; manages branch protection rules.</td>
+        </tr>
+        <tr>
+          <td><strong>Software Developers</strong></td>
+          <td>Write secure code following organizational standards; participate in code reviews; remediate identified vulnerabilities; complete security training.</td>
+        </tr>
+        <tr>
+          <td><strong>QA / Security Testing Team</strong></td>
+          <td>Executes SAST, DAST, and SCA scans; validates remediation of findings; reports security test results.</td>
+        </tr>
+        <tr>
+          <td><strong>DevOps / Platform Engineers</strong></td>
+          <td>Maintain CI/CD pipeline security; implement environment separation; manage secrets management infrastructure; enforce deployment controls.</td>
+        </tr>
+        <tr>
+          <td><strong>Architects</strong></td>
+          <td>Conduct threat modeling during design phase; define security architecture requirements; review system designs for security.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>Ramdoot Solutions <strong>shall</strong> integrate security activities into every phase of the SDLC.</li>
+      <li>All developers <strong>must</strong> complete secure coding training within 30 days of joining and annually thereafter.</li>
+      <li>Threat modeling <strong>shall</strong> be performed during the design phase of all new applications and significant feature changes.</li>
+      <li>All code <strong>must</strong> undergo peer review by at least one other qualified developer before merging to protected branches.</li>
+      <li>Static Application Security Testing (SAST) <strong>shall</strong> be integrated into the CI/CD pipeline and executed on every pull request.</li>
+      <li>Dynamic Application Security Testing (DAST) <strong>shall</strong> be conducted against staging environments before production deployment.</li>
+      <li>Software Composition Analysis (SCA) <strong>must</strong> be performed to identify known vulnerabilities in third-party dependencies.</li>
+      <li>Secrets, credentials, API keys, and tokens <strong>must not</strong> be stored in source code, configuration files committed to version control, or client-side code.</li>
+      <li>Development, testing, staging, and production environments <strong>shall</strong> be logically separated with distinct access controls and credentials.</li>
+      <li>Production data <strong>must not</strong> be used in development or testing environments without sanitization and masking of personally identifiable information.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Secure SDLC Phases</h3>
+    <table>
+      <thead>
+        <tr><th>Phase</th><th>Security Activities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Requirements</strong></td>
+          <td>Identify security requirements; define data classification; establish compliance requirements; document security user stories.</td>
+        </tr>
+        <tr>
+          <td><strong>Design</strong></td>
+          <td>Conduct threat modeling (e.g., STRIDE); define security architecture; review authentication and authorization design; identify trust boundaries.</td>
+        </tr>
+        <tr>
+          <td><strong>Implementation</strong></td>
+          <td>Follow secure coding standards; use approved libraries and frameworks; implement input validation, output encoding, and parameterized queries; peer code review.</td>
+        </tr>
+        <tr>
+          <td><strong>Testing</strong></td>
+          <td>Execute SAST, DAST, and SCA; perform security-focused code review; conduct penetration testing for critical applications; validate OWASP Top 10 coverage.</td>
+        </tr>
+        <tr>
+          <td><strong>Deployment</strong></td>
+          <td>Verify security gate passage in CI/CD; confirm environment configuration; validate secrets are properly managed; execute pre-deployment security checklist.</td>
+        </tr>
+        <tr>
+          <td><strong>Maintenance</strong></td>
+          <td>Monitor for new vulnerabilities in dependencies; apply security patches; respond to vulnerability reports; conduct periodic security assessments.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>8.2 OWASP Top 10 Compliance</h3>
+    <p>All development teams <strong>shall</strong> implement controls to prevent the following vulnerability categories as defined by the current OWASP Top 10:</p>
+    <ol>
+      <li><strong>A01 — Broken Access Control:</strong> Implement role-based access control; enforce server-side authorization checks; deny by default.</li>
+      <li><strong>A02 — Cryptographic Failures:</strong> Encrypt data in transit (TLS 1.2+) and at rest; avoid deprecated algorithms; manage keys securely.</li>
+      <li><strong>A03 — Injection:</strong> Use parameterized queries; validate and sanitize all input; use ORM frameworks where possible.</li>
+      <li><strong>A04 — Insecure Design:</strong> Conduct threat modeling; apply secure design patterns; implement defense-in-depth.</li>
+      <li><strong>A05 — Security Misconfiguration:</strong> Harden default configurations; remove unnecessary features, accounts, and documentation; automate configuration management.</li>
+      <li><strong>A06 — Vulnerable and Outdated Components:</strong> Maintain dependency inventory; scan for known CVEs; update components promptly.</li>
+      <li><strong>A07 — Identification and Authentication Failures:</strong> Implement multi-factor authentication; enforce strong password policies; protect session tokens.</li>
+      <li><strong>A08 — Software and Data Integrity Failures:</strong> Verify software integrity; use signed artifacts; protect CI/CD pipeline integrity.</li>
+      <li><strong>A09 — Security Logging and Monitoring Failures:</strong> Log security-relevant events; integrate with centralized monitoring; establish alerting.</li>
+      <li><strong>A10 — Server-Side Request Forgery (SSRF):</strong> Validate and sanitize URLs; restrict outbound network access; use allow-lists for external resources.</li>
+    </ol>
+
+    <h3>8.3 Code Review Requirements</h3>
+    <ul>
+      <li>All code changes <strong>must</strong> be submitted through pull requests (or equivalent merge requests).</li>
+      <li>At least one reviewer <strong>shall</strong> be assigned who was not the author of the code.</li>
+      <li>Reviewers <strong>must</strong> evaluate code for:
+        <ul>
+          <li>Input validation and output encoding.</li>
+          <li>Proper authentication and authorization checks.</li>
+          <li>Secure handling of sensitive data.</li>
+          <li>Absence of hard-coded secrets or credentials.</li>
+          <li>Error handling that does not leak sensitive information.</li>
+          <li>Adherence to secure coding standards.</li>
+        </ul>
+      </li>
+      <li>Code reviews <strong>shall</strong> be completed within two (2) business days of submission.</li>
+    </ul>
+
+    <h3>8.4 Static and Dynamic Analysis</h3>
+    <ul>
+      <li>SAST tools <strong>shall</strong> be integrated into the CI/CD pipeline and configured to block merges when Critical or High severity findings are detected.</li>
+      <li>DAST scans <strong>shall</strong> be performed against staging environments at least weekly and before any production release.</li>
+      <li>All Critical and High findings from SAST and DAST <strong>must</strong> be remediated before production deployment.</li>
+      <li>Medium findings <strong>shall</strong> be tracked and remediated within 30 days.</li>
+      <li>Tools in use: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+    </ul>
+
+    <h3>8.5 Dependency Scanning</h3>
+    <ul>
+      <li>SCA scans <strong>shall</strong> be executed as part of the CI/CD pipeline on every build.</li>
+      <li>Dependencies with known Critical or High CVEs <strong>must</strong> be updated or replaced before production deployment.</li>
+      <li>A Software Bill of Materials (SBOM) <strong>shall</strong> be generated and maintained for each production application.</li>
+      <li>License compliance checks <strong>shall</strong> be performed to ensure third-party licenses are compatible with organizational use.</li>
+    </ul>
+
+    <h3>8.6 Secrets Management</h3>
+    <ul>
+      <li>All secrets (database credentials, API keys, tokens, certificates, encryption keys) <strong>must</strong> be stored in an approved secrets management system: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</li>
+      <li>Secrets <strong>must not</strong> be committed to source code repositories. Pre-commit hooks <strong>shall</strong> be configured to detect and block secret leakage.</li>
+      <li>If a secret is inadvertently committed, it <strong>must</strong> be rotated immediately and the repository history cleaned.</li>
+      <li>Secrets <strong>shall</strong> be rotated at least annually, or immediately upon personnel change or suspected compromise.</li>
+      <li>Access to secrets <strong>shall</strong> be limited to the systems and personnel that require them, following the principle of least privilege.</li>
+    </ul>
+
+    <h3>8.7 Branch Protection</h3>
+    <ul>
+      <li>The main/master branch and release branches <strong>shall</strong> be protected with the following rules:
+        <ul>
+          <li>Direct commits are disabled.</li>
+          <li>At least one approving code review is required.</li>
+          <li>All CI/CD checks (including SAST and SCA) must pass before merging.</li>
+          <li>Force push is disabled.</li>
+        </ul>
+      </li>
+      <li>Branch protection rules <strong>shall</strong> be configured at the repository level and auditable.</li>
+    </ul>
+
+    <h3>8.8 Environment Separation</h3>
+    <table>
+      <thead>
+        <tr><th>Environment</th><th>Purpose</th><th>Access Controls</th><th>Data Handling</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Development</strong></td>
+          <td>Feature development and unit testing</td>
+          <td>Development team only</td>
+          <td>Synthetic / mock data only</td>
+        </tr>
+        <tr>
+          <td><strong>Testing / QA</strong></td>
+          <td>Integration, regression, and security testing</td>
+          <td>Development and QA teams</td>
+          <td>Anonymized or synthetic data</td>
+        </tr>
+        <tr>
+          <td><strong>Staging</strong></td>
+          <td>Pre-production validation and UAT</td>
+          <td>Restricted to release team</td>
+          <td>Sanitized subset of production data (if required)</td>
+        </tr>
+        <tr>
+          <td><strong>Production</strong></td>
+          <td>Live operations</td>
+          <td>Strictly limited; change-controlled access</td>
+          <td>Real data; full security controls applied</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be documented and approved by the CISO and Development Manager. Exception requests shall include:</p>
+    <ul>
+      <li>The specific requirement for which an exception is sought.</li>
+      <li>The justification and risk assessment.</li>
+      <li>Compensating controls.</li>
+      <li>The duration of the exception (maximum 6 months, renewable).</li>
+    </ul>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>CI/CD pipeline reports <strong>shall</strong> be reviewed weekly for SAST, DAST, and SCA findings.</li>
+      <li>Code review compliance (all merges require review) <strong>shall</strong> be monitored continuously through repository analytics.</li>
+      <li>Security training completion rates <strong>shall</strong> be tracked and reported quarterly.</li>
+      <li>Key metrics:
+        <ul>
+          <li>SAST/DAST finding density (findings per 1,000 lines of code).</li>
+          <li>Mean time to remediate security findings.</li>
+          <li>Percentage of merges with required code review.</li>
+          <li>Number of secrets detected in pre-commit scans.</li>
+          <li>Dependency vulnerability count by severity.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Code deployed to production without passing mandatory security gates <strong>shall</strong> be subject to immediate rollback.</li>
+      <li>Developers who commit secrets to repositories <strong>shall</strong> immediately rotate the affected credentials and report the incident.</li>
+      <li>Repeated violations may result in removal of commit access, additional mandatory training, or disciplinary action.</li>
+      <li>Deliberate circumvention of security controls shall be treated as a security incident.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SAST/DAST/SCA scan results</td><td>3 years</td><td>IT Security Team</td></tr>
+        <tr><td>Code review records (pull request history)</td><td>Duration of repository lifecycle + 3 years</td><td>Development Manager</td></tr>
+        <tr><td>Threat model documentation</td><td>Duration of application lifecycle + 3 years</td><td>Architecture Team</td></tr>
+        <tr><td>Security training completion records</td><td>3 years</td><td>HR / CISO Office</td></tr>
+        <tr><td>SBOM records</td><td>Duration of application lifecycle + 1 year</td><td>DevOps Team</td></tr>
+        <tr><td>Exception records</td><td>3 years after expiry</td><td>CISO Office</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-009 — Vulnerability Management Policy</li>
+      <li>RS-POL-010 — Patch Management Policy</li>
+      <li>RS-POL-012 — Change Management Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>Ramdoot Solutions Secure Coding Standards</li>
+      <li>OWASP Top 10 (latest version)</li>
+      <li>OWASP Application Security Verification Standard (ASVS)</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC8.1</td><td>The entity authorizes, designs, develops or acquires, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Secure Development</td><td>Organizations shall follow secure software development practices including code review, vulnerability testing, and environment separation.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Application Security</td><td>Applications shall be developed with security controls to prevent unauthorized access and data leakage.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Publication of a new OWASP Top 10 edition.</li>
+      <li>Significant changes to the development technology stack or SDLC processes.</li>
+      <li>Security incidents related to application vulnerabilities.</li>
+      <li>Findings from penetration tests or security audits.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-011 Secure Development Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

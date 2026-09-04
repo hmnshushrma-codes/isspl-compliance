@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gap Analysis — Ramdoot Solutions Compliance</title>
+  <link rel="stylesheet" href="assets/compliance.css">
+  <link rel="stylesheet" media="print" href="assets/print.css">
+</head>
+<body>
+
+<nav class="doc-nav no-print">
+  <a href="index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+  <div>
+    <a href="soc2/index.html">SOC 2</a> &nbsp;|&nbsp;
+    <a href="soc1/index.html">SOC 1</a> &nbsp;|&nbsp;
+    <a href="nisp/nisp.html">NISP</a> &nbsp;|&nbsp;
+    <a href="index.html">Home</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- Cover Page -->
+  <div class="cover-page">
+    <img src="assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+    <div class="org-name">RAMDOOT SOLUTIONS</div>
+    <div class="doc-type">Compliance &amp; Information Security</div>
+    <h1 class="cover-title">SOC 2 / SOC 1 / NISP<br>Compliance Gap Analysis</h1>
+    <div class="cover-subtitle">Control &amp; Evidence Readiness Assessment</div>
+    <div class="cover-meta">
+      <p>Version 1.0 &nbsp;|&nbsp; Classification: Confidential</p>
+      <p>Status: Draft for Management Review</p>
+      <p>Assessment Date: September 2026</p>
+    </div>
+    <div class="cover-notice">
+      This document assesses the current state of Ramdoot Solutions' controls, policies, and evidence against SOC 2 Trust Services Criteria, SOC 1 internal control objectives, and Network &amp; Information Security Policy requirements. It does not constitute or represent an independent SOC attestation or certification.
+    </div>
+  </div>
+
+  <!-- Document Control -->
+  <table class="doc-control">
+    <tr><th>Document Title</th><td>Compliance Gap Analysis</td></tr>
+    <tr><th>Document ID</th><td>RS-GAP-001</td></tr>
+    <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+    <tr><th>Document Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Version</th><td>1.0</td></tr>
+    <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Last Review Date</th><td>September 2026</td></tr>
+    <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Classification</th><td>Confidential</td></tr>
+    <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+  </table>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#methodology">Assessment Methodology</a></li>
+      <li><a href="#scope">Scope of Assessment</a></li>
+      <li><a href="#summary-dashboard">Summary Dashboard</a></li>
+      <li><a href="#detailed-findings">Detailed Findings by Control Area</a>
+        <ol>
+          <li><a href="#auth">Authentication &amp; Authorization</a></li>
+          <li><a href="#encryption">Encryption &amp; Cryptography</a></li>
+          <li><a href="#cicd">CI/CD &amp; Deployment Security</a></li>
+          <li><a href="#logging">Logging &amp; Monitoring</a></li>
+          <li><a href="#backup">Backup &amp; Recovery</a></li>
+          <li><a href="#access">Access Control</a></li>
+          <li><a href="#change">Change Management</a></li>
+          <li><a href="#infra">Infrastructure Security</a></li>
+          <li><a href="#data">Data Protection</a></li>
+          <li><a href="#incident">Incident Response</a></li>
+          <li><a href="#vendor">Vendor Management</a></li>
+          <li><a href="#testing">Security Testing</a></li>
+        </ol>
+      </li>
+      <li><a href="#framework-mapping">Framework Mapping Matrix</a></li>
+      <li><a href="#priority-matrix">Risk Priority Matrix</a></li>
+      <li><a href="#remediation">Remediation Roadmap</a></li>
+      <li><a href="#management-actions">Required Management Actions</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Executive Summary -->
+  <section id="executive-summary">
+    <h1>1. Executive Summary</h1>
+    <p>This gap analysis evaluates Ramdoot Solutions' current security controls, policies, and operational procedures against three compliance frameworks: AICPA SOC 2 Trust Services Criteria, SOC 1 internal control objectives relevant to ICFR, and NISP (Network &amp; Information Security Policy) requirements.</p>
+
+    <p>The assessment was conducted by reviewing the organization's application codebase, deployment infrastructure, CI/CD pipelines, and operational documentation. The findings identify areas where controls exist, where partial implementation has been achieved, and where documentation or implementation gaps remain.</p>
+
+    <div class="callout callout-warning">
+      <strong>Key Finding:</strong> Ramdoot Solutions has a functional technical foundation with JWT authentication, RBAC, structured logging, automated deployments, and Docker-based infrastructure. However, significant gaps exist in formal policy documentation, multi-factor authentication, centralized log management, data-at-rest encryption, incident response procedures, and vendor risk management — all of which are required for SOC 2 Type II readiness.
+    </div>
+
+    <h3>Assessment Summary by Status</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Count</th>
+          <th>Percentage</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-implemented">Implemented</span></td>
+          <td>18</td>
+          <td>15%</td>
+          <td>Control exists and is operational in the current environment</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-partial">Partially Implemented</span></td>
+          <td>26</td>
+          <td>22%</td>
+          <td>Technical capability exists but lacks formal documentation or completeness</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-required">Documentation Required</span></td>
+          <td>34</td>
+          <td>28%</td>
+          <td>Policy or procedure document must be created and approved</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-required">Evidence Required</span></td>
+          <td>22</td>
+          <td>18%</td>
+          <td>Operating evidence must be collected for the audit period</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-critical">Not Implemented</span></td>
+          <td>14</td>
+          <td>12%</td>
+          <td>Control does not exist and must be built</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-not-applicable">Requires Confirmation</span></td>
+          <td>6</td>
+          <td>5%</td>
+          <td>Management decision needed to determine applicability</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 2. Methodology -->
+  <section id="methodology">
+    <h1>2. Assessment Methodology</h1>
+    <p>The gap analysis was conducted using the following approach:</p>
+    <ol>
+      <li><strong>Codebase Review:</strong> Examination of application source code (Go backend, React frontend, Python PDF parser), configuration files, Docker Compose files, and deployment scripts.</li>
+      <li><strong>Infrastructure Assessment:</strong> Review of Nginx configurations, Docker multi-stage builds, database configurations, and VPS provisioning scripts.</li>
+      <li><strong>CI/CD Pipeline Review:</strong> Analysis of GitHub Actions workflows, deployment automation, and quality gates.</li>
+      <li><strong>Documentation Review:</strong> Assessment of existing operational documentation, deployment guides, and project documentation.</li>
+      <li><strong>Framework Mapping:</strong> Each finding was mapped against SOC 2 Common Criteria (CC1–CC9), Availability (A1), Confidentiality (C1), SOC 1 control objectives, and NISP requirements.</li>
+    </ol>
+
+    <h3>Classification Criteria</h3>
+    <table>
+      <thead>
+        <tr><th>Status</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge badge-implemented">Implemented</span></td><td>Control is in place, documented, and operational with evidence available.</td></tr>
+        <tr><td><span class="badge badge-partial">Partially Implemented</span></td><td>Technical control exists but formal policy documentation, evidence collection, or completeness is missing.</td></tr>
+        <tr><td><span class="badge badge-required">Documentation Required</span></td><td>A policy, procedure, or standard must be created and formally approved by management.</td></tr>
+        <tr><td><span class="badge badge-required">Evidence Required</span></td><td>The control may exist but operating evidence must be collected for the assessment period.</td></tr>
+        <tr><td><span class="badge badge-critical">Not Implemented</span></td><td>The control does not exist and must be designed, implemented, and documented.</td></tr>
+        <tr><td><span class="badge badge-not-applicable">Requires Confirmation</span></td><td>Management decision needed to determine if the control is in scope or applicable.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. Scope -->
+  <section id="scope">
+    <h1>3. Scope of Assessment</h1>
+    <p>This assessment covers the following systems and services operated by Ramdoot Solutions:</p>
+
+    <table>
+      <thead><tr><th>Component</th><th>Technology</th><th>Hosting</th><th>In Scope</th></tr></thead>
+      <tbody>
+        <tr><td>CertFlow Web Application (Frontend)</td><td>React, Vite</td><td>Cloudflare Pages</td><td>Yes</td></tr>
+        <tr><td>CertFlow API (Backend)</td><td>Go, Fiber framework</td><td>VPS (Docker)</td><td>Yes</td></tr>
+        <tr><td>PostgreSQL Database</td><td>PostgreSQL 15+</td><td>VPS (Native)</td><td>Yes</td></tr>
+        <tr><td>Object Storage</td><td>MinIO</td><td>VPS (Docker)</td><td>Yes</td></tr>
+        <tr><td>PDF Parser Service</td><td>Python, FastAPI</td><td>VPS (Docker)</td><td>Yes</td></tr>
+        <tr><td>Reverse Proxy / TLS Termination</td><td>Nginx + Let's Encrypt</td><td>VPS</td><td>Yes</td></tr>
+        <tr><td>CI/CD Pipeline</td><td>GitHub Actions</td><td>GitHub Cloud</td><td>Yes</td></tr>
+        <tr><td>Email Service</td><td>SMTP (Hostinger)</td><td>Third-party</td><td>Yes</td></tr>
+        <tr><td>DNS / CDN</td><td>Cloudflare</td><td>Third-party</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. Summary Dashboard -->
+  <section id="summary-dashboard">
+    <h1>4. Summary Dashboard</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Control Area</th>
+          <th>Framework</th>
+          <th>Implemented</th>
+          <th>Partial</th>
+          <th>Doc Required</th>
+          <th>Not Implemented</th>
+          <th>Overall Status</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Authentication &amp; Authorization</strong></td>
+          <td>CC6.1, CC6.6</td>
+          <td>4</td><td>2</td><td>2</td><td>2</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>Encryption &amp; Cryptography</strong></td>
+          <td>CC6.1, CC6.7</td>
+          <td>2</td><td>1</td><td>3</td><td>3</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>CI/CD &amp; Deployment</strong></td>
+          <td>CC8.1</td>
+          <td>4</td><td>2</td><td>2</td><td>2</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Logging &amp; Monitoring</strong></td>
+          <td>CC4.1, CC7.1-7.2</td>
+          <td>3</td><td>2</td><td>3</td><td>3</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>Backup &amp; Recovery</strong></td>
+          <td>A1.2, A1.3</td>
+          <td>2</td><td>2</td><td>3</td><td>2</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Access Control</strong></td>
+          <td>CC6.1-CC6.4</td>
+          <td>3</td><td>2</td><td>2</td><td>1</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Change Management</strong></td>
+          <td>CC8.1</td>
+          <td>3</td><td>3</td><td>3</td><td>1</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Infrastructure Security</strong></td>
+          <td>CC6.1, CC7.1</td>
+          <td>4</td><td>2</td><td>3</td><td>1</td>
+          <td><span class="badge badge-partial">Partial</span></td>
+          <td><span class="badge badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><strong>Data Protection</strong></td>
+          <td>CC6.5, CC6.7, C1.1</td>
+          <td>2</td><td>1</td><td>4</td><td>2</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>Incident Response</strong></td>
+          <td>CC7.3-CC7.5</td>
+          <td>1</td><td>1</td><td>3</td><td>2</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-critical">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>Vendor Management</strong></td>
+          <td>CC9.1-CC9.2</td>
+          <td>0</td><td>1</td><td>3</td><td>1</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><strong>Security Testing</strong></td>
+          <td>CC3.2, CC7.1</td>
+          <td>2</td><td>1</td><td>2</td><td>2</td>
+          <td><span class="badge badge-required">Gaps</span></td>
+          <td><span class="badge badge-high">High</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. Detailed Findings -->
+  <section id="detailed-findings" class="allow-break">
+    <h1>5. Detailed Findings by Control Area</h1>
+
+    <!-- 5.1 Authentication -->
+    <section id="auth">
+      <h2>5.1 Authentication &amp; Authorization</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-IAM-001</td>
+            <td>JWT-based authentication with secure token lifecycle</td>
+            <td>HS256 JWT with 15-min access / 30-day refresh tokens, bcrypt cost 12</td>
+            <td>Password &amp; Authentication Policy (RS-POL-003)</td>
+            <td>Authentication configuration screenshots</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document current configuration formally</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-002</td>
+            <td>Role-based access control with least privilege</td>
+            <td>12 defined roles with RequireRole middleware guards</td>
+            <td>Access Control Policy (RS-POL-002)</td>
+            <td>Role matrix, endpoint-role mapping</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Create formal role-permission matrix document</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-003</td>
+            <td>Multi-factor authentication for all users</td>
+            <td>No MFA/2FA implementation exists</td>
+            <td>Password &amp; Authentication Policy (RS-POL-003)</td>
+            <td>MFA configuration screenshots, enrollment records</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement TOTP-based MFA (e.g., Google Authenticator); enforce for privileged accounts immediately, all users within 60 days</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-004</td>
+            <td>Account lockout after repeated failed login attempts</td>
+            <td>No lockout policy; rate limiting exists (10 req/min auth endpoint in prod)</td>
+            <td>Password &amp; Authentication Policy (RS-POL-003)</td>
+            <td>Lockout configuration, failed login logs</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Implement account lockout after 5 failed attempts with 30-min reset; log all failed attempts</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-005</td>
+            <td>Password complexity and expiration requirements</td>
+            <td>No enforced password complexity; no expiration policy</td>
+            <td>Password &amp; Authentication Policy (RS-POL-003)</td>
+            <td>Password policy configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Enforce min 12 chars, mixed case, numbers, special chars; 90-day rotation for privileged accounts</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-006</td>
+            <td>Secure cookie and session management</td>
+            <td>httpOnly, Secure (production), SameSite=Lax cookies</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Cookie configuration screenshots</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document configuration; verify SameSite=Strict for production</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-007</td>
+            <td>Rate limiting on authentication endpoints</td>
+            <td>Global: 100 req/min prod; Auth: 10 req/min prod</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Rate limit configuration screenshots</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document current rate limits</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-008</td>
+            <td>Login attempt audit logging</td>
+            <td>No dedicated login attempt logging with timestamps, IP addresses, user agents</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Login audit log samples</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement login event logging: success/failure, timestamp, IP, user agent, user ID</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.2 Encryption -->
+    <section id="encryption">
+      <h2>5.2 Encryption &amp; Cryptography</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-SEC-001</td>
+            <td>TLS/HTTPS for all data in transit</td>
+            <td>Nginx + Let's Encrypt; HTTPS redirect (80→443); SMTPS on port 465</td>
+            <td>Encryption Policy (RS-POL-008)</td>
+            <td>SSL certificate records, Nginx TLS config</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document TLS configuration; verify minimum TLS 1.2</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-002</td>
+            <td>Data-at-rest encryption for databases</td>
+            <td>No PostgreSQL data-at-rest encryption configured</td>
+            <td>Encryption Policy (RS-POL-008)</td>
+            <td>Database encryption configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Enable full-disk encryption on VPS or PostgreSQL TDE; encrypt backup files</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-003</td>
+            <td>Encryption key management lifecycle</td>
+            <td>JWT secrets in environment variables; no rotation policy; no HSM or secrets manager</td>
+            <td>Encryption Policy (RS-POL-008)</td>
+            <td>Key management procedures, rotation records</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement secrets management (HashiCorp Vault or cloud KMS); define key rotation schedule</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-004</td>
+            <td>Encrypted backup storage</td>
+            <td>Backups are gzip compressed but not encrypted</td>
+            <td>Backup Policy (RS-POL-017)</td>
+            <td>Encrypted backup samples, encryption key records</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Add GPG or AES-256 encryption to backup pipeline</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-005</td>
+            <td>Password hashing with modern algorithms</td>
+            <td>bcrypt with cost factor 12</td>
+            <td>Password &amp; Authentication Policy (RS-POL-003)</td>
+            <td>Hashing algorithm configuration</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document algorithm choice and cost factor</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-006</td>
+            <td>Field-level encryption for PII</td>
+            <td>No field-level encryption for email addresses, phone numbers, or personal data</td>
+            <td>Data Classification Policy (RS-POL-006), Privacy Policy (RS-POL-020)</td>
+            <td>PII encryption configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Identify PII fields; implement application-layer encryption for sensitive columns</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.3 CI/CD -->
+    <section id="cicd">
+      <h2>5.3 CI/CD &amp; Deployment Security</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-CHG-001</td>
+            <td>Automated CI pipeline with lint, test, build</td>
+            <td>GitHub Actions: lint → test → build for frontend; manual deploy script for backend</td>
+            <td>Secure Development Policy (RS-POL-011)</td>
+            <td>CI pipeline configuration, build logs</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Add backend CI pipeline in GitHub Actions</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-002</td>
+            <td>Production deployment approval gates</td>
+            <td>GitHub Environment approval gate for production frontend; manual for backend</td>
+            <td>Change Management Policy (RS-POL-012)</td>
+            <td>Approval gate configuration, deployment logs</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Formalize approval workflow for backend deployments</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-003</td>
+            <td>Static Application Security Testing (SAST)</td>
+            <td>No SAST tool integrated</td>
+            <td>Secure Development Policy (RS-POL-011)</td>
+            <td>SAST scan reports</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Integrate Semgrep, SonarQube, or CodeQL into CI pipeline</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-004</td>
+            <td>Dependency vulnerability scanning</td>
+            <td>No automated dependency scanning (no Dependabot, Snyk, or Trivy)</td>
+            <td>Vulnerability Management Policy (RS-POL-009)</td>
+            <td>Dependency scan reports</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Enable GitHub Dependabot or Snyk for Go, npm, and Python dependencies</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-005</td>
+            <td>Container image vulnerability scanning</td>
+            <td>No container scanning configured</td>
+            <td>Vulnerability Management Policy (RS-POL-009)</td>
+            <td>Container scan reports</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Add Trivy or Grype scanning to Docker build pipeline</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-006</td>
+            <td>Secrets scanning in CI/CD</td>
+            <td>No secrets scanning configured</td>
+            <td>Secure Development Policy (RS-POL-011)</td>
+            <td>Secrets scan configuration, findings</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Enable GitHub secret scanning or integrate Gitleaks</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.4 Logging -->
+    <section id="logging">
+      <h2>5.4 Logging &amp; Monitoring</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-MON-001</td>
+            <td>Structured application logging</td>
+            <td>JSON structured logging with slog; request/response logging with status, method, path, duration</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Log format samples, logging configuration</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document logging standards formally</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-002</td>
+            <td>Centralized log aggregation</td>
+            <td>No centralized logging; logs in Docker container stdout only</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Log aggregation platform configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Deploy ELK stack, Loki+Grafana, or cloud logging service</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-003</td>
+            <td>Error alerting and escalation</td>
+            <td>Slack alerts for 5xx errors and panics with rate limiting (60s per endpoint)</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Alert configuration, sample alerts</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Define severity-based escalation procedures; add PagerDuty or on-call rotation</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-004</td>
+            <td>PII masking in log output</td>
+            <td>No PII masking; email addresses and potentially sensitive data logged in request paths</td>
+            <td>Privacy &amp; Data Protection Policy (RS-POL-020)</td>
+            <td>Log masking configuration, sample masked logs</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement log redaction for email, phone, and PII fields</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-005</td>
+            <td>Log retention policy (minimum 12 months)</td>
+            <td>No documented retention policy; Docker logs rotate by default</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Retention policy, log storage proof</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define retention periods (12 months minimum); configure Docker log rotation with persistence</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-006</td>
+            <td>User action audit trail</td>
+            <td>Some audit trails exist (pause logs, allocation history) but no comprehensive user action log</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Audit trail configuration, sample records</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Implement comprehensive audit logging: who did what, when, from where</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-MON-007</td>
+            <td>System metrics collection (CPU, memory, disk)</td>
+            <td>No system metrics monitoring configured</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Monitoring dashboard screenshots</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Deploy Prometheus + Grafana or cloud monitoring for system metrics</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.5 Backup -->
+    <section id="backup">
+      <h2>5.5 Backup &amp; Recovery</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-OPS-001</td>
+            <td>Automated daily database backups</td>
+            <td>Cron-based daily backups (2 AM preprod, 3 AM prod); gzip compressed</td>
+            <td>Backup Policy (RS-POL-017)</td>
+            <td>Backup scripts, cron configuration, backup file listings</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document backup schedule formally</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-002</td>
+            <td>Backup retention and automated cleanup</td>
+            <td>Preprod: 30 days, Production: 90 days; automatic old file cleanup</td>
+            <td>Backup Policy (RS-POL-017)</td>
+            <td>Retention configuration, cleanup logs</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document retention periods</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-003</td>
+            <td>Offsite/redundant backup storage</td>
+            <td>Backups stored on same VPS only; no offsite replication</td>
+            <td>Backup Policy (RS-POL-017), Disaster Recovery Policy (RS-POL-016)</td>
+            <td>Offsite backup configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Configure S3-compatible offsite backup replication</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-004</td>
+            <td>Backup integrity verification and restore testing</td>
+            <td>No automated backup integrity checks; no scheduled restore tests</td>
+            <td>Backup Policy (RS-POL-017)</td>
+            <td>Restore test records, integrity verification logs</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Schedule quarterly restore tests; add checksum verification to backup script</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-005</td>
+            <td>Documented RTO and RPO objectives</td>
+            <td>No RTO/RPO defined</td>
+            <td>Disaster Recovery Policy (RS-POL-016), Business Continuity Policy (RS-POL-015)</td>
+            <td>RTO/RPO documentation, management approval</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define RTO/RPO targets with management; document in DR policy</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-006</td>
+            <td>MinIO/object storage backup</td>
+            <td>No backup procedure for uploaded documents in MinIO</td>
+            <td>Backup Policy (RS-POL-017)</td>
+            <td>MinIO backup configuration</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement MinIO mirror or mc backup to offsite storage</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.6 Access Control -->
+    <section id="access">
+      <h2>5.6 Access Control</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-IAM-010</td>
+            <td>Role-based access control model</td>
+            <td>12 roles defined in constants; RequireRole middleware enforced on all routes</td>
+            <td>Access Control Policy (RS-POL-002)</td>
+            <td>Role matrix document, route-role mapping</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Formalize role-permission matrix as evidence</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-011</td>
+            <td>Quarterly access reviews</td>
+            <td>No scheduled access reviews</td>
+            <td>Access Control Policy (RS-POL-002)</td>
+            <td>Quarterly access review records</td>
+            <td><span class="badge badge-required">Evidence Required</span></td>
+            <td>Implement quarterly user access reviews; document findings and remediation</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-012</td>
+            <td>Privileged access management</td>
+            <td>Admin flag (is_admin) grants elevated access; no PAM tool or time-limited access</td>
+            <td>Access Control Policy (RS-POL-002)</td>
+            <td>PAM configuration, privileged user listing</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Implement privileged access logging; document admin access justification</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-IAM-013</td>
+            <td>Admin action audit logging</td>
+            <td>No dedicated admin action logging</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>Admin audit log samples</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Log all admin actions: user creation, role changes, data deletion, config changes</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.7 Change Management -->
+    <section id="change">
+      <h2>5.7 Change Management</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-CHG-010</td>
+            <td>Git version control with branch protection</td>
+            <td>Git + GitHub; main branch used for deployments</td>
+            <td>Change Management Policy (RS-POL-012)</td>
+            <td>Branch protection configuration screenshots</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Enable branch protection rules: require PR reviews, status checks, no force push</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-011</td>
+            <td>Change approval workflow</td>
+            <td>GitHub Environment approval for production frontend; manual for backend</td>
+            <td>Change Management Policy (RS-POL-012)</td>
+            <td>Change approval records</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Formalize CAB process; require documented approval for all production changes</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-012</td>
+            <td>Database migration tracking</td>
+            <td>schema_migrations table; 126 embedded migrations; auto-run on startup</td>
+            <td>Change Management Policy (RS-POL-012)</td>
+            <td>Migration logs, pre-deploy backup evidence</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Document migration process formally</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-CHG-013</td>
+            <td>Emergency change procedure</td>
+            <td>No documented emergency change procedure</td>
+            <td>Change Management Policy (RS-POL-012)</td>
+            <td>Emergency change records</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define emergency change procedure with post-hoc approval and documentation</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.8 Infrastructure -->
+    <section id="infra">
+      <h2>5.8 Infrastructure Security</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-OPS-010</td>
+            <td>Docker container hardening</td>
+            <td>Multi-stage builds; Alpine base; non-root user (app); minimal packages</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Dockerfile review, container security scan</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Add container vulnerability scanning</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-011</td>
+            <td>Security headers on all responses</td>
+            <td>X-Content-Type-Options: nosniff, X-Frame-Options: DENY, Referrer-Policy</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Header configuration, response samples</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Add Content-Security-Policy and Strict-Transport-Security headers</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-012</td>
+            <td>Firewall configuration</td>
+            <td>UFW provisioned but rules not documented; Fail2ban installed</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Firewall rules export, Fail2ban configuration</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Document all firewall rules; configure Fail2ban for SSH, HTTP brute force</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-013</td>
+            <td>Network segmentation</td>
+            <td>Docker network isolation between services; no broader network segmentation</td>
+            <td>Information Security Policy (RS-POL-001)</td>
+            <td>Network diagram, segmentation configuration</td>
+            <td><span class="badge badge-partial">Partially Implemented</span></td>
+            <td>Document Docker network architecture; consider VPC if migrating to cloud</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-014</td>
+            <td>Intrusion detection system</td>
+            <td>No IDS deployed</td>
+            <td>Logging &amp; Monitoring Policy (RS-POL-013)</td>
+            <td>IDS configuration, alert records</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Deploy OSSEC, Wazuh, or cloud-based IDS</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.9 Data Protection -->
+    <section id="data">
+      <h2>5.9 Data Protection</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-SEC-010</td>
+            <td>Data classification policy</td>
+            <td>No formal data classification</td>
+            <td>Data Classification Policy (RS-POL-006)</td>
+            <td>Approved policy document, classification records</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create and approve data classification policy with four tiers</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-011</td>
+            <td>Data retention and disposal policy</td>
+            <td>No documented retention or disposal procedures</td>
+            <td>Data Retention Policy (RS-POL-007)</td>
+            <td>Approved policy, retention schedule</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define retention periods by data type; document secure deletion methods</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-012</td>
+            <td>PII identification and protection</td>
+            <td>Application stores email, names, phone numbers; no PII inventory or special handling</td>
+            <td>Privacy &amp; Data Protection Policy (RS-POL-020)</td>
+            <td>PII inventory, data flow diagrams</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create PII inventory; implement data flow mapping; assess DPDP Act compliance</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-013</td>
+            <td>Data breach notification procedures</td>
+            <td>No data breach notification plan; CERT-In 6-hour reporting requirement applicable</td>
+            <td>Incident Response Policy (RS-POL-014)</td>
+            <td>Notification procedures, contact lists</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create breach notification plan aligned with CERT-In and DPDP requirements</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.10 Incident Response -->
+    <section id="incident">
+      <h2>5.10 Incident Response</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-OPS-020</td>
+            <td>Incident response plan and playbook</td>
+            <td>No formal incident response plan; error-ID tracking and Slack alerts exist</td>
+            <td>Incident Response Policy (RS-POL-014)</td>
+            <td>Approved IRP document</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create comprehensive IRP with classification, escalation, and communication procedures</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-021</td>
+            <td>Incident severity classification</td>
+            <td>No severity model defined</td>
+            <td>Incident Response Policy (RS-POL-014)</td>
+            <td>Severity matrix document</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define P1-P4 severity levels with response time SLAs</td>
+            <td><span class="badge badge-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-022</td>
+            <td>Post-incident review process</td>
+            <td>No post-mortem process documented</td>
+            <td>Incident Response Policy (RS-POL-014)</td>
+            <td>Post-incident review templates, completed reviews</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create post-incident review template; require reviews for all P1/P2 incidents</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-OPS-023</td>
+            <td>Forensic evidence preservation</td>
+            <td>No forensic procedures documented</td>
+            <td>Incident Response Policy (RS-POL-014)</td>
+            <td>Evidence handling procedures</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Define chain-of-custody procedures for security incidents</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.11 Vendor Management -->
+    <section id="vendor">
+      <h2>5.11 Vendor Management</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-VRM-001</td>
+            <td>Vendor risk assessment program</td>
+            <td>No formal vendor assessment; dependencies tracked in go.mod/package.json only</td>
+            <td>Vendor Management Policy (RS-POL-018)</td>
+            <td>Vendor risk assessments, approved vendor list</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Create vendor register; classify vendors; perform risk assessments for critical vendors</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-VRM-002</td>
+            <td>Third-party attestation report collection</td>
+            <td>No SOC/ISO reports collected from vendors (Cloudflare, Hostinger, GitHub)</td>
+            <td>Vendor Management Policy (RS-POL-018)</td>
+            <td>Vendor SOC 2/ISO 27001 reports</td>
+            <td><span class="badge badge-required">Evidence Required</span></td>
+            <td>Request SOC 2 reports from Cloudflare, GitHub; assess Hostinger security posture</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-VRM-003</td>
+            <td>Vendor contractual security requirements</td>
+            <td>No security clauses documented in vendor contracts</td>
+            <td>Vendor Management Policy (RS-POL-018)</td>
+            <td>Contract excerpts showing security clauses</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Review and update vendor contracts with security, data protection, and SLA clauses</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5.12 Security Testing -->
+    <section id="testing">
+      <h2>5.12 Security Testing</h2>
+      <table>
+        <thead>
+          <tr><th>Control ID</th><th>Requirement</th><th>Current State</th><th>Required Policy</th><th>Required Evidence</th><th>Status</th><th>Remediation</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RS-SEC-020</td>
+            <td>Unit and integration test suites</td>
+            <td>715+ frontend tests (Vitest), Go unit tests with race detection, E2E with Playwright</td>
+            <td>Secure Development Policy (RS-POL-011)</td>
+            <td>Test results, coverage reports</td>
+            <td><span class="badge badge-implemented">Implemented</span></td>
+            <td>Add code coverage reporting; enforce minimum threshold</td>
+            <td><span class="badge badge-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-021</td>
+            <td>Annual penetration testing</td>
+            <td>No penetration testing conducted</td>
+            <td>Vulnerability Management Policy (RS-POL-009)</td>
+            <td>Penetration test report</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Engage qualified third-party for annual penetration testing</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-022</td>
+            <td>Vulnerability scanning program</td>
+            <td>No vulnerability scanning configured</td>
+            <td>Vulnerability Management Policy (RS-POL-009)</td>
+            <td>Vulnerability scan reports</td>
+            <td><span class="badge badge-critical">Not Implemented</span></td>
+            <td>Implement automated vulnerability scanning (weekly internal, monthly external)</td>
+            <td><span class="badge badge-high">High</span></td>
+          </tr>
+          <tr>
+            <td>RS-SEC-023</td>
+            <td>Threat modeling</td>
+            <td>No threat model documentation</td>
+            <td>Risk Management Policy (RS-POL-019)</td>
+            <td>Threat model document</td>
+            <td><span class="badge badge-required">Documentation Required</span></td>
+            <td>Conduct STRIDE or DREAD threat modeling exercise for CertFlow</td>
+            <td><span class="badge badge-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <!-- 6. Framework Mapping -->
+  <section id="framework-mapping" class="allow-break">
+    <h1>6. Cross-Framework Mapping Matrix</h1>
+    <p>This matrix maps control areas to their relevant framework criteria, enabling unified remediation planning across SOC 2, SOC 1, and NISP requirements.</p>
+
+    <table>
+      <thead>
+        <tr><th>Control Area</th><th>SOC 2 Criteria</th><th>SOC 1 Relevance</th><th>NISP Section</th><th>Key Policies</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Authentication &amp; Authorization</td><td>CC6.1, CC6.2, CC6.6</td><td>Logical Access Controls</td><td>§7-9 IAM, Auth, MFA</td><td>RS-POL-002, RS-POL-003</td></tr>
+        <tr><td>Encryption</td><td>CC6.1, CC6.7</td><td>Data Integrity</td><td>§16-18 Cryptography</td><td>RS-POL-008</td></tr>
+        <tr><td>CI/CD Security</td><td>CC8.1</td><td>Change Management</td><td>§14 SDLC</td><td>RS-POL-011, RS-POL-012</td></tr>
+        <tr><td>Logging &amp; Monitoring</td><td>CC4.1, CC7.1, CC7.2</td><td>Operations Monitoring</td><td>§22-23 Logging, Alerting</td><td>RS-POL-013</td></tr>
+        <tr><td>Backup &amp; Recovery</td><td>A1.2, A1.3</td><td>Data Backup</td><td>§26-28 Backup, DR, BCP</td><td>RS-POL-015, RS-POL-016, RS-POL-017</td></tr>
+        <tr><td>Access Control</td><td>CC6.1-CC6.4</td><td>Logical/Physical Access</td><td>§7-8 IAM, Privileged</td><td>RS-POL-002</td></tr>
+        <tr><td>Change Management</td><td>CC8.1</td><td>Change Management</td><td>§14 SDLC</td><td>RS-POL-012</td></tr>
+        <tr><td>Infrastructure</td><td>CC6.1, CC7.1</td><td>IT General Controls</td><td>§10-12 Network, Endpoint, Cloud</td><td>RS-POL-001</td></tr>
+        <tr><td>Data Protection</td><td>CC6.5, CC6.7, C1.1</td><td>Data Integrity</td><td>§5-6 Classification, §31 Retention</td><td>RS-POL-006, RS-POL-007, RS-POL-020</td></tr>
+        <tr><td>Incident Response</td><td>CC7.3, CC7.4, CC7.5</td><td>Incident Management</td><td>§24-25 IR, Evidence</td><td>RS-POL-014</td></tr>
+        <tr><td>Vendor Management</td><td>CC9.1, CC9.2</td><td>Vendor Controls</td><td>§29-30 Vendor, Third-Party</td><td>RS-POL-018</td></tr>
+        <tr><td>Security Testing</td><td>CC3.2, CC7.1</td><td>N/A</td><td>§19-20 Vuln Mgmt, Patching</td><td>RS-POL-009</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. Priority Matrix -->
+  <section id="priority-matrix">
+    <h1>7. Risk Priority Matrix</h1>
+
+    <h3>Critical Priority (Remediate within 30 days)</h3>
+    <table>
+      <thead><tr><th>#</th><th>Gap</th><th>Risk</th><th>Remediation</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>No MFA for any user accounts</td><td>Credential compromise leads to unauthorized access</td><td>Implement TOTP-based MFA; enforce for admin/privileged accounts first</td></tr>
+        <tr><td>2</td><td>No data-at-rest encryption</td><td>Physical server compromise exposes all data</td><td>Enable full-disk encryption or PostgreSQL TDE</td></tr>
+        <tr><td>3</td><td>Backups not encrypted</td><td>Backup file compromise exposes all historical data</td><td>Add GPG/AES-256 encryption to backup pipeline</td></tr>
+        <tr><td>4</td><td>No centralized log aggregation</td><td>Incident investigation limited; log loss on container restart</td><td>Deploy Loki+Grafana or ELK stack</td></tr>
+        <tr><td>5</td><td>No incident response plan</td><td>Uncoordinated response to security events</td><td>Create and approve IRP with severity levels and escalation</td></tr>
+        <tr><td>6</td><td>No data classification or retention policy</td><td>Regulatory non-compliance; unclear data handling obligations</td><td>Create and approve data classification and retention policies</td></tr>
+        <tr><td>7</td><td>No data breach notification plan</td><td>CERT-In 6-hour reporting requirement violation</td><td>Create breach notification plan aligned with Indian regulations</td></tr>
+      </tbody>
+    </table>
+
+    <h3>High Priority (Remediate within 60 days)</h3>
+    <table>
+      <thead><tr><th>#</th><th>Gap</th><th>Risk</th><th>Remediation</th></tr></thead>
+      <tbody>
+        <tr><td>8</td><td>No SAST/DAST in CI pipeline</td><td>Vulnerabilities shipped to production undetected</td><td>Integrate Semgrep/CodeQL and OWASP ZAP</td></tr>
+        <tr><td>9</td><td>No dependency vulnerability scanning</td><td>Known CVEs in third-party packages exploited</td><td>Enable Dependabot or Snyk</td></tr>
+        <tr><td>10</td><td>No offsite backup storage</td><td>Single-point-of-failure for all backups</td><td>Configure S3-compatible offsite replication</td></tr>
+        <tr><td>11</td><td>No vendor risk assessment program</td><td>Unassessed vendor risks propagate to organization</td><td>Create vendor register; assess critical vendors</td></tr>
+        <tr><td>12</td><td>No quarterly access reviews</td><td>Stale access accumulates; privilege creep</td><td>Schedule quarterly access reviews with documentation</td></tr>
+        <tr><td>13</td><td>No penetration testing</td><td>Unknown vulnerabilities in production systems</td><td>Engage third-party for annual pentest</td></tr>
+        <tr><td>14</td><td>No PII masking in logs</td><td>Privacy violation; log exposure leaks personal data</td><td>Implement log redaction for PII fields</td></tr>
+        <tr><td>15</td><td>Account lockout not enforced</td><td>Brute-force attacks on authentication</td><td>Implement lockout after 5 failed attempts</td></tr>
+        <tr><td>16</td><td>No intrusion detection system</td><td>Network attacks go undetected</td><td>Deploy OSSEC/Wazuh or cloud-based IDS</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Medium Priority (Remediate within 120 days)</h3>
+    <table>
+      <thead><tr><th>#</th><th>Gap</th><th>Remediation</th></tr></thead>
+      <tbody>
+        <tr><td>17</td><td>No formal change approval workflow</td><td>Formalize CAB process with documented approvals</td></tr>
+        <tr><td>18</td><td>Firewall rules not documented</td><td>Export and document UFW/Fail2ban configurations</td></tr>
+        <tr><td>19</td><td>No system metrics monitoring</td><td>Deploy Prometheus + Grafana</td></tr>
+        <tr><td>20</td><td>No emergency change procedure</td><td>Define emergency change process with post-hoc documentation</td></tr>
+        <tr><td>21</td><td>No threat model</td><td>Conduct STRIDE threat modeling exercise</td></tr>
+        <tr><td>22</td><td>Security headers incomplete</td><td>Add CSP and HSTS headers</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 8. Remediation Roadmap -->
+  <section id="remediation">
+    <h1>8. Remediation Roadmap</h1>
+
+    <h3>Phase 1 — Immediate (0–30 days)</h3>
+    <div class="callout callout-danger">
+      <strong>Focus:</strong> Address critical gaps that pose immediate risk or regulatory exposure.
+    </div>
+    <ol>
+      <li>Implement MFA for admin and privileged user accounts</li>
+      <li>Enable data-at-rest encryption (full-disk or database-level)</li>
+      <li>Add encryption to backup pipeline (GPG or AES-256)</li>
+      <li>Deploy centralized log aggregation (Loki+Grafana recommended)</li>
+      <li>Create and approve Incident Response Plan (RS-POL-014)</li>
+      <li>Create Data Classification Policy (RS-POL-006) and Data Retention Policy (RS-POL-007)</li>
+      <li>Create Data Breach Notification Procedures aligned with CERT-In requirements</li>
+    </ol>
+
+    <h3>Phase 2 — Short-Term (30–60 days)</h3>
+    <div class="callout callout-warning">
+      <strong>Focus:</strong> Strengthen development security, access governance, and vendor management.
+    </div>
+    <ol>
+      <li>Integrate SAST tool (Semgrep/CodeQL) into CI/CD pipeline</li>
+      <li>Enable dependency vulnerability scanning (Dependabot/Snyk)</li>
+      <li>Configure offsite backup replication</li>
+      <li>Create Vendor Register and perform risk assessments for critical vendors</li>
+      <li>Implement quarterly access review schedule</li>
+      <li>Engage penetration testing firm for initial assessment</li>
+      <li>Implement PII masking in application logs</li>
+      <li>Add account lockout enforcement</li>
+      <li>Deploy IDS on production VPS</li>
+    </ol>
+
+    <h3>Phase 3 — Medium-Term (60–120 days)</h3>
+    <div class="callout callout-info">
+      <strong>Focus:</strong> Formalize processes, collect operating evidence, prepare for assessment.
+    </div>
+    <ol>
+      <li>Formalize change approval workflow (CAB process)</li>
+      <li>Document all firewall and network security configurations</li>
+      <li>Deploy system metrics monitoring</li>
+      <li>Conduct threat modeling exercise</li>
+      <li>Add remaining security headers (CSP, HSTS)</li>
+      <li>Collect 3 months of operating evidence for all implemented controls</li>
+      <li>Conduct management review of all policies</li>
+      <li>Schedule DR/BCP testing</li>
+    </ol>
+
+    <h3>Phase 4 — Pre-Assessment (120–180 days)</h3>
+    <ol>
+      <li>Complete all policy approvals</li>
+      <li>Verify minimum 6 months of operating evidence</li>
+      <li>Conduct internal readiness assessment</li>
+      <li>Address findings from internal assessment</li>
+      <li>Select and engage SOC 2 audit firm</li>
+      <li>Define audit period and scope with auditor</li>
+    </ol>
+  </section>
+
+  <!-- 9. Management Actions -->
+  <section id="management-actions">
+    <h1>9. Required Management Actions</h1>
+    <p>The following decisions must be made by Ramdoot Solutions management before remediation can proceed:</p>
+
+    <table>
+      <thead>
+        <tr><th>#</th><th>Decision Required</th><th>Options</th><th>Impact</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>SOC 2 scope — which Trust Services Categories?</td><td>Security only vs. Security + Availability + Confidentiality</td><td>Determines control scope and audit cost</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>2</td><td>SOC 1 applicability</td><td>Required vs. not applicable based on services</td><td>Determines if SOC 1 controls must be implemented</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>3</td><td>Target audit period</td><td>3 months, 6 months, or 12 months</td><td>Determines evidence collection timeline</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>4</td><td>Information Security Officer appointment</td><td>Designate existing employee or hire</td><td>Required for policy ownership and compliance oversight</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>5</td><td>Budget allocation for security tooling</td><td>Open-source vs. commercial (ELK/Loki, IDS, SAST)</td><td>Affects implementation timeline and capability</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>6</td><td>RTO/RPO targets</td><td>Based on business requirements</td><td>Drives DR infrastructure and backup frequency</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>7</td><td>Vendor risk assessment scope</td><td>All vendors vs. critical vendors first</td><td>Determines vendor assessment workload</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>8</td><td>MFA enforcement timeline</td><td>Phased (admin first) vs. all-at-once</td><td>Affects user experience and deployment complexity</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>9</td><td>Penetration testing frequency and scope</td><td>Annual vs. bi-annual; internal + external vs. external only</td><td>Affects budget and vulnerability discovery cadence</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td>10</td><td>Data residency requirements</td><td>India-only vs. multi-region acceptable</td><td>Affects cloud provider and backup location choices</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Approval Block -->
+  <section>
+    <h1>Approval</h1>
+    <div class="approval-block">
+      <table class="doc-control">
+        <tr><th>Prepared By</th><td>Ramdoot Solutions</td></tr>
+        <tr><th>Reviewed By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approval Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Signature</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Version History -->
+  <section class="version-history">
+    <h2>Version History</h2>
+    <table>
+      <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td>September 2026</td><td>Ramdoot Solutions</td><td>Initial gap analysis based on codebase and infrastructure assessment</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="doc-footer">
+    <span>Ramdoot Solutions &mdash; Confidential</span>
+    <span>RS-GAP-001 &nbsp;|&nbsp; v1.0</span>
+  </div>
+
+</div>
+</body>
+</html>

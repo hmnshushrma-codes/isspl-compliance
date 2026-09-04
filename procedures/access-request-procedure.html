@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-003: Access Request Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-003</td></tr>
+            <tr><th>Title</th><td>Access Request Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure defines the standardized process for requesting, approving, modifying, and revoking access to information systems, applications, and data at Ramdoot Solutions. It ensures that all access is granted on a need-to-know and least-privilege basis, with proper authorization and documentation at every stage.</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure applies to:</p>
+        <ul>
+            <li>All access requests for production systems, SaaS applications, cloud infrastructure, databases, file shares, and code repositories.</li>
+            <li>All employees, contractors, and temporary staff of Ramdoot Solutions.</li>
+            <li>Access requests for new access, access changes (role modifications), and access removal.</li>
+        </ul>
+        <p>Privileged/administrative access follows the supplementary <a href="privileged-access-procedure.html">Privileged Access Procedure (RS-PRO-004)</a>.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Access Request</td><td>A formal submission to grant, modify, or revoke access to a system or data resource.</td></tr>
+                <tr><td>Requestor</td><td>The individual submitting the access request (may be on behalf of another user).</td></tr>
+                <tr><td>Beneficiary</td><td>The individual who will receive the access.</td></tr>
+                <tr><td>Data Owner</td><td>The individual accountable for the data or system to which access is being requested.</td></tr>
+                <tr><td>Least Privilege</td><td>Granting only the minimum access necessary for the user to perform their job function.</td></tr>
+                <tr><td>RBAC</td><td>Role-Based Access Control &mdash; access determined by the user's role within the organization.</td></tr>
+                <tr><td>Ticket System</td><td>The IT service management platform used to submit, track, and document access requests (e.g., Jira Service Management, ServiceNow).</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>Requestor</td><td>Submits the access request ticket with complete information including business justification.</td></tr>
+                <tr><td>Line Manager</td><td>Reviews and approves the request, confirming the business need and that the access level is appropriate for the beneficiary's role.</td></tr>
+                <tr><td>Data/System Owner</td><td>Approves access to their system or dataset based on data classification and sensitivity.</td></tr>
+                <tr><td>Information Security Team</td><td>Reviews requests for compliance with security policies, validates least-privilege adherence, and escalates concerns.</td></tr>
+                <tr><td>IT Operations / System Admin</td><td>Provisions or revokes access as approved, and documents the action in the ticket and the Access Management Log.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>The beneficiary must have an active employee/contractor record in the HRIS.</li>
+            <li>The requestor must have access to the IT ticket system.</li>
+            <li>For new employees, the onboarding process (<a href="employee-onboarding.html">RS-PRO-001</a>) must have been initiated.</li>
+            <li>The system or application must be registered in the IT service catalogue with a defined Data Owner.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>6A. New Access Request</h3>
+
+        <h4>Step 1: Request Submission</h4>
+        <p><strong>Performed by:</strong> Requestor</p>
+        <ol>
+            <li>Open a new "Access Request" ticket in the IT ticket system.</li>
+            <li>Complete all mandatory fields:
+                <ul>
+                    <li>Beneficiary name and employee ID</li>
+                    <li>System / application name</li>
+                    <li>Specific role or access level requested</li>
+                    <li>Business justification (why this access is needed)</li>
+                    <li>Duration (permanent or time-limited)</li>
+                </ul>
+            </li>
+            <li>Submit the ticket; the system routes it to the Line Manager for approval.</li>
+        </ol>
+
+        <h4>Step 2: Manager Approval</h4>
+        <p><strong>Performed by:</strong> Line Manager</p>
+        <ol>
+            <li>Review the request within 2 business days.</li>
+            <li>Confirm the beneficiary's role requires the requested access.</li>
+            <li>Verify the access level adheres to the principle of least privilege.</li>
+            <li>Approve or reject the request with comments. If rejected, the requestor is notified with the reason.</li>
+        </ol>
+
+        <h4>Step 3: Security Review</h4>
+        <p><strong>Performed by:</strong> Information Security Team</p>
+        <ol>
+            <li>Review all requests involving sensitive data (Confidential or Restricted classification), cross-department access, or production system access.</li>
+            <li>Validate that the access does not create segregation-of-duties conflicts.</li>
+            <li>Check for existing access that may overlap or conflict with the request.</li>
+            <li>Approve, reject, or request modifications. For routine/low-risk access, this step may be auto-approved based on predefined rules.</li>
+        </ol>
+
+        <h4>Step 4: Access Provisioning</h4>
+        <p><strong>Performed by:</strong> IT Operations / System Admin</p>
+        <ol>
+            <li>Provision the approved access exactly as specified in the ticket.</li>
+            <li>Enable MFA if not already configured on the target system.</li>
+            <li>Set the access expiry date for time-limited requests.</li>
+            <li>Document the provisioned access in the Access Management Log.</li>
+        </ol>
+
+        <h4>Step 5: Confirmation</h4>
+        <p><strong>Performed by:</strong> IT Operations / Requestor</p>
+        <ol>
+            <li>IT notifies the requestor and beneficiary that access has been provisioned.</li>
+            <li>The beneficiary verifies they can access the system with the correct permissions.</li>
+            <li>If there are issues, the beneficiary re-opens the ticket for correction.</li>
+        </ol>
+
+        <h4>Step 6: Documentation</h4>
+        <p><strong>Performed by:</strong> IT Operations</p>
+        <ol>
+            <li>Close the ticket with a summary of access granted, approval chain, and provisioning date.</li>
+            <li>Update the user's access profile in the Access Management Log.</li>
+            <li>The ticket and all approvals are retained as audit evidence.</li>
+        </ol>
+
+        <h3>6B. Access Change Sub-Procedure</h3>
+        <p>When an employee's role changes (promotion, transfer, project reassignment), their access must be reviewed and modified:</p>
+        <ol>
+            <li>The Line Manager submits an "Access Change" ticket specifying the access to be added and/or removed.</li>
+            <li>The request follows Steps 2&ndash;6 of the New Access Request procedure above.</li>
+            <li>Critically, access that is no longer required for the new role must be explicitly removed. The ticket must list both additions and removals.</li>
+            <li>The Information Security Team verifies that the combined access (existing + new) still adheres to least privilege and segregation of duties.</li>
+        </ol>
+
+        <h3>6C. Access Removal Sub-Procedure</h3>
+        <p>When access is no longer required (project completion, role change, or manager-initiated removal):</p>
+        <ol>
+            <li>The Line Manager or HR submits an "Access Removal" ticket identifying the specific access to be revoked.</li>
+            <li>IT Operations revokes the access within 1 business day of approval.</li>
+            <li>For employee offboarding, the removal is handled under <a href="employee-offboarding.html">RS-PRO-002</a> with same-day or last-day revocation timelines.</li>
+            <li>IT Operations updates the Access Management Log and closes the ticket.</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>Every access request has a closed ticket with complete approval chain documented.</li>
+            <li>The Access Management Log reflects the current state of all user access.</li>
+            <li>Time-limited access has an expiry date set and is automatically revoked or flagged for review.</li>
+            <li>Quarterly access reviews confirm that all active access is still justified.</li>
+            <li>No access is provisioned without documented manager approval.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Access Request Tickets</td><td>IT Ticket System</td><td>3 years from ticket closure</td></tr>
+                <tr><td>Approval Records (within tickets)</td><td>IT Ticket System</td><td>3 years from ticket closure</td></tr>
+                <tr><td>Access Management Log</td><td>IT Security Repository</td><td>Current + 3 years of history</td></tr>
+                <tr><td>Quarterly Access Review Reports</td><td>Information Security Repository</td><td>3 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>All exceptions require approval from <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Emergency Access:</strong> In critical incidents (P1/P2), emergency access may be provisioned with verbal manager approval. A formal ticket must be raised and approved retrospectively within 24 hours. Emergency access is logged separately and reviewed by Information Security within 48 hours.</li>
+            <li><strong>Bulk Access Requests:</strong> For new project teams requiring identical access, a single bulk request may be submitted listing all beneficiaries. Each individual's access is still logged separately in the Access Management Log.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="employee-onboarding.html">RS-PRO-001: Employee Onboarding Procedure</a></li>
+            <li><a href="employee-offboarding.html">RS-PRO-002: Employee Offboarding Procedure</a></li>
+            <li><a href="privileged-access-procedure.html">RS-PRO-004: Privileged Access Procedure</a></li>
+            <li>RS-POL-006: Access Control Policy</li>
+            <li>RS-POL-005: Data Classification &amp; Handling Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC6.2</td><td>Prior to issuing system credentials and granting system access, the entity registers and authorizes new internal and external users. Access is modified or removed when no longer needed.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.15</td><td>Access control &mdash; rules established and implemented for controlling logical and physical access.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.18</td><td>Access rights &mdash; provisioned, reviewed, modified, and removed in accordance with policy.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.2</td><td>Privileged access rights restricted and managed.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

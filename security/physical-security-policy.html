@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-021 Physical Security Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Physical Security Policy</h1>
+    </div>
+
+    <!-- Document Control Table -->
+    <h2>Document Control</h2>
+    <table class="doc-control">
+      <tr><th>Document ID</th><td>RS-POL-021</td></tr>
+      <tr><th>Title</th><td>Physical Security Policy</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Framework Mapping</th><td>SOC 2 — CC6.4; NISP — Physical &amp; Environmental Security</td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>This policy defines the requirements for physical and environmental security controls at Ramdoot Solutions' facilities. It ensures that the organization's premises, equipment, and information assets are protected against unauthorized physical access, damage, theft, and environmental hazards.</p>
+    <p>Physical security is a foundational element of Ramdoot Solutions' information security programme and supports compliance with SOC 2 Trust Services Criteria (CC6.4) and NISP physical security requirements.</p>
+
+    <!-- Scope -->
+    <h2>2. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All Ramdoot Solutions office premises, including leased and co-working spaces</li>
+      <li>Server rooms, network closets, and data processing areas</li>
+      <li>Storage areas for physical documents, media, and equipment</li>
+      <li>All employees, contractors, visitors, and service personnel accessing Ramdoot Solutions facilities</li>
+      <li>All physical assets including servers, networking equipment, workstations, laptops, and mobile devices</li>
+      <li>Third-party data centre facilities used by Ramdoot Solutions</li>
+    </ul>
+
+    <!-- Objectives -->
+    <h2>3. Objectives</h2>
+    <ul>
+      <li>Prevent unauthorized physical access to facilities and sensitive areas</li>
+      <li>Protect equipment and information assets from theft, damage, and environmental threats</li>
+      <li>Establish visitor management procedures that maintain security while supporting business operations</li>
+      <li>Implement environmental controls to protect against fire, water damage, power failure, and climate extremes</li>
+      <li>Enforce clean desk and secure area practices to reduce information exposure</li>
+      <li>Maintain auditable records of physical access and security events</li>
+    </ul>
+
+    <!-- Definitions -->
+    <h2>4. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Secure Area</td><td>A physically protected area with access controls that restrict entry to authorized personnel based on their role and need.</td></tr>
+        <tr><td>Restricted Zone</td><td>The highest-security area (e.g., server room, network closet) with the most stringent access controls.</td></tr>
+        <tr><td>General Office Area</td><td>Standard work areas accessible to all employees with valid access credentials.</td></tr>
+        <tr><td>Public Area</td><td>Areas accessible to visitors without escort (e.g., reception, meeting rooms in designated zones).</td></tr>
+        <tr><td>Access Badge</td><td>An electronic card or credential used for identity verification and access control at secured entry points.</td></tr>
+        <tr><td>Biometric Authentication</td><td>Verification of identity through physical characteristics such as fingerprint or facial recognition.</td></tr>
+        <tr><td>Clean Desk</td><td>The practice of ensuring no sensitive information is left visible or accessible on desks or workstations when unattended.</td></tr>
+        <tr><td>CCTV</td><td>Closed-Circuit Television — video surveillance systems used for security monitoring.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Roles & Responsibilities -->
+    <h2>5. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibility</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Facilities Manager</td><td>Oversee physical security controls; manage access badge issuance and revocation; coordinate with building management; maintain environmental controls.</td></tr>
+        <tr><td>Information Security Officer</td><td>Define physical security requirements; audit compliance; review CCTV and access logs; investigate physical security incidents.</td></tr>
+        <tr><td>Reception / Front Desk</td><td>Manage visitor registration; issue temporary badges; ensure visitor escort compliance; maintain the visitor log.</td></tr>
+        <tr><td>IT / DevOps</td><td>Manage server room access; maintain environmental monitoring systems; secure network equipment.</td></tr>
+        <tr><td>Department Heads</td><td>Approve access requests for their team members; enforce clean desk compliance within their departments.</td></tr>
+        <tr><td>All Employees</td><td>Wear access badges visibly; challenge unescorted visitors; report security incidents; comply with clean desk requirements.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Policy Statements -->
+    <h2>6. Policy Statements</h2>
+    <ol>
+      <li>All Ramdoot Solutions facilities <strong>shall</strong> have physical access controls proportionate to the sensitivity of the areas and assets they contain.</li>
+      <li>Access to secure areas <strong>must</strong> be restricted to authorized personnel only, based on documented business need.</li>
+      <li>All visitors <strong>shall</strong> be registered, issued temporary identification, and escorted at all times within secure areas.</li>
+      <li>CCTV surveillance <strong>must</strong> be operational at all facility entry/exit points, server rooms, and other critical areas, with recordings retained for a minimum of 90 days.</li>
+      <li>Environmental controls (fire suppression, HVAC, UPS) <strong>shall</strong> be maintained in server rooms and data processing areas.</li>
+      <li>All employees <strong>must</strong> comply with the clean desk policy during and after working hours.</li>
+      <li>Physical access rights <strong>shall</strong> be reviewed quarterly and revoked upon role change or termination.</li>
+      <li>Physical security incidents <strong>must</strong> be reported immediately and investigated within 24 hours.</li>
+    </ol>
+
+    <!-- Detailed Requirements -->
+    <h2>7. Detailed Requirements</h2>
+
+    <h3>7.1 Facility Access Control</h3>
+    <h4>7.1.1 Access Badges</h4>
+    <ul>
+      <li>All employees and long-term contractors <strong>shall</strong> be issued personalized access badges with their photograph, name, and role.</li>
+      <li>Access badges <strong>must</strong> be worn visibly at all times within the facility.</li>
+      <li>Lost or stolen badges <strong>must</strong> be reported to the Facilities Manager immediately and deactivated within 1 hour of report.</li>
+      <li>Badge sharing or tailgating (allowing others to pass through on one badge) is strictly prohibited.</li>
+      <li>Temporary badges for visitors <strong>shall</strong> be visually distinct from employee badges (e.g., different colour).</li>
+    </ul>
+
+    <h4>7.1.2 Biometric Access</h4>
+    <ul>
+      <li>Restricted zones (server rooms, network closets) <strong>shall</strong> require biometric authentication (fingerprint or facial recognition) in addition to badge access.</li>
+      <li>Biometric data <strong>must</strong> be stored encrypted and handled in compliance with RS-POL-020 (Privacy &amp; Data Protection Policy).</li>
+      <li>Biometric templates <strong>shall</strong> be deleted within 30 days of an individual's access revocation.</li>
+    </ul>
+
+    <h4>7.1.3 Secure Area Classification</h4>
+    <table>
+      <thead>
+        <tr><th>Zone</th><th>Access Method</th><th>Authorized Personnel</th><th>Monitoring</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Public Area (Reception, lobbies)</td><td>Open / receptionist controlled</td><td>Visitors (registered), all employees</td><td>CCTV</td></tr>
+        <tr><td>General Office Area</td><td>Badge access</td><td>All employees and escorted visitors</td><td>CCTV at entry points</td></tr>
+        <tr><td>Secure Area (Finance, HR, executive)</td><td>Badge access (restricted)</td><td>Department personnel with approved access</td><td>CCTV + access logs</td></tr>
+        <tr><td>Restricted Zone (Server room, network)</td><td>Badge + biometric</td><td>Authorized IT/DevOps personnel only</td><td>CCTV + access logs + environmental sensors</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.2 Visitor Management</h3>
+    <ol>
+      <li><strong>Pre-registration:</strong> Visitors <strong>should</strong> be pre-registered by the hosting employee, providing the visitor's full name, organization, purpose of visit, and expected duration.</li>
+      <li><strong>Registration:</strong> All visitors <strong>must</strong> register at reception, present a valid government-issued photo ID, and sign the visitor register.</li>
+      <li><strong>Badge Issuance:</strong> Visitors <strong>shall</strong> receive a temporary visitor badge that clearly identifies them as a non-employee.</li>
+      <li><strong>Escort:</strong> Visitors <strong>must</strong> be escorted at all times within areas beyond the public zone. The hosting employee is responsible for the visitor.</li>
+      <li><strong>Checkout:</strong> Visitors <strong>shall</strong> return their temporary badge upon departure, and the visit end time <strong>must</strong> be recorded.</li>
+      <li><strong>Prohibited Areas:</strong> Visitors <strong>shall not</strong> be granted access to restricted zones (server rooms) without prior written approval from the Information Security Officer.</li>
+    </ol>
+
+    <h3>7.3 CCTV Surveillance</h3>
+    <ul>
+      <li>CCTV cameras <strong>shall</strong> be installed at: all facility entry/exit points, reception area, corridor intersections, server room entrance, and parking areas.</li>
+      <li>CCTV recordings <strong>must</strong> be retained for a minimum of 90 days.</li>
+      <li>Camera placement <strong>shall</strong> ensure coverage of critical areas while respecting privacy (no cameras in restrooms or prayer rooms).</li>
+      <li>Access to CCTV footage <strong>must</strong> be restricted to the Facilities Manager and Information Security Officer.</li>
+      <li>CCTV system health <strong>shall</strong> be checked weekly, with any camera failures resolved within 24 hours.</li>
+      <li>Signage indicating CCTV surveillance <strong>must</strong> be displayed at facility entrances.</li>
+    </ul>
+
+    <h3>7.4 Environmental Controls</h3>
+    <table>
+      <thead>
+        <tr><th>Control</th><th>Requirement</th><th>Location</th><th>Testing Frequency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fire Detection &amp; Suppression</td><td>Smoke detectors, fire alarms, fire extinguishers; server rooms shall have gas-based suppression (FM-200 or equivalent)</td><td>All areas; enhanced in server rooms</td><td>Quarterly inspection; annual testing</td></tr>
+        <tr><td>HVAC (Temperature &amp; Humidity)</td><td>Server room maintained at 18–27°C with 40–60% relative humidity; alerts on deviation</td><td>Server rooms, network closets</td><td>Continuous monitoring</td></tr>
+        <tr><td>UPS (Uninterruptible Power Supply)</td><td>Minimum 30-minute runtime for graceful shutdown; regular battery testing</td><td>Server rooms, network equipment</td><td>Monthly battery check; annual load test</td></tr>
+        <tr><td>Power Generator</td><td>Diesel generator for extended outages; automatic transfer switch</td><td>Facility-wide</td><td>Monthly test run; annual full-load test</td></tr>
+        <tr><td>Water Leak Detection</td><td>Sensors in raised floor areas and near HVAC units; alerts to Facilities Manager</td><td>Server rooms</td><td>Quarterly sensor test</td></tr>
+      </tbody>
+    </table>
+
+    <h3>7.5 Clean Desk Policy</h3>
+    <ul>
+      <li>Employees <strong>shall</strong> clear their desks of all sensitive documents and removable media at the end of each working day and whenever leaving their desk for extended periods.</li>
+      <li>Sensitive documents <strong>must</strong> be stored in locked drawers or cabinets when not in active use.</li>
+      <li>Whiteboards <strong>shall</strong> be erased after meetings if they contain sensitive information.</li>
+      <li>Printers and copiers <strong>must</strong> not be left unattended with sensitive documents in output trays.</li>
+      <li>Computer screens <strong>shall</strong> be locked when the employee steps away (automatic lock after 5 minutes of inactivity at minimum).</li>
+      <li>Random clean desk audits <strong>shall</strong> be conducted monthly by the Information Security Officer or designee.</li>
+    </ul>
+
+    <h3>7.6 Equipment Protection</h3>
+    <ul>
+      <li>All servers and critical network equipment <strong>shall</strong> be housed in locked racks within the restricted zone.</li>
+      <li>Laptops and portable devices <strong>must</strong> be secured with cable locks when left unattended in the office.</li>
+      <li>Equipment removal from facilities <strong>shall</strong> require written authorization from the employee's department head.</li>
+      <li>Decommissioned equipment <strong>must</strong> have all data securely wiped (NIST SP 800-88 guidelines) before disposal or reuse.</li>
+      <li>Equipment maintenance by external vendors <strong>shall</strong> be supervised by an authorized Ramdoot Solutions employee.</li>
+      <li>An equipment inventory <strong>must</strong> be maintained and reconciled quarterly.</li>
+    </ul>
+
+    <!-- Exceptions -->
+    <h2>8. Exceptions</h2>
+    <p>Exceptions to this policy <strong>must</strong> be formally requested and approved. Each request shall include:</p>
+    <ul>
+      <li>Justification for the exception</li>
+      <li>Risk assessment of the physical security implications</li>
+      <li>Compensating controls to be implemented</li>
+      <li>Duration of the exception (maximum 6 months before re-evaluation)</li>
+    </ul>
+    <p>Exceptions <strong>shall</strong> be approved by the Information Security Officer and <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+
+    <!-- Monitoring & Compliance -->
+    <h2>9. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>Physical access logs <strong>shall</strong> be reviewed monthly for anomalies (after-hours access, failed attempts, excessive visitor traffic).</li>
+      <li>Clean desk compliance audits <strong>must</strong> be conducted monthly with results documented.</li>
+      <li>CCTV system health and coverage <strong>shall</strong> be audited quarterly.</li>
+      <li>Environmental control systems <strong>must</strong> be tested per the schedules defined in Section 7.4.</li>
+      <li>Physical security access rights <strong>shall</strong> be reviewed quarterly and aligned with the current employee roster.</li>
+      <li>Annual physical security assessments <strong>shall</strong> be conducted, including penetration-style walk-through testing.</li>
+    </ul>
+
+    <!-- Violations / Enforcement -->
+    <h2>10. Violations &amp; Enforcement</h2>
+    <p>Violations of this policy may result in:</p>
+    <ul>
+      <li>Verbal warning for first-time minor violations (e.g., clean desk non-compliance)</li>
+      <li>Written warning and mandatory retraining for repeated violations</li>
+      <li>Temporary access suspension pending investigation for serious violations (tailgating, unauthorized area access)</li>
+      <li>Formal disciplinary action, up to and including termination, for deliberate or egregious violations</li>
+      <li>Visitor banning and vendor contract review for third-party violations</li>
+    </ul>
+
+    <!-- Records & Evidence -->
+    <h2>11. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Physical access logs (badge/biometric)</td><td>1 year</td><td>Facilities Manager</td></tr>
+        <tr><td>Visitor register</td><td>1 year</td><td>Reception</td></tr>
+        <tr><td>CCTV recordings</td><td>90 days (minimum)</td><td>Facilities Manager</td></tr>
+        <tr><td>Clean desk audit reports</td><td>2 years</td><td>Information Security Officer</td></tr>
+        <tr><td>Environmental monitoring logs</td><td>1 year</td><td>Facilities Manager</td></tr>
+        <tr><td>Equipment inventory</td><td>Current + 3 years historical</td><td>IT / Facilities</td></tr>
+        <tr><td>Physical security incident reports</td><td>3 years</td><td>Information Security Officer</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>12. Related Documents</h2>
+    <ul>
+      <li>RS-POL-020 — Privacy &amp; Data Protection Policy</li>
+      <li>RS-POL-022 — Remote Work Policy</li>
+      <li>RS-POL-024 — Termination &amp; Offboarding Policy</li>
+      <li>Information Security Policy</li>
+      <li>Asset Management Policy</li>
+      <li>Incident Management Policy</li>
+      <li>Business Continuity Plan</li>
+    </ul>
+
+    <!-- Framework Mapping -->
+    <h2>13. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>CC6.4</td><td>The entity restricts physical access to facilities and protected information assets to authorized personnel to meet the entity's objectives.</td></tr>
+        <tr><td>NISP</td><td>Physical &amp; Environmental Security</td><td>Requirements for securing facilities, controlling physical access, and protecting against environmental threats.</td></tr>
+        <tr><td>ISO 27001</td><td>A.11.1, A.11.2</td><td>Secure areas; equipment security.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Review Cycle -->
+    <h2>14. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed:</p>
+    <ul>
+      <li>At least annually, or</li>
+      <li>Upon relocation to new premises or significant facility changes, or</li>
+      <li>Following a physical security incident, or</li>
+      <li>When required by changes in regulatory or contractual obligations</li>
+    </ul>
+    <p>Next scheduled review: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></p>
+
+    <!-- Approval Block -->
+    <h2>15. Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr><th>Prepared By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Reviewed By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Approval Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><th>Signature</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>16. Version History</h2>
+    <table class="version-history">
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial draft</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-021 — Physical Security Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

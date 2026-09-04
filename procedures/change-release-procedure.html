@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-007: Change &amp; Release Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-007</td></tr>
+            <tr><th>Title</th><td>Change &amp; Release Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure governs the lifecycle of changes to production information systems at Ramdoot Solutions, from initial request through impact assessment, approval, implementation, and post-implementation review. It ensures that all changes are assessed for risk, authorized before implementation, tested adequately, and documented &mdash; minimizing the risk of service disruption and unauthorized modifications.</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure applies to all changes affecting:</p>
+        <ul>
+            <li>Production and disaster recovery environments (servers, databases, network, cloud infrastructure).</li>
+            <li>Application code deployed to production.</li>
+            <li>Security configurations (firewall rules, WAF policies, IAM roles).</li>
+            <li>Third-party integrations and APIs.</li>
+            <li>Database schema changes and data migrations.</li>
+            <li>Infrastructure-as-code templates and CI/CD pipeline configurations.</li>
+        </ul>
+        <p>Development and test environments are excluded from CAB review but must follow the testing requirements in this procedure before promoting to staging/production.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>RFC</td><td>Request for Change &mdash; a formal proposal to modify a production system.</td></tr>
+                <tr><td>CAB</td><td>Change Advisory Board &mdash; the group that reviews and approves changes based on risk and impact.</td></tr>
+                <tr><td>Standard Change</td><td>A pre-approved, low-risk, routine change (e.g., scheduled patching, minor config update) that follows a pre-defined procedure and does not require individual CAB review.</td></tr>
+                <tr><td>Normal Change</td><td>A change that requires CAB review and approval before implementation.</td></tr>
+                <tr><td>Emergency Change</td><td>An urgent change needed to resolve a P1/P2 incident or address a critical vulnerability; follows an expedited approval path.</td></tr>
+                <tr><td>Rollback Plan</td><td>A documented procedure to reverse the change and restore the prior state if the implementation fails.</td></tr>
+                <tr><td>PIR</td><td>Post-Implementation Review &mdash; a retrospective assessment of the change after deployment.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>Change Requestor</td><td>Submits the RFC with complete details including business justification, impact assessment, test results, and rollback plan.</td></tr>
+                <tr><td>Change Manager</td><td>Facilitates the CAB process, ensures RFC completeness, schedules changes, and tracks implementation status.</td></tr>
+                <tr><td>CAB Members</td><td>Review RFCs, assess risk and impact, approve or reject changes. CAB typically includes: IT Manager, Security Officer, affected System Owners, and QA lead.</td></tr>
+                <tr><td>Implementation Team</td><td>Executes the approved change in production, monitors for issues, and executes rollback if needed.</td></tr>
+                <tr><td>QA / Testing Team</td><td>Validates the change in staging before production deployment and conducts post-deployment verification.</td></tr>
+                <tr><td>Security Officer</td><td>Reviews security implications of changes and approves security-related modifications.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>A ticketing system is in place for RFC submission and tracking.</li>
+            <li>CAB membership is defined and meeting cadence established (weekly or bi-weekly).</li>
+            <li>Staging environment mirrors production for pre-deployment testing.</li>
+            <li>Backup procedures are executed before major changes (per <a href="backup-restore-procedure.html">RS-PRO-008</a>).</li>
+            <li>CI/CD pipelines include automated testing gates.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>6A. Normal Change Procedure</h3>
+
+        <h4>Step 1: RFC Submission</h4>
+        <p><strong>Performed by:</strong> Change Requestor</p>
+        <ol>
+            <li>Create an RFC ticket in the ticketing system with the following details:
+                <ul>
+                    <li>Description of the change and its business justification.</li>
+                    <li>Systems, services, and environments affected.</li>
+                    <li>Proposed implementation date and maintenance window.</li>
+                    <li>Dependencies on other changes or systems.</li>
+                    <li>Rollback plan with step-by-step instructions and estimated rollback time.</li>
+                    <li>Test plan and results from staging/pre-production testing.</li>
+                    <li>Communication plan (who needs to be notified before, during, and after).</li>
+                </ul>
+            </li>
+            <li>Submit the RFC at least 3 business days before the next CAB meeting for normal changes.</li>
+        </ol>
+
+        <h4>Step 2: Impact Assessment</h4>
+        <p><strong>Performed by:</strong> Change Manager / Change Requestor</p>
+        <ol>
+            <li>Assess the change risk level (Low / Medium / High / Critical) based on:
+                <ul>
+                    <li>Scope of impact (number of users, systems, services).</li>
+                    <li>Complexity of the change.</li>
+                    <li>Reversibility (can it be easily rolled back?).</li>
+                    <li>Historical success rate of similar changes.</li>
+                    <li>Security implications.</li>
+                </ul>
+            </li>
+            <li>Identify potential conflicts with other scheduled changes or maintenance windows.</li>
+            <li>Document the impact assessment in the RFC ticket.</li>
+        </ol>
+
+        <h4>Step 3: CAB Review</h4>
+        <p><strong>Performed by:</strong> CAB Members</p>
+        <ol>
+            <li>The Change Manager presents the RFC at the CAB meeting.</li>
+            <li>CAB members review: business justification, impact assessment, test results, rollback plan, and security implications.</li>
+            <li>CAB decision:
+                <ul>
+                    <li><strong>Approved:</strong> The change is authorized for implementation on the proposed date.</li>
+                    <li><strong>Approved with conditions:</strong> Additional testing, modified timeline, or enhanced rollback plan required.</li>
+                    <li><strong>Deferred:</strong> More information needed; resubmit at the next CAB.</li>
+                    <li><strong>Rejected:</strong> The change is not approved with documented reasons.</li>
+                </ul>
+            </li>
+            <li>Record the CAB decision and any conditions in the RFC ticket.</li>
+        </ol>
+
+        <h4>Step 4: Approval</h4>
+        <p><strong>Performed by:</strong> Change Manager</p>
+        <ol>
+            <li>Confirm all CAB conditions have been met.</li>
+            <li>Obtain formal sign-off from the Change Manager and any additional approvers (e.g., Security Officer for security-related changes).</li>
+            <li>Schedule the implementation in the change calendar.</li>
+            <li>Send pre-implementation notification to all affected stakeholders.</li>
+        </ol>
+
+        <h4>Step 5: Development &amp; Testing</h4>
+        <p><strong>Performed by:</strong> Implementation Team / QA</p>
+        <ol>
+            <li>Complete development and code review (peer review required for all code changes).</li>
+            <li>Execute unit tests, integration tests, and security tests.</li>
+            <li>Deploy to staging environment and execute the full test plan.</li>
+            <li>Obtain QA sign-off that staging testing passed.</li>
+            <li>Ensure all automated CI/CD pipeline checks pass (linting, tests, security scans).</li>
+        </ol>
+
+        <h4>Step 6: Staging Deployment</h4>
+        <p><strong>Performed by:</strong> Implementation Team</p>
+        <ol>
+            <li>Deploy the change to the staging environment using the same process that will be used for production.</li>
+            <li>Conduct user acceptance testing (UAT) if applicable.</li>
+            <li>Verify the staging deployment matches the expected behaviour.</li>
+            <li>Confirm the rollback procedure works by executing it in staging.</li>
+        </ol>
+
+        <h4>Step 7: Production Deployment</h4>
+        <p><strong>Performed by:</strong> Implementation Team</p>
+        <ol>
+            <li>Verify that a current backup exists (per <a href="backup-restore-procedure.html">RS-PRO-008</a>).</li>
+            <li>Begin the deployment within the approved maintenance window.</li>
+            <li>Execute the deployment steps as documented in the RFC.</li>
+            <li>Monitor system health, error rates, and performance metrics during and immediately after deployment.</li>
+            <li>If critical issues are detected, execute the rollback plan immediately and notify the Change Manager.</li>
+            <li>Send deployment completion notification to stakeholders.</li>
+        </ol>
+
+        <h4>Step 8: Post-Implementation Review (PIR)</h4>
+        <p><strong>Performed by:</strong> Change Manager / Implementation Team</p>
+        <ol>
+            <li>Conduct a PIR within 3 business days for High/Critical changes, 5 business days for Medium/Low changes.</li>
+            <li>Review:
+                <ul>
+                    <li>Was the change implemented as planned?</li>
+                    <li>Did any issues occur during or after deployment?</li>
+                    <li>Were the objectives of the change achieved?</li>
+                    <li>Was the timeline and maintenance window adequate?</li>
+                </ul>
+            </li>
+            <li>Document lessons learned and update procedures if needed.</li>
+        </ol>
+
+        <h4>Step 9: Documentation</h4>
+        <p><strong>Performed by:</strong> Change Requestor / Change Manager</p>
+        <ol>
+            <li>Update the RFC ticket with: actual implementation date/time, outcome (success/rollback), any deviations from the plan, and PIR findings.</li>
+            <li>Close the RFC ticket.</li>
+            <li>Update system documentation, runbooks, and configuration records as applicable.</li>
+        </ol>
+
+        <h3>6B. Emergency Change Sub-Procedure</h3>
+        <p>Emergency changes bypass the standard CAB meeting schedule but still require authorization and documentation.</p>
+        <ol>
+            <li><strong>Initiation:</strong> The Change Requestor contacts the Change Manager and at least one CAB member (Security Officer for security changes, IT Manager for infrastructure changes) by phone or instant message.</li>
+            <li><strong>Verbal Approval:</strong> The Change Manager and one CAB member provide verbal approval. The decision and rationale are documented in the RFC ticket retroactively.</li>
+            <li><strong>Implementation:</strong> The change is implemented following Steps 7 of the normal procedure (backup, deploy, monitor).</li>
+            <li><strong>Retroactive Documentation:</strong> Within 24 hours, the Change Requestor completes the full RFC ticket including impact assessment, test results (if any), and rollback plan used.</li>
+            <li><strong>Retroactive CAB Review:</strong> The emergency change is reviewed at the next scheduled CAB meeting for compliance and lessons learned.</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>All production changes have an RFC ticket with documented approval before implementation.</li>
+            <li>Staging testing is completed and signed off before production deployment.</li>
+            <li>Rollback plans exist and are tested for all High/Critical changes.</li>
+            <li>PIR is completed for all changes.</li>
+            <li>Emergency changes have retroactive documentation and CAB review within 1 week.</li>
+            <li>No unauthorized changes are detected in production (verified via configuration monitoring).</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>RFC Tickets (with approvals)</td><td>IT Ticket System</td><td>3 years</td></tr>
+                <tr><td>CAB Meeting Minutes</td><td>Change Management Repository</td><td>3 years</td></tr>
+                <tr><td>Test Results / QA Sign-Off</td><td>CI/CD Platform / IT Ticket System</td><td>3 years</td></tr>
+                <tr><td>Deployment Logs</td><td>CI/CD Platform / Server Logs</td><td>1 year</td></tr>
+                <tr><td>PIR Reports</td><td>Change Management Repository</td><td>3 years</td></tr>
+                <tr><td>Change Calendar</td><td>Change Management Repository</td><td>3 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Standard Changes:</strong> Pre-approved change types (defined in the Standard Change Catalogue) do not require individual CAB review. Examples: scheduled OS patching with approved vendor patches, SSL certificate renewals, and routine backup configuration updates. Standard changes must still be logged as RFC tickets for audit trail.</li>
+            <li><strong>Development/Test Environment Changes:</strong> Changes to non-production environments do not require CAB approval but must follow the testing and code review requirements before promotion to staging.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="backup-restore-procedure.html">RS-PRO-008: Backup &amp; Restore Procedure</a></li>
+            <li><a href="vulnerability-remediation-procedure.html">RS-PRO-006: Vulnerability Remediation Procedure</a></li>
+            <li><a href="incident-response-procedure.html">RS-PRO-005: Incident Response Procedure</a></li>
+            <li>RS-POL-013: Change Management Policy</li>
+            <li>RS-POL-014: Software Development Lifecycle (SDLC) Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC8.1</td><td>The entity authorizes, designs, develops or acquires, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures to meet its objectives.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.32</td><td>Change management &mdash; changes to information processing facilities and systems shall be subject to change management procedures.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.31</td><td>Separation of development, test, and production environments.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.25</td><td>Secure development lifecycle.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

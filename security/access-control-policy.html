@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-002 — Access Control Policy | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html">← Compliance Home</a>
+  <span class="nav-title">RS-POL-002 — Access Control Policy</span>
+</nav>
+
+<main class="policy-document">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. DOCUMENT CONTROL
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="document-control">
+    <h1>Document Control</h1>
+    <table class="doc-control">
+      <tr><th>Document Title</th><td>Access Control Policy</td></tr>
+      <tr><th>Document ID</th><td>RS-POL-002</td></tr>
+      <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Status</th><td>Draft for Management Approval</td></tr>
+      <tr><th>Classification</th><td>Confidential</td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2. PURPOSE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="purpose">
+    <h2>2. Purpose</h2>
+    <p>This Access Control Policy defines the principles, requirements, and procedures governing the management of logical and physical access to Ramdoot Solutions information systems, networks, applications, and data. The policy ensures that access is granted on a need-to-know basis and in alignment with the principle of least privilege, protecting information assets from unauthorized access, modification, or destruction.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. SCOPE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="scope">
+    <h2>3. Scope</h2>
+    <p>This policy applies to:</p>
+    <ul>
+      <li>All employees, contractors, consultants, temporary workers, and third-party users who require access to Ramdoot Solutions information systems.</li>
+      <li>All information systems, applications, databases, cloud services, network infrastructure, and physical facilities owned or operated by Ramdoot Solutions.</li>
+      <li>All types of access, including local, remote, VPN, API, and administrative access.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4. OBJECTIVES
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="objectives">
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Ensure that access to information assets is authorized, controlled, and auditable.</li>
+      <li>Implement role-based access control (RBAC) to align access rights with job functions.</li>
+      <li>Enforce the principle of least privilege — users shall receive only the minimum access required to perform their duties.</li>
+      <li>Establish processes for timely provisioning and deprovisioning of access.</li>
+      <li>Define requirements for periodic access reviews to detect and remediate inappropriate access.</li>
+      <li>Manage privileged access with enhanced controls and monitoring.</li>
+    </ol>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. DEFINITIONS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="definitions">
+    <h2>5. Definitions</h2>
+    <table class="definitions">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td>Least Privilege</td><td>The practice of restricting access rights for users to the bare minimum permissions needed to perform their work.</td></tr>
+        <tr><td>Role-Based Access Control (RBAC)</td><td>A method of regulating access based on the roles of individual users within the organization.</td></tr>
+        <tr><td>Privileged Access</td><td>Elevated access rights that allow administrative functions such as system configuration, user management, or access to sensitive data beyond normal user scope.</td></tr>
+        <tr><td>Access Provisioning</td><td>The process of granting a user the appropriate access rights to systems and data.</td></tr>
+        <tr><td>Access Deprovisioning</td><td>The process of revoking a user's access rights when they are no longer required.</td></tr>
+        <tr><td>Access Review</td><td>A periodic evaluation of user access rights to verify they remain appropriate and authorized.</td></tr>
+        <tr><td>Emergency Access</td><td>Temporary elevated access granted during critical situations that bypass normal approval workflows.</td></tr>
+        <tr><td>Service Account</td><td>A non-human account used by applications, services, or automated processes to interact with systems.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       6. ROLES AND RESPONSIBILITIES
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="roles">
+    <h2>6. Roles and Responsibilities</h2>
+
+    <h3>6.1 Information Security Officer</h3>
+    <p>The ISO shall define access control standards, oversee quarterly access reviews, and approve exceptions to this policy.</p>
+
+    <h3>6.2 IT Administration</h3>
+    <p>IT shall implement access control mechanisms, process provisioning and deprovisioning requests, maintain the identity management system, and generate access reports for review.</p>
+
+    <h3>6.3 Department Managers / Data Owners</h3>
+    <p>Managers shall authorize access requests for their team members, participate in quarterly access reviews, and ensure that departing employees' access is revoked promptly.</p>
+
+    <h3>6.4 Human Resources</h3>
+    <p>HR shall notify IT of all personnel changes — new hires, role changes, transfers, and terminations — in a timely manner to trigger access provisioning or deprovisioning actions.</p>
+
+    <h3>6.5 All Users</h3>
+    <p>Users shall safeguard their credentials, shall not share access with others, and shall report suspected unauthorized access immediately.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. POLICY STATEMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="policy-statements">
+    <h2>7. Policy Statements</h2>
+
+    <h3>7.1 Principle of Least Privilege</h3>
+    <p>All access to Ramdoot Solutions information systems shall be granted based on the principle of least privilege. Users shall receive only the access necessary to perform their assigned job functions. No user shall be granted blanket or unrestricted access to any system.</p>
+
+    <h3>7.2 Role-Based Access Control</h3>
+    <p>Ramdoot Solutions shall implement RBAC as the primary access control model. Roles shall be defined based on job functions and shall be reviewed annually. Each role shall have a documented set of permissions. Users shall be assigned to roles — not granted individual permissions — except where documented exceptions exist.</p>
+
+    <h3>7.3 Access Provisioning</h3>
+    <p>Access shall be provisioned only upon receipt of a formal, approved access request. The request must specify the systems, data, and level of access required, and must be approved by the user's manager or the data owner. IT shall process approved requests within <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> business days.</p>
+
+    <h3>7.4 Access Deprovisioning</h3>
+    <p>Access shall be revoked immediately upon termination of employment or contract. For role changes or transfers, access associated with the previous role shall be revoked within one (1) business day, and new access shall be provisioned per the standard request process. HR must notify IT of all terminations and transfers on or before the effective date.</p>
+
+    <h3>7.5 Quarterly Access Reviews</h3>
+    <p>Access reviews shall be conducted at least quarterly for all systems classified as Confidential or Restricted. Reviews shall be performed by data owners or their designated delegates. Reviewers shall verify that each user's access is appropriate for their current role. Identified discrepancies must be remediated within five (5) business days of discovery.</p>
+
+    <h3>7.6 Privileged Access Management</h3>
+    <p>Privileged accounts shall be assigned to named individuals — shared administrator accounts are prohibited. Privileged access shall require enhanced authentication (multi-factor authentication is mandatory). All privileged access activity shall be logged and monitored. Privileged access shall be reviewed monthly. Administrative access to production systems must be justified and time-bound wherever technically feasible.</p>
+
+    <h3>7.7 Emergency Access</h3>
+    <p>Emergency access procedures shall be documented and available to authorized personnel. Emergency access shall be granted only when normal provisioning processes cannot meet urgent business or operational needs. All emergency access grants must be logged, reviewed within 24 hours, and formally approved or revoked. A post-incident review shall assess whether the emergency access was appropriate.</p>
+
+    <h3>7.8 Service Accounts</h3>
+    <p>Service accounts shall have a designated owner responsible for their security. Credentials for service accounts must be stored securely (e.g., in a secrets management system) and rotated at least every <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> days. Service accounts shall not be used for interactive login by humans.</p>
+
+    <h3>7.9 Remote Access</h3>
+    <p>Remote access to Ramdoot Solutions systems shall be permitted only through approved, encrypted channels (VPN or equivalent). Remote access requires multi-factor authentication. Devices used for remote access must comply with Ramdoot Solutions endpoint security requirements.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       8. DETAILED REQUIREMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="detailed-requirements">
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 User Account Management</h3>
+    <ul>
+      <li>Each user shall have a unique, individually assigned account. Shared or generic accounts are prohibited for interactive use.</li>
+      <li>Accounts not used for <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> consecutive days shall be automatically disabled.</li>
+      <li>Default vendor accounts shall be disabled or renamed before systems are placed into production.</li>
+    </ul>
+
+    <h3>8.2 Access Request Workflow</h3>
+    <ol>
+      <li>User or manager submits a formal access request specifying systems, role, and business justification.</li>
+      <li>Data owner or manager reviews and approves or rejects the request.</li>
+      <li>IT provisions the access and notifies the requester.</li>
+      <li>The access grant is recorded in the access management log.</li>
+    </ol>
+
+    <h3>8.3 Segregation of Duties</h3>
+    <p>Access rights shall be structured to enforce segregation of duties. No single individual shall have access that allows them to execute conflicting transactions without independent review (e.g., requesting and approving their own access, developing and deploying code to production without review).</p>
+
+    <h3>8.4 Physical Access Controls</h3>
+    <p>Physical access to server rooms, network closets, and other sensitive areas shall be restricted to authorized personnel. Physical access logs shall be maintained and reviewed quarterly.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       9. EXCEPTIONS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="exceptions">
+    <h2>9. Exceptions</h2>
+    <p>Any exception to this policy must be documented with a business justification and risk assessment, approved by the Information Security Officer, and recorded in the exception register. Exceptions shall be time-bound (maximum 12 months), subject to compensating controls, and reviewed quarterly.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       10. MONITORING AND COMPLIANCE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="monitoring">
+    <h2>10. Monitoring and Compliance</h2>
+    <ul>
+      <li>Quarterly access reviews shall produce documented evidence of review outcomes and remediation actions.</li>
+      <li>Privileged access shall be monitored continuously; anomalous activity shall trigger alerts.</li>
+      <li>Annual internal audits shall assess compliance with this policy, including testing of provisioning, deprovisioning, and review processes.</li>
+      <li>Metrics shall be tracked, including: time to provision, time to deprovision, number of orphaned accounts, and access review completion rates.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       11. VIOLATIONS / ENFORCEMENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="violations">
+    <h2>11. Violations and Enforcement</h2>
+    <p>Violations of this policy, including sharing credentials, accessing systems without authorization, or circumventing access controls, may result in disciplinary action up to and including termination of employment or contract. Violations shall be reported to the Information Security Officer and investigated promptly. Ramdoot Solutions reserves the right to pursue legal action where warranted.</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       12. RECORDS AND EVIDENCE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="records">
+    <h2>12. Records and Evidence</h2>
+    <ul>
+      <li>Access request forms and approval records.</li>
+      <li>Quarterly access review reports and sign-off records.</li>
+      <li>Privileged access activity logs.</li>
+      <li>Emergency access logs and post-incident reviews.</li>
+      <li>Provisioning and deprovisioning audit trails.</li>
+      <li>Role definitions and RBAC mapping documents.</li>
+      <li>Exception request forms and approvals.</li>
+    </ul>
+    <p>Records shall be retained in accordance with the Data Retention Policy (RS-POL-007).</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       13. RELATED DOCUMENTS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="related-documents">
+    <h2>13. Related Documents</h2>
+    <table class="related-docs">
+      <thead><tr><th>Document ID</th><th>Title</th></tr></thead>
+      <tbody>
+        <tr><td>RS-POL-001</td><td>Information Security Policy</td></tr>
+        <tr><td>RS-POL-003</td><td>Password and Authentication Policy</td></tr>
+        <tr><td>RS-POL-004</td><td>Acceptable Use Policy</td></tr>
+        <tr><td>RS-POL-005</td><td>Asset Management Policy</td></tr>
+        <tr><td>RS-POL-006</td><td>Data Classification Policy</td></tr>
+        <tr><td>RS-POL-007</td><td>Data Retention Policy</td></tr>
+        <tr><td>RS-POL-008</td><td>Encryption Policy</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       14. FRAMEWORK MAPPING
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="framework-mapping">
+    <h2>14. Framework Mapping</h2>
+    <table class="framework-map">
+      <thead><tr><th>Framework</th><th>Reference</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>SOC 2</td><td>CC6.1</td><td>The entity implements logical access security software, infrastructure, and architectures over protected information assets.</td></tr>
+        <tr><td>SOC 2</td><td>CC6.2</td><td>Prior to issuing system credentials and granting system access, the entity registers and authorizes new internal and external users.</td></tr>
+        <tr><td>SOC 2</td><td>CC6.3</td><td>The entity authorizes, modifies, or removes access to data, software, functions, and other protected information assets based on roles.</td></tr>
+        <tr><td>NISP</td><td>§9</td><td>Access Control — Policies and procedures for managing user access to information assets.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       15. REVIEW CYCLE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="review-cycle">
+    <h2>15. Review Cycle</h2>
+    <p>This policy shall be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>A security incident involving unauthorized access.</li>
+      <li>Significant changes to organizational structure or information systems.</li>
+      <li>Changes in regulatory or compliance requirements.</li>
+      <li>Findings from internal or external audits.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       16. APPROVAL BLOCK
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="approval">
+    <h2>16. Approval</h2>
+    <table class="approval-block">
+      <tr>
+        <th>Prepared By</th>
+        <td>Ramdoot Solutions</td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Reviewed By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Approved By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Date: <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       17. VERSION HISTORY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="version-history">
+    <h2>17. Version History</h2>
+    <table class="version-history">
+      <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+      <tbody>
+        <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Ramdoot Solutions</td><td>Initial draft created for management review.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+</body>
+</html>

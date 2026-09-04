@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#1a2744"/>
+  <text x="100" y="85" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="42" fill="#ffffff">RS</text>
+  <text x="100" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="14" fill="#ccd6e6">RAMDOOT</text>
+  <text x="100" y="138" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="14" fill="#ccd6e6">SOLUTIONS</text>
+</svg>

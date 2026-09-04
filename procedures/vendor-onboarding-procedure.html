@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-009: Vendor Onboarding Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-009</td></tr>
+            <tr><th>Title</th><td>Vendor Onboarding Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure defines the end-to-end process for evaluating, onboarding, and establishing ongoing monitoring of third-party vendors and service providers at Ramdoot Solutions. It ensures that vendors handling company data, accessing company systems, or providing critical services are properly assessed for risk, bound by appropriate contractual agreements, and subject to continuous oversight.</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure applies to all third-party relationships where the vendor:</p>
+        <ul>
+            <li>Has access to Ramdoot Solutions' systems, networks, or data (including SaaS/IaaS/PaaS providers).</li>
+            <li>Processes, stores, or transmits Ramdoot Solutions data (including personal data).</li>
+            <li>Provides critical services that support business operations (hosting, payment processing, communication platforms).</li>
+            <li>Has physical access to Ramdoot Solutions facilities.</li>
+        </ul>
+        <p>This procedure does not cover non-critical suppliers of goods without system access (e.g., office supplies, furniture), though basic procurement due diligence still applies.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Vendor / Third Party</td><td>Any external organization or individual providing products, services, or support to Ramdoot Solutions.</td></tr>
+                <tr><td>NDA</td><td>Non-Disclosure Agreement &mdash; a contract prohibiting the vendor from disclosing confidential information.</td></tr>
+                <tr><td>DPA</td><td>Data Processing Agreement &mdash; a contract governing the vendor's processing of personal data on behalf of Ramdoot Solutions, required under data protection regulations.</td></tr>
+                <tr><td>SLA</td><td>Service Level Agreement &mdash; contractual commitments on service availability, performance, and support response times.</td></tr>
+                <tr><td>SOC Report</td><td>System and Organization Controls report &mdash; an independent audit report on the vendor's control environment (SOC 1, SOC 2, SOC 3).</td></tr>
+                <tr><td>Vendor Risk Tier</td><td>A classification of the vendor based on the level of risk they pose: Critical, High, Medium, or Low.</td></tr>
+                <tr><td>Due Diligence</td><td>The investigation and evaluation of a vendor's security posture, financial stability, and compliance status before engagement.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>Business Owner / Requestor</td><td>Identifies the business need, submits the vendor onboarding request, and serves as the primary relationship manager.</td></tr>
+                <tr><td>Procurement / Vendor Management</td><td>Manages the vendor evaluation process, coordinates due diligence, and maintains the vendor register.</td></tr>
+                <tr><td>Information Security Team</td><td>Conducts the security risk assessment, reviews SOC reports and security questionnaire responses, and defines security requirements for the contract.</td></tr>
+                <tr><td>Legal / Compliance</td><td>Reviews and negotiates contracts (NDA, DPA, SLA, MSA), ensures regulatory compliance, and advises on data protection obligations.</td></tr>
+                <tr><td>Finance</td><td>Validates vendor financial stability, approves budget, and manages payment setup.</td></tr>
+                <tr><td>IT Department</td><td>Provisions vendor access to systems (if required) following the <a href="access-request-procedure.html">Access Request Procedure (RS-PRO-003)</a>.</td></tr>
+                <tr><td>Management</td><td>Provides final approval for Critical and High-tier vendor engagements.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>A defined business need that cannot be fulfilled internally.</li>
+            <li>Budget approval for the anticipated vendor cost.</li>
+            <li>The Vendor Risk Assessment template and Security Questionnaire are available and current.</li>
+            <li>Standard NDA, DPA, and SLA templates are approved by Legal.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>Step 1: Business Need Identification</h3>
+        <p><strong>Performed by:</strong> Business Owner</p>
+        <ol>
+            <li>Document the business need, including:
+                <ul>
+                    <li>The service or product required.</li>
+                    <li>The type and sensitivity of data the vendor will access or process.</li>
+                    <li>The criticality of the service to business operations.</li>
+                    <li>The expected duration of the engagement.</li>
+                </ul>
+            </li>
+            <li>Submit a "Vendor Onboarding Request" to Procurement / Vendor Management.</li>
+        </ol>
+
+        <h3>Step 2: Vendor Research</h3>
+        <p><strong>Performed by:</strong> Procurement / Business Owner</p>
+        <ol>
+            <li>Identify potential vendors through market research, referrals, and RFP/RFI processes.</li>
+            <li>Shortlist vendors based on capability, reputation, pricing, and geographic considerations.</li>
+            <li>Obtain preliminary information from each shortlisted vendor (company profile, certifications, references).</li>
+        </ol>
+
+        <h3>Step 3: Risk Assessment</h3>
+        <p><strong>Performed by:</strong> Information Security Team / Procurement</p>
+        <ol>
+            <li>Classify the vendor into a risk tier based on:
+                <ul>
+                    <li><strong>Critical:</strong> Vendor has access to sensitive data (PII, financial, health) or provides services essential to business continuity.</li>
+                    <li><strong>High:</strong> Vendor has access to internal systems or processes confidential data.</li>
+                    <li><strong>Medium:</strong> Vendor has limited system access or processes non-sensitive data.</li>
+                    <li><strong>Low:</strong> Vendor has no system access and does not process company data.</li>
+                </ul>
+            </li>
+            <li>Document the risk tier and rationale in the Vendor Risk Assessment form.</li>
+        </ol>
+
+        <h3>Step 4: Due Diligence</h3>
+        <p><strong>Performed by:</strong> Information Security Team / Legal / Finance</p>
+        <ol>
+            <li>For Critical and High-tier vendors, collect and review:
+                <ul>
+                    <li><strong>SOC 2 Type II report</strong> (or equivalent: ISO 27001 certificate, SOC 1, SSAE 18). Review the report for relevant control areas and any exceptions or qualifications.</li>
+                    <li><strong>Security Questionnaire</strong> responses covering: data encryption, access control, incident response, business continuity, employee screening, and sub-processor management.</li>
+                    <li><strong>Data protection practices</strong> including data residency, cross-border transfers, and breach notification procedures.</li>
+                    <li><strong>Financial stability</strong> review (credit reports, financial statements for critical vendors).</li>
+                    <li><strong>References</strong> from comparable clients.</li>
+                    <li><strong>Regulatory compliance</strong> relevant to the service (e.g., PCI DSS for payment processors, HIPAA for health data).</li>
+                </ul>
+            </li>
+            <li>For Medium-tier vendors: SOC report or security questionnaire review is sufficient.</li>
+            <li>For Low-tier vendors: basic company verification and NDA are sufficient.</li>
+            <li>Document the due diligence findings in the Vendor Assessment Report.</li>
+        </ol>
+
+        <h3>Step 5: Contract Negotiation</h3>
+        <p><strong>Performed by:</strong> Legal / Procurement / Business Owner</p>
+        <ol>
+            <li>Prepare and negotiate the following agreements as applicable:
+                <ul>
+                    <li><strong>NDA:</strong> Required for all vendors with access to confidential information.</li>
+                    <li><strong>DPA:</strong> Required for all vendors processing personal data. Must include: data processing purposes, data categories, security obligations, sub-processor restrictions, breach notification (within 24&ndash;48 hours), data return/deletion at termination, and audit rights.</li>
+                    <li><strong>SLA:</strong> Required for Critical and High-tier vendors. Must define: uptime commitments, support response times, escalation procedures, and remedies for SLA breaches.</li>
+                    <li><strong>Master Service Agreement (MSA):</strong> Covers the overall commercial terms, liability, indemnification, termination clauses, and intellectual property.</li>
+                </ul>
+            </li>
+            <li>Ensure the Information Security Team reviews all security-related contract clauses.</li>
+        </ol>
+
+        <h3>Step 6: Legal Review</h3>
+        <p><strong>Performed by:</strong> Legal / Compliance</p>
+        <ol>
+            <li>Legal reviews the complete contract package for compliance with applicable laws and regulations (IT Act, DPDP Act, GDPR if applicable).</li>
+            <li>Verify that data protection, confidentiality, audit rights, and termination provisions meet organizational requirements.</li>
+            <li>Confirm that liability and indemnification clauses adequately protect Ramdoot Solutions.</li>
+            <li>Obtain Legal sign-off on the contract package.</li>
+        </ol>
+
+        <h3>Step 7: Approval</h3>
+        <p><strong>Performed by:</strong> Management / Procurement</p>
+        <ol>
+            <li>For Critical and High-tier vendors: Management approval is required (CTO or designated authority).</li>
+            <li>For Medium-tier vendors: Procurement Manager approval is sufficient.</li>
+            <li>For Low-tier vendors: Business Owner approval is sufficient.</li>
+            <li>Record the approval in the vendor onboarding ticket.</li>
+        </ol>
+
+        <h3>Step 8: Vendor Registration</h3>
+        <p><strong>Performed by:</strong> Procurement / Vendor Management</p>
+        <ol>
+            <li>Create the vendor record in the Vendor Register with:
+                <ul>
+                    <li>Vendor name, contact details, and relationship manager.</li>
+                    <li>Risk tier classification.</li>
+                    <li>Services provided and data categories involved.</li>
+                    <li>Contract details (start date, end date, renewal date, key terms).</li>
+                    <li>Due diligence completion date and findings summary.</li>
+                </ul>
+            </li>
+            <li>Execute all signed agreements and store them in the contract management system.</li>
+            <li>Set up payment terms in the Finance system.</li>
+        </ol>
+
+        <h3>Step 9: Access Provisioning</h3>
+        <p><strong>Performed by:</strong> IT Department</p>
+        <ol>
+            <li>If the vendor requires access to Ramdoot Solutions systems, follow the <a href="access-request-procedure.html">Access Request Procedure (RS-PRO-003)</a>.</li>
+            <li>Vendor access must be:
+                <ul>
+                    <li>Limited to the minimum necessary for the contracted service.</li>
+                    <li>Configured with MFA and unique credentials per vendor user.</li>
+                    <li>Time-limited to the contract duration.</li>
+                    <li>Logged and monitored.</li>
+                </ul>
+            </li>
+            <li>Vendor VPN or secure remote access is configured per the network security policy.</li>
+        </ol>
+
+        <h3>Step 10: Ongoing Monitoring Schedule</h3>
+        <p><strong>Performed by:</strong> Procurement / Information Security Team</p>
+        <ol>
+            <li>Establish the ongoing monitoring cadence based on vendor risk tier:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>Risk Tier</th><th>Review Frequency</th><th>Activities</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Critical</td><td>Quarterly</td><td>SOC report review, SLA performance review, security questionnaire update, business review meeting.</td></tr>
+                <tr><td>High</td><td>Semi-annually</td><td>SOC report or security questionnaire review, SLA performance review.</td></tr>
+                <tr><td>Medium</td><td>Annually</td><td>Security questionnaire update, contract review.</td></tr>
+                <tr><td>Low</td><td>At contract renewal</td><td>Basic verification and contract review.</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="2">
+            <li>Schedule the first review date in the Vendor Register.</li>
+            <li>Monitor for vendor-related security events (data breaches, compliance failures, financial instability) on an ongoing basis.</li>
+            <li>Any significant changes in the vendor's risk profile trigger an ad-hoc reassessment.</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>Vendor Risk Assessment is completed and risk tier assigned.</li>
+            <li>Due diligence is documented with all required reports and questionnaires reviewed.</li>
+            <li>All required agreements (NDA, DPA, SLA, MSA) are executed and filed.</li>
+            <li>Legal and Management approvals are recorded.</li>
+            <li>Vendor is registered in the Vendor Register with complete information.</li>
+            <li>Access is provisioned per least-privilege with MFA and logging.</li>
+            <li>Ongoing monitoring schedule is established and first review date is set.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Vendor Onboarding Request</td><td>IT Ticket System / Procurement</td><td>Duration of engagement + 3 years</td></tr>
+                <tr><td>Vendor Risk Assessment</td><td>Information Security Repository</td><td>Duration of engagement + 3 years</td></tr>
+                <tr><td>Due Diligence Report (SOC, Questionnaire)</td><td>Information Security Repository</td><td>Duration of engagement + 3 years</td></tr>
+                <tr><td>Executed Contracts (NDA, DPA, SLA, MSA)</td><td>Contract Management System</td><td>Duration of engagement + 7 years</td></tr>
+                <tr><td>Vendor Register</td><td>Procurement / GRC Tool</td><td>Ongoing (current + archived)</td></tr>
+                <tr><td>Ongoing Monitoring / Review Records</td><td>Procurement / Information Security</td><td>3 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved in writing by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Urgent Vendor Engagement:</strong> If business urgency requires vendor engagement before full due diligence is complete, the CTO may approve conditional engagement with: interim NDA in place, limited scope of access/data, and a deadline (maximum 30 days) to complete full due diligence.</li>
+            <li><strong>SOC Report Unavailability:</strong> Smaller vendors may not have a SOC report. In this case, a detailed security questionnaire review, reference checks, and compensating contractual controls (enhanced audit rights, security incident notification clauses) are required.</li>
+            <li><strong>Open-Source / Free Tools:</strong> Free tools and open-source software used without vendor support contracts are managed through the software asset management process, not this vendor onboarding procedure, unless a commercial support contract is being established.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="access-request-procedure.html">RS-PRO-003: Access Request Procedure</a></li>
+            <li><a href="annual-risk-assessment-procedure.html">RS-PRO-010: Annual Risk Assessment Procedure</a></li>
+            <li>RS-POL-015: Vendor &amp; Third-Party Management Policy</li>
+            <li>RS-POL-005: Data Classification &amp; Handling Policy</li>
+            <li>RS-POL-003: Data Privacy Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC9.2</td><td>The entity assesses and manages risks associated with vendors and business partners.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.19</td><td>Information security in supplier relationships.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.20</td><td>Addressing information security within supplier agreements.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.21</td><td>Managing information security in the ICT supply chain.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.5.22</td><td>Monitoring, review, and change management of supplier services.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

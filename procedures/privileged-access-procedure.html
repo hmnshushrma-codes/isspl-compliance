@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-004: Privileged Access Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-004</td></tr>
+            <tr><th>Title</th><td>Privileged Access Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure governs the request, approval, provisioning, monitoring, review, and revocation of privileged access (administrative, root, superuser, or elevated permissions) across all Ramdoot Solutions information systems. Privileged accounts carry significantly higher risk than standard user accounts because they can bypass security controls, access sensitive data, and modify system configurations. This procedure ensures such access is tightly controlled, time-limited where possible, continuously monitored, and regularly recertified.</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure applies to:</p>
+        <ul>
+            <li>All privileged accounts including: root/administrator accounts, database administrator accounts, cloud console admin roles, service accounts with elevated permissions, and break-glass/emergency accounts.</li>
+            <li>All employees, contractors, and third-party personnel who require privileged access to any Ramdoot Solutions system.</li>
+            <li>All environments: production, staging, and disaster recovery.</li>
+        </ul>
+        <p>Standard (non-privileged) access requests follow <a href="access-request-procedure.html">RS-PRO-003</a>.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Privileged Access</td><td>Access that provides administrative, root, superuser, or otherwise elevated permissions beyond those of a standard user.</td></tr>
+                <tr><td>PAM</td><td>Privileged Access Management &mdash; the tools and processes used to manage, monitor, and audit privileged accounts.</td></tr>
+                <tr><td>Break-Glass Account</td><td>An emergency account used only when normal administrative access is unavailable; subject to immediate post-use review.</td></tr>
+                <tr><td>Just-In-Time (JIT) Access</td><td>Temporary elevation of privileges for a defined period, automatically revoked upon expiration.</td></tr>
+                <tr><td>Access Recertification</td><td>Periodic review of privileged access to confirm continued business need and appropriateness.</td></tr>
+                <tr><td>Security Officer</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> &mdash; the designated individual responsible for approving privileged access requests.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>Requestor / Beneficiary</td><td>Submits the privileged access request with a detailed business justification and the requested duration.</td></tr>
+                <tr><td>Line Manager</td><td>Validates the business need and confirms the requestor's role requires privileged access.</td></tr>
+                <tr><td>Security Officer</td><td>Reviews the request against security policies, assesses risk, approves or denies, and sets conditions (time limits, monitoring requirements).</td></tr>
+                <tr><td>IT Operations / PAM Administrator</td><td>Provisions time-limited privileged access, configures session logging, and revokes access upon expiration or request.</td></tr>
+                <tr><td>Information Security Team</td><td>Monitors privileged access activity, conducts monthly reviews, leads recertification cycles, and investigates anomalies.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>The requestor must have an active standard access account in good standing (no policy violations).</li>
+            <li>Multi-factor authentication (MFA) must be enabled on the requestor's identity provider account.</li>
+            <li>The requestor must have completed the annual Security Awareness Training and any privileged-user-specific training.</li>
+            <li>The target system must be enrolled in the PAM platform (or have manual equivalent controls documented).</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>Step 1: Business Justification</h3>
+        <p><strong>Performed by:</strong> Requestor</p>
+        <ol>
+            <li>Submit a "Privileged Access Request" ticket in the IT ticket system.</li>
+            <li>Provide a detailed business justification including:
+                <ul>
+                    <li>The specific system(s) and the privileged role/permission required.</li>
+                    <li>The tasks that require elevated access (e.g., server configuration, database migration, incident remediation).</li>
+                    <li>The requested duration &mdash; privileged access must be time-limited. Permanent privileged access requires exceptional justification.</li>
+                    <li>Confirmation that the task cannot be accomplished with standard access.</li>
+                </ul>
+            </li>
+            <li>Attach any supporting documentation (change ticket, incident ticket, project plan).</li>
+        </ol>
+
+        <h3>Step 2: Security Officer Approval</h3>
+        <p><strong>Performed by:</strong> Line Manager, then Security Officer</p>
+        <ol>
+            <li>The Line Manager reviews and endorses the request, confirming the business need.</li>
+            <li>The Security Officer reviews the request within 1 business day, assessing:
+                <ul>
+                    <li>Whether the justification is adequate and specific.</li>
+                    <li>Whether the requested access level is the minimum necessary (least privilege).</li>
+                    <li>Whether the duration is appropriate &mdash; preferring Just-In-Time (JIT) access.</li>
+                    <li>Whether there are segregation-of-duties conflicts.</li>
+                    <li>The requestor's access history and any prior policy violations.</li>
+                </ul>
+            </li>
+            <li>Approve with conditions (time limit, monitoring level), reject with documented reason, or request additional information.</li>
+        </ol>
+
+        <h3>Step 3: Time-Limited Provisioning</h3>
+        <p><strong>Performed by:</strong> IT Operations / PAM Administrator</p>
+        <ol>
+            <li>Provision the privileged access exactly as approved, using the PAM platform where available.</li>
+            <li>Set the automatic expiration date/time as specified in the approval.</li>
+            <li>Configure session recording and keystroke logging for the privileged session (where technically feasible).</li>
+            <li>Ensure the privileged account uses a unique credential (not shared) and requires MFA at each login.</li>
+            <li>Notify the requestor that access is active and remind them of the expiration time and usage conditions.</li>
+        </ol>
+
+        <h3>Step 4: Activity Logging</h3>
+        <p><strong>Performed by:</strong> PAM Platform / IT Operations</p>
+        <ol>
+            <li>All actions performed under the privileged account are logged with timestamps, source IP, and command/action details.</li>
+            <li>Logs are forwarded to the centralized SIEM in real time.</li>
+            <li>Alerts are configured for high-risk actions (e.g., bulk data exports, security setting changes, user creation).</li>
+            <li>Logs are immutable and tamper-protected; privileged users cannot modify their own activity logs.</li>
+        </ol>
+
+        <h3>Step 5: Periodic Review (Monthly)</h3>
+        <p><strong>Performed by:</strong> Information Security Team</p>
+        <ol>
+            <li>On a monthly basis, generate a report of all active privileged access grants.</li>
+            <li>Review each grant:
+                <ul>
+                    <li>Is the access still needed? Has the task or project been completed?</li>
+                    <li>Has the access been used? Unused privileged access should be revoked.</li>
+                    <li>Were there any anomalous activities in the session logs?</li>
+                </ul>
+            </li>
+            <li>Contact the Line Manager and requestor for confirmation of continued need.</li>
+            <li>Revoke access where it is no longer justified.</li>
+            <li>Document the review findings and actions taken.</li>
+        </ol>
+
+        <h3>Step 6: Access Recertification</h3>
+        <p><strong>Performed by:</strong> Information Security Team / Security Officer</p>
+        <ol>
+            <li>Quarterly, conduct a formal recertification of all standing (non-JIT) privileged access.</li>
+            <li>Each privileged access holder's Line Manager must explicitly recertify or revoke.</li>
+            <li>The Security Officer reviews the recertification results and approves the continued access or mandates revocation.</li>
+            <li>Recertification records are maintained as audit evidence.</li>
+            <li>Any access not recertified within 5 business days of the review deadline is automatically suspended.</li>
+        </ol>
+
+        <h3>Step 7: Revocation When No Longer Needed</h3>
+        <p><strong>Performed by:</strong> IT Operations / PAM Administrator</p>
+        <ol>
+            <li>Privileged access is revoked immediately when:
+                <ul>
+                    <li>The approved time window expires (automatic).</li>
+                    <li>The task or project requiring the access is completed.</li>
+                    <li>The employee changes roles or leaves the organization.</li>
+                    <li>A security concern or policy violation is identified.</li>
+                    <li>The access is not recertified during the quarterly review.</li>
+                </ul>
+            </li>
+            <li>Update the Access Management Log and close the associated ticket.</li>
+            <li>Rotate any shared credentials that the revoked user had access to.</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>All privileged access requests have a completed ticket with Security Officer approval on file.</li>
+            <li>No privileged access exists without a documented business justification and expiration date.</li>
+            <li>Monthly reviews are completed and documented with action items resolved.</li>
+            <li>Quarterly recertification achieves 100% coverage of standing privileged access.</li>
+            <li>All privileged sessions have corresponding activity logs in the SIEM.</li>
+            <li>Break-glass account usage is reviewed within 24 hours of each use.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Privileged Access Request Tickets</td><td>IT Ticket System</td><td>3 years from closure</td></tr>
+                <tr><td>Security Officer Approval Records</td><td>IT Ticket System / PAM Platform</td><td>3 years from closure</td></tr>
+                <tr><td>Privileged Session Logs</td><td>SIEM / PAM Platform</td><td>1 year (or per regulatory requirement)</td></tr>
+                <tr><td>Monthly Review Reports</td><td>Information Security Repository</td><td>3 years</td></tr>
+                <tr><td>Quarterly Recertification Records</td><td>Information Security Repository</td><td>3 years</td></tr>
+                <tr><td>Break-Glass Usage Logs</td><td>PAM Platform / SIEM</td><td>3 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved in writing by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Break-Glass Access:</strong> In a P1 incident where the Security Officer is unavailable, the IT Manager may authorize break-glass account usage. The Security Officer must be notified within 1 hour, and a full post-use review must be completed within 24 hours.</li>
+            <li><strong>Standing Privileged Access:</strong> Certain operational roles (e.g., DBA, infrastructure engineer) may require standing privileged access. These must be explicitly approved by the Security Officer, subject to quarterly recertification, and have enhanced monitoring enabled at all times.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="access-request-procedure.html">RS-PRO-003: Access Request Procedure</a></li>
+            <li><a href="employee-offboarding.html">RS-PRO-002: Employee Offboarding Procedure</a></li>
+            <li><a href="incident-response-procedure.html">RS-PRO-005: Incident Response Procedure</a></li>
+            <li>RS-POL-006: Access Control Policy</li>
+            <li>RS-POL-010: Logging &amp; Monitoring Policy</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC6.2</td><td>The entity registers and authorizes users prior to granting system access; credentials are removed when no longer needed.</td></tr>
+                <tr><td>SOC 2 (TSC)</td><td>CC6.3</td><td>The entity authorizes, modifies, or removes access based on roles, responsibilities, or system design changes.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.2</td><td>Privileged access rights shall be restricted and managed.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.5</td><td>Secure authentication &mdash; MFA and strong credentials for privileged accounts.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>A.8.15</td><td>Logging &mdash; activities of privileged users shall be logged and monitored.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

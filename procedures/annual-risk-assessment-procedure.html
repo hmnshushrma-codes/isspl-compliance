@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-PRO-010: Annual Risk Assessment Procedure | Ramdoot Solutions</title>
+    <link rel="stylesheet" href="../assets/compliance.css">
+    <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions &mdash; Compliance</a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#policies">Policies</a></li>
+        <li><a href="../index.html#procedures">Procedures</a></li>
+        <li><a href="../index.html#controls">Controls</a></li>
+    </ul>
+</nav>
+
+<main class="document-container">
+
+    <!-- Document Control Table -->
+    <table class="doc-control-table">
+        <caption>Document Control</caption>
+        <tbody>
+            <tr><th>Document ID</th><td>RS-PRO-010</td></tr>
+            <tr><th>Title</th><td>Annual Risk Assessment Procedure</td></tr>
+            <tr><th>Organization</th><td>Ramdoot Solutions</td></tr>
+            <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Version</th><td>1.0</td></tr>
+            <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Next Review</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+            <tr><th>Status</th><td>Draft</td></tr>
+            <tr><th>Classification</th><td>Confidential</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 1. Purpose -->
+    <section id="purpose">
+        <h2>1. Purpose</h2>
+        <p>This procedure defines the structured process for conducting the annual information security risk assessment at Ramdoot Solutions. It ensures that risks to the confidentiality, integrity, and availability of the organization's information assets are systematically identified, analyzed, evaluated, and treated. The risk assessment informs management decisions on security investments, control implementations, and risk acceptance, and serves as a foundational input for the organization's information security management system (ISMS).</p>
+    </section>
+
+    <!-- 2. Scope -->
+    <section id="scope">
+        <h2>2. Scope</h2>
+        <p>This procedure covers:</p>
+        <ul>
+            <li>All information assets owned, managed, or processed by Ramdoot Solutions, including data, systems, infrastructure, applications, and personnel.</li>
+            <li>All threats and vulnerabilities applicable to the organization's operating environment.</li>
+            <li>All locations, business processes, and third-party relationships within the ISMS scope.</li>
+            <li>Both cyber and physical security risks.</li>
+        </ul>
+        <p>The annual risk assessment is the comprehensive, organization-wide exercise. Ad-hoc risk assessments (for new projects, major changes, or incidents) follow the same methodology but with a narrower scope.</p>
+    </section>
+
+    <!-- 3. Definitions -->
+    <section id="definitions">
+        <h2>3. Definitions</h2>
+        <table class="definitions-table">
+            <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+            <tbody>
+                <tr><td>Risk</td><td>The potential that a threat will exploit a vulnerability and cause harm to an asset, measured in terms of likelihood and impact.</td></tr>
+                <tr><td>Threat</td><td>Any circumstance or event with the potential to adversely impact organizational operations or assets (e.g., cyber attack, natural disaster, insider threat).</td></tr>
+                <tr><td>Vulnerability</td><td>A weakness in an asset, system, or process that could be exploited by a threat.</td></tr>
+                <tr><td>Likelihood</td><td>The probability that a threat will successfully exploit a vulnerability, rated on a defined scale.</td></tr>
+                <tr><td>Impact</td><td>The magnitude of harm resulting from a risk event materializing, rated on a defined scale.</td></tr>
+                <tr><td>Risk Score</td><td>The product of Likelihood and Impact ratings, used to prioritize risks.</td></tr>
+                <tr><td>Risk Register</td><td>The authoritative log of all identified risks, their assessments, treatment decisions, owners, and status.</td></tr>
+                <tr><td>Risk Appetite</td><td>The level and type of risk that the organization is willing to accept in pursuit of its objectives, as defined by Management and the Board.</td></tr>
+                <tr><td>Risk Treatment</td><td>The action taken in response to a risk: mitigate (implement controls), transfer (insurance, outsource), avoid (cease activity), or accept (acknowledge residual risk).</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 4. Roles & Responsibilities -->
+    <section id="roles">
+        <h2>4. Roles &amp; Responsibilities</h2>
+        <table class="roles-table">
+            <thead><tr><th>Role</th><th>Responsibility</th></tr></thead>
+            <tbody>
+                <tr><td>Information Security Officer / CISO</td><td>Leads the risk assessment process, coordinates all activities, maintains the risk register, and presents findings to Management and the Board.</td></tr>
+                <tr><td>Information Security Team</td><td>Conducts threat identification, vulnerability assessment, and risk analysis; documents findings and drafts the risk report.</td></tr>
+                <tr><td>Asset Owners / Department Heads</td><td>Participate in risk identification workshops, validate asset inventories, provide business context for impact analysis, and accept or champion risk treatment actions.</td></tr>
+                <tr><td>IT Operations</td><td>Provides technical input on system architectures, current controls, vulnerability scan data, and incident history.</td></tr>
+                <tr><td>Management (CTO / Leadership Team)</td><td>Reviews risk assessment results, approves the risk register, makes risk treatment decisions, and allocates resources for risk mitigation.</td></tr>
+                <tr><td>Board / Governance Committee</td><td>Receives the annual risk report, validates alignment with risk appetite, and provides strategic direction.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 5. Prerequisites -->
+    <section id="prerequisites">
+        <h2>5. Prerequisites</h2>
+        <ul>
+            <li>The ISMS scope is defined and current.</li>
+            <li>The Risk Assessment Methodology document is approved and available (defining the rating scales, risk matrix, and risk appetite thresholds).</li>
+            <li>The previous year's risk register is available for review and update.</li>
+            <li>Asset inventory is current and complete.</li>
+            <li>Recent vulnerability scan reports, incident reports, audit findings, and threat intelligence are available.</li>
+            <li>Risk assessment workshops are scheduled with all relevant department heads and asset owners.</li>
+        </ul>
+    </section>
+
+    <!-- 6. Step-by-Step Procedure -->
+    <section id="procedure">
+        <h2>6. Step-by-Step Procedure</h2>
+
+        <h3>Step 1: Scope Definition</h3>
+        <p><strong>Performed by:</strong> Information Security Officer</p>
+        <ol>
+            <li>Confirm the scope of the annual risk assessment aligns with the current ISMS scope statement.</li>
+            <li>Identify any changes since the last assessment that may affect scope:
+                <ul>
+                    <li>New business processes, services, or products launched.</li>
+                    <li>New systems, applications, or infrastructure deployed.</li>
+                    <li>Organizational changes (mergers, acquisitions, restructuring).</li>
+                    <li>New regulatory or contractual obligations.</li>
+                    <li>Significant incidents or near-misses that occurred.</li>
+                </ul>
+            </li>
+            <li>Document the assessment scope, objectives, timeline, and participants.</li>
+            <li>Communicate the assessment plan to all participants at least 2 weeks before the first workshop.</li>
+        </ol>
+
+        <h3>Step 2: Asset Inventory Review</h3>
+        <p><strong>Performed by:</strong> Information Security Team / IT Operations / Asset Owners</p>
+        <ol>
+            <li>Review and update the asset inventory, categorized by type:
+                <ul>
+                    <li><strong>Information assets:</strong> databases, file stores, customer data, intellectual property, source code.</li>
+                    <li><strong>Software assets:</strong> applications, operating systems, SaaS platforms.</li>
+                    <li><strong>Physical assets:</strong> servers, network equipment, endpoints, data centre facilities.</li>
+                    <li><strong>Services:</strong> cloud services, third-party vendors, internet connectivity.</li>
+                    <li><strong>People:</strong> key personnel, specialized skill dependencies.</li>
+                </ul>
+            </li>
+            <li>Confirm each asset has an assigned owner and a data classification level.</li>
+            <li>Identify critical assets whose compromise would have the highest business impact.</li>
+        </ol>
+
+        <h3>Step 3: Threat Identification</h3>
+        <p><strong>Performed by:</strong> Information Security Team (with input from all departments)</p>
+        <ol>
+            <li>Conduct threat identification workshops with department heads and asset owners.</li>
+            <li>Identify threats across the following categories:
+                <ul>
+                    <li><strong>Cyber threats:</strong> ransomware, phishing, APT, DDoS, supply chain attacks, zero-day exploits.</li>
+                    <li><strong>Insider threats:</strong> malicious insiders, negligent employees, social engineering.</li>
+                    <li><strong>Physical threats:</strong> theft, fire, flood, power outage, natural disaster.</li>
+                    <li><strong>Environmental threats:</strong> pandemic, geopolitical instability, regulatory changes.</li>
+                    <li><strong>Operational threats:</strong> system failure, human error, data corruption, vendor failure.</li>
+                </ul>
+            </li>
+            <li>Reference external threat intelligence sources: CERT-In advisories, ENISA threat landscape, industry-specific threat reports.</li>
+            <li>Document all identified threats with their source, target assets, and potential attack vectors.</li>
+        </ol>
+
+        <h3>Step 4: Vulnerability Assessment</h3>
+        <p><strong>Performed by:</strong> Information Security Team / IT Operations</p>
+        <ol>
+            <li>Review technical vulnerabilities from:
+                <ul>
+                    <li>Automated vulnerability scan reports (per <a href="vulnerability-remediation-procedure.html">RS-PRO-006</a>).</li>
+                    <li>Penetration test findings from the most recent engagement.</li>
+                    <li>Application security assessment (SAST/DAST) results.</li>
+                    <li>Configuration audit findings.</li>
+                </ul>
+            </li>
+            <li>Identify process and organizational vulnerabilities:
+                <ul>
+                    <li>Gaps in policies or procedures.</li>
+                    <li>Insufficient training or awareness.</li>
+                    <li>Single points of failure (personnel, systems, vendors).</li>
+                    <li>Inadequate monitoring or logging.</li>
+                </ul>
+            </li>
+            <li>Map vulnerabilities to the threats identified in Step 3 to form threat-vulnerability pairs.</li>
+        </ol>
+
+        <h3>Step 5: Likelihood &amp; Impact Analysis</h3>
+        <p><strong>Performed by:</strong> Information Security Team / Asset Owners</p>
+        <ol>
+            <li>For each threat-vulnerability pair, rate the <strong>Likelihood</strong> on a 5-point scale:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead><tr><th>Rating</th><th>Likelihood</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Rare</td><td>May occur only in exceptional circumstances (&lt;5% chance per year).</td></tr>
+                <tr><td>2</td><td>Unlikely</td><td>Could occur but not expected (5&ndash;20% chance per year).</td></tr>
+                <tr><td>3</td><td>Possible</td><td>Might occur at some time (20&ndash;50% chance per year).</td></tr>
+                <tr><td>4</td><td>Likely</td><td>Will probably occur in most circumstances (50&ndash;80% chance per year).</td></tr>
+                <tr><td>5</td><td>Almost Certain</td><td>Is expected to occur in most circumstances (&gt;80% chance per year).</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="2">
+            <li>Rate the <strong>Impact</strong> on a 5-point scale:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead><tr><th>Rating</th><th>Impact</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Insignificant</td><td>Negligible operational or financial impact; no data loss.</td></tr>
+                <tr><td>2</td><td>Minor</td><td>Limited operational disruption (&lt;4 hours); minor financial loss; no sensitive data exposed.</td></tr>
+                <tr><td>3</td><td>Moderate</td><td>Significant disruption (4&ndash;24 hours); moderate financial loss; limited sensitive data exposure.</td></tr>
+                <tr><td>4</td><td>Major</td><td>Severe disruption (&gt;24 hours); substantial financial loss; significant data breach; regulatory action possible.</td></tr>
+                <tr><td>5</td><td>Critical</td><td>Catastrophic disruption; existential financial loss; large-scale data breach; regulatory sanctions; reputational damage.</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="3">
+            <li>Consider existing controls and their effectiveness when determining likelihood (inherent risk vs. residual risk).</li>
+        </ol>
+
+        <h3>Step 6: Risk Scoring</h3>
+        <p><strong>Performed by:</strong> Information Security Team</p>
+        <ol>
+            <li>Calculate the Risk Score for each risk: <strong>Risk Score = Likelihood x Impact</strong>.</li>
+            <li>Map each risk to the risk matrix:</li>
+        </ol>
+
+        <table class="data-table">
+            <thead><tr><th>Risk Score</th><th>Risk Level</th><th>Required Action</th></tr></thead>
+            <tbody>
+                <tr><td>20&ndash;25</td><td>Critical</td><td>Immediate action required. Must be escalated to Management within 24 hours.</td></tr>
+                <tr><td>12&ndash;19</td><td>High</td><td>Action required within 30 days. Treatment plan mandatory.</td></tr>
+                <tr><td>6&ndash;11</td><td>Medium</td><td>Action required within 90 days. Treatment plan recommended.</td></tr>
+                <tr><td>1&ndash;5</td><td>Low</td><td>Monitor and review. Treatment optional; may be accepted within risk appetite.</td></tr>
+            </tbody>
+        </table>
+
+        <ol start="3">
+            <li>Rank all risks by score to create the prioritized risk list.</li>
+        </ol>
+
+        <h3>Step 7: Risk Treatment Decisions</h3>
+        <p><strong>Performed by:</strong> Information Security Officer / Management</p>
+        <ol>
+            <li>For each risk above the acceptable threshold (as defined by the risk appetite statement), select a treatment option:
+                <ul>
+                    <li><strong>Mitigate:</strong> Implement additional controls to reduce likelihood or impact.</li>
+                    <li><strong>Transfer:</strong> Transfer the risk to a third party (e.g., cyber insurance, outsource to a specialist provider).</li>
+                    <li><strong>Avoid:</strong> Eliminate the risk by ceasing the activity or removing the asset from scope.</li>
+                    <li><strong>Accept:</strong> Formally accept the residual risk with documented Management approval.</li>
+                </ul>
+            </li>
+            <li>For each treatment decision, define:
+                <ul>
+                    <li>The specific actions or controls to be implemented.</li>
+                    <li>The responsible owner.</li>
+                    <li>The deadline for implementation.</li>
+                    <li>The expected residual risk after treatment.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Step 8: Risk Register Update</h3>
+        <p><strong>Performed by:</strong> Information Security Team</p>
+        <ol>
+            <li>Update the Risk Register with all identified risks including:
+                <ul>
+                    <li>Risk ID, description, and category.</li>
+                    <li>Affected assets.</li>
+                    <li>Threat-vulnerability pair.</li>
+                    <li>Inherent risk score (before controls).</li>
+                    <li>Current controls and their effectiveness rating.</li>
+                    <li>Residual risk score (after current controls).</li>
+                    <li>Treatment decision and action plan.</li>
+                    <li>Risk owner.</li>
+                    <li>Status and target completion date.</li>
+                </ul>
+            </li>
+            <li>Archive the previous version of the risk register for audit trail.</li>
+            <li>The risk register is a living document and must be updated whenever risks change materially between annual assessments.</li>
+        </ol>
+
+        <h3>Step 9: Management Reporting</h3>
+        <p><strong>Performed by:</strong> Information Security Officer</p>
+        <ol>
+            <li>Prepare the Annual Risk Assessment Report including:
+                <ul>
+                    <li>Executive summary with key findings and risk trends.</li>
+                    <li>Top 10 risks by residual risk score.</li>
+                    <li>Year-over-year comparison (new risks, closed risks, changes in risk levels).</li>
+                    <li>Treatment plan status and resource requirements.</li>
+                    <li>Recommendations for management action.</li>
+                </ul>
+            </li>
+            <li>Present the report to the Management / Leadership Team for review and approval.</li>
+            <li>Obtain Management sign-off on the risk register and treatment plans.</li>
+        </ol>
+
+        <h3>Step 10: Board Communication</h3>
+        <p><strong>Performed by:</strong> Information Security Officer / CTO</p>
+        <ol>
+            <li>Prepare a board-level risk summary (non-technical, focused on business impact and strategic implications).</li>
+            <li>Present to the Board / Governance Committee at the next board meeting following the assessment completion.</li>
+            <li>Obtain Board acknowledgement of the risk profile and any strategic risk decisions.</li>
+            <li>Document the Board's feedback and any directives in the risk assessment record.</li>
+        </ol>
+
+        <h3>Step 11: Action Plan Creation</h3>
+        <p><strong>Performed by:</strong> Information Security Officer / Risk Owners</p>
+        <ol>
+            <li>Translate the treatment decisions into a formal Risk Treatment Action Plan with:
+                <ul>
+                    <li>Specific, measurable actions for each risk requiring mitigation.</li>
+                    <li>Assigned owner for each action.</li>
+                    <li>Deadline and milestones.</li>
+                    <li>Budget and resource allocation.</li>
+                    <li>Success criteria and verification method.</li>
+                </ul>
+            </li>
+            <li>Track action plan progress on a monthly basis through the security governance meeting.</li>
+            <li>Report on action plan completion rates to Management quarterly.</li>
+        </ol>
+    </section>
+
+    <!-- 7. Verification / Completion Criteria -->
+    <section id="verification">
+        <h2>7. Verification / Completion Criteria</h2>
+        <ul>
+            <li>The risk assessment is completed annually, with no more than 12 months between assessments.</li>
+            <li>All critical and high-risk items have documented treatment plans with assigned owners.</li>
+            <li>The risk register is updated and approved by Management.</li>
+            <li>The Annual Risk Assessment Report is presented to Management and the Board.</li>
+            <li>Risk treatment action plans are tracked and progress is reported monthly.</li>
+            <li>Risk acceptances are formally documented with Management approval and reviewed at least annually.</li>
+        </ul>
+    </section>
+
+    <!-- 8. Records & Evidence -->
+    <section id="records">
+        <h2>8. Records &amp; Evidence</h2>
+        <table class="records-table">
+            <thead><tr><th>Record</th><th>Location</th><th>Retention Period</th></tr></thead>
+            <tbody>
+                <tr><td>Risk Assessment Scope &amp; Plan</td><td>Information Security Repository</td><td>5 years</td></tr>
+                <tr><td>Workshop Minutes &amp; Attendance</td><td>Information Security Repository</td><td>5 years</td></tr>
+                <tr><td>Risk Register (current + archived versions)</td><td>GRC Tool / Information Security Repository</td><td>Current + 5 years of archives</td></tr>
+                <tr><td>Annual Risk Assessment Report</td><td>Information Security Repository</td><td>5 years</td></tr>
+                <tr><td>Risk Treatment Action Plans</td><td>Information Security Repository</td><td>5 years</td></tr>
+                <tr><td>Management &amp; Board Sign-Off Records</td><td>Governance Repository</td><td>5 years</td></tr>
+                <tr><td>Risk Acceptance Records</td><td>Information Security Repository</td><td>Duration of acceptance + 5 years</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 9. Exceptions -->
+    <section id="exceptions">
+        <h2>9. Exceptions</h2>
+        <p>Exceptions must be approved by <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span>.</p>
+        <ul>
+            <li><strong>Deferred Assessment:</strong> If the annual risk assessment cannot be completed within 12 months of the previous one (e.g., due to major organizational change), the CTO must approve a deferral of no more than 60 days, with documented justification.</li>
+            <li><strong>Reduced Scope:</strong> If a particular business unit or system is undergoing a separate, detailed risk assessment (e.g., as part of a regulatory audit), it may be excluded from the annual assessment to avoid duplication, provided the separate assessment meets the methodology requirements of this procedure.</li>
+        </ul>
+    </section>
+
+    <!-- 10. Related Documents -->
+    <section id="related-documents">
+        <h2>10. Related Documents</h2>
+        <ul>
+            <li><a href="vulnerability-remediation-procedure.html">RS-PRO-006: Vulnerability Remediation Procedure</a></li>
+            <li><a href="vendor-onboarding-procedure.html">RS-PRO-009: Vendor Onboarding Procedure</a></li>
+            <li><a href="incident-response-procedure.html">RS-PRO-005: Incident Response Procedure</a></li>
+            <li>RS-POL-001: Information Security Policy</li>
+            <li>RS-POL-002: Risk Management Policy</li>
+            <li>Risk Assessment Methodology Document</li>
+        </ul>
+    </section>
+
+    <!-- 11. Framework Mapping -->
+    <section id="framework-mapping">
+        <h2>11. Framework Mapping</h2>
+        <table class="mapping-table">
+            <thead><tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td>SOC 2 (TSC)</td><td>CC3.1</td><td>The entity specifies objectives with sufficient clarity to enable the identification and assessment of risks relating to objectives.</td></tr>
+                <tr><td>SOC 2 (TSC)</td><td>CC3.2</td><td>The entity identifies risks to the achievement of its objectives across the entity and analyzes risks as a basis for determining how the risks should be managed.</td></tr>
+                <tr><td>SOC 2 (TSC)</td><td>CC3.3</td><td>The entity considers the potential for fraud in assessing risks to the achievement of objectives.</td></tr>
+                <tr><td>SOC 2 (TSC)</td><td>CC3.4</td><td>The entity identifies and assesses changes that could significantly impact the system of internal control.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>6.1.2</td><td>Information security risk assessment.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>6.1.3</td><td>Information security risk treatment.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>8.2</td><td>Information security risk assessment &mdash; performed at planned intervals or when significant changes occur.</td></tr>
+                <tr><td>ISO 27001:2022</td><td>8.3</td><td>Information security risk treatment &mdash; implement the risk treatment plan.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 12. Approval Block -->
+    <section id="approval">
+        <h2>12. Approval</h2>
+        <table class="approval-table">
+            <thead><tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr></thead>
+            <tbody>
+                <tr><td>Document Owner</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Reviewed By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+                <tr><td>Approved By</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 13. Version History -->
+    <section id="version-history">
+        <h2>13. Version History</h2>
+        <table class="version-table">
+            <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>1.0</td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td><td>Initial release.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<footer class="doc-footer">
+    <p>&copy; Ramdoot Solutions. Confidential. Unauthorized distribution is prohibited.</p>
+</footer>
+
+</body>
+</html>

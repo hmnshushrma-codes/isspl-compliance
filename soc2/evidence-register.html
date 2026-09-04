@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-SOC2-005 | SOC 2 Evidence Register | Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+  <style>
+    /* Evidence register specific — wide table layout */
+    .evidence-table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .evidence-table {
+      min-width: 1200px;
+      table-layout: fixed;
+    }
+    .evidence-table th:nth-child(1) { width: 7%; }   /* Evidence ID */
+    .evidence-table th:nth-child(2) { width: 7%; }   /* SOC 2 Criteria */
+    .evidence-table th:nth-child(3) { width: 22%; }  /* Description */
+    .evidence-table th:nth-child(4) { width: 12%; }  /* Related Policy */
+    .evidence-table th:nth-child(5) { width: 9%; }   /* Related Control */
+    .evidence-table th:nth-child(6) { width: 10%; }  /* Evidence Owner */
+    .evidence-table th:nth-child(7) { width: 7%; }   /* Frequency */
+    .evidence-table th:nth-child(8) { width: 8%; }   /* Status */
+    .evidence-table th:nth-child(9) { width: 10%; }  /* Storage Location */
+    .evidence-table th:nth-child(10) { width: 8%; }  /* Notes */
+
+    .section-divider td {
+      background: var(--rs-accent-lt) !important;
+      font-weight: 700;
+      color: var(--rs-navy);
+      font-size: 0.9rem;
+      padding: 0.6rem 0.7rem;
+      border-bottom: 2px solid var(--rs-navy);
+    }
+    .section-divider:hover td {
+      background: var(--rs-accent-lt) !important;
+    }
+
+    @media print {
+      .evidence-table-wrapper { overflow-x: visible; }
+      .evidence-table { min-width: 100%; font-size: 7.5pt; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     Navigation Bar
+     ============================================================ -->
+<nav class="doc-nav no-print">
+  <span class="nav-brand">Ramdoot Solutions</span>
+  <span>
+    <a href="../index.html">Compliance Home</a> &nbsp;|&nbsp;
+    <a href="#toc">Contents</a> &nbsp;|&nbsp;
+    <a href="#register">Evidence Register</a> &nbsp;|&nbsp;
+    <button class="btn-print" onclick="window.print()">Print / PDF</button>
+  </span>
+</nav>
+
+<!-- ============================================================
+     Cover Page
+     ============================================================ -->
+<div class="cover-page">
+  <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+  <div class="org-name">Ramdoot Solutions</div>
+  <div class="doc-type">Internal Compliance Documentation</div>
+
+  <h1 class="cover-title">SOC 2 Evidence Register</h1>
+  <p class="cover-subtitle">Comprehensive Evidence Mapping for SOC 2 Type II Compliance</p>
+
+  <div class="cover-meta">
+    <p><strong>Document ID:</strong> RS-SOC2-005</p>
+    <p><strong>Classification:</strong> Confidential &mdash; Internal Use Only</p>
+    <p><strong>Effective Date:</strong> <span class="placeholder">[TO BE COMPLETED]</span></p>
+    <p><strong>Prepared By:</strong> Information Security &amp; Compliance</p>
+  </div>
+
+  <div class="cover-notice">
+    <strong>Confidentiality Notice:</strong> This document is the proprietary and confidential property of
+    Ramdoot Solutions. It is intended solely for internal compliance purposes. Unauthorized reproduction,
+    distribution, or disclosure is strictly prohibited. This evidence register contains mappings to
+    organizational controls and must be protected accordingly.
+  </div>
+</div>
+
+<!-- ============================================================
+     Document Control
+     ============================================================ -->
+<div class="page-wrapper">
+
+  <h2>Document Control</h2>
+  <table class="doc-control">
+    <tr><th>Document ID</th><td>RS-SOC2-005</td></tr>
+    <tr><th>Title</th><td>SOC 2 Evidence Register</td></tr>
+    <tr><th>Classification</th><td>Confidential &mdash; Internal Use Only</td></tr>
+    <tr><th>Version</th><td>1.0</td></tr>
+    <tr><th>Status</th><td><span class="badge badge-draft">DRAFT</span></td></tr>
+    <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+    <tr><th>Last Reviewed</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+    <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+    <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Framework</th><td>SOC 2 (AICPA Trust Services Criteria 2017)</td></tr>
+    <tr><th>Applicable Standards</th><td>SOC 2 Type II &mdash; Security, Availability, Confidentiality</td></tr>
+    <tr><th>Distribution</th><td>Compliance Team, IT Security, Senior Management</td></tr>
+  </table>
+
+  <!-- ============================================================
+       Version History
+       ============================================================ -->
+  <h2>Version History</h2>
+  <div class="version-history">
+    <table>
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Author</th>
+          <th>Change Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[DATE]</span></td>
+          <td><span class="placeholder">[AUTHOR]</span></td>
+          <td>Initial evidence register creation; 95 evidence items mapped across all SOC 2 criteria</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================
+       Approval Block
+       ============================================================ -->
+  <h2>Document Approval</h2>
+  <div class="approval-block">
+    <table>
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Name</th>
+          <th>Signature</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prepared By</td>
+          <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+          <td></td>
+          <td><span class="placeholder">[DATE]</span></td>
+        </tr>
+        <tr>
+          <td>Reviewed By</td>
+          <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+          <td></td>
+          <td><span class="placeholder">[DATE]</span></td>
+        </tr>
+        <tr>
+          <td>Approved By &mdash; CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+          <td></td>
+          <td><span class="placeholder">[DATE]</span></td>
+        </tr>
+        <tr>
+          <td>Approved By &mdash; CEO</td>
+          <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+          <td></td>
+          <td><span class="placeholder">[DATE]</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================
+       Table of Contents
+       ============================================================ -->
+  <div class="toc" id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#purpose">Purpose and Scope</a></li>
+      <li><a href="#usage">How to Use This Register</a></li>
+      <li>
+        <a href="#register">Evidence Register</a>
+        <ol>
+          <li><a href="#cc1">CC1 &mdash; Control Environment</a></li>
+          <li><a href="#cc2">CC2 &mdash; Communication and Information</a></li>
+          <li><a href="#cc3">CC3 &mdash; Risk Assessment</a></li>
+          <li><a href="#cc5">CC5 &mdash; Control Activities</a></li>
+          <li><a href="#cc6">CC6 &mdash; Logical and Physical Access Controls</a></li>
+          <li><a href="#cc7">CC7 &mdash; System Operations</a></li>
+          <li><a href="#cc8">CC8 &mdash; Change Management</a></li>
+          <li><a href="#cc9">CC9 &mdash; Risk Mitigation / Vendor Management</a></li>
+          <li><a href="#avail">A &mdash; Availability</a></li>
+          <li><a href="#confid">C &mdash; Confidentiality</a></li>
+        </ol>
+      </li>
+      <li><a href="#summary">Evidence Summary Statistics</a></li>
+      <li><a href="#definitions">Definitions and Key</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================
+       1. Purpose and Scope
+       ============================================================ -->
+  <h1 id="purpose">1. Purpose and Scope</h1>
+  <p>
+    This Evidence Register provides a comprehensive mapping of all evidence artifacts required to
+    demonstrate Ramdoot Solutions' compliance with the AICPA SOC 2 Trust Services Criteria (TSC 2017).
+    It serves as the single source of truth for identifying, tracking, and managing evidence items
+    that support the organization's SOC 2 Type II examination.
+  </p>
+  <p>
+    The register covers the following Trust Services Categories:
+  </p>
+  <ul>
+    <li><strong>Common Criteria (CC1&ndash;CC9):</strong> Security (applicable to all SOC 2 engagements)</li>
+    <li><strong>Availability (A1):</strong> System availability commitments</li>
+    <li><strong>Confidentiality (C1):</strong> Information designated as confidential</li>
+  </ul>
+
+  <div class="callout callout-info">
+    <p><strong>Note:</strong> Each evidence item is assigned a unique identifier (RS-EV-xxx) and mapped to the
+    corresponding SOC 2 criteria, related policies, and controls. Evidence owners are responsible for
+    maintaining current evidence and ensuring timely collection per the defined frequency.</p>
+  </div>
+
+  <!-- ============================================================
+       2. How to Use This Register
+       ============================================================ -->
+  <h1 id="usage">2. How to Use This Register</h1>
+  <p>This register should be used as follows:</p>
+  <ul>
+    <li><strong>Evidence Owners</strong> &mdash; Identify your assigned evidence items, ensure artifacts are current, and upload to the designated storage location.</li>
+    <li><strong>Compliance Team</strong> &mdash; Track evidence collection progress, coordinate with owners, and verify completeness prior to the audit period.</li>
+    <li><strong>External Auditors</strong> &mdash; Use the storage location links to access evidence artifacts during the SOC 2 examination.</li>
+    <li><strong>Management</strong> &mdash; Monitor overall readiness via the summary statistics section.</li>
+  </ul>
+
+  <h3>Frequency Definitions</h3>
+  <table>
+    <thead>
+      <tr><th>Frequency</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Annual</td><td>Evidence collected or reviewed once per year (typically during the audit period)</td></tr>
+      <tr><td>Quarterly</td><td>Evidence collected or reviewed every three months</td></tr>
+      <tr><td>Monthly</td><td>Evidence collected or reviewed every month</td></tr>
+      <tr><td>Per Event</td><td>Evidence generated each time the relevant event occurs (e.g., new hire, incident)</td></tr>
+      <tr><td>Continuous</td><td>Evidence generated automatically or maintained on an ongoing basis</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       3. Evidence Register
+       ============================================================ -->
+  <h1 id="register">3. Evidence Register</h1>
+
+  <div class="evidence-table-wrapper">
+    <table class="evidence-table">
+      <thead>
+        <tr>
+          <th>Evidence ID</th>
+          <th>SOC 2 Criteria</th>
+          <th>Evidence Description</th>
+          <th>Related Policy</th>
+          <th>Related Control</th>
+          <th>Evidence Owner</th>
+          <th>Frequency</th>
+          <th>Status</th>
+          <th>Storage Location</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ====================================================
+             CC1 — Control Environment
+             ==================================================== -->
+        <tr class="section-divider" id="cc1">
+          <td colspan="10">CC1 &mdash; Control Environment (16 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-001</td>
+          <td>CC1.1</td>
+          <td>List of senior/executive management and board members with titles, roles, and reporting lines</td>
+          <td>Governance Charter</td>
+          <td>RS-GOV-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must reflect current organizational leadership</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-002</td>
+          <td>CC1.1</td>
+          <td>Executive/board meeting agendas and minutes (minimum 3 meetings from the audit period)</td>
+          <td>Governance Charter</td>
+          <td>RS-GOV-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must include security/compliance agenda items</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-003</td>
+          <td>CC1.1</td>
+          <td>Employee handbook (current version, updated within last 12 months)</td>
+          <td>Employee Handbook</td>
+          <td>RS-GOV-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must contain IT security and acceptable use sections</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-004</td>
+          <td>CC1.1</td>
+          <td>Code of Conduct policy (signed acknowledgement by all employees)</td>
+          <td>Code of Conduct</td>
+          <td>RS-GOV-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include ethics, integrity, and conflict of interest provisions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-005</td>
+          <td>CC1.1</td>
+          <td>Handbook acknowledgement form (signed by all employees confirming receipt and understanding)</td>
+          <td>Employee Handbook</td>
+          <td>RS-GOV-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Collected at onboarding and annually at handbook update</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-006</td>
+          <td>CC1.1</td>
+          <td>Employee performance review/evaluation form (sample of completed reviews)</td>
+          <td>Performance Management Policy</td>
+          <td>RS-GOV-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Provide 3-5 samples with PII redacted</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-007</td>
+          <td>CC1.1</td>
+          <td>Disciplinary policies and procedures for policy violations</td>
+          <td>Employee Handbook</td>
+          <td>RS-GOV-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must cover security policy violation consequences</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-008</td>
+          <td>CC1.1</td>
+          <td>Contractor/vendor employee agreement template and signed samples</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-GOV-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include confidentiality and security clauses</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-009</td>
+          <td>CC1.1</td>
+          <td>Contractor onboarding procedures documentation</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-GOV-008</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include access provisioning and training requirements</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-010</td>
+          <td>CC1.2</td>
+          <td>Board of Directors bylaws or charter document</td>
+          <td>Governance Charter</td>
+          <td>RS-GOV-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must describe oversight responsibilities for security</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-011</td>
+          <td>CC1.2</td>
+          <td>Board member biographies and qualifications demonstrating relevant expertise</td>
+          <td>Governance Charter</td>
+          <td>RS-GOV-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include technology and risk management experience</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-012</td>
+          <td>CC1.3</td>
+          <td>Current organizational chart (updated within the last 12 months)</td>
+          <td>Governance Charter</td>
+          <td>RS-GOV-010</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must show reporting lines for IT security function</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-013</td>
+          <td>CC1.3</td>
+          <td>Job descriptions for key security and IT roles (sample of 5)</td>
+          <td>Hiring Policy</td>
+          <td>RS-GOV-011</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include CISO, DevOps, SRE, Security Analyst, Compliance Manager</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-014</td>
+          <td>CC1.4</td>
+          <td>Security awareness training completion records (all employees, current period)</td>
+          <td>Security Awareness Training Policy</td>
+          <td>RS-GOV-012</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include completion rates, training content, and quiz results</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-015</td>
+          <td>CC1.4</td>
+          <td>Background check authorization form and completed check results (sample)</td>
+          <td>Hiring Policy</td>
+          <td>RS-GOV-013</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Provide 3-5 samples with PII redacted; must be pre-employment</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-016</td>
+          <td>CC1.4</td>
+          <td>Hiring policy and procedures document</td>
+          <td>Hiring Policy</td>
+          <td>RS-GOV-014</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must include background check, reference check, and security training requirements</td>
+        </tr>
+
+        <!-- ====================================================
+             CC2 — Communication and Information
+             ==================================================== -->
+        <tr class="section-divider" id="cc2">
+          <td colspan="10">CC2 &mdash; Communication and Information (8 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-017</td>
+          <td>CC2.1</td>
+          <td>Policy and procedure document management system screenshots (showing version control, review dates)</td>
+          <td>Document Management Policy</td>
+          <td>RS-GOV-015</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show document repository with version history</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-018</td>
+          <td>CC2.1</td>
+          <td>Information security policy set (complete collection of all security-related policies)</td>
+          <td>Information Security Policy</td>
+          <td>RS-GOV-016</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>All policies must be current, approved, and communicated</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-019</td>
+          <td>CC2.2</td>
+          <td>Internal communication procedures for security matters (email templates, Slack channels, escalation paths)</td>
+          <td>Communication Policy</td>
+          <td>RS-GOV-017</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include evidence of security notifications sent to staff</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-020</td>
+          <td>CC2.2</td>
+          <td>External communication procedures (customer notifications, breach disclosure, regulatory reporting)</td>
+          <td>Communication Policy</td>
+          <td>RS-GOV-018</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include customer-facing security documentation</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-021</td>
+          <td>CC2.2</td>
+          <td>Anonymous reporting channel evidence (whistleblower hotline, ethics reporting portal screenshots)</td>
+          <td>Code of Conduct</td>
+          <td>RS-GOV-019</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Demonstrate availability and employee awareness</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-022</td>
+          <td>CC2.3</td>
+          <td>SOC 2 system description document (describing system boundaries, components, and commitments)</td>
+          <td>System Description</td>
+          <td>RS-GOV-020</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must match auditor report Section III description</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-023</td>
+          <td>CC2.3</td>
+          <td>Security commitments communicated to customers (SLA excerpts, terms of service, trust page)</td>
+          <td>Communication Policy</td>
+          <td>RS-GOV-021</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include links to public trust/security page if applicable</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-024</td>
+          <td>CC2.1</td>
+          <td>New employee security onboarding materials and completion records</td>
+          <td>Security Awareness Training Policy</td>
+          <td>RS-GOV-022</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must be completed within first week of employment</td>
+        </tr>
+
+        <!-- ====================================================
+             CC3 — Risk Assessment
+             ==================================================== -->
+        <tr class="section-divider" id="cc3">
+          <td colspan="10">CC3 &mdash; Risk Assessment (7 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-025</td>
+          <td>CC3.1</td>
+          <td>Risk management policy document (defining risk appetite, methodology, and governance)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-RISK-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must define risk tolerance thresholds and escalation criteria</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-026</td>
+          <td>CC3.2</td>
+          <td>Risk assessment report (current period; identifying threats, vulnerabilities, likelihood, and impact)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-RISK-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must be performed within the audit period; include risk register</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-027</td>
+          <td>CC3.2</td>
+          <td>Risk treatment plan (documenting mitigation actions, owners, and target dates)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-RISK-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Track remediation progress for identified risks</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-028</td>
+          <td>CC3.3</td>
+          <td>Fraud risk assessment (evaluating potential for fraudulent activity, management override)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-RISK-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Address incentives, pressures, opportunities, and rationalizations</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-029</td>
+          <td>CC3.1</td>
+          <td>Information asset inventory (hardware, software, data stores, third-party services)</td>
+          <td>Asset Management Policy</td>
+          <td>RS-RISK-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include classification, owner, and criticality for each asset</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-030</td>
+          <td>CC3.4</td>
+          <td>Significant change assessment documentation (evaluating risk impact of major changes)</td>
+          <td>Change Management Policy</td>
+          <td>RS-RISK-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Required for infrastructure changes, vendor changes, or org restructuring</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-031</td>
+          <td>CC3.4</td>
+          <td>Regulatory change monitoring evidence (tracking changes in applicable laws and regulations)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-RISK-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Document review of regulatory landscape and impact assessment</td>
+        </tr>
+
+        <!-- ====================================================
+             CC5 — Control Activities
+             ==================================================== -->
+        <tr class="section-divider" id="cc5">
+          <td colspan="10">CC5 &mdash; Control Activities (7 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-032</td>
+          <td>CC5.1</td>
+          <td>Control activities mapped to risk assessment (showing controls that address identified risks)</td>
+          <td>Risk Management Policy</td>
+          <td>RS-CTRL-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Cross-reference with risk register entries</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-033</td>
+          <td>CC5.2</td>
+          <td>Access control policy document (defining authorization, authentication, and access principles)</td>
+          <td>Access Control Policy</td>
+          <td>RS-CTRL-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must define least privilege and separation of duties</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-034</td>
+          <td>CC5.2</td>
+          <td>Confidentiality/Non-Disclosure Agreement (NDA) template and signed samples</td>
+          <td>Confidentiality Policy</td>
+          <td>RS-CTRL-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Required for employees, contractors, and third parties with data access</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-035</td>
+          <td>CC5.2</td>
+          <td>Segregation of duties matrix (identifying incompatible roles and compensating controls)</td>
+          <td>Access Control Policy</td>
+          <td>RS-CTRL-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Cover development, deployment, and access administration functions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-036</td>
+          <td>CC5.3</td>
+          <td>Annual policy review evidence (sign-off records, change logs, review meeting minutes)</td>
+          <td>Document Management Policy</td>
+          <td>RS-CTRL-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>All policies must be reviewed at least annually</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-037</td>
+          <td>CC5.3</td>
+          <td>Control monitoring and testing results (internal audit or self-assessment of control effectiveness)</td>
+          <td>Internal Audit Policy</td>
+          <td>RS-CTRL-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include test procedures, findings, and remediation actions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-038</td>
+          <td>CC5.1</td>
+          <td>Organizational chart showing IT and security reporting structure</td>
+          <td>Governance Charter</td>
+          <td>RS-CTRL-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show security function independence and escalation paths</td>
+        </tr>
+
+        <!-- ====================================================
+             CC6 — Logical and Physical Access Controls
+             ==================================================== -->
+        <tr class="section-divider" id="cc6">
+          <td colspan="10">CC6 &mdash; Logical and Physical Access Controls (17 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-039</td>
+          <td>CC6.1</td>
+          <td>Multi-factor authentication (MFA) configuration screenshots for all production systems</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Cover cloud provider console, VPN, email, source control</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-040</td>
+          <td>CC6.1</td>
+          <td>Authentication and password policy settings screenshots (complexity, expiry, lockout)</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>From IdP (SSO), AD/LDAP, or application settings</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-041</td>
+          <td>CC6.1</td>
+          <td>Single sign-on (SSO) configuration evidence for corporate applications</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>List applications integrated with SSO</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-042</td>
+          <td>CC6.1</td>
+          <td>User provisioning and access request process documentation with workflow screenshots</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include approval workflow and sample access request tickets</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-043</td>
+          <td>CC6.2</td>
+          <td>User access review results (quarterly review of user accounts and privileges)</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Cover all critical systems; document remediation of exceptions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-044</td>
+          <td>CC6.2</td>
+          <td>Privileged access list and justification for each privileged account (admin, root, DBA)</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must document business justification for each privileged account</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-045</td>
+          <td>CC6.3</td>
+          <td>Role-based access control (RBAC) configuration screenshots from production systems</td>
+          <td>Access Control Policy</td>
+          <td>RS-ACC-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include role definitions and permission mappings</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-046</td>
+          <td>CC6.3</td>
+          <td>Termination/offboarding checklist with access revocation evidence (sample of 3-5)</td>
+          <td>Offboarding Policy</td>
+          <td>RS-ACC-008</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must show access removed within 24 hours of termination</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-047</td>
+          <td>CC6.4</td>
+          <td>Physical access controls documentation (badge access, visitor logs, datacenter security)</td>
+          <td>Physical Security Policy</td>
+          <td>RS-ACC-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include cloud provider datacenter attestations if applicable</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-048</td>
+          <td>CC6.6</td>
+          <td>Network architecture diagram showing security zones, firewalls, and traffic flow</td>
+          <td>Network Security Policy</td>
+          <td>RS-ACC-010</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must show DMZ, internal zones, and external connections</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-049</td>
+          <td>CC6.6</td>
+          <td>Firewall rules and security group configurations (production environment)</td>
+          <td>Network Security Policy</td>
+          <td>RS-ACC-011</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include rule review and cleanup evidence</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-050</td>
+          <td>CC6.6</td>
+          <td>Intrusion detection/prevention system (IDS/IPS) configuration and alert settings</td>
+          <td>Network Security Policy</td>
+          <td>RS-ACC-012</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include alert thresholds and escalation procedures</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-051</td>
+          <td>CC6.7</td>
+          <td>Encryption configuration evidence &mdash; data at rest (disk encryption, database encryption)</td>
+          <td>Encryption Policy</td>
+          <td>RS-ACC-013</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Document encryption algorithms, key lengths, and key management</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-052</td>
+          <td>CC6.7</td>
+          <td>Encryption configuration evidence &mdash; data in transit (TLS/SSL settings, VPN configuration)</td>
+          <td>Encryption Policy</td>
+          <td>RS-ACC-014</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Minimum TLS 1.2; include cipher suite configurations</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-053</td>
+          <td>CC6.7</td>
+          <td>SSL/TLS certificate inventory and expiration monitoring screenshots</td>
+          <td>Encryption Policy</td>
+          <td>RS-ACC-015</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include automated renewal configuration if applicable</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-054</td>
+          <td>CC6.8</td>
+          <td>Endpoint protection (EDR/antivirus) deployment and configuration screenshots</td>
+          <td>Endpoint Security Policy</td>
+          <td>RS-ACC-016</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show coverage percentage and update frequency</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-055</td>
+          <td>CC6.8</td>
+          <td>Mobile device management (MDM) policy and configuration (if BYOD or corporate devices)</td>
+          <td>Endpoint Security Policy</td>
+          <td>RS-ACC-017</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include remote wipe capability and encryption enforcement</td>
+        </tr>
+
+        <!-- ====================================================
+             CC7 — System Operations
+             ==================================================== -->
+        <tr class="section-divider" id="cc7">
+          <td colspan="10">CC7 &mdash; System Operations (11 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-056</td>
+          <td>CC7.1</td>
+          <td>Infrastructure monitoring configuration (uptime, CPU, memory, disk, network dashboards)</td>
+          <td>Operations Policy</td>
+          <td>RS-OPS-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include alerting thresholds and notification channels</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-057</td>
+          <td>CC7.1</td>
+          <td>Application monitoring and logging configuration (APM, error tracking, audit logs)</td>
+          <td>Operations Policy</td>
+          <td>RS-OPS-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show log retention period (minimum 90 days)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-058</td>
+          <td>CC7.1</td>
+          <td>Security event logging and SIEM configuration (centralized log aggregation and correlation)</td>
+          <td>Logging and Monitoring Policy</td>
+          <td>RS-OPS-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include correlation rules and alert escalation procedures</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-059</td>
+          <td>CC7.1</td>
+          <td>Vulnerability scan reports (internal and external; from the audit period)</td>
+          <td>Vulnerability Management Policy</td>
+          <td>RS-OPS-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include remediation timelines and closure evidence</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-060</td>
+          <td>CC7.1</td>
+          <td>Penetration test report (annual; performed by qualified third party)</td>
+          <td>Vulnerability Management Policy</td>
+          <td>RS-OPS-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include scope, methodology, findings, and remediation status</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-061</td>
+          <td>CC7.2</td>
+          <td>Anomaly detection and security event investigation procedures</td>
+          <td>Incident Response Policy</td>
+          <td>RS-OPS-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Document triage, analysis, and escalation workflow</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-062</td>
+          <td>CC7.2</td>
+          <td>IDS/IPS alert reports and response actions (sample from the audit period)</td>
+          <td>Network Security Policy</td>
+          <td>RS-OPS-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Monthly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include false positive tuning evidence</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-063</td>
+          <td>CC7.3</td>
+          <td>Incident response plan document (defining roles, procedures, communication, and recovery)</td>
+          <td>Incident Response Policy</td>
+          <td>RS-OPS-008</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must cover identification, containment, eradication, recovery, lessons learned</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-064</td>
+          <td>CC7.4</td>
+          <td>Incident management tickets and post-incident reports (all security incidents from audit period)</td>
+          <td>Incident Response Policy</td>
+          <td>RS-OPS-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include root cause analysis and corrective actions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-065</td>
+          <td>CC7.4</td>
+          <td>Incident response tabletop exercise results (annual simulation exercise)</td>
+          <td>Incident Response Policy</td>
+          <td>RS-OPS-010</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include scenario, participants, findings, and improvement actions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-066</td>
+          <td>CC7.5</td>
+          <td>Build and deployment procedures documentation (CI/CD pipeline configuration)</td>
+          <td>Change Management Policy</td>
+          <td>RS-OPS-011</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include pipeline screenshots, gates, and approval steps</td>
+        </tr>
+
+        <!-- ====================================================
+             CC8 — Change Management
+             ==================================================== -->
+        <tr class="section-divider" id="cc8">
+          <td colspan="10">CC8 &mdash; Change Management (11 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-067</td>
+          <td>CC8.1</td>
+          <td>Change management policy and procedures document</td>
+          <td>Change Management Policy</td>
+          <td>RS-CHG-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must define change types, approval requirements, and rollback procedures</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-068</td>
+          <td>CC8.1</td>
+          <td>Change request/ticket management system screenshots (showing workflow and approvals)</td>
+          <td>Change Management Policy</td>
+          <td>RS-CHG-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Provide 5-10 sample change tickets with full lifecycle</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-069</td>
+          <td>CC8.1</td>
+          <td>Software development lifecycle (SDLC) documentation and methodology</td>
+          <td>SDLC Policy</td>
+          <td>RS-CHG-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include secure coding standards and security review gates</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-070</td>
+          <td>CC8.1</td>
+          <td>Version control system configuration and branch protection rules</td>
+          <td>SDLC Policy</td>
+          <td>RS-CHG-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show required reviews, CI checks, and merge protections</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-071</td>
+          <td>CC8.1</td>
+          <td>Code review process evidence (pull request samples showing reviewer approval)</td>
+          <td>SDLC Policy</td>
+          <td>RS-CHG-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Provide 5-10 sample PRs showing review and approval</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-072</td>
+          <td>CC8.1</td>
+          <td>QA and testing process documentation (test plans, acceptance criteria, automated test results)</td>
+          <td>SDLC Policy</td>
+          <td>RS-CHG-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include unit, integration, and security test evidence</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-073</td>
+          <td>CC8.1</td>
+          <td>Production access list showing limited personnel with deployment privileges</td>
+          <td>Access Control Policy</td>
+          <td>RS-CHG-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Developers must not have direct production write access</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-074</td>
+          <td>CC8.1</td>
+          <td>Baseline configuration standards (server hardening, CIS benchmarks, golden images)</td>
+          <td>Configuration Management Policy</td>
+          <td>RS-CHG-008</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include Infrastructure as Code (IaC) templates if applicable</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-075</td>
+          <td>CC8.1</td>
+          <td>Separate environment evidence (screenshots showing dev, staging, and production isolation)</td>
+          <td>Change Management Policy</td>
+          <td>RS-CHG-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show network isolation, separate credentials, and data separation</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-076</td>
+          <td>CC8.1</td>
+          <td>Emergency/hotfix change procedure documentation and sample emergency change tickets</td>
+          <td>Change Management Policy</td>
+          <td>RS-CHG-010</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include post-hoc review and approval documentation</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-077</td>
+          <td>CC8.1</td>
+          <td>Patch management policy and evidence of timely patching (OS, application, dependencies)</td>
+          <td>Vulnerability Management Policy</td>
+          <td>RS-CHG-011</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Monthly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Critical patches within 30 days; include dependency scanning (e.g., Dependabot)</td>
+        </tr>
+
+        <!-- ====================================================
+             CC9 — Risk Mitigation / Vendor Management
+             ==================================================== -->
+        <tr class="section-divider" id="cc9">
+          <td colspan="10">CC9 &mdash; Risk Mitigation / Vendor Management (7 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-078</td>
+          <td>CC9.1</td>
+          <td>Vendor management policy document (vendor selection, assessment, and monitoring procedures)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must define vendor criticality tiers and assessment frequency</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-079</td>
+          <td>CC9.1</td>
+          <td>Vendor inventory with risk classification (all third-party service providers)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include data access level, criticality, and contract status</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-080</td>
+          <td>CC9.2</td>
+          <td>Vendor risk assessment questionnaires and results (for critical/high-risk vendors)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include security questionnaire responses and risk ratings</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-081</td>
+          <td>CC9.2</td>
+          <td>Third-party attestation reports (SOC 2, ISO 27001, PCI DSS from key vendors)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Collect from cloud provider, payment processor, etc.</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-082</td>
+          <td>CC9.2</td>
+          <td>SLA/MSA contracts with key vendors (sample of 5 including security provisions)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Highlight security, privacy, and data protection clauses</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-083</td>
+          <td>CC9.2</td>
+          <td>Vendor performance monitoring evidence (SLA compliance, uptime reports, issue tracking)</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Quarterly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Track vendor-related incidents and service disruptions</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-084</td>
+          <td>CC9.2</td>
+          <td>Vendor termination and data return/destruction procedures</td>
+          <td>Vendor Management Policy</td>
+          <td>RS-VND-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include data destruction certificates where applicable</td>
+        </tr>
+
+        <!-- ====================================================
+             A — Availability
+             ==================================================== -->
+        <tr class="section-divider" id="avail">
+          <td colspan="10">A &mdash; Availability (9 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-085</td>
+          <td>A1.1</td>
+          <td>Capacity monitoring dashboards and alerting configuration (CPU, memory, disk, bandwidth)</td>
+          <td>Operations Policy</td>
+          <td>RS-AVL-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Continuous</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include auto-scaling configuration if applicable</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-086</td>
+          <td>A1.1</td>
+          <td>Capacity planning documentation and forecasting (annual resource planning)</td>
+          <td>Operations Policy</td>
+          <td>RS-AVL-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include growth projections and infrastructure scaling plans</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-087</td>
+          <td>A1.1</td>
+          <td>Environmental safeguards documentation (power, cooling, fire suppression for on-premises equipment)</td>
+          <td>Physical Security Policy</td>
+          <td>RS-AVL-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>For cloud-hosted: reference provider's physical security attestation</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-088</td>
+          <td>A1.2</td>
+          <td>Backup configuration and schedule documentation (databases, files, configurations)</td>
+          <td>Backup and Recovery Policy</td>
+          <td>RS-AVL-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include backup frequency, retention, and encryption settings</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-089</td>
+          <td>A1.2</td>
+          <td>Backup restoration test results (annual test of backup recovery procedures)</td>
+          <td>Backup and Recovery Policy</td>
+          <td>RS-AVL-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Document RTO/RPO achieved vs. targets</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-090</td>
+          <td>A1.2</td>
+          <td>Disaster Recovery (DR) plan document</td>
+          <td>Disaster Recovery Policy</td>
+          <td>RS-AVL-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must define RTO, RPO, failover procedures, and communication plan</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-091</td>
+          <td>A1.2</td>
+          <td>Business Continuity Plan (BCP) document</td>
+          <td>Business Continuity Policy</td>
+          <td>RS-AVL-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include business impact analysis and critical process recovery priorities</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-092</td>
+          <td>A1.2</td>
+          <td>DR/BCP test results (annual disaster recovery simulation and tabletop exercise)</td>
+          <td>Disaster Recovery Policy</td>
+          <td>RS-AVL-008</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include test scenario, results, gaps identified, and remediation plan</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-093</td>
+          <td>A1.3</td>
+          <td>System uptime and availability reports (SLA performance for the audit period)</td>
+          <td>Operations Policy</td>
+          <td>RS-AVL-009</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Monthly</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include downtime incidents and root cause analysis</td>
+        </tr>
+
+        <!-- ====================================================
+             C — Confidentiality
+             ==================================================== -->
+        <tr class="section-divider" id="confid">
+          <td colspan="10">C &mdash; Confidentiality (7 items)</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-094</td>
+          <td>C1.1</td>
+          <td>Data classification policy (defining classification levels: public, internal, confidential, restricted)</td>
+          <td>Data Classification Policy</td>
+          <td>RS-CNF-001</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must include handling and labeling requirements for each level</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-095</td>
+          <td>C1.1</td>
+          <td>Data inventory showing classification applied to key data stores and repositories</td>
+          <td>Data Classification Policy</td>
+          <td>RS-CNF-002</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include databases, file shares, cloud storage, and SaaS applications</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-096</td>
+          <td>C1.1</td>
+          <td>Data Loss Prevention (DLP) configuration and policy screenshots</td>
+          <td>Data Protection Policy</td>
+          <td>RS-CNF-003</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include email, endpoint, and cloud DLP rules</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-097</td>
+          <td>C1.2</td>
+          <td>Data retention policy and schedule (defining retention periods by data type)</td>
+          <td>Data Retention Policy</td>
+          <td>RS-CNF-004</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must align with legal, regulatory, and contractual requirements</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-098</td>
+          <td>C1.2</td>
+          <td>Data disposal/destruction procedures and evidence (secure deletion, media sanitization)</td>
+          <td>Data Retention Policy</td>
+          <td>RS-CNF-005</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Per Event</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Include certificates of destruction for physical media</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-099</td>
+          <td>C1.1</td>
+          <td>Confidential data access logging and monitoring evidence</td>
+          <td>Logging and Monitoring Policy</td>
+          <td>RS-CNF-006</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Continuous</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Show audit trail for access to confidential/restricted data</td>
+        </tr>
+
+        <tr>
+          <td>RS-EV-100</td>
+          <td>C1.2</td>
+          <td>Privacy policy (public-facing) and privacy impact assessment documentation</td>
+          <td>Privacy Policy</td>
+          <td>RS-CNF-007</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Annual</td>
+          <td><span class="badge badge-required">REQUIRED</span></td>
+          <td><span class="placeholder">[EVIDENCE LINK TO BE ADDED]</span></td>
+          <td>Must be accessible from company website and reviewed annually</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================
+       4. Evidence Summary Statistics
+       ============================================================ -->
+  <h1 id="summary">4. Evidence Summary Statistics</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>SOC 2 Category</th>
+        <th>Evidence Items</th>
+        <th>Status</th>
+        <th>Annual</th>
+        <th>Quarterly</th>
+        <th>Monthly</th>
+        <th>Per Event</th>
+        <th>Continuous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CC1 &mdash; Control Environment</td>
+        <td>16</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>10</td>
+        <td>1</td>
+        <td>0</td>
+        <td>4</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC2 &mdash; Communication and Information</td>
+        <td>8</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>6</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC3 &mdash; Risk Assessment</td>
+        <td>7</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>3</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC5 &mdash; Control Activities</td>
+        <td>7</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC6 &mdash; Logical and Physical Access</td>
+        <td>17</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>10</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC7 &mdash; System Operations</td>
+        <td>11</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>7</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC8 &mdash; Change Management</td>
+        <td>11</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>7</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>CC9 &mdash; Vendor Management</td>
+        <td>7</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>4</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>A &mdash; Availability</td>
+        <td>9</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>6</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>C &mdash; Confidentiality</td>
+        <td>7</td>
+        <td><span class="badge badge-required">ALL REQUIRED</span></td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr style="font-weight: 700; background: var(--rs-accent-lt);">
+        <td><strong>TOTAL</strong></td>
+        <td><strong>100</strong></td>
+        <td><span class="badge badge-required">100 REQUIRED</span></td>
+        <td><strong>63</strong></td>
+        <td><strong>9</strong></td>
+        <td><strong>3</strong></td>
+        <td><strong>12</strong></td>
+        <td><strong>2</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-warning">
+    <p><strong>Collection Priority:</strong> Begin evidence collection with items marked as <strong>Annual</strong>
+    and <strong>Per Event</strong> frequency, as these typically require the most lead time. <strong>Continuous</strong>
+    and <strong>Quarterly</strong> items should be verified for automated collection mechanisms.</p>
+  </div>
+
+  <!-- ============================================================
+       5. Definitions and Key
+       ============================================================ -->
+  <h1 id="definitions">5. Definitions and Key</h1>
+
+  <h3>Status Badges</h3>
+  <table>
+    <thead>
+      <tr><th>Badge</th><th>Meaning</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-required">REQUIRED</span></td>
+        <td>Evidence artifact must be collected and maintained for SOC 2 compliance</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-implemented">IMPLEMENTED</span></td>
+        <td>Evidence has been collected and stored in the designated location</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-partial">PARTIAL</span></td>
+        <td>Evidence is partially available; additional collection needed</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-not-applicable">N/A</span></td>
+        <td>Evidence item not applicable to the organization (requires documented justification)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Control ID Prefixes</h3>
+  <table>
+    <thead>
+      <tr><th>Prefix</th><th>Domain</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>RS-GOV-</code></td><td>Governance and Organizational Controls</td></tr>
+      <tr><td><code>RS-RISK-</code></td><td>Risk Management Controls</td></tr>
+      <tr><td><code>RS-CTRL-</code></td><td>General Control Activities</td></tr>
+      <tr><td><code>RS-ACC-</code></td><td>Access Management Controls</td></tr>
+      <tr><td><code>RS-OPS-</code></td><td>Operations and Monitoring Controls</td></tr>
+      <tr><td><code>RS-CHG-</code></td><td>Change Management Controls</td></tr>
+      <tr><td><code>RS-VND-</code></td><td>Vendor Management Controls</td></tr>
+      <tr><td><code>RS-AVL-</code></td><td>Availability Controls</td></tr>
+      <tr><td><code>RS-CNF-</code></td><td>Confidentiality Controls</td></tr>
+    </tbody>
+  </table>
+
+  <h3>SOC 2 Trust Services Criteria Reference</h3>
+  <table>
+    <thead>
+      <tr><th>Criteria</th><th>Category</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>CC1</td><td>Control Environment</td><td>Management philosophy, organizational structure, HR policies</td></tr>
+      <tr><td>CC2</td><td>Communication &amp; Information</td><td>Internal/external communication, system description</td></tr>
+      <tr><td>CC3</td><td>Risk Assessment</td><td>Risk identification, analysis, fraud assessment</td></tr>
+      <tr><td>CC4</td><td>Monitoring Activities</td><td>Ongoing/separate evaluations, deficiency communication</td></tr>
+      <tr><td>CC5</td><td>Control Activities</td><td>Control selection, technology controls, policy deployment</td></tr>
+      <tr><td>CC6</td><td>Logical &amp; Physical Access</td><td>Authentication, access management, encryption, network security</td></tr>
+      <tr><td>CC7</td><td>System Operations</td><td>Monitoring, incident response, vulnerability management</td></tr>
+      <tr><td>CC8</td><td>Change Management</td><td>Change authorization, testing, deployment controls</td></tr>
+      <tr><td>CC9</td><td>Risk Mitigation</td><td>Vendor management, business risk mitigation</td></tr>
+      <tr><td>A1</td><td>Availability</td><td>System availability, capacity, backup, disaster recovery</td></tr>
+      <tr><td>C1</td><td>Confidentiality</td><td>Data classification, retention, disposal, protection</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
+  <div class="doc-footer">
+    <span>RS-SOC2-005 &mdash; SOC 2 Evidence Register v1.0</span>
+    <span>Ramdoot Solutions &mdash; Confidential</span>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+</body>
+</html>

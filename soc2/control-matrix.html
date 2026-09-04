@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 2 Control Matrix — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+  <style>
+    /* Control matrix specific overrides */
+    .matrix-table { table-layout: auto; }
+    .matrix-table th { font-size: 0.8rem; white-space: nowrap; }
+    .matrix-table td { font-size: 0.82rem; }
+    .matrix-table td:nth-child(1) { white-space: nowrap; font-family: var(--rs-mono); font-weight: 600; }
+    .matrix-table td:nth-child(2) { white-space: nowrap; font-family: var(--rs-mono); font-size: 0.8rem; }
+    .matrix-table td:nth-child(7),
+    .matrix-table td:nth-child(8) { white-space: nowrap; text-align: center; }
+    .matrix-table td:nth-child(9) { white-space: nowrap; }
+    .family-header td {
+      background: var(--rs-accent-lt) !important;
+      font-weight: 700;
+      color: var(--rs-navy);
+      font-size: 0.9rem;
+      padding: 0.7rem;
+      border-bottom: 2px solid var(--rs-navy);
+    }
+    .family-header:hover td { background: var(--rs-accent-lt) !important; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .summary-card {
+      border: 1px solid var(--rs-border);
+      border-radius: 4px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .summary-card .count {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--rs-navy);
+    }
+    .summary-card .label {
+      font-size: 0.82rem;
+      color: var(--rs-muted);
+      margin-top: 0.2rem;
+    }
+    .legend-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION BAR
+     ============================================================ -->
+<nav class="doc-nav no-print">
+  <span class="nav-brand">Ramdoot Solutions &mdash; Compliance</span>
+  <span>
+    <a href="../index.html">Home</a> &nbsp;|&nbsp;
+    <a href="#toc">Contents</a> &nbsp;|&nbsp;
+    <a href="#governance">Governance</a> &nbsp;|&nbsp;
+    <a href="#communication">Communication</a> &nbsp;|&nbsp;
+    <a href="#risk">Risk</a> &nbsp;|&nbsp;
+    <a href="#monitoring">Monitoring</a> &nbsp;|&nbsp;
+    <a href="#control-activities">Controls</a> &nbsp;|&nbsp;
+    <a href="#iam">IAM</a> &nbsp;|&nbsp;
+    <a href="#operations">Operations</a> &nbsp;|&nbsp;
+    <a href="#change-mgmt">Change Mgmt</a> &nbsp;|&nbsp;
+    <a href="#vrm">Vendor Risk</a> &nbsp;|&nbsp;
+    <button class="btn-print" onclick="window.print()">Print / PDF</button>
+  </span>
+</nav>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="cover-page">
+  <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+  <div class="org-name">RAMDOOT SOLUTIONS</div>
+  <div class="doc-type">Internal Compliance Documentation</div>
+
+  <h1 class="cover-title">SOC 2 Control Matrix</h1>
+  <p class="cover-subtitle">Trust Services Criteria &mdash; Comprehensive Control Inventory</p>
+
+  <div class="cover-meta">
+    <p><strong>Document ID:</strong> RS-SOC2-004</p>
+    <p><strong>Classification:</strong> Confidential &mdash; Internal Use Only</p>
+    <p><strong>Effective Date:</strong> September 2026</p>
+    <p><strong>Framework:</strong> AICPA SOC 2 Type II &mdash; Trust Services Criteria (2017/2022)</p>
+  </div>
+
+  <div class="cover-notice">
+    <strong>IMPORTANT NOTICE:</strong> This document is an internal compliance tool prepared by and for
+    Ramdoot Solutions. It is <strong>not</strong> a SOC 2 attestation report, nor has it been reviewed or
+    issued by an independent auditor. This control matrix documents Ramdoot Solutions' internal controls
+    mapped to the AICPA Trust Services Criteria and is intended to support readiness assessment,
+    gap analysis, and remediation planning. No representation is made regarding the operating
+    effectiveness of the controls described herein.
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE WRAPPER
+     ============================================================ -->
+<div class="page-wrapper">
+
+<!-- ============================================================
+     DOCUMENT CONTROL
+     ============================================================ -->
+<section>
+  <h2>Document Control</h2>
+  <table class="doc-control">
+    <tr><th>Document ID</th><td>RS-SOC2-004</td></tr>
+    <tr><th>Title</th><td>SOC 2 Control Matrix</td></tr>
+    <tr><th>Classification</th><td>Confidential &mdash; Internal Use Only</td></tr>
+    <tr><th>Framework</th><td>AICPA SOC 2 Type II &mdash; Trust Services Criteria (TSC) 2017/2022</td></tr>
+    <tr><th>Applicable Criteria</th><td>Common Criteria (CC1&ndash;CC9), Security</td></tr>
+    <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Approved By</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+    <tr><th>Effective Date</th><td>September 2026</td></tr>
+    <tr><th>Review Frequency</th><td>Annual (or upon significant change)</td></tr>
+    <tr><th>Next Review Date</th><td>September 2027</td></tr>
+    <tr><th>Status</th><td><span class="badge badge-draft">DRAFT</span></td></tr>
+  </table>
+</section>
+
+<!-- ============================================================
+     TABLE OF CONTENTS
+     ============================================================ -->
+<section class="toc" id="toc">
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#sec-introduction">Introduction</a>
+      <ol>
+        <li><a href="#sec-purpose">Purpose</a></li>
+        <li><a href="#sec-scope">Scope</a></li>
+        <li><a href="#sec-methodology">Methodology</a></li>
+        <li><a href="#sec-status-legend">Status Legend</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec-summary">Control Summary</a></li>
+    <li><a href="#sec-matrix">Control Matrix</a>
+      <ol>
+        <li><a href="#governance">CC1 &mdash; Governance (RS-GOV)</a></li>
+        <li><a href="#communication">CC2 &mdash; Communication (RS-COM)</a></li>
+        <li><a href="#risk">CC3 &mdash; Risk Assessment (RS-RSK)</a></li>
+        <li><a href="#monitoring">CC4 &mdash; Monitoring (RS-MON)</a></li>
+        <li><a href="#control-activities">CC5 &mdash; Control Activities (RS-CTL)</a></li>
+        <li><a href="#iam">CC6 &mdash; Identity &amp; Access Management (RS-IAM)</a></li>
+        <li><a href="#operations">CC7 &mdash; System Operations (RS-OPS)</a></li>
+        <li><a href="#change-mgmt">CC8 &mdash; Change Management (RS-CHG)</a></li>
+        <li><a href="#vrm">CC9 &mdash; Vendor Risk Management (RS-VRM)</a></li>
+      </ol>
+    </li>
+    <li><a href="#sec-approval">Approval</a></li>
+    <li><a href="#sec-version-history">Version History</a></li>
+  </ol>
+</section>
+
+<!-- ============================================================
+     1. INTRODUCTION
+     ============================================================ -->
+<section id="sec-introduction">
+  <h1>1. Introduction</h1>
+
+  <h2 id="sec-purpose">1.1 Purpose</h2>
+  <p>
+    This SOC 2 Control Matrix enumerates the internal controls that Ramdoot Solutions maintains
+    (or intends to implement) in alignment with the AICPA Trust Services Criteria (TSC). The matrix
+    serves as the central reference for gap analysis, remediation tracking, and audit readiness
+    assessment. Each control is mapped to one or more TSC criteria, with clear ownership, frequency,
+    evidence requirements, and implementation status.
+  </p>
+
+  <h2 id="sec-scope">1.2 Scope</h2>
+  <p>
+    This matrix covers the <strong>Common Criteria (CC1 through CC9)</strong> of the Security
+    trust services category. Controls are organized into nine families corresponding to the CC
+    groupings. The scope encompasses all information systems, processes, personnel, and
+    third-party relationships that support Ramdoot Solutions' service delivery.
+  </p>
+  <div class="callout callout-info">
+    <strong>Note:</strong> Availability, Processing Integrity, Confidentiality, and Privacy
+    criteria may be addressed in supplemental matrices as Ramdoot Solutions expands its
+    compliance program.
+  </div>
+
+  <h2 id="sec-methodology">1.3 Methodology</h2>
+  <p>Each control in this matrix has been defined using the following approach:</p>
+  <ul>
+    <li><strong>TSC Mapping:</strong> Direct reference to the applicable Trust Services Criteria point(s).</li>
+    <li><strong>Control Design:</strong> Description of the control's intended design, including operational detail sufficient for an auditor to understand the mechanism.</li>
+    <li><strong>Evidence Expectations:</strong> Specific artifacts and records that must be produced to demonstrate operating effectiveness.</li>
+    <li><strong>Status Assessment:</strong> Honest assessment of current implementation maturity — no control is marked as fully implemented without independent verification.</li>
+  </ul>
+
+  <h2 id="sec-status-legend">1.4 Status Legend</h2>
+  <div class="legend-grid">
+    <div class="legend-item">
+      <span class="badge badge-required">DOCUMENTATION REQUIRED</span>
+      <span>Control is designed but formal documentation or evidence does not yet exist.</span>
+    </div>
+    <div class="legend-item">
+      <span class="badge badge-partial">PARTIALLY IMPLEMENTED</span>
+      <span>Control operates informally or covers only a subset of the intended scope.</span>
+    </div>
+    <div class="legend-item">
+      <span class="badge badge-pending">REQUIRES CONFIRMATION</span>
+      <span>Control may be in place but has not been independently verified or tested.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     2. CONTROL SUMMARY
+     ============================================================ -->
+<section id="sec-summary">
+  <h1>2. Control Summary</h1>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="count">45</div>
+      <div class="label">Total Controls</div>
+    </div>
+    <div class="summary-card">
+      <div class="count">9</div>
+      <div class="label">Control Families</div>
+    </div>
+    <div class="summary-card">
+      <div class="count">23</div>
+      <div class="label"><span class="badge badge-required">DOCUMENTATION REQUIRED</span></div>
+    </div>
+    <div class="summary-card">
+      <div class="count">15</div>
+      <div class="label"><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></div>
+    </div>
+    <div class="summary-card">
+      <div class="count">7</div>
+      <div class="label"><span class="badge badge-pending">REQUIRES CONFIRMATION</span></div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Control Family</th>
+        <th>TSC Group</th>
+        <th>Control Count</th>
+        <th>Preventive</th>
+        <th>Detective</th>
+        <th>Corrective</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>RS-GOV &mdash; Governance</td><td>CC1</td><td>5</td><td>4</td><td>1</td><td>0</td></tr>
+      <tr><td>RS-COM &mdash; Communication</td><td>CC2</td><td>5</td><td>3</td><td>1</td><td>1</td></tr>
+      <tr><td>RS-RSK &mdash; Risk Assessment</td><td>CC3</td><td>5</td><td>3</td><td>2</td><td>0</td></tr>
+      <tr><td>RS-MON &mdash; Monitoring</td><td>CC4</td><td>5</td><td>1</td><td>3</td><td>1</td></tr>
+      <tr><td>RS-CTL &mdash; Control Activities</td><td>CC5</td><td>5</td><td>3</td><td>1</td><td>1</td></tr>
+      <tr><td>RS-IAM &mdash; Identity &amp; Access</td><td>CC6</td><td>5</td><td>4</td><td>1</td><td>0</td></tr>
+      <tr><td>RS-OPS &mdash; System Operations</td><td>CC7</td><td>5</td><td>2</td><td>2</td><td>1</td></tr>
+      <tr><td>RS-CHG &mdash; Change Management</td><td>CC8</td><td>5</td><td>3</td><td>1</td><td>1</td></tr>
+      <tr><td>RS-VRM &mdash; Vendor Risk</td><td>CC9</td><td>5</td><td>3</td><td>2</td><td>0</td></tr>
+      <tr style="font-weight:700;">
+        <td>TOTAL</td><td></td><td>45</td><td>26</td><td>14</td><td>5</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================================
+     3. CONTROL MATRIX
+     ============================================================ -->
+<section id="sec-matrix" class="allow-break">
+  <h1>3. Control Matrix</h1>
+
+  <div class="callout callout-warning">
+    <strong>Implementation Note:</strong> All "Control Owner" fields are intentionally left blank
+    and must be completed by Ramdoot Solutions management. No control has been marked as fully
+    implemented, as operating effectiveness has not been independently verified.
+  </div>
+
+  <!-- ============================================================
+       CC1 — GOVERNANCE (RS-GOV)
+       ============================================================ -->
+  <h2 id="governance">3.1 CC1 &mdash; Governance (RS-GOV)</h2>
+  <p>
+    Controls related to the entity's commitment to integrity and ethical values, board and management
+    oversight, organizational structure, competence of personnel, and accountability mechanisms.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-GOV-001 -->
+      <tr>
+        <td>RS-GOV-001</td>
+        <td>CC1.1</td>
+        <td>Code of Conduct &amp; Ethics Policy</td>
+        <td>Ensure all personnel understand and commit to the organization's ethical standards and integrity expectations.</td>
+        <td>Ramdoot Solutions maintains a written Code of Conduct and Ethics Policy that defines acceptable behavior, conflict-of-interest disclosure requirements, anti-fraud expectations, and disciplinary consequences for violations. The policy is distributed to all employees, contractors, and temporary staff during onboarding and is re-acknowledged annually via a signed attestation form. The policy is reviewed by senior management at least annually and updated to reflect regulatory changes or lessons learned from incidents.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Current Code of Conduct document with version history</li>
+            <li>Signed employee acknowledgement forms (sample)</li>
+            <li>Annual review meeting minutes</li>
+            <li>Onboarding checklist referencing policy distribution</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Policy document must be formalized and version-controlled. Annual acknowledgement tracking system to be established.</td>
+      </tr>
+      <!-- RS-GOV-002 -->
+      <tr>
+        <td>RS-GOV-002</td>
+        <td>CC1.2</td>
+        <td>Board &amp; Management Oversight Structure</td>
+        <td>Establish clear oversight responsibilities for internal controls at the board and senior management level.</td>
+        <td>Ramdoot Solutions defines a governance structure in which senior leadership (or a designated governance committee) provides oversight of the internal control environment. The governance body meets at least quarterly to review risk posture, control effectiveness summaries, incident reports, and compliance program status. Meeting agendas include standing items for information security updates, audit findings, and remediation tracking. Action items are recorded, assigned, and tracked to closure with defined deadlines.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Quarterly</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Governance committee charter</li>
+            <li>Quarterly meeting minutes with attendee list</li>
+            <li>Action item tracker with closure evidence</li>
+            <li>Organizational chart showing reporting lines</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Governance committee charter and cadence to be formally established. Consider whether existing leadership meetings satisfy this requirement.</td>
+      </tr>
+      <!-- RS-GOV-003 -->
+      <tr>
+        <td>RS-GOV-003</td>
+        <td>CC1.3</td>
+        <td>Organizational Structure &amp; Reporting Lines</td>
+        <td>Define clear organizational structure with delineated authority and reporting relationships.</td>
+        <td>Ramdoot Solutions maintains a documented organizational chart that delineates reporting relationships, spans of control, and functional responsibilities for all departments involved in service delivery and security operations. The organizational chart is updated within 30 days of any structural change (hiring, departures, reorganizations). Role descriptions are maintained for all positions with security or control responsibilities, specifying required qualifications, authority levels, and accountability expectations.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Current organizational chart (dated)</li>
+            <li>Role descriptions for key positions</li>
+            <li>Evidence of timely updates following changes</li>
+            <li>RACI matrix for security functions</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Organizational chart likely exists informally. Formal version control and role descriptions for security-relevant positions needed.</td>
+      </tr>
+      <!-- RS-GOV-004 -->
+      <tr>
+        <td>RS-GOV-004</td>
+        <td>CC1.4</td>
+        <td>Competence &amp; Professional Development</td>
+        <td>Ensure personnel possess and maintain the competencies necessary to fulfill their control responsibilities.</td>
+        <td>Ramdoot Solutions implements a competency management process that includes: (a) defining minimum competency requirements for each security-relevant role in job descriptions; (b) evaluating candidates against these requirements during hiring, including background verification; (c) providing role-specific security training within 30 days of onboarding; (d) conducting annual performance reviews that assess control-related competencies; and (e) maintaining a training log that tracks completion of mandatory security and compliance training modules for each employee.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Job descriptions with competency requirements</li>
+            <li>Training completion records (LMS or spreadsheet)</li>
+            <li>Performance review templates referencing security</li>
+            <li>Background check completion confirmations</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Training programs may exist but formal tracking of security-specific competencies against role requirements needs verification.</td>
+      </tr>
+      <!-- RS-GOV-005 -->
+      <tr>
+        <td>RS-GOV-005</td>
+        <td>CC1.5</td>
+        <td>Accountability &amp; Disciplinary Enforcement</td>
+        <td>Hold individuals accountable for their internal control responsibilities through defined enforcement mechanisms.</td>
+        <td>Ramdoot Solutions enforces accountability for internal control responsibilities through: (a) inclusion of control-related responsibilities in job descriptions and performance objectives; (b) documented disciplinary procedures for policy violations, with graduated consequences ranging from verbal warning to termination; (c) tracking of security incidents and policy violations attributed to individuals; and (d) annual review of disciplinary actions taken to identify systemic issues or training gaps. Accountability measures are communicated to all staff during onboarding and reinforced through periodic security awareness reminders.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Disciplinary policy document</li>
+            <li>Log of policy violations and outcomes</li>
+            <li>Annual summary of enforcement actions</li>
+            <li>Employee acknowledgement of accountability expectations</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Disciplinary policy may be part of HR handbook. Needs to be explicitly linked to information security control failures.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC2 — COMMUNICATION (RS-COM)
+       ============================================================ -->
+  <h2 id="communication">3.2 CC2 &mdash; Communication (RS-COM)</h2>
+  <p>
+    Controls governing internal and external communication channels, security awareness programs,
+    and the mechanisms by which relevant information reaches appropriate stakeholders.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-COM-001 -->
+      <tr>
+        <td>RS-COM-001</td>
+        <td>CC2.1</td>
+        <td>Information Security Policy Communication</td>
+        <td>Ensure all personnel have access to and understand current information security policies.</td>
+        <td>Ramdoot Solutions maintains a central repository (intranet, shared drive, or document management system) where all current information security policies, standards, and procedures are published and accessible to authorized personnel. Upon publication of a new or revised policy, an email notification is sent to all affected personnel with a summary of changes and a link to the full document. New employees receive a policy orientation package during their first week, including a checklist of required reading. The policy repository includes version history and a "last reviewed" date for each document.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Policy repository access logs or screenshots</li>
+            <li>Email notifications of policy updates (sample)</li>
+            <li>New hire orientation checklist with sign-off</li>
+            <li>Policy inventory with version dates</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Policies likely distributed but centralized repository with version control may not be formally established.</td>
+      </tr>
+      <!-- RS-COM-002 -->
+      <tr>
+        <td>RS-COM-002</td>
+        <td>CC2.2</td>
+        <td>Security Awareness Training Program</td>
+        <td>Educate all personnel on security threats, policies, and their individual responsibilities on a regular basis.</td>
+        <td>Ramdoot Solutions conducts a mandatory security awareness training program that includes: (a) initial security training for all new hires within 14 days of start date covering phishing, password hygiene, data classification, acceptable use, and incident reporting; (b) annual refresher training for all employees, delivered via online modules or instructor-led sessions; (c) role-specific training for personnel with elevated access or security responsibilities (e.g., developers receive secure coding training, administrators receive hardening workshops); and (d) periodic phishing simulation exercises at least twice per year, with results tracked and individuals who fail receiving supplemental training within 10 business days.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual + Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Training curriculum and materials</li>
+            <li>Completion records for all employees</li>
+            <li>Phishing simulation reports with metrics</li>
+            <li>Supplemental training records for failed simulations</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Formal training program with tracked completion needs to be established. Consider an LMS or third-party training platform.</td>
+      </tr>
+      <!-- RS-COM-003 -->
+      <tr>
+        <td>RS-COM-003</td>
+        <td>CC2.2</td>
+        <td>Internal Security Communication Channels</td>
+        <td>Provide reliable channels for internal communication of security-relevant information and incident reporting.</td>
+        <td>Ramdoot Solutions establishes and maintains dedicated internal communication channels for security matters, including: (a) a security-specific Slack channel or email distribution list monitored by the security team; (b) an anonymous reporting mechanism (whistleblower hotline or web form) for employees to report suspected fraud, policy violations, or security concerns without fear of retaliation; (c) documented escalation procedures that define when and how to escalate security issues to management; and (d) regular security bulletins or newsletters (at least quarterly) communicating current threats, upcoming policy changes, and lessons learned from incidents.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Documentation of available reporting channels</li>
+            <li>Anonymous reporting mechanism configuration</li>
+            <li>Escalation procedure document</li>
+            <li>Sample security bulletins or newsletters</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Slack channels likely exist. Anonymous reporting mechanism and formal escalation procedures may need establishment.</td>
+      </tr>
+      <!-- RS-COM-004 -->
+      <tr>
+        <td>RS-COM-004</td>
+        <td>CC2.3</td>
+        <td>External Communication &amp; Disclosure</td>
+        <td>Manage external communications regarding security commitments, obligations, and incidents in a controlled manner.</td>
+        <td>Ramdoot Solutions defines a process for managing external communications related to security and compliance, including: (a) designated spokespersons authorized to communicate security matters to external parties (clients, regulators, media); (b) templates and approval workflows for security incident notifications to affected clients; (c) contractual review of security commitments made in service agreements, SLAs, and privacy notices to ensure alignment with actual controls; and (d) annual review of externally published security documentation (website, marketing materials) for accuracy. All external security communications require approval from a designated manager before release.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>External communication policy document</li>
+            <li>Authorized spokesperson list</li>
+            <li>Incident notification templates</li>
+            <li>Annual review of published security statements</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>External communication procedures for security matters likely informal. Formal policy and templates needed.</td>
+      </tr>
+      <!-- RS-COM-005 -->
+      <tr>
+        <td>RS-COM-005</td>
+        <td>CC2.3</td>
+        <td>Client Security Reporting</td>
+        <td>Provide clients with timely and relevant information about security events that may affect their data or services.</td>
+        <td>Ramdoot Solutions maintains a client notification procedure for security events that includes: (a) defined severity thresholds that trigger client notification (e.g., any confirmed breach of client data triggers notification within 72 hours); (b) a notification template that includes incident summary, affected scope, containment actions taken, remediation steps, and point of contact; (c) a tracking log of all client notifications issued; and (d) post-incident follow-up communication providing root cause analysis and preventive measures within 30 days of incident closure. Notification obligations are aligned with contractual requirements and applicable regulations.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Corrective</td>
+        <td>
+          <ul>
+            <li>Client notification procedure document</li>
+            <li>Notification threshold definitions</li>
+            <li>Notification tracking log</li>
+            <li>Sample notification correspondence</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Formal client notification procedures need to be documented. Review existing contractual obligations for notification timelines.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC3 — RISK ASSESSMENT (RS-RSK)
+       ============================================================ -->
+  <h2 id="risk">3.3 CC3 &mdash; Risk Assessment (RS-RSK)</h2>
+  <p>
+    Controls governing risk identification, analysis, and response processes, including fraud risk
+    assessment and evaluation of changes that could impact the control environment.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-RSK-001 -->
+      <tr>
+        <td>RS-RSK-001</td>
+        <td>CC3.1</td>
+        <td>Enterprise Risk Assessment</td>
+        <td>Identify and assess risks to the achievement of entity objectives, including IT and information security risks.</td>
+        <td>Ramdoot Solutions performs a formal enterprise risk assessment at least annually, using a structured methodology that includes: (a) identification of internal and external threats to business objectives, information assets, and service delivery; (b) assessment of each risk's likelihood and impact using a defined rating scale (e.g., 5x5 matrix); (c) mapping of identified risks to existing controls to determine residual risk levels; (d) prioritization of risks and development of risk treatment plans (accept, mitigate, transfer, avoid) for risks exceeding the defined risk appetite; and (e) presentation of the risk assessment results to senior management for review and approval. The risk register is maintained as a living document and updated when significant new risks are identified.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Risk assessment methodology document</li>
+            <li>Completed risk register with ratings</li>
+            <li>Risk treatment plans for high/critical risks</li>
+            <li>Management sign-off on risk assessment results</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Formal risk assessment framework and register must be established. Define risk appetite statement first.</td>
+      </tr>
+      <!-- RS-RSK-002 -->
+      <tr>
+        <td>RS-RSK-002</td>
+        <td>CC3.2</td>
+        <td>Fraud Risk Assessment</td>
+        <td>Identify and assess risks of fraud, including management override of controls, unauthorized data manipulation, and asset misappropriation.</td>
+        <td>As part of the annual risk assessment, Ramdoot Solutions conducts a specific fraud risk analysis that evaluates: (a) opportunities for unauthorized access to financial systems, client data, or intellectual property; (b) risks of management override of established controls; (c) incentives or pressures that could motivate fraudulent activity; (d) attitudes or rationalizations that could lead to fraud; and (e) IT-specific fraud scenarios including unauthorized code changes, data exfiltration, and privilege escalation. Fraud risk scenarios are documented with likelihood and impact ratings, and specific anti-fraud controls are mapped to each identified scenario. Results are shared with the governance body.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Fraud risk assessment documentation</li>
+            <li>Fraud risk scenario inventory</li>
+            <li>Anti-fraud control mapping</li>
+            <li>Management review and acknowledgement</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Fraud risk assessment is a distinct deliverable from enterprise risk assessment. Must cover IT fraud scenarios.</td>
+      </tr>
+      <!-- RS-RSK-003 -->
+      <tr>
+        <td>RS-RSK-003</td>
+        <td>CC3.3</td>
+        <td>Technology Risk Assessment</td>
+        <td>Identify and evaluate risks specific to information technology systems, infrastructure, and data processing.</td>
+        <td>Ramdoot Solutions performs a technology-focused risk assessment that evaluates risks to: (a) production infrastructure including servers, databases, and network equipment; (b) application security vulnerabilities in developed and deployed software; (c) data storage and transmission security, including encryption adequacy; (d) business continuity and disaster recovery capabilities; (e) third-party technology dependencies and SaaS platform risks; and (f) emerging technology threats (e.g., AI-based attacks, supply chain compromise). The assessment includes review of vulnerability scan results, penetration test findings, and incident history. Technology risk ratings feed into the enterprise risk register and are used to prioritize remediation budgets.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Technology risk assessment report</li>
+            <li>Infrastructure and application inventory</li>
+            <li>Vulnerability scan summaries referenced</li>
+            <li>Prioritized remediation plan</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Technology risks likely assessed informally during infrastructure decisions. Needs formalization into a structured assessment.</td>
+      </tr>
+      <!-- RS-RSK-004 -->
+      <tr>
+        <td>RS-RSK-004</td>
+        <td>CC3.4</td>
+        <td>Change Risk Evaluation</td>
+        <td>Assess the impact of significant changes on the internal control environment before implementation.</td>
+        <td>Ramdoot Solutions evaluates the potential impact on the control environment when significant changes are planned, including: (a) changes to organizational structure, leadership, or staffing levels; (b) introduction of new technology platforms, vendors, or service offerings; (c) changes to regulatory or contractual requirements; (d) major infrastructure changes (cloud migration, data center moves, network redesign); and (e) mergers, acquisitions, or divestitures. For each significant change, a risk impact analysis is completed before the change is approved, identifying new risks introduced, controls that may be affected, and compensating controls or remediation actions required. The analysis is documented and reviewed by the appropriate governance body.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Change risk assessment template</li>
+            <li>Completed assessments for recent changes</li>
+            <li>Governance body review records</li>
+            <li>Definition of "significant change" criteria</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Criteria for what constitutes a "significant change" requiring risk evaluation must be formally defined.</td>
+      </tr>
+      <!-- RS-RSK-005 -->
+      <tr>
+        <td>RS-RSK-005</td>
+        <td>CC3.4</td>
+        <td>Risk Appetite &amp; Tolerance Statement</td>
+        <td>Define and communicate the organization's risk appetite and tolerance levels to guide risk-based decision-making.</td>
+        <td>Ramdoot Solutions' senior management establishes and approves a formal risk appetite statement that articulates: (a) the overall level of risk the organization is willing to accept in pursuit of its objectives; (b) specific risk tolerance thresholds for key risk categories (operational, financial, reputational, compliance); (c) absolute risk boundaries that must not be exceeded (e.g., no unencrypted storage of client PII, no production access without MFA); and (d) escalation requirements when risk levels approach tolerance thresholds. The risk appetite statement is reviewed annually, communicated to all managers, and used as a decision-making framework when evaluating risk treatment options. Deviations from risk appetite require documented justification and executive approval.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Risk appetite and tolerance statement</li>
+            <li>Management approval evidence</li>
+            <li>Communication records to managers</li>
+            <li>Deviation log with justifications</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Risk appetite statement is a foundational document. Must be established before the risk register can be properly calibrated.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC4 — MONITORING (RS-MON)
+       ============================================================ -->
+  <h2 id="monitoring">3.4 CC4 &mdash; Monitoring (RS-MON)</h2>
+  <p>
+    Controls for ongoing evaluation of the internal control environment, communication of
+    deficiencies, and remediation tracking.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-MON-001 -->
+      <tr>
+        <td>RS-MON-001</td>
+        <td>CC4.1</td>
+        <td>Continuous Control Monitoring</td>
+        <td>Establish ongoing monitoring mechanisms to evaluate whether internal controls are present and functioning over time.</td>
+        <td>Ramdoot Solutions implements continuous monitoring of key controls through: (a) automated alerting on security-relevant events (failed login attempts exceeding threshold, unauthorized access attempts, configuration changes to production systems); (b) daily automated checks of critical control indicators (backup completion, antivirus signature currency, certificate expiration, patch compliance); (c) monthly dashboard review by the security team summarizing control health metrics; and (d) integration of monitoring outputs into the quarterly governance review. Monitoring thresholds and alert rules are documented and reviewed semi-annually for adequacy. False positive rates are tracked and tuning actions are documented.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Monitoring tool configuration documentation</li>
+            <li>Alert rule definitions and thresholds</li>
+            <li>Monthly control health dashboards</li>
+            <li>False positive tuning records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Some automated monitoring likely exists. Formal control health dashboard and systematic threshold management needed.</td>
+      </tr>
+      <!-- RS-MON-002 -->
+      <tr>
+        <td>RS-MON-002</td>
+        <td>CC4.1</td>
+        <td>Internal Control Self-Assessment</td>
+        <td>Periodically assess the design and operating effectiveness of internal controls through structured self-assessment.</td>
+        <td>Ramdoot Solutions conducts a formal internal control self-assessment (ICSA) at least annually, in which each control owner evaluates the design adequacy and operating effectiveness of controls within their domain. The ICSA process includes: (a) completion of a standardized assessment questionnaire for each control; (b) collection and review of supporting evidence; (c) identification of control gaps or weaknesses; (d) development of remediation plans for identified deficiencies with assigned owners and target dates; and (e) aggregation and reporting of results to the governance body. The ICSA is timed to occur at least 60 days before any planned external audit engagement.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>ICSA questionnaire template</li>
+            <li>Completed assessment forms per control family</li>
+            <li>Evidence collection records</li>
+            <li>Summary report to governance body</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>ICSA process must be designed and implemented. Consider piloting with 2-3 control families before full rollout.</td>
+      </tr>
+      <!-- RS-MON-003 -->
+      <tr>
+        <td>RS-MON-003</td>
+        <td>CC4.2</td>
+        <td>Deficiency Tracking &amp; Remediation</td>
+        <td>Track identified control deficiencies through to resolution with clear accountability and timelines.</td>
+        <td>Ramdoot Solutions maintains a centralized deficiency tracker (ticketing system, spreadsheet, or GRC tool) that records all identified control deficiencies, audit findings, and risk exceptions. Each deficiency entry includes: (a) description and severity classification (critical, high, medium, low); (b) affected control(s) and TSC criteria; (c) root cause analysis; (d) remediation plan with specific action items; (e) assigned owner and target completion date; and (f) current status with evidence of progress. Critical and high-severity deficiencies are reviewed weekly by the security team. Overdue items are automatically escalated to senior management. The tracker is reviewed in quarterly governance meetings.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Manual</td>
+        <td>Corrective</td>
+        <td>
+          <ul>
+            <li>Deficiency tracker with all fields populated</li>
+            <li>Severity classification criteria</li>
+            <li>Escalation procedure for overdue items</li>
+            <li>Quarterly governance review records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Issues are likely tracked informally. Centralized tracker with formal severity classification and escalation procedures needed.</td>
+      </tr>
+      <!-- RS-MON-004 -->
+      <tr>
+        <td>RS-MON-004</td>
+        <td>CC4.2</td>
+        <td>Exception Management Process</td>
+        <td>Provide a controlled process for requesting, approving, and tracking temporary exceptions to established controls.</td>
+        <td>Ramdoot Solutions maintains a formal exception management process for situations where compliance with a specific control is not feasible. The process includes: (a) a standardized exception request form documenting the control, reason for exception, risk assessment, compensating controls, and requested duration; (b) approval authority defined by exception severity (manager for low risk, director for medium, executive for high/critical); (c) maximum exception duration of 90 days with mandatory re-evaluation before renewal; (d) documentation of compensating controls implemented during the exception period; and (e) a centralized exception register reviewed quarterly to identify patterns and systemic issues. Expired exceptions without renewal are treated as control deficiencies.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Exception request form template</li>
+            <li>Approval authority matrix</li>
+            <li>Exception register with status tracking</li>
+            <li>Quarterly review records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Exception management process needs formal establishment. Critical for audit readiness.</td>
+      </tr>
+      <!-- RS-MON-005 -->
+      <tr>
+        <td>RS-MON-005</td>
+        <td>CC4.1</td>
+        <td>Key Performance Indicator Reporting</td>
+        <td>Define and report on key security and control performance indicators to support evidence-based decision-making.</td>
+        <td>Ramdoot Solutions defines a set of Key Performance Indicators (KPIs) and Key Risk Indicators (KRIs) for the information security program, including: (a) mean time to detect and respond to security incidents; (b) percentage of employees completing security awareness training; (c) patch compliance rate for critical vulnerabilities; (d) percentage of access reviews completed on schedule; (e) number of overdue deficiency remediations; and (f) vendor risk assessment completion rate. KPIs are reported monthly to the security team and quarterly to the governance body. Trends are analyzed over rolling 12-month periods to identify deteriorating control areas. Threshold breaches trigger investigation and corrective action.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Monthly</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>KPI/KRI definitions with thresholds</li>
+            <li>Monthly reporting dashboards or reports</li>
+            <li>Trend analysis documentation</li>
+            <li>Threshold breach investigation records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>KPI definitions and reporting cadence must be established. Start with 5-6 core metrics before expanding.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC5 — CONTROL ACTIVITIES (RS-CTL)
+       ============================================================ -->
+  <h2 id="control-activities">3.5 CC5 &mdash; Control Activities (RS-CTL)</h2>
+  <p>
+    Controls addressing risk mitigation activities, technology general controls, and the deployment
+    of policies and procedures that operationalize the control environment.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-CTL-001 -->
+      <tr>
+        <td>RS-CTL-001</td>
+        <td>CC5.1</td>
+        <td>Information Security Policy Framework</td>
+        <td>Maintain a comprehensive set of information security policies that address all material risk areas.</td>
+        <td>Ramdoot Solutions maintains an information security policy framework consisting of: (a) an overarching Information Security Policy approved by senior management; (b) supporting standards and procedures for access management, data classification, encryption, acceptable use, incident response, business continuity, and vendor management; (c) a policy lifecycle management process that includes annual review, version control, and formal approval; (d) a policy inventory listing all documents with owner, review date, and next review date; and (e) a gap analysis against applicable frameworks (SOC 2 TSC, ISO 27001 Annex A) performed at least annually to identify coverage gaps. Policies are written in clear language accessible to non-technical staff where applicable.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Policy inventory with review dates</li>
+            <li>Current approved policies (full set)</li>
+            <li>Policy approval records</li>
+            <li>Annual gap analysis results</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Some policies likely exist. Comprehensive framework with lifecycle management and gap analysis needed.</td>
+      </tr>
+      <!-- RS-CTL-002 -->
+      <tr>
+        <td>RS-CTL-002</td>
+        <td>CC5.2</td>
+        <td>Data Classification &amp; Handling</td>
+        <td>Classify information assets by sensitivity and apply appropriate handling, storage, and transmission controls.</td>
+        <td>Ramdoot Solutions implements a data classification scheme with the following levels: (a) Public &mdash; information intended for unrestricted disclosure; (b) Internal &mdash; information for internal use that would cause minor impact if disclosed; (c) Confidential &mdash; sensitive business or client information requiring access restrictions; and (d) Restricted &mdash; highly sensitive data (PII, credentials, financial records) requiring encryption at rest and in transit. Each classification level has documented handling requirements covering storage locations, transmission methods, access controls, labeling requirements, and disposal procedures. Data owners are responsible for classifying their assets and ensuring proper labeling. The classification scheme is referenced in onboarding training and reinforced through periodic awareness communications.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Data classification policy</li>
+            <li>Classification level definitions with handling rules</li>
+            <li>Data asset inventory with classifications</li>
+            <li>Training materials referencing classification</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Data classification policy and handling procedures must be formalized. Asset inventory should be bootstrapped from existing systems.</td>
+      </tr>
+      <!-- RS-CTL-003 -->
+      <tr>
+        <td>RS-CTL-003</td>
+        <td>CC5.2</td>
+        <td>Encryption Standards &amp; Key Management</td>
+        <td>Protect sensitive data through encryption and manage cryptographic keys securely throughout their lifecycle.</td>
+        <td>Ramdoot Solutions enforces encryption for data classified as Confidential or Restricted: (a) data at rest is encrypted using AES-256 or equivalent on all production databases, file storage, and backups; (b) data in transit is protected using TLS 1.2 or higher for all external connections and internal service-to-service communications where technically feasible; (c) SSH keys use RSA 4096-bit or Ed25519; (d) cryptographic key management follows defined procedures including key generation using approved algorithms, secure storage in hardware security modules or dedicated key management services, key rotation schedules (annual for symmetric keys, per policy for asymmetric), and key revocation and destruction procedures; and (e) an inventory of all cryptographic implementations and key custodians is maintained and reviewed semi-annually.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Encryption standards document</li>
+            <li>Key management procedures</li>
+            <li>Cryptographic inventory</li>
+            <li>TLS configuration scan results</li>
+            <li>Key rotation records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>Encryption likely in use for production systems. Standards documentation and key management procedures need verification.</td>
+      </tr>
+      <!-- RS-CTL-004 -->
+      <tr>
+        <td>RS-CTL-004</td>
+        <td>CC5.3</td>
+        <td>Endpoint Protection &amp; Hardening</td>
+        <td>Protect endpoints (workstations, servers, mobile devices) against malware and unauthorized modifications.</td>
+        <td>Ramdoot Solutions deploys endpoint protection on all company-managed devices including: (a) endpoint detection and response (EDR) or antivirus software with real-time scanning enabled on all workstations and servers, with centralized management and reporting; (b) automated signature updates at least daily; (c) host-based firewall enabled on all endpoints with default-deny outbound rules for non-standard ports; (d) full disk encryption (BitLocker, FileVault, or LUKS) enabled on all laptops and portable devices; (e) baseline hardening configurations applied to all operating systems per CIS Benchmarks or equivalent, documented in configuration standards; and (f) USB storage device restrictions enforced via group policy or MDM. Compliance with endpoint standards is monitored continuously, and non-compliant devices are quarantined or flagged for remediation within 48 hours.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>EDR/AV deployment dashboard showing coverage</li>
+            <li>Hardening configuration standards</li>
+            <li>Disk encryption compliance report</li>
+            <li>Non-compliance remediation records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>Endpoint protection tools likely deployed. Coverage rates, hardening baselines, and disk encryption status need verification.</td>
+      </tr>
+      <!-- RS-CTL-005 -->
+      <tr>
+        <td>RS-CTL-005</td>
+        <td>CC5.3</td>
+        <td>Network Security Controls</td>
+        <td>Protect the network perimeter and internal segments against unauthorized access and lateral movement.</td>
+        <td>Ramdoot Solutions implements network security controls including: (a) perimeter firewalls with documented rulesets reviewed quarterly, following a default-deny policy; (b) network segmentation separating production, development, staging, and corporate networks with controlled inter-segment access; (c) intrusion detection/prevention systems (IDS/IPS) monitoring network traffic for known attack signatures and anomalous patterns; (d) VPN or zero-trust network access required for all remote access to internal resources; (e) DNS filtering to block access to known malicious domains; and (f) network access control (NAC) or equivalent mechanism to prevent unauthorized devices from connecting to the corporate network. Firewall rule changes require approval through the change management process and are logged for audit purposes.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Corrective</td>
+        <td>
+          <ul>
+            <li>Network architecture diagram</li>
+            <li>Firewall ruleset review records</li>
+            <li>IDS/IPS configuration and alert samples</li>
+            <li>VPN access logs (sample period)</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Core network controls likely in place. Formal documentation, quarterly rule reviews, and segmentation verification needed.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC6 — IDENTITY & ACCESS MANAGEMENT (RS-IAM)
+       ============================================================ -->
+  <h2 id="iam">3.6 CC6 &mdash; Identity &amp; Access Management (RS-IAM)</h2>
+  <p>
+    Controls governing logical and physical access to information assets, including identity
+    lifecycle management, authentication, authorization, and access review processes.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-IAM-001 -->
+      <tr>
+        <td>RS-IAM-001</td>
+        <td>CC6.1</td>
+        <td>Identity Lifecycle Management</td>
+        <td>Manage the complete lifecycle of user identities from provisioning through deprovisioning.</td>
+        <td>Ramdoot Solutions maintains an identity lifecycle management process that governs: (a) account provisioning &mdash; new accounts are created only upon receipt of an approved access request from the employee's manager, specifying role-based access requirements; (b) account modification &mdash; role changes trigger a review of existing access, with unnecessary privileges removed within 5 business days; (c) account deprovisioning &mdash; upon employee termination or contractor end-date, all accounts are disabled within 24 hours and deleted within 30 days, triggered by HR notification to IT; (d) account inventory &mdash; a complete list of all user accounts across systems is maintained and reconciled quarterly against the HR active employee roster; and (e) orphan account detection &mdash; quarterly automated or manual scans identify accounts without matching active employees, which are investigated and disabled within 10 business days.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event + Quarterly</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Access request and approval records</li>
+            <li>Termination checklist with IT sign-off</li>
+            <li>Quarterly account reconciliation reports</li>
+            <li>Orphan account scan results</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Account provisioning/deprovisioning likely handled informally. Formal process with documented approvals and quarterly reconciliation needed.</td>
+      </tr>
+      <!-- RS-IAM-002 -->
+      <tr>
+        <td>RS-IAM-002</td>
+        <td>CC6.1</td>
+        <td>Role-Based Access Control</td>
+        <td>Restrict system access to authorized users based on their job function using predefined roles.</td>
+        <td>Ramdoot Solutions implements role-based access control (RBAC) across all production systems, internal applications, and SaaS platforms. The RBAC model includes: (a) a documented role matrix mapping each job function to the minimum set of system roles and permissions required (principle of least privilege); (b) predefined role templates that are assigned during provisioning rather than individual permission grants; (c) separation of duties enforcement &mdash; no single role combines conflicting privileges (e.g., code deployment and production database access, payment initiation and payment approval); (d) role assignments require manager approval and are logged; and (e) the role matrix is reviewed and updated at least annually or when organizational changes occur. Custom or ad hoc permissions that deviate from standard roles require documented justification and time-limited exception approval.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual + Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Role matrix document</li>
+            <li>System role configuration screenshots</li>
+            <li>Separation of duties conflict analysis</li>
+            <li>Role assignment approval records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>RBAC likely implemented in applications. Formal role matrix, SoD analysis, and comprehensive documentation needed.</td>
+      </tr>
+      <!-- RS-IAM-003 -->
+      <tr>
+        <td>RS-IAM-003</td>
+        <td>CC6.2</td>
+        <td>Multi-Factor Authentication</td>
+        <td>Require multi-factor authentication for access to sensitive systems and remote access scenarios.</td>
+        <td>Ramdoot Solutions requires multi-factor authentication (MFA) for: (a) all remote access to the corporate network (VPN, remote desktop); (b) access to production infrastructure (servers, databases, cloud management consoles); (c) access to source code repositories and CI/CD pipelines; (d) access to email and collaboration platforms; (e) administrative access to all SaaS applications; and (f) access to security tools and monitoring dashboards. Acceptable MFA factors include hardware security keys (FIDO2/U2F), authenticator app (TOTP), or push notification via an approved authenticator application. SMS-based OTP is not permitted as a primary MFA factor due to SIM-swapping risks. MFA enrollment status is monitored continuously, and non-compliant accounts are flagged for remediation within 48 hours.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>MFA policy specifying covered systems</li>
+            <li>MFA enrollment report per system</li>
+            <li>Non-compliant account remediation records</li>
+            <li>MFA method configuration evidence</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>MFA likely enabled on critical systems. Coverage completeness across all required systems needs verification.</td>
+      </tr>
+      <!-- RS-IAM-004 -->
+      <tr>
+        <td>RS-IAM-004</td>
+        <td>CC6.2, CC6.3</td>
+        <td>Privileged Access Management</td>
+        <td>Control and monitor privileged (administrative) access to prevent unauthorized use and detect anomalies.</td>
+        <td>Ramdoot Solutions manages privileged access through: (a) a documented inventory of all privileged accounts (root, administrator, service accounts with elevated rights) across all systems; (b) privileged accounts are assigned to named individuals (no shared admin accounts), with a break-glass procedure for emergency access using sealed credentials stored securely; (c) privileged access is granted for the minimum duration necessary, with just-in-time (JIT) access preferred where technically feasible; (d) all privileged sessions are logged, including commands executed and changes made, with logs retained for at least 12 months; (e) privileged access is reviewed quarterly by management, with unused privileges revoked; and (f) separate privileged accounts are maintained for administrative tasks (admins do not use their privileged account for daily email/web browsing).</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Quarterly</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Privileged account inventory</li>
+            <li>Quarterly privileged access review records</li>
+            <li>Privileged session logs (sample period)</li>
+            <li>Break-glass procedure and usage log</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Privileged accounts exist but formal inventory, quarterly reviews, and session logging may not be fully established.</td>
+      </tr>
+      <!-- RS-IAM-005 -->
+      <tr>
+        <td>RS-IAM-005</td>
+        <td>CC6.3</td>
+        <td>User Access Reviews</td>
+        <td>Periodically review and validate that user access rights remain appropriate and aligned with current job responsibilities.</td>
+        <td>Ramdoot Solutions conducts formal user access reviews on a defined schedule: (a) quarterly reviews for all privileged accounts and access to production systems; (b) semi-annual reviews for standard user access across all business applications; (c) reviews are performed by system owners or their delegates, not by IT staff who provision access; (d) reviewers certify each user's access as appropriate, flag access for modification, or flag accounts for removal; (e) flagged items are remediated within 10 business days, with remediation confirmed by the reviewer; and (f) access review completion reports are retained, including the percentage of reviews completed on time and the number of access modifications resulting from the review. The review process is documented in a procedure that specifies timelines, responsibilities, and escalation for non-completion.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Quarterly / Semi-Annual</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Access review procedure document</li>
+            <li>Completed access review certifications</li>
+            <li>Remediation tracking for flagged items</li>
+            <li>Access review completion metrics</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Formal access review process and schedule must be established. Template review forms needed for consistency.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC7 — SYSTEM OPERATIONS (RS-OPS)
+       ============================================================ -->
+  <h2 id="operations">3.7 CC7 &mdash; System Operations (RS-OPS)</h2>
+  <p>
+    Controls for infrastructure and application monitoring, threat detection, incident management,
+    backup, and disaster recovery operations.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-OPS-001 -->
+      <tr>
+        <td>RS-OPS-001</td>
+        <td>CC7.1</td>
+        <td>Infrastructure Monitoring &amp; Alerting</td>
+        <td>Monitor infrastructure health, performance, and availability to detect and respond to operational issues promptly.</td>
+        <td>Ramdoot Solutions monitors all production infrastructure components using centralized monitoring tools that cover: (a) server health metrics (CPU, memory, disk utilization, process status) with alerts at defined thresholds (e.g., 85% disk = warning, 95% = critical); (b) network performance (latency, packet loss, bandwidth utilization); (c) application uptime and response time via synthetic checks at least every 5 minutes; (d) database performance metrics (query latency, connection pool usage, replication lag); (e) SSL/TLS certificate expiration monitoring with alerts 30 days before expiry; and (f) log aggregation from all production systems to a centralized platform with at least 90 days of online retention. On-call rotation is defined with documented escalation procedures, ensuring 24/7 coverage for critical alerts. Alert fatigue is managed through monthly review and tuning of alert thresholds.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Monitoring tool configuration and coverage map</li>
+            <li>Alert threshold documentation</li>
+            <li>On-call rotation schedule</li>
+            <li>Sample alert-to-resolution workflow</li>
+            <li>Monthly tuning review records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>Production monitoring likely exists. Completeness of coverage, alert threshold documentation, and on-call procedures need verification.</td>
+      </tr>
+      <!-- RS-OPS-002 -->
+      <tr>
+        <td>RS-OPS-002</td>
+        <td>CC7.2</td>
+        <td>Vulnerability Management Program</td>
+        <td>Identify, assess, prioritize, and remediate security vulnerabilities across all systems in a timely manner.</td>
+        <td>Ramdoot Solutions operates a vulnerability management program that includes: (a) automated vulnerability scanning of all production and internet-facing systems at least monthly, and within 72 hours of notification of critical zero-day vulnerabilities; (b) scanning coverage includes operating systems, installed software, web applications, and container images; (c) vulnerability findings are triaged using CVSS scores and contextualized by asset criticality: critical (CVSS 9.0+) remediated within 7 days, high (7.0-8.9) within 30 days, medium (4.0-6.9) within 90 days, low (below 4.0) within 180 days or accepted; (d) remediation is tracked in the deficiency tracker with assigned owners; (e) an annual penetration test is performed by a qualified third party, with findings treated per the same remediation SLAs; and (f) monthly vulnerability metrics (total open vulns, ageing, SLA compliance) are reported to the security team.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Monthly</td>
+        <td>Automated</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Vulnerability scan reports (monthly samples)</li>
+            <li>Vulnerability remediation tracking records</li>
+            <li>SLA compliance metrics</li>
+            <li>Annual penetration test report</li>
+            <li>Remediation evidence for critical findings</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Some vulnerability scanning may occur. Formal program with defined SLAs, tracking, and annual penetration testing needs verification.</td>
+      </tr>
+      <!-- RS-OPS-003 -->
+      <tr>
+        <td>RS-OPS-003</td>
+        <td>CC7.3</td>
+        <td>Security Incident Response</td>
+        <td>Detect, respond to, contain, and recover from security incidents in a structured and timely manner.</td>
+        <td>Ramdoot Solutions maintains a Security Incident Response Plan (SIRP) that defines: (a) incident classification scheme with severity levels (P1-Critical through P4-Low) and response time targets for each; (b) roles and responsibilities for the incident response team, including incident commander, technical lead, communications lead, and legal liaison; (c) detection and triage procedures, including how alerts from monitoring systems are investigated and confirmed; (d) containment strategies for common incident types (malware, unauthorized access, data breach, DDoS, insider threat); (e) evidence preservation procedures, including chain of custody requirements for forensic artifacts; (f) eradication and recovery procedures; (g) post-incident review (PIR) process conducted within 10 business days of incident closure, producing a lessons-learned report with action items; and (h) regulatory and client notification requirements per RS-COM-005. The SIRP is tested through tabletop exercises at least annually.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event + Annual Test</td>
+        <td>Manual</td>
+        <td>Corrective</td>
+        <td>
+          <ul>
+            <li>Security Incident Response Plan document</li>
+            <li>Incident log with classification and timeline</li>
+            <li>Post-incident review reports</li>
+            <li>Annual tabletop exercise report</li>
+            <li>Incident response team roster</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>SIRP must be formally documented. Consider starting with a tabletop exercise to validate the plan before formalizing.</td>
+      </tr>
+      <!-- RS-OPS-004 -->
+      <tr>
+        <td>RS-OPS-004</td>
+        <td>CC7.4</td>
+        <td>Backup &amp; Recovery Operations</td>
+        <td>Protect against data loss through regular backups with tested recovery capabilities.</td>
+        <td>Ramdoot Solutions implements a backup and recovery program that includes: (a) automated daily backups of all production databases, file storage, and application configurations; (b) backup retention schedule: daily backups retained for 30 days, weekly backups for 90 days, monthly backups for 12 months; (c) backups are encrypted using AES-256 and stored in a geographically separate location from production (different availability zone, region, or offsite facility); (d) backup completion is monitored daily, with failures generating immediate alerts to the operations team; (e) backup integrity is verified through automated checksum validation; and (f) recovery testing is performed quarterly, including at least one full restoration test per year, with Recovery Time Objective (RTO) and Recovery Point Objective (RPO) measurements documented and compared against defined targets. Recovery test results are reported to management.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Daily + Quarterly Test</td>
+        <td>Automated</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Backup policy with retention schedule</li>
+            <li>Backup monitoring dashboard/reports</li>
+            <li>Recovery test records with RTO/RPO measurements</li>
+            <li>Backup failure investigation records</li>
+            <li>Offsite storage verification</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>Backups likely running for production systems. Recovery testing frequency, encryption, and offsite storage need verification.</td>
+      </tr>
+      <!-- RS-OPS-005 -->
+      <tr>
+        <td>RS-OPS-005</td>
+        <td>CC7.5</td>
+        <td>Business Continuity &amp; Disaster Recovery</td>
+        <td>Maintain the ability to continue critical business operations and recover from disasters within defined timeframes.</td>
+        <td>Ramdoot Solutions maintains a Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) that address: (a) business impact analysis (BIA) identifying critical processes, their dependencies, and maximum tolerable downtime; (b) defined RTO and RPO for each critical system; (c) disaster recovery procedures for each critical system, including failover to secondary infrastructure; (d) communication plan for notifying employees, clients, and stakeholders during a disruption; (e) alternate work arrangements for key personnel; (f) regular testing: DR failover test at least annually, BCP tabletop exercise at least annually; and (g) plan maintenance including review and update at least annually and within 30 days of any significant infrastructure change. Test results are documented with identified gaps, and remediation actions are tracked to closure. Third-party hosting provider DR capabilities are validated during vendor assessments.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual + Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Business Continuity Plan document</li>
+            <li>Disaster Recovery Plan document</li>
+            <li>Business Impact Analysis</li>
+            <li>DR test reports with results</li>
+            <li>Plan update history</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>BCP/DRP documentation is a high-priority gap. BIA should be conducted first to define scope and RTOs.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC8 — CHANGE MANAGEMENT (RS-CHG)
+       ============================================================ -->
+  <h2 id="change-mgmt">3.8 CC8 &mdash; Change Management (RS-CHG)</h2>
+  <p>
+    Controls governing the software development lifecycle, change authorization, testing,
+    deployment practices, and infrastructure change processes.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-CHG-001 -->
+      <tr>
+        <td>RS-CHG-001</td>
+        <td>CC8.1</td>
+        <td>Change Management Policy &amp; Process</td>
+        <td>Ensure all changes to production systems are authorized, documented, tested, and approved before deployment.</td>
+        <td>Ramdoot Solutions follows a formal change management process for all modifications to production systems, including: (a) all changes are logged in a change tracking system (e.g., Jira, GitHub Issues) with a description, justification, risk assessment, rollback plan, and assigned approver; (b) changes are classified by risk level: standard (pre-approved, low-risk), normal (requires approval), and emergency (expedited approval with post-implementation review); (c) normal and emergency changes require approval from a designated change approver who is not the person implementing the change; (d) testing requirements are defined for each change type, including functional testing, regression testing, and security impact assessment; (e) deployment windows are defined, with high-risk changes restricted to designated maintenance windows; and (f) a post-implementation review is conducted for all changes within 5 business days. Change advisory board (CAB) meetings are held weekly to review upcoming normal changes.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Change management policy document</li>
+            <li>Change tracking system records (sample)</li>
+            <li>Change approval records</li>
+            <li>CAB meeting minutes (sample)</li>
+            <li>Post-implementation review records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Changes tracked via GitHub PRs and Issues. Formal change management policy, CAB process, and risk classification need formalization.</td>
+      </tr>
+      <!-- RS-CHG-002 -->
+      <tr>
+        <td>RS-CHG-002</td>
+        <td>CC8.1</td>
+        <td>Secure Software Development Lifecycle</td>
+        <td>Integrate security practices throughout the software development lifecycle to reduce vulnerabilities in deployed code.</td>
+        <td>Ramdoot Solutions follows a secure SDLC that incorporates security at each phase: (a) Requirements &mdash; security requirements and abuse cases are defined alongside functional requirements; (b) Design &mdash; threat modeling is performed for significant new features or architectural changes; (c) Development &mdash; developers follow secure coding guidelines (OWASP Top 10 mitigation, input validation, parameterized queries, output encoding), enforced through code review checklists; (d) Testing &mdash; static application security testing (SAST) is integrated into the CI pipeline and runs on every pull request, with findings triaged before merge; (e) Review &mdash; all code changes require peer review by at least one reviewer who is not the author before merge to the main branch; and (f) Deployment &mdash; production deployments follow the change management process (RS-CHG-001). Developers receive secure coding training annually.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated + Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Secure SDLC documentation</li>
+            <li>Secure coding guidelines</li>
+            <li>SAST tool configuration and sample reports</li>
+            <li>Code review records showing reviewer approval</li>
+            <li>Threat model documentation (samples)</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-partial">PARTIALLY IMPLEMENTED</span></td>
+        <td>Code reviews via GitHub PRs in place. SAST integration, threat modeling, and formal secure coding guidelines need establishment.</td>
+      </tr>
+      <!-- RS-CHG-003 -->
+      <tr>
+        <td>RS-CHG-003</td>
+        <td>CC8.1</td>
+        <td>Environment Separation</td>
+        <td>Maintain separate environments for development, testing, staging, and production to prevent unauthorized changes and data exposure.</td>
+        <td>Ramdoot Solutions enforces separation between environments: (a) dedicated development, staging/QA, and production environments are maintained, each with independent infrastructure, databases, and configurations; (b) production data is not used in non-production environments unless it is anonymized or synthetically generated, per the data classification policy; (c) access to the production environment is restricted to authorized operations personnel and is not available to developers except through controlled deployment pipelines; (d) environment configurations are managed through infrastructure-as-code or documented configuration baselines; (e) promotion of code between environments follows a defined pipeline (dev to staging to production) with approval gates at each stage; and (f) environment parity is maintained between staging and production to ensure test results are representative.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Continuous</td>
+        <td>Automated</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Environment architecture documentation</li>
+            <li>Access control lists per environment</li>
+            <li>Deployment pipeline configuration</li>
+            <li>Evidence of data anonymization for non-prod</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>Environment separation likely exists (Docker, separate configs). Formal documentation and data anonymization practices need verification.</td>
+      </tr>
+      <!-- RS-CHG-004 -->
+      <tr>
+        <td>RS-CHG-004</td>
+        <td>CC8.1</td>
+        <td>Release &amp; Deployment Management</td>
+        <td>Manage the release and deployment of changes to production through controlled, repeatable, and auditable processes.</td>
+        <td>Ramdoot Solutions manages production deployments through: (a) a CI/CD pipeline that automates build, test, and deployment steps, ensuring consistency and reproducibility; (b) deployment artifacts are versioned and stored in a controlled artifact repository; (c) production deployments are executed through the pipeline only, not through manual server access (no "cowboy deployments"); (d) each deployment is tagged in version control with a unique release identifier; (e) deployment logs capture the release version, deployer identity, timestamp, and deployment outcome; (f) rollback procedures are documented and tested, with the ability to revert to the previous version within a defined timeframe (e.g., 30 minutes); and (g) deployment success criteria are defined (health checks, smoke tests) and verified before the deployment is considered complete. Failed deployments trigger automatic rollback or manual intervention per documented procedures.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Automated</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>CI/CD pipeline configuration</li>
+            <li>Deployment log records (sample period)</li>
+            <li>Rollback procedure documentation</li>
+            <li>Release version tags in version control</li>
+            <li>Deployment health check evidence</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-pending">REQUIRES CONFIRMATION</span></td>
+        <td>CI/CD pipeline and deploy.sh in use. Formal deployment logging, rollback testing, and health checks need verification.</td>
+      </tr>
+      <!-- RS-CHG-005 -->
+      <tr>
+        <td>RS-CHG-005</td>
+        <td>CC8.1</td>
+        <td>Emergency Change Procedures</td>
+        <td>Provide a controlled fast-track process for urgent changes that cannot wait for normal change management approval cycles.</td>
+        <td>Ramdoot Solutions defines an emergency change procedure for situations requiring immediate production changes (e.g., critical security patch, service-affecting outage resolution): (a) emergency changes may bypass the normal CAB review but require verbal or electronic approval from a designated emergency approver (at minimum, a senior technical lead or manager); (b) the emergency change is logged in the change tracking system contemporaneously or within 24 hours of implementation; (c) a post-implementation review is mandatory within 3 business days, documenting the change details, justification for emergency classification, testing performed, and any deviations from standard procedures; (d) emergency changes are reported in the next CAB meeting for retrospective review; and (e) management reviews the frequency and patterns of emergency changes quarterly to identify systemic issues that should be addressed through preventive measures. Excessive emergency change frequency triggers a root cause investigation.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Corrective</td>
+        <td>
+          <ul>
+            <li>Emergency change procedure document</li>
+            <li>Emergency change log entries</li>
+            <li>Post-implementation review records</li>
+            <li>Quarterly emergency change frequency analysis</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Emergency change procedures must be formally documented. Define criteria for what qualifies as an emergency change.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ============================================================
+       CC9 — VENDOR RISK MANAGEMENT (RS-VRM)
+       ============================================================ -->
+  <h2 id="vrm">3.9 CC9 &mdash; Vendor Risk Management (RS-VRM)</h2>
+  <p>
+    Controls governing the assessment, selection, monitoring, and offboarding of third-party
+    vendors and service providers that access, process, or store organizational data.
+  </p>
+
+  <table class="matrix-table">
+    <thead>
+      <tr>
+        <th>Control ID</th>
+        <th>TSC Mapping</th>
+        <th>Control Name</th>
+        <th>Control Objective</th>
+        <th>Control Description</th>
+        <th>Control Owner</th>
+        <th>Frequency</th>
+        <th>Manual / Auto</th>
+        <th>Type</th>
+        <th>Required Evidence</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- RS-VRM-001 -->
+      <tr>
+        <td>RS-VRM-001</td>
+        <td>CC9.1</td>
+        <td>Vendor Risk Assessment Program</td>
+        <td>Assess the security posture of third-party vendors before engagement and on an ongoing basis.</td>
+        <td>Ramdoot Solutions performs a risk assessment of all third-party vendors who access, process, or store company or client data, before contract execution and annually thereafter. The assessment includes: (a) classification of each vendor by risk tier based on data sensitivity, access level, and business criticality (Tier 1: critical/high-risk, Tier 2: moderate, Tier 3: low); (b) a security questionnaire covering the vendor's security policies, access controls, encryption practices, incident response capabilities, and compliance certifications; (c) review of the vendor's SOC 2 report, ISO 27001 certificate, or equivalent independent assessment (required for Tier 1 vendors); (d) evaluation of the vendor's financial stability and business continuity capabilities for critical vendors; and (e) documentation of assessment findings, risk rating, and any required remediation actions or contractual requirements. Vendors who fail to meet minimum security requirements are not approved for engagement, or existing engagements are escalated to management for risk acceptance.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual + Pre-Engagement</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Vendor risk assessment policy</li>
+            <li>Vendor risk tiering criteria</li>
+            <li>Completed vendor assessments (sample)</li>
+            <li>Vendor SOC/ISO certificate inventory</li>
+            <li>Non-approval or escalation records</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Vendor risk assessment program must be formally established. Start by inventorying all current vendors and classifying by tier.</td>
+      </tr>
+      <!-- RS-VRM-002 -->
+      <tr>
+        <td>RS-VRM-002</td>
+        <td>CC9.1</td>
+        <td>Vendor Inventory &amp; Classification</td>
+        <td>Maintain a complete inventory of all third-party vendors with risk classification to enable appropriate oversight.</td>
+        <td>Ramdoot Solutions maintains a centralized vendor register that records: (a) vendor name, primary contact, and contract owner; (b) services provided and data types accessed or processed; (c) risk tier classification (Tier 1/2/3) per the criteria defined in RS-VRM-001; (d) contract start date, renewal date, and termination notice period; (e) most recent risk assessment date and outcome; (f) compliance certifications held (SOC 2, ISO 27001, etc.) with expiration dates; (g) sub-processor information for vendors who further share data with their own third parties; and (h) data residency location(s). The vendor register is updated within 10 business days when vendors are onboarded, offboarded, or when contract terms change materially. The register is reviewed quarterly to identify vendors with overdue assessments, expiring certifications, or contracts approaching renewal.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Quarterly</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Vendor register (complete, current)</li>
+            <li>Quarterly review records</li>
+            <li>Vendor onboarding/offboarding records</li>
+            <li>Sub-processor documentation</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Centralized vendor register must be created. Enumerate all SaaS, hosting, and service providers currently in use.</td>
+      </tr>
+      <!-- RS-VRM-003 -->
+      <tr>
+        <td>RS-VRM-003</td>
+        <td>CC9.2</td>
+        <td>Vendor Contractual Security Requirements</td>
+        <td>Ensure vendor contracts include appropriate security, confidentiality, and compliance obligations.</td>
+        <td>Ramdoot Solutions includes the following security clauses in all contracts with vendors who access or process company or client data: (a) confidentiality and non-disclosure obligations; (b) data protection requirements aligned with the organization's data classification and handling standards; (c) right to audit or request evidence of the vendor's security controls; (d) incident notification requirements, including timelines (e.g., notify within 48 hours of a suspected breach); (e) data return and secure destruction obligations upon contract termination; (f) compliance with applicable laws and regulations; (g) insurance requirements proportional to vendor risk tier; and (h) sub-processor notification and approval requirements. A standard security addendum template is used for consistency, reviewed by legal, and updated at least annually. Contract negotiations that result in deviations from standard security requirements require documented risk acceptance from management.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Preventive</td>
+        <td>
+          <ul>
+            <li>Standard security addendum template</li>
+            <li>Executed contracts with security clauses</li>
+            <li>Legal review records for deviations</li>
+            <li>Risk acceptance records for non-standard terms</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Standard security addendum template needs creation. Review existing vendor contracts for security clause gaps.</td>
+      </tr>
+      <!-- RS-VRM-004 -->
+      <tr>
+        <td>RS-VRM-004</td>
+        <td>CC9.2</td>
+        <td>Ongoing Vendor Monitoring</td>
+        <td>Monitor vendor performance, security posture, and compliance on an ongoing basis throughout the engagement.</td>
+        <td>Ramdoot Solutions performs ongoing monitoring of vendor security and performance including: (a) annual re-assessment of Tier 1 vendors using the full vendor risk assessment process (RS-VRM-001), and biennial re-assessment for Tier 2 vendors; (b) continuous monitoring of vendor security ratings through external risk rating services (e.g., SecurityScorecard, BitSight) for Tier 1 vendors where available; (c) tracking vendor compliance certification renewals and following up on expired certifications within 30 days; (d) reviewing vendor security incident notifications and assessing potential impact to the organization; (e) monitoring vendor service level agreement (SLA) performance against contractual commitments; and (f) conducting periodic meetings (at least semi-annual for Tier 1) with vendor relationship managers to discuss security updates, upcoming changes, and any concerns. Vendor monitoring findings feed into the enterprise risk assessment.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Annual / Continuous</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Annual re-assessment records for Tier 1 vendors</li>
+            <li>Vendor security rating reports</li>
+            <li>Certification renewal tracking</li>
+            <li>Vendor meeting minutes</li>
+            <li>SLA performance reports</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Ongoing vendor monitoring process must be established. Prioritize Tier 1 vendor assessments first.</td>
+      </tr>
+      <!-- RS-VRM-005 -->
+      <tr>
+        <td>RS-VRM-005</td>
+        <td>CC9.2</td>
+        <td>Vendor Offboarding &amp; Data Return</td>
+        <td>Ensure secure offboarding of vendors including data return, destruction, and access revocation upon contract termination.</td>
+        <td>Ramdoot Solutions follows a vendor offboarding procedure when a vendor relationship ends, including: (a) notification to all internal stakeholders who interact with the vendor; (b) revocation of all vendor access to company systems, networks, and facilities within 24 hours of contract termination date; (c) request for confirmation of data deletion or return per contractual requirements, with a signed certificate of destruction for Tier 1 vendors; (d) recovery of any company-owned assets (hardware, tokens, credentials) provided to the vendor; (e) review of any vendor-managed systems or configurations that need to be transitioned to internal management or a replacement vendor; (f) update of the vendor register to reflect terminated status; and (g) retention of vendor assessment and contract records per the organization's document retention policy. Vendor offboarding is tracked using a standardized checklist, and completion is confirmed by the contract owner.</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Per Event</td>
+        <td>Manual</td>
+        <td>Detective</td>
+        <td>
+          <ul>
+            <li>Vendor offboarding checklist</li>
+            <li>Access revocation confirmation records</li>
+            <li>Data destruction certificates</li>
+            <li>Asset recovery records</li>
+            <li>Updated vendor register entries</li>
+          </ul>
+        </td>
+        <td><span class="badge badge-required">DOCUMENTATION REQUIRED</span></td>
+        <td>Vendor offboarding procedure and checklist must be created. Review past vendor terminations to identify gaps.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<!-- ============================================================
+     4. APPROVAL
+     ============================================================ -->
+<section id="sec-approval">
+  <h1>4. Approval</h1>
+  <p>
+    This SOC 2 Control Matrix has been reviewed and is approved for use as Ramdoot Solutions'
+    internal compliance reference document.
+  </p>
+
+  <div class="approval-block">
+    <table>
+      <tr>
+        <th>Prepared By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Signature</th>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="approval-block">
+    <table>
+      <tr>
+        <th>Reviewed By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Signature</th>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="approval-block">
+    <table>
+      <tr>
+        <th>Approved By</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+      </tr>
+      <tr>
+        <th>Signature</th>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================
+     5. VERSION HISTORY
+     ============================================================ -->
+<section id="sec-version-history" class="version-history">
+  <h1>5. Version History</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Date</th>
+        <th>Author</th>
+        <th>Changes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0.1</td>
+        <td>September 2026</td>
+        <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        <td>Initial draft &mdash; 45 controls across 9 families (CC1&ndash;CC9). All controls pending implementation verification and evidence collection.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="doc-footer">
+  <span>RS-SOC2-004 &mdash; SOC 2 Control Matrix &mdash; Ramdoot Solutions</span>
+  <span>Confidential &mdash; Internal Use Only</span>
+</footer>
+
+</div><!-- /.page-wrapper -->
+</body>
+</html>

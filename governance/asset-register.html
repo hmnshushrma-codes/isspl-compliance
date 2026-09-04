@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Asset Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">IT Asset Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-003</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; IT / Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Quarterly (inventory reconciliation) / Annually (full review)</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The IT Asset Register provides a comprehensive inventory of all information technology assets owned, leased, or managed by Ramdoot Solutions. Maintaining an accurate asset inventory is fundamental to information security, enabling the organisation to protect what it owns, track asset lifecycle, manage configurations, and ensure compliance with SOC 2 Trust Services Criteria and internal security policies.</p>
+    <p>This register supports requirements under SOC 2 CC6.1 (logical and physical access controls) and CC6.4 (restrictions on physical access to assets), as well as the organisation's Data Classification Policy (RS-SEC-006) and Information Security Policy (RS-SEC-001).</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Asset Owners:</strong></p>
+      <ol>
+        <li><strong>Registration:</strong> Every IT asset must be registered before deployment. Assign a unique Asset ID following the naming convention (see Section 3).</li>
+        <li><strong>Classification:</strong> Classify each asset according to the data classification scheme (Public, Internal, Confidential, Restricted) based on the highest sensitivity of data it stores, processes, or transmits.</li>
+        <li><strong>Ownership:</strong> Assign a named owner responsible for the asset's security, maintenance, and eventual disposal.</li>
+        <li><strong>Lifecycle Tracking:</strong> Record acquisition date and expected end-of-life. Plan replacements before end-of-life to avoid unsupported hardware or software.</li>
+        <li><strong>Status Updates:</strong> Update the status whenever an asset is deployed, redeployed, decommissioned, lost, or stolen.</li>
+        <li><strong>Quarterly Reconciliation:</strong> The IT Manager reconciles the register against physical inventory and system discovery tools quarterly.</li>
+        <li><strong>Disposal:</strong> Decommissioned assets must follow the secure disposal procedure, including data wiping and documentation.</li>
+      </ol>
+    </div>
+
+    <!-- Asset ID Convention -->
+    <h2>3. Asset ID Naming Convention</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Asset Type</th>
+          <th>Prefix</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Server (Physical)</td><td>SRV</td><td>SRV-001</td></tr>
+        <tr><td>Server (Virtual / Cloud)</td><td>VSR</td><td>VSR-001</td></tr>
+        <tr><td>Workstation (Desktop)</td><td>WKS</td><td>WKS-001</td></tr>
+        <tr><td>Laptop</td><td>LTP</td><td>LTP-001</td></tr>
+        <tr><td>Network Equipment</td><td>NET</td><td>NET-001</td></tr>
+        <tr><td>Mobile Device</td><td>MOB</td><td>MOB-001</td></tr>
+        <tr><td>Software License</td><td>SFT</td><td>SFT-001</td></tr>
+        <tr><td>Cloud Service</td><td>CLD</td><td>CLD-001</td></tr>
+        <tr><td>Storage Device</td><td>STG</td><td>STG-001</td></tr>
+        <tr><td>Peripheral</td><td>PER</td><td>PER-001</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Asset Register Table -->
+    <h2>4. Asset Register</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.78rem; min-width: 1200px;">
+      <thead>
+        <tr>
+          <th>Asset ID</th>
+          <th>Asset Type</th>
+          <th>Description</th>
+          <th>Owner</th>
+          <th>Location</th>
+          <th>Classification</th>
+          <th>Acquisition Date</th>
+          <th>End of Life</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Servers -->
+        <tr>
+          <td>VSR-001</td>
+          <td>Server (Cloud)</td>
+          <td>Production application server &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Confidential</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>VSR-002</td>
+          <td>Server (Cloud)</td>
+          <td>Production database server &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Restricted</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>VSR-003</td>
+          <td>Server (Cloud)</td>
+          <td>Staging/test environment server &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Internal</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <!-- Workstations -->
+        <tr>
+          <td>LTP-001</td>
+          <td>Laptop</td>
+          <td>Developer workstation &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Office / Remote</td>
+          <td>Confidential</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>LTP-002</td>
+          <td>Laptop</td>
+          <td>Developer workstation &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Office / Remote</td>
+          <td>Confidential</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <!-- Network -->
+        <tr>
+          <td>NET-001</td>
+          <td>Network Equipment</td>
+          <td>Office router/firewall &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Office</td>
+          <td>Internal</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>NET-002</td>
+          <td>Network Equipment</td>
+          <td>Office wireless access point &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Office</td>
+          <td>Internal</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <!-- Software -->
+        <tr>
+          <td>SFT-001</td>
+          <td>Software License</td>
+          <td>Operating system licenses (Windows/macOS) &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>All workstations</td>
+          <td>Internal</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>SFT-002</td>
+          <td>Software License</td>
+          <td>Development IDE licenses &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Developer workstations</td>
+          <td>Internal</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <!-- Cloud Services -->
+        <tr>
+          <td>CLD-001</td>
+          <td>Cloud Service</td>
+          <td>Cloud hosting platform subscription &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Cloud</td>
+          <td>Confidential</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <tr>
+          <td>CLD-002</td>
+          <td>Cloud Service</td>
+          <td>Source code repository &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Cloud</td>
+          <td>Confidential</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+        <!-- Storage -->
+        <tr>
+          <td>STG-001</td>
+          <td>Storage Device</td>
+          <td>External backup drive &mdash; <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Secure storage</td>
+          <td>Restricted</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="badge badge-pending">Pending Registration</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Data Classification Guide -->
+    <h2>5. Data Classification Levels</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Description</th>
+          <th>Examples</th>
+          <th>Handling Requirements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Restricted</strong></td>
+          <td>Most sensitive data; unauthorised disclosure would cause severe harm</td>
+          <td>Database credentials, encryption keys, client financial data</td>
+          <td>Encrypted at rest and in transit, strict access control, audit logging</td>
+        </tr>
+        <tr>
+          <td><strong>Confidential</strong></td>
+          <td>Sensitive business data; disclosure could cause significant harm</td>
+          <td>Source code, client data, employee PII, contracts</td>
+          <td>Encrypted, access limited to authorised personnel, NDA required for external parties</td>
+        </tr>
+        <tr>
+          <td><strong>Internal</strong></td>
+          <td>Internal business data not intended for external distribution</td>
+          <td>Policies, internal communications, project plans</td>
+          <td>Access limited to employees and authorised contractors</td>
+        </tr>
+        <tr>
+          <td><strong>Public</strong></td>
+          <td>Data approved for public distribution</td>
+          <td>Marketing materials, published documentation, public website content</td>
+          <td>No restrictions on distribution</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Lifecycle States -->
+    <h2>6. Asset Status Definitions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Active</strong></td><td>Asset is deployed and in active use</td></tr>
+        <tr><td><strong>In Storage</strong></td><td>Asset is procured but not yet deployed, or temporarily in storage</td></tr>
+        <tr><td><strong>Under Maintenance</strong></td><td>Asset is being repaired, updated, or reconfigured</td></tr>
+        <tr><td><strong>End of Life</strong></td><td>Asset has reached its end-of-life and is pending decommission</td></tr>
+        <tr><td><strong>Decommissioned</strong></td><td>Asset has been securely wiped and removed from service</td></tr>
+        <tr><td><strong>Lost / Stolen</strong></td><td>Asset is reported lost or stolen; incident response triggered</td></tr>
+        <tr><td><strong>Pending Registration</strong></td><td>Asset identified but registration details incomplete</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>7. Related Documents</h2>
+    <ul>
+      <li><a href="../security/information-security-policy.html">RS-SEC-001 &mdash; Information Security Policy</a></li>
+      <li><a href="../security/data-classification-policy.html">RS-SEC-006 &mdash; Data Classification and Handling Policy</a></li>
+      <li><a href="../procedures/asset-management.html">RS-PROC-006 &mdash; Asset Management Procedure</a></li>
+      <li><a href="./risk-register.html">RS-REG-001 &mdash; Risk Register</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with placeholder asset entries</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-003 &mdash; IT Asset Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

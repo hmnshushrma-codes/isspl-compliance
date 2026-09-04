@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RS-POL-012 Change Management Policy — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Information Security Policy Document</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Change Management Policy</h1>
+    </div>
+
+    <!-- ====================================================
+         1. DOCUMENT CONTROL TABLE
+         ==================================================== -->
+    <h2>1. Document Control</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Document ID</strong></td><td>RS-POL-012</td></tr>
+        <tr><td><strong>Title</strong></td><td>Change Management Policy</td></tr>
+        <tr><td><strong>Organization</strong></td><td>Ramdoot Solutions</td></tr>
+        <tr><td><strong>Document Owner</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Approver</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Version</strong></td><td>1.0</td></tr>
+        <tr><td><strong>Status</strong></td><td><span class="badge badge-draft">Draft</span></td></tr>
+        <tr><td><strong>Classification</strong></td><td>Confidential</td></tr>
+        <tr><td><strong>Effective Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+        <tr><td><strong>Next Review Date</strong></td><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         2. PURPOSE
+         ==================================================== -->
+    <h2>2. Purpose</h2>
+    <p>This policy defines the requirements for managing changes to information systems, infrastructure, applications, and configurations at Ramdoot Solutions. It ensures that all changes are planned, assessed, approved, tested, documented, and reviewed in a controlled manner, minimizing the risk of service disruption and unintended security exposure while supporting business agility.</p>
+
+    <!-- ====================================================
+         3. SCOPE
+         ==================================================== -->
+    <h2>3. Scope</h2>
+    <p>This policy applies to all changes made to:</p>
+    <ul>
+      <li>Production systems, including servers, databases, network devices, and cloud infrastructure.</li>
+      <li>Application software deployed to production or customer-facing environments.</li>
+      <li>Security systems and configurations (firewalls, IDS/IPS, access controls, encryption settings).</li>
+      <li>Operating system and middleware configurations.</li>
+      <li>CI/CD pipelines and deployment tooling.</li>
+      <li>Disaster recovery and backup configurations.</li>
+      <li>All personnel who initiate, approve, implement, or review changes.</li>
+    </ul>
+
+    <!-- ====================================================
+         4. OBJECTIVES
+         ==================================================== -->
+    <h2>4. Objectives</h2>
+    <ol>
+      <li>Ensure all changes to information systems are authorized, documented, and traceable.</li>
+      <li>Minimize the risk of unauthorized, untested, or poorly planned changes affecting system availability, integrity, or security.</li>
+      <li>Establish a structured approval process through the Change Advisory Board (CAB).</li>
+      <li>Ensure rollback plans exist for all changes.</li>
+      <li>Maintain a complete audit trail of all changes for compliance and forensic purposes.</li>
+    </ol>
+
+    <!-- ====================================================
+         5. DEFINITIONS
+         ==================================================== -->
+    <h2>5. Definitions</h2>
+    <table>
+      <thead>
+        <tr><th>Term</th><th>Definition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Change Request (CR)</strong></td><td>A formal proposal to modify any component of the information technology environment.</td></tr>
+        <tr><td><strong>Change Advisory Board (CAB)</strong></td><td>A cross-functional body that reviews, assesses, and approves or rejects change requests.</td></tr>
+        <tr><td><strong>Standard Change</strong></td><td>A pre-approved, low-risk, routine change that follows an established procedure (e.g., password reset, scheduled patch deployment).</td></tr>
+        <tr><td><strong>Normal Change</strong></td><td>A change that follows the full change management process including CAB review.</td></tr>
+        <tr><td><strong>Emergency Change</strong></td><td>A change that must be implemented urgently to restore service or mitigate a critical security threat, with retroactive CAB review.</td></tr>
+        <tr><td><strong>Impact Assessment</strong></td><td>An evaluation of the potential effects of a proposed change on systems, services, and users.</td></tr>
+        <tr><td><strong>Rollback Plan</strong></td><td>A documented procedure to revert a system to its pre-change state if the change fails or causes adverse effects.</td></tr>
+        <tr><td><strong>Post-Implementation Review (PIR)</strong></td><td>A formal review conducted after a change is deployed to assess its success, identify lessons learned, and close the change record.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         6. ROLES & RESPONSIBILITIES
+         ==================================================== -->
+    <h2>6. Roles &amp; Responsibilities</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Responsibilities</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Change Requester</strong></td>
+          <td>Initiates the change request with complete documentation; provides business justification; supports impact assessment.</td>
+        </tr>
+        <tr>
+          <td><strong>Change Manager</strong></td>
+          <td>Manages the change management process end-to-end; schedules CAB meetings; tracks change status; ensures documentation completeness.</td>
+        </tr>
+        <tr>
+          <td><strong>Change Advisory Board (CAB)</strong></td>
+          <td>Reviews and approves/rejects Normal and Emergency changes; assesses risk and impact; resolves scheduling conflicts.</td>
+        </tr>
+        <tr>
+          <td><strong>Change Implementer</strong></td>
+          <td>Executes the approved change according to the implementation plan; performs testing; executes rollback if needed.</td>
+        </tr>
+        <tr>
+          <td><strong>System / Application Owner</strong></td>
+          <td>Approves changes to their systems; validates post-implementation functionality; participates in PIR.</td>
+        </tr>
+        <tr>
+          <td><strong>CISO</strong></td>
+          <td>Reviews changes with security implications; approves emergency changes related to security incidents; ensures compliance.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         7. POLICY STATEMENTS
+         ==================================================== -->
+    <h2>7. Policy Statements</h2>
+    <ol>
+      <li>All changes to production systems <strong>shall</strong> be managed through a formal change management process.</li>
+      <li>No change <strong>shall</strong> be implemented in production without documented approval from the appropriate authority (CAB for Normal changes; CISO/IT Operations Manager for Emergency changes).</li>
+      <li>Every change request <strong>must</strong> include a documented impact assessment and rollback plan.</li>
+      <li>All changes <strong>shall</strong> be tested in a non-production environment before production deployment, except where the emergency change procedure applies.</li>
+      <li>Changes <strong>must</strong> be implemented within approved maintenance windows unless an emergency change is authorized.</li>
+      <li>A Post-Implementation Review <strong>shall</strong> be conducted for all Normal and Emergency changes.</li>
+      <li>All change records <strong>shall</strong> be maintained in the change management system with a complete audit trail.</li>
+      <li>Unauthorized changes <strong>shall</strong> be treated as security incidents and investigated accordingly.</li>
+    </ol>
+
+    <!-- ====================================================
+         8. DETAILED REQUIREMENTS
+         ==================================================== -->
+    <h2>8. Detailed Requirements</h2>
+
+    <h3>8.1 Change Request Process</h3>
+    <p>The standard change request process follows these steps:</p>
+    <ol>
+      <li><strong>Initiation:</strong> The Change Requester submits a Change Request (CR) through the change management system, including:
+        <ul>
+          <li>Description of the proposed change.</li>
+          <li>Business justification and expected benefits.</li>
+          <li>Systems, applications, and infrastructure affected.</li>
+          <li>Proposed implementation date and maintenance window.</li>
+          <li>Impact assessment and risk rating.</li>
+          <li>Rollback plan.</li>
+          <li>Testing plan and results.</li>
+        </ul>
+      </li>
+      <li><strong>Review:</strong> The Change Manager reviews the CR for completeness and assigns it to the next CAB meeting.</li>
+      <li><strong>Assessment:</strong> The CAB assesses the change for risk, impact, resource requirements, and scheduling conflicts.</li>
+      <li><strong>Approval / Rejection:</strong> The CAB approves, rejects, or requests modifications to the CR. Approval is recorded in the change management system.</li>
+      <li><strong>Implementation:</strong> The Change Implementer executes the change per the approved plan during the designated maintenance window.</li>
+      <li><strong>Verification:</strong> Post-implementation testing is performed to confirm the change was successful.</li>
+      <li><strong>Closure:</strong> A Post-Implementation Review is conducted, and the CR is closed in the change management system.</li>
+    </ol>
+
+    <h3>8.2 CAB Approval</h3>
+    <ul>
+      <li>The CAB <strong>shall</strong> convene at least weekly, or more frequently as needed.</li>
+      <li>CAB membership <strong>shall</strong> include representatives from IT Operations, IT Security, application development, and affected business units.</li>
+      <li>A quorum of at least three (3) CAB members is required for change approval.</li>
+      <li>CAB decisions <strong>shall</strong> be documented in meeting minutes and recorded against the relevant CRs.</li>
+      <li>Changes with security implications <strong>must</strong> have explicit CISO or IT Security Team approval.</li>
+    </ul>
+
+    <h3>8.3 Impact Assessment</h3>
+    <p>Every change request <strong>must</strong> include an impact assessment that evaluates:</p>
+    <table>
+      <thead>
+        <tr><th>Assessment Area</th><th>Considerations</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Service Impact</strong></td><td>Which services and users will be affected? What is the expected downtime?</td></tr>
+        <tr><td><strong>Security Impact</strong></td><td>Does the change alter access controls, encryption, network segmentation, or logging? Could it introduce new vulnerabilities?</td></tr>
+        <tr><td><strong>Compliance Impact</strong></td><td>Does the change affect regulatory or contractual compliance? Are audit controls impacted?</td></tr>
+        <tr><td><strong>Dependency Impact</strong></td><td>Are there upstream or downstream systems that depend on the component being changed?</td></tr>
+        <tr><td><strong>Resource Requirements</strong></td><td>What personnel, tools, and time are required to implement and verify the change?</td></tr>
+      </tbody>
+    </table>
+
+    <h3>8.4 Testing Requirements</h3>
+    <ul>
+      <li>All changes <strong>shall</strong> be tested in a non-production environment that mirrors the production configuration.</li>
+      <li>Test plans <strong>must</strong> cover:
+        <ul>
+          <li>Functional validation of the change.</li>
+          <li>Regression testing to ensure existing functionality is unaffected.</li>
+          <li>Security testing where the change modifies security-relevant components.</li>
+          <li>Performance testing where the change may impact system performance.</li>
+        </ul>
+      </li>
+      <li>Test results <strong>shall</strong> be documented and attached to the change request before CAB approval.</li>
+    </ul>
+
+    <h3>8.5 Rollback Plans</h3>
+    <ul>
+      <li>Every change request <strong>must</strong> include a rollback plan that describes how to revert the system to its pre-change state.</li>
+      <li>The rollback plan <strong>shall</strong> include:
+        <ul>
+          <li>Step-by-step rollback procedures.</li>
+          <li>Criteria that trigger a rollback decision.</li>
+          <li>Estimated time to complete the rollback.</li>
+          <li>Personnel responsible for executing the rollback.</li>
+          <li>Verification steps to confirm successful rollback.</li>
+        </ul>
+      </li>
+      <li>System backups or snapshots <strong>must</strong> be taken before implementing the change.</li>
+    </ul>
+
+    <h3>8.6 Emergency Change Procedure</h3>
+    <ol>
+      <li>An emergency change may be initiated when:
+        <ul>
+          <li>A critical service outage requires immediate resolution.</li>
+          <li>An active security threat or exploitation demands urgent response.</li>
+          <li>Regulatory or contractual deadlines necessitate immediate action.</li>
+        </ul>
+      </li>
+      <li>Emergency changes <strong>shall</strong> be authorized by the CISO, IT Operations Manager, or their designated delegate.</li>
+      <li>Abbreviated testing <strong>must</strong> be performed where feasible.</li>
+      <li>An emergency change record <strong>shall</strong> be created retroactively within 24 hours of implementation.</li>
+      <li>The CAB <strong>shall</strong> review all emergency changes at the next scheduled meeting to validate the decision and identify process improvements.</li>
+    </ol>
+
+    <h3>8.7 Change Documentation</h3>
+    <p>All changes <strong>shall</strong> be documented in the change management system with the following information:</p>
+    <ul>
+      <li>Change request ID and title.</li>
+      <li>Requester, implementer, and approver details.</li>
+      <li>Date and time of submission, approval, implementation, and closure.</li>
+      <li>Description of the change and business justification.</li>
+      <li>Impact assessment and risk rating.</li>
+      <li>Test plan and test results.</li>
+      <li>Rollback plan.</li>
+      <li>Post-implementation review findings.</li>
+      <li>Any deviations from the approved plan.</li>
+    </ul>
+
+    <h3>8.8 Post-Implementation Review (PIR)</h3>
+    <ul>
+      <li>A PIR <strong>shall</strong> be conducted within five (5) business days of change implementation.</li>
+      <li>The PIR <strong>must</strong> assess:
+        <ul>
+          <li>Whether the change achieved its intended objectives.</li>
+          <li>Whether any unintended side effects occurred.</li>
+          <li>Whether the implementation followed the approved plan.</li>
+          <li>Lessons learned and recommendations for process improvement.</li>
+        </ul>
+      </li>
+      <li>PIR findings <strong>shall</strong> be documented and attached to the change record.</li>
+    </ul>
+
+    <!-- ====================================================
+         9. EXCEPTIONS
+         ==================================================== -->
+    <h2>9. Exceptions</h2>
+    <p>Exceptions to this policy require written approval from the CISO and the Change Manager. Exception requests shall include business justification, risk assessment, compensating controls, and a proposed duration (maximum 12 months).</p>
+
+    <!-- ====================================================
+         10. MONITORING & COMPLIANCE
+         ==================================================== -->
+    <h2>10. Monitoring &amp; Compliance</h2>
+    <ul>
+      <li>The Change Manager <strong>shall</strong> produce a monthly Change Management Report summarizing change volume, approval rates, emergency change frequency, and PIR completion.</li>
+      <li>Unauthorized changes detected through configuration monitoring <strong>shall</strong> be investigated as security incidents.</li>
+      <li>Internal Audit <strong>shall</strong> review change management compliance at least annually.</li>
+      <li>Key metrics:
+        <ul>
+          <li>Total changes by type (Standard, Normal, Emergency).</li>
+          <li>Change success rate (changes implemented without rollback or incident).</li>
+          <li>Emergency change frequency and root causes.</li>
+          <li>PIR completion rate.</li>
+          <li>Number of unauthorized changes detected.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- ====================================================
+         11. VIOLATIONS / ENFORCEMENT
+         ==================================================== -->
+    <h2>11. Violations &amp; Enforcement</h2>
+    <ul>
+      <li>Implementing changes without required approval <strong>shall</strong> be treated as an unauthorized change and investigated.</li>
+      <li>Repeated non-compliance may result in revocation of change implementation privileges.</li>
+      <li>Personnel who circumvent the change management process may face disciplinary action, up to and including termination.</li>
+      <li>Unauthorized changes that result in security incidents or data loss may result in legal consequences.</li>
+    </ul>
+
+    <!-- ====================================================
+         12. RECORDS & EVIDENCE
+         ==================================================== -->
+    <h2>12. Records &amp; Evidence</h2>
+    <table>
+      <thead>
+        <tr><th>Record</th><th>Retention Period</th><th>Custodian</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Change request records (all types)</td><td>3 years</td><td>Change Manager</td></tr>
+        <tr><td>CAB meeting minutes</td><td>3 years</td><td>Change Manager</td></tr>
+        <tr><td>Impact assessment documentation</td><td>3 years</td><td>Change Manager</td></tr>
+        <tr><td>Test plans and results</td><td>3 years</td><td>Change Implementer</td></tr>
+        <tr><td>Post-Implementation Review reports</td><td>3 years</td><td>Change Manager</td></tr>
+        <tr><td>Emergency change authorization records</td><td>3 years</td><td>CISO Office</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         13. RELATED DOCUMENTS
+         ==================================================== -->
+    <h2>13. Related Documents</h2>
+    <ul>
+      <li>RS-POL-010 — Patch Management Policy</li>
+      <li>RS-POL-011 — Secure Development Policy</li>
+      <li>RS-POL-013 — Logging and Monitoring Policy</li>
+      <li>RS-POL-014 — Incident Response Policy</li>
+      <li>Ramdoot Solutions Configuration Management Procedure</li>
+      <li>Ramdoot Solutions Release Management Procedure</li>
+    </ul>
+
+    <!-- ====================================================
+         14. FRAMEWORK MAPPING
+         ==================================================== -->
+    <h2>14. Framework Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>Framework</th><th>Control Reference</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>SOC 2</strong></td><td>CC8.1</td><td>The entity authorizes, designs, develops or acquires, configures, documents, tests, approves, and implements changes to infrastructure, data, software, and procedures to meet its objectives.</td></tr>
+        <tr><td><strong>NISP</strong></td><td>Change Management</td><td>All changes to information systems shall be managed through a controlled change management process with documented authorization, testing, and review.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         15. REVIEW CYCLE
+         ==================================================== -->
+    <h2>15. Review Cycle</h2>
+    <p>This policy <strong>shall</strong> be reviewed at least annually, or sooner if triggered by:</p>
+    <ul>
+      <li>Significant changes to the organization's IT infrastructure or service delivery model.</li>
+      <li>Incidents caused by inadequately managed changes.</li>
+      <li>Findings from internal or external audits.</li>
+      <li>Changes in regulatory or contractual requirements.</li>
+    </ul>
+
+    <!-- ====================================================
+         16. APPROVAL BLOCK
+         ==================================================== -->
+    <h2>16. Approval</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Name</th><th>Signature</th><th>Date</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Document Owner</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>Approver</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>CISO</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ====================================================
+         17. VERSION HISTORY
+         ==================================================== -->
+    <h2>17. Version History</h2>
+    <table>
+      <thead>
+        <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.0</td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Initial draft</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-POL-012 Change Management Policy v1.0</span>
+    </div>
+
+  </div>
+</body>
+</html>

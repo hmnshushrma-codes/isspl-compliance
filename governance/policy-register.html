@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Policy Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Master Policy Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-008</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Internal &mdash; Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Quarterly (status updates) / Annually (full review)</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Master Policy Register is the single source of truth for all compliance, security, and governance documentation maintained by Ramdoot Solutions. It provides a complete inventory of every policy, procedure, register, and report in the compliance documentation suite, along with ownership, approval status, versioning, review schedules, and document locations.</p>
+    <p>This register supports the Compliance Policy (RS-GOV-002) requirement for policy lifecycle management and ensures that all documentation is current, reviewed on schedule, and owned by the appropriate parties. It also serves as a readiness reference for SOC 2/SOC 1 audits, enabling auditors to quickly locate relevant documentation.</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Document Owners and the Compliance Officer:</strong></p>
+      <ol>
+        <li><strong>New Documents:</strong> When a new policy, procedure, register, or report is created, add it to this register immediately. Assign a unique Document ID following the naming convention (see Section 3).</li>
+        <li><strong>Status Tracking:</strong> Update the Status column as documents progress through their lifecycle (Draft, Under Review, Approved, Retired).</li>
+        <li><strong>Review Scheduling:</strong> Set the Next Review Date based on the review frequency for the document type. The Compliance Officer is responsible for initiating reviews before the due date.</li>
+        <li><strong>Version Updates:</strong> When a document is revised, update the Version and Effective Date in this register.</li>
+        <li><strong>Retirement:</strong> When a document is superseded or no longer applicable, update its status to Retired and note the replacement document if applicable.</li>
+        <li><strong>Audit Preparation:</strong> Before any audit, review this register to confirm all documents are current, approved, and accessible at their listed locations.</li>
+      </ol>
+    </div>
+
+    <!-- Document ID Convention -->
+    <h2>3. Document ID Convention</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Prefix</th>
+          <th>Category</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>RS-GOV-</code></td><td>Governance Policies</td><td>RS-GOV-001</td></tr>
+        <tr><td><code>RS-SEC-</code></td><td>Security Policies</td><td>RS-SEC-001</td></tr>
+        <tr><td><code>RS-PROC-</code></td><td>Procedures</td><td>RS-PROC-001</td></tr>
+        <tr><td><code>RS-REG-</code></td><td>Registers</td><td>RS-REG-001</td></tr>
+        <tr><td><code>RS-SOC2-</code></td><td>SOC 2 Documentation</td><td>RS-SOC2-001</td></tr>
+        <tr><td><code>RS-SOC1-</code></td><td>SOC 1 Documentation</td><td>RS-SOC1-001</td></tr>
+        <tr><td><code>RS-NISP-</code></td><td>NISP Documentation</td><td>RS-NISP-001</td></tr>
+        <tr><td><code>RS-RPT-</code></td><td>Reports</td><td>RS-RPT-001</td></tr>
+        <tr><td><code>RS-EVD-</code></td><td>Evidence Templates</td><td>RS-EVD-001</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Status Definitions -->
+    <h2>4. Document Status Definitions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td>Document created but not yet reviewed or approved. May be incomplete.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-pending">Under Review</span></td>
+          <td>Document is undergoing review by designated reviewers or approvers.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-implemented">Approved</span></td>
+          <td>Document reviewed, approved, and in effect. This is the authoritative version.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-not-applicable">Retired</span></td>
+          <td>Document is no longer in effect. Superseded by a newer version or no longer applicable.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Master Register -->
+    <h2>5. Master Document Register</h2>
+
+    <!-- 5.1 Governance -->
+    <h3>5.1 Governance Policies</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-GOV-001</code></td>
+          <td>Code of Conduct</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/code-of-conduct.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-GOV-002</code></td>
+          <td>Compliance Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/compliance-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-GOV-003</code></td>
+          <td>Roles and Responsibilities Matrix</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/roles-responsibilities.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.2 Security Policies -->
+    <h3>5.2 Security Policies</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-SEC-001</code></td>
+          <td>Information Security Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/information-security-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-002</code></td>
+          <td>Access Control Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/access-control-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-003</code></td>
+          <td>Encryption and Key Management Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/encryption-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-004</code></td>
+          <td>Incident Response Plan</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/incident-response-plan.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-005</code></td>
+          <td>Acceptable Use Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/acceptable-use-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-006</code></td>
+          <td>Data Classification and Handling Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/data-classification-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-007</code></td>
+          <td>Network Security Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/network-security-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-008</code></td>
+          <td>Physical Security Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/physical-security-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-009</code></td>
+          <td>Business Continuity and Disaster Recovery Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/bcp-dr-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-010</code></td>
+          <td>Data Retention and Disposal Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/data-retention-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-011</code></td>
+          <td>Vulnerability Management Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/vulnerability-management-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-012</code></td>
+          <td>Logging and Monitoring Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/logging-monitoring-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-013</code></td>
+          <td>Mobile Device and Remote Work Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/mobile-remote-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-014</code></td>
+          <td>Password and Authentication Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/password-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-015</code></td>
+          <td>Software Development Lifecycle (SDLC) Security Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/sdlc-security-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-016</code></td>
+          <td>Privacy Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/privacy-policy.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SEC-017</code></td>
+          <td>Backup and Recovery Policy</td>
+          <td>Policy</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>security/backup-recovery-policy.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.3 Procedures -->
+    <h3>5.3 Procedures</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-PROC-001</code></td>
+          <td>Access Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/access-management.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-002</code></td>
+          <td>Onboarding and Offboarding Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/onboarding-offboarding.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-003</code></td>
+          <td>Incident Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/incident-management.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-004</code></td>
+          <td>Change Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/change-management.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-005</code></td>
+          <td>Vendor Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/vendor-management.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-006</code></td>
+          <td>Asset Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/asset-management.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-007</code></td>
+          <td>Risk Assessment Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/risk-assessment.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-008</code></td>
+          <td>Backup and Restore Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/backup-restore.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-009</code></td>
+          <td>Vulnerability Scanning and Patch Management Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/vulnerability-patching.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-010</code></td>
+          <td>BCP/DR Testing Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/bcp-dr-testing.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-011</code></td>
+          <td>Data Breach Notification Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/data-breach-notification.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-012</code></td>
+          <td>Secure Software Development Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/secure-development.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-013</code></td>
+          <td>Log Review Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/log-review.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-PROC-014</code></td>
+          <td>Endpoint Security Procedure</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>procedures/endpoint-security.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.4 Registers -->
+    <h3>5.4 Registers</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-REG-001</code></td>
+          <td>Risk Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/risk-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-002</code></td>
+          <td>Vendor Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/vendor-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-003</code></td>
+          <td>IT Asset Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/asset-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-004</code></td>
+          <td>Access Review Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/access-review-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-005</code></td>
+          <td>Security Incident Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/incident-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-006</code></td>
+          <td>Change Management Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/change-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-007</code></td>
+          <td>Security Training Register</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/training-register.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-REG-008</code></td>
+          <td>Master Policy Register (this document)</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>governance/policy-register.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.5 SOC 2 Documentation -->
+    <h3>5.5 SOC 2 Documentation</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-SOC2-001</code></td>
+          <td>SOC 2 Readiness Report</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/soc2-readiness-report.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-002</code></td>
+          <td>SOC 2 Control Matrix</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/control-matrix.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-003</code></td>
+          <td>SOC 2 System Description</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/system-description.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-004</code></td>
+          <td>SOC 2 Gap Analysis</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/gap-analysis.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-005</code></td>
+          <td>SOC 2 Remediation Plan</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/remediation-plan.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-006</code></td>
+          <td>SOC 2 Management Assertion</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/management-assertion.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC2-007</code></td>
+          <td>SOC 2 Subservice Organisation Matrix</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc2/subservice-matrix.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.6 SOC 1 Documentation -->
+    <h3>5.6 SOC 1 Documentation</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-SOC1-001</code></td>
+          <td>SOC 1 Readiness Report</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc1/soc1-readiness-report.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC1-002</code></td>
+          <td>Internal Controls Framework</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc1/internal-controls-framework.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-SOC1-003</code></td>
+          <td>SOC 1 Control Matrix</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>soc1/control-matrix.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.7 NISP Documentation -->
+    <h3>5.7 NISP Documentation</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-NISP-001</code></td>
+          <td>National Information Security Policy Compliance Report</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>nisp/nisp-compliance-report.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-NISP-002</code></td>
+          <td>NISP Control Mapping</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>nisp/control-mapping.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-NISP-003</code></td>
+          <td>NISP Gap Analysis</td>
+          <td>Report</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>nisp/gap-analysis.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- 5.8 Evidence Templates -->
+    <h3>5.8 Evidence Templates and Library</h3>
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.75rem; min-width: 1300px;">
+      <thead>
+        <tr>
+          <th>Document ID</th>
+          <th>Document Title</th>
+          <th>Type</th>
+          <th>Version</th>
+          <th>Owner</th>
+          <th>Approver</th>
+          <th>Effective Date</th>
+          <th>Next Review</th>
+          <th>Status</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>RS-EVD-001</code></td>
+          <td>Evidence Collection Guide</td>
+          <td>Procedure</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/evidence-guide.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-002</code></td>
+          <td>Evidence Library Index</td>
+          <td>Register</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/index.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-003</code></td>
+          <td>Access Review Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/access-review-template.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-004</code></td>
+          <td>Change Management Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/change-evidence-template.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-005</code></td>
+          <td>Incident Response Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/incident-evidence-template.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-006</code></td>
+          <td>Vendor Assessment Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/vendor-assessment-template.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-007</code></td>
+          <td>BCP/DR Test Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/bcp-dr-test-template.html</code></td>
+        </tr>
+        <tr>
+          <td><code>RS-EVD-008</code></td>
+          <td>Training Completion Evidence Template</td>
+          <td>Template</td>
+          <td>1.0</td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="placeholder">[TBC]</span></td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><code>evidence/training-evidence-template.html</code></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Summary Statistics -->
+    <h2>6. Document Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Count</th>
+          <th>Approved</th>
+          <th>Draft</th>
+          <th>Under Review</th>
+          <th>Retired</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Governance Policies</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Security Policies</td>
+          <td>17</td>
+          <td>0</td>
+          <td>17</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Procedures</td>
+          <td>14</td>
+          <td>0</td>
+          <td>14</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Registers</td>
+          <td>8</td>
+          <td>0</td>
+          <td>8</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>SOC 2 Documentation</td>
+          <td>7</td>
+          <td>0</td>
+          <td>7</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>SOC 1 Documentation</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>NISP Documentation</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Evidence Templates</td>
+          <td>8</td>
+          <td>0</td>
+          <td>8</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr style="font-weight: 700;">
+          <td><strong>TOTAL</strong></td>
+          <td><strong>63</strong></td>
+          <td><strong>0</strong></td>
+          <td><strong>63</strong></td>
+          <td><strong>0</strong></td>
+          <td><strong>0</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warning">
+      <p><strong>Note:</strong> All documents are currently in Draft status. The Compliance Officer should prioritise review and approval of governance policies (RS-GOV-001 through RS-GOV-003) and core security policies (RS-SEC-001, RS-SEC-002, RS-SEC-004) as these form the foundation of the compliance programme. Remaining documents should be reviewed and approved according to the implementation timeline agreed with management.</p>
+    </div>
+
+    <!-- Review Schedule -->
+    <h2>7. Review Schedule by Document Type</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Document Type</th>
+          <th>Review Frequency</th>
+          <th>Initiator</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Governance Policies</td>
+          <td>Annually</td>
+          <td>Compliance Officer</td>
+          <td>Board approval required for significant changes</td>
+        </tr>
+        <tr>
+          <td>Security Policies</td>
+          <td>Annually or upon significant change</td>
+          <td>CISO / Security Officer</td>
+          <td>Review triggered by incidents, regulatory changes, or audit findings</td>
+        </tr>
+        <tr>
+          <td>Procedures</td>
+          <td>Annually</td>
+          <td>Procedure Owner</td>
+          <td>Must align with parent policy versions</td>
+        </tr>
+        <tr>
+          <td>Registers (operational)</td>
+          <td>Quarterly</td>
+          <td>Register Owner</td>
+          <td>Content updated continuously; structure reviewed quarterly</td>
+        </tr>
+        <tr>
+          <td>SOC 2/SOC 1 Documentation</td>
+          <td>Annually or per audit cycle</td>
+          <td>Compliance Officer</td>
+          <td>Must be current for audit examination period</td>
+        </tr>
+        <tr>
+          <td>Evidence Templates</td>
+          <td>Annually</td>
+          <td>Compliance Officer</td>
+          <td>Updated when audit requirements change</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>8. Related Documents</h2>
+    <ul>
+      <li><a href="./compliance-policy.html">RS-GOV-002 &mdash; Compliance Policy</a></li>
+      <li><a href="./roles-responsibilities.html">RS-GOV-003 &mdash; Roles and Responsibilities Matrix</a></li>
+      <li><a href="../index.html">Compliance Documentation Home</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with 63 documents across 8 categories</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-008 &mdash; Master Policy Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

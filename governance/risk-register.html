@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Register — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a>
+      <a href="./index.html" style="margin-left:1rem;">Governance</a>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- Document Header -->
+    <div class="doc-header">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="org-sub">Governance &mdash; Registers</p>
+      <h1 class="doc-title" style="border:none; margin-top:1rem;">Risk Register</h1>
+    </div>
+
+    <!-- Document Control -->
+    <table class="doc-control">
+      <tr><th>Document ID</th><td><code>RS-REG-001</code></td></tr>
+      <tr><th>Version</th><td>1.0</td></tr>
+      <tr><th>Classification</th><td>Confidential &mdash; Management</td></tr>
+      <tr><th>Owner</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td></tr>
+      <tr><th>Review Frequency</th><td>Quarterly</td></tr>
+      <tr><th>Status</th><td><span class="badge badge-draft">Draft</span></td></tr>
+    </table>
+
+    <!-- Purpose -->
+    <h2>1. Purpose</h2>
+    <p>The Risk Register is a living document that captures all identified information security, operational, and compliance risks faced by Ramdoot Solutions. It provides a structured approach to risk identification, assessment, treatment, and monitoring, supporting the organisation's overall risk management programme.</p>
+    <p>This register is maintained by the CISO/Security Officer and reviewed quarterly by the Security and Compliance Committee. It aligns with the risk management requirements of SOC 2 Trust Services Criteria (CC3.1 - CC3.4) and the organisation's Compliance Policy (RS-GOV-002).</p>
+
+    <!-- How to Use -->
+    <h2>2. How to Use This Register</h2>
+    <div class="callout callout-info">
+      <p><strong>Instructions for Risk Owners:</strong></p>
+      <ol>
+        <li><strong>Identify:</strong> When a new risk is identified (through assessments, incidents, audits, or day-to-day operations), add a new row with a unique Risk ID.</li>
+        <li><strong>Assess:</strong> Rate the Likelihood (1-5) and Impact (1-5) to calculate the Risk Score (Likelihood x Impact).</li>
+        <li><strong>Treat:</strong> Select a treatment strategy (Mitigate, Accept, Transfer, or Avoid) and document the specific controls that address the risk.</li>
+        <li><strong>Assign:</strong> Designate a Risk Owner who is accountable for managing and monitoring the risk.</li>
+        <li><strong>Monitor:</strong> Review each risk at least quarterly. Update the status, likelihood, impact, and controls as the risk landscape changes.</li>
+        <li><strong>Report:</strong> Present risk register updates to the Security and Compliance Committee quarterly and to the Board annually.</li>
+      </ol>
+    </div>
+
+    <!-- Scoring Methodology -->
+    <h2>3. Risk Scoring Methodology</h2>
+
+    <h3>3.1 Likelihood Scale</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Score</th>
+          <th>Rating</th>
+          <th>Description</th>
+          <th>Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Rare</td>
+          <td>May only occur in exceptional circumstances</td>
+          <td>Less than once in 5 years</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Unlikely</td>
+          <td>Could occur at some time but not expected</td>
+          <td>Once in 2-5 years</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Possible</td>
+          <td>Might occur at some time</td>
+          <td>Once in 1-2 years</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Likely</td>
+          <td>Will probably occur in most circumstances</td>
+          <td>Several times per year</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Almost Certain</td>
+          <td>Expected to occur in most circumstances</td>
+          <td>Monthly or more frequently</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.2 Impact Scale</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Score</th>
+          <th>Rating</th>
+          <th>Financial Impact</th>
+          <th>Operational Impact</th>
+          <th>Reputational Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Insignificant</td>
+          <td>Negligible financial loss</td>
+          <td>No disruption to operations</td>
+          <td>No external awareness</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Minor</td>
+          <td>Small financial loss, absorbed within budget</td>
+          <td>Minor disruption, resolved within hours</td>
+          <td>Local/limited awareness</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Moderate</td>
+          <td>Significant financial loss requiring management attention</td>
+          <td>Partial disruption, resolved within 1-2 days</td>
+          <td>Industry awareness, media interest</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Major</td>
+          <td>Major financial loss impacting profitability</td>
+          <td>Major disruption, several days to recover</td>
+          <td>National media, client attrition</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Catastrophic</td>
+          <td>Existential financial loss, threat to business survival</td>
+          <td>Complete operational failure, weeks to recover</td>
+          <td>Widespread media, regulatory action, loss of major clients</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 Risk Score Matrix</h3>
+    <table style="text-align: center;">
+      <thead>
+        <tr>
+          <th style="text-align: center;">Likelihood \ Impact</th>
+          <th style="text-align: center;">1 (Insignificant)</th>
+          <th style="text-align: center;">2 (Minor)</th>
+          <th style="text-align: center;">3 (Moderate)</th>
+          <th style="text-align: center;">4 (Major)</th>
+          <th style="text-align: center;">5 (Catastrophic)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>5 (Almost Certain)</strong></td>
+          <td><span class="badge badge-medium">5</span></td>
+          <td><span class="badge badge-high">10</span></td>
+          <td><span class="badge badge-high">15</span></td>
+          <td><span class="badge badge-critical">20</span></td>
+          <td><span class="badge badge-critical">25</span></td>
+        </tr>
+        <tr>
+          <td><strong>4 (Likely)</strong></td>
+          <td><span class="badge badge-low">4</span></td>
+          <td><span class="badge badge-medium">8</span></td>
+          <td><span class="badge badge-high">12</span></td>
+          <td><span class="badge badge-critical">16</span></td>
+          <td><span class="badge badge-critical">20</span></td>
+        </tr>
+        <tr>
+          <td><strong>3 (Possible)</strong></td>
+          <td><span class="badge badge-low">3</span></td>
+          <td><span class="badge badge-medium">6</span></td>
+          <td><span class="badge badge-medium">9</span></td>
+          <td><span class="badge badge-high">12</span></td>
+          <td><span class="badge badge-high">15</span></td>
+        </tr>
+        <tr>
+          <td><strong>2 (Unlikely)</strong></td>
+          <td><span class="badge badge-low">2</span></td>
+          <td><span class="badge badge-low">4</span></td>
+          <td><span class="badge badge-medium">6</span></td>
+          <td><span class="badge badge-medium">8</span></td>
+          <td><span class="badge badge-high">10</span></td>
+        </tr>
+        <tr>
+          <td><strong>1 (Rare)</strong></td>
+          <td><span class="badge badge-low">1</span></td>
+          <td><span class="badge badge-low">2</span></td>
+          <td><span class="badge badge-low">3</span></td>
+          <td><span class="badge badge-low">4</span></td>
+          <td><span class="badge badge-medium">5</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-warning">
+      <p><strong>Risk Appetite:</strong></p>
+      <ul>
+        <li><strong>Low (1-4):</strong> Acceptable. Monitor during regular reviews.</li>
+        <li><strong>Medium (5-9):</strong> Tolerable with controls. Active monitoring required.</li>
+        <li><strong>High (10-15):</strong> Unacceptable. Immediate mitigation or escalation required.</li>
+        <li><strong>Critical (16-25):</strong> Intolerable. Requires immediate executive attention and action.</li>
+      </ul>
+    </div>
+
+    <!-- Risk Register Table -->
+    <h2>4. Risk Register</h2>
+
+    <div style="overflow-x: auto;">
+    <table style="font-size: 0.78rem; min-width: 1200px;">
+      <thead>
+        <tr>
+          <th>Risk ID</th>
+          <th>Category</th>
+          <th>Risk Description</th>
+          <th>L</th>
+          <th>I</th>
+          <th>Score</th>
+          <th>Risk Owner</th>
+          <th>Treatment</th>
+          <th>Mitigation Controls</th>
+          <th>Status</th>
+          <th>Review Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>RSK-001</td>
+          <td>Cyber Security</td>
+          <td>Data breach through external attack (e.g., SQL injection, XSS, API exploitation) leading to exposure of client or employee data</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>WAF, input validation, SAST/DAST, penetration testing, encryption at rest and in transit</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-002</td>
+          <td>Cyber Security</td>
+          <td>Ransomware infection encrypting critical systems and data, causing operational disruption and potential data loss</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Endpoint protection, email filtering, backup strategy (3-2-1), network segmentation, user training</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-003</td>
+          <td>Cyber Security</td>
+          <td>Phishing attack leading to credential compromise and unauthorised access to systems</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>MFA, phishing simulations, security awareness training, email filtering, SPF/DKIM/DMARC</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-004</td>
+          <td>Insider Threat</td>
+          <td>Malicious or negligent insider accessing, modifying, or exfiltrating sensitive data</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Least privilege access, audit logging, DLP controls, background checks, offboarding procedures</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-005</td>
+          <td>Access Control</td>
+          <td>Excessive or orphaned access privileges enabling unauthorised actions across systems</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Quarterly access reviews, RBAC, automated deprovisioning, access request workflow</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-006</td>
+          <td>Vendor/Third-Party</td>
+          <td>Critical vendor failure or security breach at a third-party service provider impacting operations or data security</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Vendor risk assessments, SOC reports review, SLA monitoring, contractual security clauses, exit strategy</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-007</td>
+          <td>Operational</td>
+          <td>System or infrastructure outage exceeding RTO/RPO targets, impacting client service delivery</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Redundancy, failover, backup testing, BCP/DR plan, monitoring and alerting</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-008</td>
+          <td>Physical</td>
+          <td>Natural disaster (earthquake, flood, fire) affecting office premises or data centre causing data loss or extended downtime</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Cloud-based backups, geographic redundancy, BCP, insurance, facility safety measures</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-009</td>
+          <td>Compliance</td>
+          <td>Regulatory non-compliance (DPDPA, IT Act) resulting in penalties, legal action, or loss of client trust</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Compliance programme, legal counsel, policy reviews, training, regulatory monitoring</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-010</td>
+          <td>Compliance</td>
+          <td>Failure to achieve or maintain SOC 2 Type II certification, impacting client relationships and market competitiveness</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Compliance documentation suite, control monitoring, gap assessments, evidence collection</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-011</td>
+          <td>Data</td>
+          <td>Unintentional data loss through human error (accidental deletion, misconfiguration, improper handling)</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Automated backups, version control, change management, training, data classification</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-012</td>
+          <td>Cyber Security</td>
+          <td>Exploitation of unpatched software vulnerabilities leading to system compromise</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Patch management programme, vulnerability scanning, SBOM tracking, emergency patching process</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-013</td>
+          <td>Operational</td>
+          <td>Unauthorised or poorly tested changes to production systems causing service disruption or security weaknesses</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Change management process (RS-REG-006), CAB review, rollback plans, post-implementation review</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-014</td>
+          <td>People</td>
+          <td>Key person dependency &mdash; critical knowledge held by single individuals without documentation or cross-training</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Knowledge management, cross-training, documentation standards, succession planning</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-015</td>
+          <td>Physical</td>
+          <td>Unauthorised physical access to office premises, server rooms, or sensitive areas</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Access cards, visitor logs, CCTV, clean desk policy, server room restrictions</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-016</td>
+          <td>Cyber Security</td>
+          <td>Supply chain attack through compromised software dependency or third-party library</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>SBOM, dependency scanning, lock files, vendor security reviews, code signing verification</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-017</td>
+          <td>Data</td>
+          <td>Inadequate data retention or destruction leading to regulatory non-compliance or unnecessary data exposure</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Data retention policy, automated lifecycle management, secure disposal procedures</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-018</td>
+          <td>Operational</td>
+          <td>Power outage or infrastructure failure at office or hosting facility disrupting operations</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>UPS, generator backup, cloud hosting redundancy, remote work capability</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-019</td>
+          <td>Cyber Security</td>
+          <td>Denial of service (DoS/DDoS) attack rendering public-facing services unavailable</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>DDoS protection service, CDN, rate limiting, incident response procedures, ISP coordination</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <td>RSK-020</td>
+          <td>People</td>
+          <td>Insufficient security awareness among employees leading to social engineering success or policy violations</td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE ASSESSED]</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+          <td>Mitigate</td>
+          <td>Annual security training, phishing simulations, awareness campaigns, policy acknowledgement</td>
+          <td><span class="badge badge-draft">Draft</span></td>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- Risk Treatment Strategies -->
+    <h2>5. Risk Treatment Strategies</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Description</th>
+          <th>When to Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mitigate</strong></td>
+          <td>Implement controls to reduce the likelihood and/or impact of the risk to an acceptable level</td>
+          <td>When the risk can be reduced through feasible and cost-effective controls</td>
+        </tr>
+        <tr>
+          <td><strong>Accept</strong></td>
+          <td>Acknowledge the risk and accept the potential consequences without additional controls</td>
+          <td>When the risk is within appetite, or the cost of mitigation exceeds the potential impact</td>
+        </tr>
+        <tr>
+          <td><strong>Transfer</strong></td>
+          <td>Transfer the risk to a third party (e.g., through insurance or outsourcing)</td>
+          <td>When the risk is best managed by a specialised third party or can be covered by insurance</td>
+        </tr>
+        <tr>
+          <td><strong>Avoid</strong></td>
+          <td>Eliminate the risk by ceasing the activity that generates it</td>
+          <td>When the risk is intolerable and no effective mitigation is available</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Review Schedule -->
+    <h2>6. Review Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Frequency</th>
+          <th>Responsible</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Full risk register review</td>
+          <td>Quarterly</td>
+          <td>CISO / Security Officer</td>
+          <td>Updated risk register, risk report to management</td>
+        </tr>
+        <tr>
+          <td>New risk identification</td>
+          <td>Ongoing</td>
+          <td>All personnel (escalated to CISO)</td>
+          <td>New entries added to register</td>
+        </tr>
+        <tr>
+          <td>Risk treatment effectiveness</td>
+          <td>Semi-annually</td>
+          <td>Risk Owners</td>
+          <td>Treatment plan status updates</td>
+        </tr>
+        <tr>
+          <td>Board-level risk report</td>
+          <td>Annually</td>
+          <td>CISO / Compliance Officer</td>
+          <td>Annual risk assessment report</td>
+        </tr>
+        <tr>
+          <td>Post-incident risk update</td>
+          <td>After each P1/P2 incident</td>
+          <td>Incident Manager / CISO</td>
+          <td>Risk reassessment, new risks identified</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Related Documents -->
+    <h2>7. Related Documents</h2>
+    <ul>
+      <li><a href="./compliance-policy.html">RS-GOV-002 &mdash; Compliance Policy</a></li>
+      <li><a href="./roles-responsibilities.html">RS-GOV-003 &mdash; Roles and Responsibilities Matrix</a></li>
+      <li><a href="../security/information-security-policy.html">RS-SEC-001 &mdash; Information Security Policy</a></li>
+      <li><a href="../security/incident-response-plan.html">RS-SEC-004 &mdash; Incident Response Plan</a></li>
+      <li><a href="./incident-register.html">RS-REG-005 &mdash; Incident Register</a></li>
+      <li><a href="./vendor-register.html">RS-REG-002 &mdash; Vendor Register</a></li>
+    </ul>
+
+    <!-- Approval Block -->
+    <h2>Approval</h2>
+    <div class="approval-block">
+      <table>
+        <tr>
+          <th>Prepared By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Reviewed By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approved By</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+        <tr>
+          <th>Approval Date</th>
+          <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Version History -->
+    <h2>Version History</h2>
+    <div class="version-history">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Author</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0</td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+            <td>Initial draft with 20 pre-populated risks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-REG-001 &mdash; Risk Register</span>
+    </div>
+
+  </div>
+</body>
+</html>

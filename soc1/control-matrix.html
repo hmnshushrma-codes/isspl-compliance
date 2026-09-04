@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOC 1 Control Matrix — RS-SOC1-003 — Ramdoot Solutions</title>
+  <link rel="stylesheet" href="../assets/compliance.css">
+  <link rel="stylesheet" media="print" href="../assets/print.css">
+  <style>
+    /* Control matrix specific overrides for wide table */
+    .control-matrix { font-size: 0.82rem; table-layout: auto; }
+    .control-matrix th { font-size: 0.78rem; white-space: nowrap; }
+    .control-matrix td { font-size: 0.82rem; }
+    .control-matrix td:nth-child(1) { min-width: 100px; } /* Objective */
+    .control-matrix td:nth-child(2) { white-space: nowrap; } /* ID */
+    .control-matrix td:nth-child(5) { min-width: 200px; } /* Activity */
+    @media print {
+      .control-matrix { font-size: 7.5pt; }
+      .control-matrix th { font-size: 7pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="doc-nav">
+    <a href="../index.html" class="nav-brand">Ramdoot Solutions — Compliance</a>
+    <div>
+      <a href="../index.html">Home</a> &nbsp;|&nbsp;
+      <a href="./index.html">SOC 1</a> &nbsp;|&nbsp;
+      <button class="btn-print" onclick="window.print()">Print / PDF</button>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- ============================================================
+         COVER PAGE
+         ============================================================ -->
+    <div class="cover-page">
+      <img src="../assets/logo-placeholder.svg" alt="Ramdoot Solutions" class="org-logo">
+      <p class="org-name">Ramdoot Solutions</p>
+      <p class="doc-type">Internal Compliance Readiness Document</p>
+      <h1 class="cover-title">SOC 1 Control Matrix</h1>
+      <p class="cover-subtitle">Control Objectives, Activities, Evidence, and Testing Approach</p>
+      <div class="cover-meta">
+        <p><strong>Document ID:</strong> RS-SOC1-003</p>
+        <p><strong>Version:</strong> 0.1 — Draft</p>
+        <p><strong>Classification:</strong> Confidential</p>
+        <p><strong>Prepared by:</strong> <span class="placeholder">[TO BE COMPLETED]</span></p>
+        <p><strong>Date:</strong> <span class="placeholder">[TO BE COMPLETED]</span></p>
+      </div>
+      <div class="cover-notice">
+        <strong>Disclaimer:</strong> This control matrix is an internal readiness document prepared by Ramdoot Solutions. It is <strong>not</strong> part of a SOC 1 attestation report and has not been tested or opined upon by an independent service auditor. Control owners, specific system names, and operational details must be completed by Ramdoot Solutions before this matrix can be used for audit readiness purposes.
+      </div>
+    </div>
+
+    <!-- ============================================================
+         DOCUMENT CONTROL
+         ============================================================ -->
+    <section>
+      <h2>Document Control</h2>
+      <table class="doc-control">
+        <tr><th>Document ID</th><td>RS-SOC1-003</td></tr>
+        <tr><th>Title</th><td>SOC 1 Control Matrix</td></tr>
+        <tr><th>Version</th><td>0.1 — Draft</td></tr>
+        <tr><th>Classification</th><td>Confidential</td></tr>
+        <tr><th>Author</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Reviewer</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Approver</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Effective Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Next Review Date</th><td><span class="placeholder">[TO BE COMPLETED]</span></td></tr>
+        <tr><th>Related Documents</th><td>RS-SOC1-001 (Readiness Report), RS-SOC1-002 (Internal Controls Framework)</td></tr>
+      </table>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <div class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#s1">How to Read This Matrix</a></li>
+        <li><a href="#s2">Control Matrix — Logical Access to Financial Systems</a></li>
+        <li><a href="#s3">Control Matrix — Segregation of Duties</a></li>
+        <li><a href="#s4">Control Matrix — Transaction Processing</a></li>
+        <li><a href="#s5">Control Matrix — Data Backup and Recovery</a></li>
+        <li><a href="#s6">Control Matrix — Change Management for Financial Systems</a></li>
+        <li><a href="#s7">Control Matrix — Vendor Controls</a></li>
+        <li><a href="#s8">Control Matrix — Incident Management</a></li>
+        <li><a href="#s9">Control Matrix — Physical Security</a></li>
+        <li><a href="#s10">Control Summary</a></li>
+        <li><a href="#s11">Approval &amp; Version History</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================================
+         SECTIONS
+         ============================================================ -->
+    <div class="numbered-section">
+
+      <!-- Section 1 -->
+      <section id="s1">
+        <h2>1. How to Read This Matrix</h2>
+        <p>Each row in the control matrix represents a single control activity. The columns are defined as follows:</p>
+
+        <table>
+          <thead>
+            <tr><th>Column</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Control Objective</strong></td><td>The high-level objective the control supports (mapped to control objectives in RS-SOC1-001).</td></tr>
+            <tr><td><strong>Control ID</strong></td><td>Unique identifier in the format <code>RS-SOC1-CTL-xxx</code>.</td></tr>
+            <tr><td><strong>Business Process</strong></td><td>The business process or IT function the control operates within.</td></tr>
+            <tr><td><strong>Risk</strong></td><td>The risk the control is designed to mitigate.</td></tr>
+            <tr><td><strong>Control Activity</strong></td><td>Detailed description of the control activity in operational language.</td></tr>
+            <tr><td><strong>Control Owner</strong></td><td>The individual or role responsible for operating the control. Marked as <span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span> until assigned.</td></tr>
+            <tr><td><strong>Control Frequency</strong></td><td>How often the control is performed (e.g., Per Event, Daily, Weekly, Monthly, Quarterly, Annually).</td></tr>
+            <tr><td><strong>Control Type</strong></td><td>Preventive, Detective, or Corrective.</td></tr>
+            <tr><td><strong>Evidence</strong></td><td>The artefact(s) that demonstrate the control was performed.</td></tr>
+            <tr><td><strong>Testing Approach</strong></td><td>How an auditor would test the control (Inquiry, Observation, Inspection, Re-performance).</td></tr>
+            <tr><td><strong>Status</strong></td><td>Current implementation status.</td></tr>
+            <tr><td><strong>Exception</strong></td><td>Any known exception or gap related to the control.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout-warning">
+          <p><strong>Important:</strong> This matrix does not fabricate any financial-processing activities specific to Ramdoot Solutions. All control activities describe general control expectations. Ramdoot Solutions must populate specific system names, process details, and control owners before this matrix is suitable for audit readiness.</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Logical Access -->
+      <section id="s2" class="allow-break">
+        <h2>2. Control Matrix — Logical Access to Financial Systems</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-001 -->
+            <tr>
+              <td>CO-01: Logical access to systems and data relevant to financial reporting is restricted to authorised individuals</td>
+              <td><code>RS-SOC1-CTL-001</code></td>
+              <td>User Access Management</td>
+              <td>Unauthorised individuals gain access to systems that process or store financial data</td>
+              <td>New user access to in-scope systems is provisioned based on a formal access request approved by the user's manager and the system owner. The request specifies the role, level of access, and business justification.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Preventive</td>
+              <td>Approved access request forms/tickets; provisioning logs showing creation date and approver</td>
+              <td>Inspection of a sample of access requests and comparison to provisioned accounts</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-002 -->
+            <tr>
+              <td>CO-01: Logical access restricted to authorised individuals</td>
+              <td><code>RS-SOC1-CTL-002</code></td>
+              <td>User Access Management</td>
+              <td>Terminated employees retain access to financial systems</td>
+              <td>Upon notification of employee termination or transfer, access to in-scope systems is revoked or modified within one business day. HR communicates terminations to IT through a formal process.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Preventive</td>
+              <td>Termination checklists; access revocation logs with timestamps; HR notification records</td>
+              <td>Inspection of a sample of terminated employees and comparison of termination date to access revocation date</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-003 -->
+            <tr>
+              <td>CO-01: Logical access restricted to authorised individuals</td>
+              <td><code>RS-SOC1-CTL-003</code></td>
+              <td>User Access Management</td>
+              <td>Users accumulate excessive access over time that is no longer required for their role</td>
+              <td>User access to in-scope systems is reviewed at least quarterly by the system owner or designated reviewer. Identified access that is no longer required is revoked within five business days of identification.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Quarterly</td>
+              <td>Detective</td>
+              <td>Completed access review reports with reviewer sign-off; evidence of access revocations resulting from review</td>
+              <td>Inspection of quarterly access review reports; re-performance of a sample of review determinations</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-004 -->
+            <tr>
+              <td>CO-01: Logical access restricted to authorised individuals</td>
+              <td><code>RS-SOC1-CTL-004</code></td>
+              <td>Authentication</td>
+              <td>Weak authentication allows unauthorised access to financial systems</td>
+              <td>Password policies for in-scope systems enforce a minimum length of 12 characters, complexity requirements (upper, lower, numeric, special), a maximum age of 90 days, and account lockout after 5 consecutive failed attempts.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Continuous (system-enforced)</td>
+              <td>Preventive</td>
+              <td>System configuration screenshots showing password policy settings</td>
+              <td>Inspection of system configuration; attempted creation of non-compliant passwords</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-005 -->
+            <tr>
+              <td>CO-01: Logical access restricted to authorised individuals</td>
+              <td><code>RS-SOC1-CTL-005</code></td>
+              <td>Privileged Access</td>
+              <td>Compromise of privileged accounts leads to unauthorised modification of financial data or system configuration</td>
+              <td>Administrative and privileged access to in-scope systems is restricted to a defined set of personnel with documented justification. Multi-factor authentication (MFA) is required for all privileged access sessions. Privileged access activity is logged and reviewed monthly.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event (MFA) / Monthly (review)</td>
+              <td>Preventive / Detective</td>
+              <td>List of privileged users with justification; MFA configuration evidence; monthly privileged access review logs</td>
+              <td>Inspection of privileged user list; inquiry with administrators; review of MFA configuration and access logs</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 3: Segregation of Duties -->
+      <section id="s3" class="allow-break">
+        <h2>3. Control Matrix — Segregation of Duties</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-006 -->
+            <tr>
+              <td>CO-06: Duties are appropriately segregated to prevent unauthorised or erroneous processing</td>
+              <td><code>RS-SOC1-CTL-006</code></td>
+              <td>Role Assignment</td>
+              <td>A single individual can initiate, authorise, and record a financial transaction without independent oversight</td>
+              <td>Role-based access controls (RBAC) are implemented in in-scope systems such that conflicting duties are separated. A segregation of duties (SoD) matrix is maintained identifying incompatible role combinations. System roles are configured to enforce the SoD matrix.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event (system-enforced) / Annually (SoD matrix review)</td>
+              <td>Preventive</td>
+              <td>SoD matrix document; role configuration in systems; RBAC configuration screenshots</td>
+              <td>Inspection of SoD matrix; review of role configurations in systems; identification of users with conflicting roles</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-007 -->
+            <tr>
+              <td>CO-06: Duties are appropriately segregated</td>
+              <td><code>RS-SOC1-CTL-007</code></td>
+              <td>SoD Monitoring</td>
+              <td>SoD conflicts emerge over time due to role changes or accumulated access</td>
+              <td>A periodic review (at least semi-annually) is performed to identify users with conflicting roles or access that violates the SoD matrix. Identified conflicts are escalated and resolved through access modification or implementation of compensating controls.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Semi-Annually</td>
+              <td>Detective</td>
+              <td>SoD conflict analysis reports; resolution documentation for identified conflicts; compensating control documentation</td>
+              <td>Inspection of SoD review reports; inquiry with reviewer; re-performance of conflict analysis on a sample</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 4: Transaction Processing -->
+      <section id="s4" class="allow-break">
+        <h2>4. Control Matrix — Transaction Processing</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-008 -->
+            <tr>
+              <td>CO-03: Transactions are processed completely, accurately, and in a timely manner</td>
+              <td><code>RS-SOC1-CTL-008</code></td>
+              <td>Data Input</td>
+              <td>Invalid or incomplete data is accepted for processing, leading to inaccurate financial records</td>
+              <td>In-scope applications implement input validation controls that verify the completeness, format, and range of data submitted for processing. Validation failures are rejected with descriptive error messages, and no partial processing occurs.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Transaction (automated)</td>
+              <td>Preventive</td>
+              <td>Application validation rule documentation; system configuration; error logs showing rejected transactions</td>
+              <td>Inspection of validation rules; re-performance by submitting invalid data and verifying rejection</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-009 -->
+            <tr>
+              <td>CO-03: Transactions are processed completely and accurately</td>
+              <td><code>RS-SOC1-CTL-009</code></td>
+              <td>Data Processing</td>
+              <td>Processing errors result in inaccurate, incomplete, or duplicate records</td>
+              <td>Automated processing controls ensure that each transaction is processed exactly once. Control totals, record counts, or hash totals are generated before and after processing and reconciled. Discrepancies trigger alerts and halt further processing until resolved.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Batch / Per Transaction (automated)</td>
+              <td>Detective</td>
+              <td>Reconciliation reports showing input and output totals; exception/alert logs; resolution documentation</td>
+              <td>Inspection of reconciliation reports for a sample of processing runs; inquiry about exception handling</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-010 -->
+            <tr>
+              <td>CO-03: Transactions are processed completely and accurately</td>
+              <td><code>RS-SOC1-CTL-010</code></td>
+              <td>Data Output</td>
+              <td>Output delivered to user entities contains errors or is incomplete</td>
+              <td>Output generated for user entities is subject to a completeness and accuracy review before delivery. For automated outputs, reconciliation controls verify that all processed transactions are included. For manual outputs, a designated reviewer validates accuracy before release.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Output Cycle</td>
+              <td>Detective</td>
+              <td>Output review logs; reconciliation reports; reviewer sign-off records</td>
+              <td>Inspection of output review documentation for a sample of delivery cycles</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-011 -->
+            <tr>
+              <td>CO-03: Transactions are processed in a timely manner</td>
+              <td><code>RS-SOC1-CTL-011</code></td>
+              <td>Processing Timeliness</td>
+              <td>Delayed processing results in untimely financial data being provided to user entities</td>
+              <td>Service level targets are defined for the timeliness of processing. Monitoring tools track processing completion times against defined targets. Breaches of service level targets are escalated to management and communicated to affected user entities where contractually required.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Daily (monitoring) / Monthly (reporting)</td>
+              <td>Detective</td>
+              <td>Processing time reports; SLA monitoring dashboards; escalation records for breaches</td>
+              <td>Inspection of monitoring reports; inquiry about SLA breach handling</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 5: Data Backup and Recovery -->
+      <section id="s5" class="allow-break">
+        <h2>5. Control Matrix — Data Backup and Recovery</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-012 -->
+            <tr>
+              <td>CO-04: Data is backed up and can be recovered to support continuity of financially relevant services</td>
+              <td><code>RS-SOC1-CTL-012</code></td>
+              <td>Backup Operations</td>
+              <td>Data loss due to system failure, corruption, or disaster renders financial data unrecoverable</td>
+              <td>Automated backups of in-scope system databases and application data are performed daily. Backup success and failure status is monitored, and failures trigger alerts for immediate investigation and remediation. Backups are stored in a geographically separate location or cloud region from the primary data.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Daily (backup) / Per Event (failure alert)</td>
+              <td>Preventive</td>
+              <td>Backup job logs showing success/failure; backup monitoring dashboard; backup storage location confirmation</td>
+              <td>Inspection of backup logs for the reporting period; inquiry about failure handling; verification of offsite storage</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-013 -->
+            <tr>
+              <td>CO-04: Data can be recovered to support service continuity</td>
+              <td><code>RS-SOC1-CTL-013</code></td>
+              <td>Backup Testing</td>
+              <td>Backups are not recoverable when needed due to corruption, configuration errors, or untested procedures</td>
+              <td>Backup restoration tests are performed at least quarterly for in-scope systems. Tests verify that data can be successfully restored to a functional state within defined Recovery Time Objective (RTO) and Recovery Point Objective (RPO) targets. Test results and any identified issues are documented.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Quarterly</td>
+              <td>Detective</td>
+              <td>Backup restoration test reports with results, duration, and comparison to RTO/RPO targets</td>
+              <td>Inspection of quarterly test reports; inquiry about remediation of failed tests</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-014 -->
+            <tr>
+              <td>CO-04: Data can be recovered to support service continuity</td>
+              <td><code>RS-SOC1-CTL-014</code></td>
+              <td>Disaster Recovery</td>
+              <td>Extended service outage due to disaster prevents delivery of financially relevant services</td>
+              <td>A disaster recovery plan (DRP) is maintained for in-scope systems and services. The DRP defines roles, responsibilities, recovery procedures, communication protocols, and alternate processing arrangements. The DRP is tested at least annually through a tabletop exercise or live failover test, and results are documented.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Annually (test) / As Needed (invocation)</td>
+              <td>Corrective</td>
+              <td>Disaster recovery plan document; annual DR test reports with results and lessons learned</td>
+              <td>Inspection of DRP document and test reports; inquiry with DR coordinator</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 6: Change Management -->
+      <section id="s6" class="allow-break">
+        <h2>6. Control Matrix — Change Management for Financial Systems</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-015 -->
+            <tr>
+              <td>CO-02: System changes affecting financial processing are authorised, tested, and approved</td>
+              <td><code>RS-SOC1-CTL-015</code></td>
+              <td>Change Initiation</td>
+              <td>Unauthorised or undocumented changes are made to in-scope systems</td>
+              <td>All changes to in-scope systems are initiated through a formal change request that includes a description of the change, business justification, risk assessment, and rollback plan. Changes cannot proceed without an approved request.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Preventive</td>
+              <td>Change request tickets/forms with approval records; change management system logs</td>
+              <td>Inspection of a sample of changes deployed during the period and verification that each has an approved change request</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-016 -->
+            <tr>
+              <td>CO-02: System changes are tested and approved</td>
+              <td><code>RS-SOC1-CTL-016</code></td>
+              <td>Change Testing</td>
+              <td>Untested changes introduce defects that compromise data processing integrity</td>
+              <td>Changes are tested in a non-production environment that is logically separated from the production environment. Test results are documented and reviewed by an individual independent of the developer. Changes with failed tests are not approved for production deployment.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Preventive</td>
+              <td>Test plans and results; reviewer sign-off; evidence of environment separation</td>
+              <td>Inspection of test documentation for a sample of changes; verification of environment separation</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-017 -->
+            <tr>
+              <td>CO-02: System changes are authorised and approved</td>
+              <td><code>RS-SOC1-CTL-017</code></td>
+              <td>Change Approval &amp; Deployment</td>
+              <td>Changes are deployed to production without proper authorisation, introducing risk to financial processing</td>
+              <td>Production deployment requires approval from an authorised approver who is independent of the developer (segregation of duties). Deployment to production is restricted to authorised personnel. All production deployments are logged with timestamps and the identity of the deployer.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Preventive</td>
+              <td>Deployment approval records; production deployment logs; access lists for production deployment tools</td>
+              <td>Inspection of deployment records for a sample of changes; verification that approver differs from developer</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 7: Vendor Controls -->
+      <section id="s7" class="allow-break">
+        <h2>7. Control Matrix — Vendor Controls</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-018 -->
+            <tr>
+              <td>CO-07: Subservice organisations and vendors are monitored and managed</td>
+              <td><code>RS-SOC1-CTL-018</code></td>
+              <td>Vendor Onboarding</td>
+              <td>Engaging a vendor without adequate due diligence introduces unmanaged risk to in-scope services</td>
+              <td>Prior to engagement, vendors that will support in-scope services undergo a risk assessment and due diligence review that evaluates their security controls, financial stability, and compliance posture. The assessment is documented and approved by management. Contractual agreements include security requirements, data handling obligations, audit rights, and incident notification provisions.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event (new vendor)</td>
+              <td>Preventive</td>
+              <td>Vendor risk assessment forms; due diligence reports; signed contracts with security clauses</td>
+              <td>Inspection of vendor onboarding documentation for vendors engaged during the period</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-019 -->
+            <tr>
+              <td>CO-07: Vendors are monitored and managed</td>
+              <td><code>RS-SOC1-CTL-019</code></td>
+              <td>Vendor Monitoring</td>
+              <td>Vendor control environment degrades without detection, introducing risk to customer financial data</td>
+              <td>Critical vendors supporting in-scope services are reviewed at least annually. The review includes obtaining and evaluating the vendor's SOC report (or equivalent assurance), reviewing service performance, and assessing any material changes. Findings are documented and escalated to management. Where a bridge letter is required (gap between SOC report period end and current period), it is obtained and reviewed.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Annually</td>
+              <td>Detective</td>
+              <td>Vendor review reports; SOC report review documentation; bridge letters; management sign-off</td>
+              <td>Inspection of annual vendor review documentation; verification that SOC reports were obtained and reviewed</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 8: Incident Management -->
+      <section id="s8" class="allow-break">
+        <h2>8. Control Matrix — Incident Management</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-020 -->
+            <tr>
+              <td>CO-05: Security incidents affecting financial data are identified, reported, and resolved</td>
+              <td><code>RS-SOC1-CTL-020</code></td>
+              <td>Incident Detection</td>
+              <td>Security incidents affecting financial data are not detected in a timely manner</td>
+              <td>Monitoring tools and alerting mechanisms are configured to detect security events relevant to in-scope systems, including unauthorised access attempts, data exfiltration indicators, malware detection, and system integrity violations. Alerts are routed to designated personnel for investigation.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Continuous (automated)</td>
+              <td>Detective</td>
+              <td>Monitoring tool configuration; alert configuration documentation; sample alert logs</td>
+              <td>Inspection of monitoring configuration; review of alert logs for the period; inquiry about alert handling</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-021 -->
+            <tr>
+              <td>CO-05: Incidents are reported and resolved</td>
+              <td><code>RS-SOC1-CTL-021</code></td>
+              <td>Incident Response</td>
+              <td>Incidents affecting customer financial data are not properly managed, leading to prolonged impact</td>
+              <td>A formal incident response procedure exists that defines classification criteria (based on impact to customer financial reporting), escalation paths, response timelines, communication requirements (including notification to affected user entities), and root cause analysis. Incidents are tracked in a centralised system from detection through closure.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event</td>
+              <td>Corrective</td>
+              <td>Incident response procedure document; incident tickets showing classification, timeline, root cause, and resolution; user entity notification records</td>
+              <td>Inspection of incident response procedure; review of incident tickets for the period; inquiry about notification process</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-022 -->
+            <tr>
+              <td>CO-05: Incidents are resolved and prevented from recurrence</td>
+              <td><code>RS-SOC1-CTL-022</code></td>
+              <td>Post-Incident Review</td>
+              <td>Lessons from incidents are not captured, leading to recurrence</td>
+              <td>For incidents classified as high or critical severity, a post-incident review is conducted within 10 business days of closure. The review identifies root cause, contributing factors, and corrective actions. Corrective actions are tracked to completion and validated.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event (post-incident)</td>
+              <td>Corrective</td>
+              <td>Post-incident review reports; corrective action tracking records; validation of corrective action completion</td>
+              <td>Inspection of post-incident reviews for high/critical incidents during the period</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 9: Physical Security -->
+      <section id="s9" class="allow-break">
+        <h2>9. Control Matrix — Physical Security</h2>
+
+        <table class="control-matrix">
+          <thead>
+            <tr>
+              <th>Control Objective</th>
+              <th>Control ID</th>
+              <th>Business Process</th>
+              <th>Risk</th>
+              <th>Control Activity</th>
+              <th>Control Owner</th>
+              <th>Frequency</th>
+              <th>Type</th>
+              <th>Evidence</th>
+              <th>Testing Approach</th>
+              <th>Status</th>
+              <th>Exception</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- CTL-023 -->
+            <tr>
+              <td>CO-08: Physical security of facilities housing in-scope systems is maintained</td>
+              <td><code>RS-SOC1-CTL-023</code></td>
+              <td>Facility Access</td>
+              <td>Unauthorised physical access to facilities leads to theft, damage, or tampering with systems</td>
+              <td>Physical access to office facilities where in-scope systems are accessed or administered is restricted to authorised personnel. Access control mechanisms (badge readers, biometric scanners, or equivalent) are in place at entry points. Visitor access requires registration and escort.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Continuous (system-enforced)</td>
+              <td>Preventive</td>
+              <td>Physical access control system configuration; visitor logs; badge/access card issuance records</td>
+              <td>Observation of physical access controls; inspection of visitor logs for the period</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-024 -->
+            <tr>
+              <td>CO-08: Physical security of facilities is maintained</td>
+              <td><code>RS-SOC1-CTL-024</code></td>
+              <td>Physical Access Review</td>
+              <td>Former employees or contractors retain physical access to facilities</td>
+              <td>Physical access rights are reviewed at least quarterly to ensure only currently authorised personnel have access. Access for terminated employees is revoked on the same day as logical access revocation. Access badges are collected upon termination.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Per Event (termination) / Quarterly (review)</td>
+              <td>Detective</td>
+              <td>Quarterly physical access review reports; badge collection records; termination checklists</td>
+              <td>Inspection of quarterly access review documentation; comparison of physical access list to active employee list</td>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>--</td>
+            </tr>
+            <!-- CTL-025 -->
+            <tr>
+              <td>CO-08: Physical security of facilities is maintained</td>
+              <td><code>RS-SOC1-CTL-025</code></td>
+              <td>Environmental Controls</td>
+              <td>Environmental hazards (fire, flood, power failure) damage systems housing financial data</td>
+              <td>Facilities housing in-scope systems (including server rooms or data closets, if applicable) are protected by environmental controls including fire suppression systems, climate control (temperature and humidity monitoring), and uninterruptible power supply (UPS) or backup power. Environmental monitoring alerts are configured and routed to designated personnel.</td>
+              <td><span class="placeholder">[TO BE COMPLETED BY RAMDOOT SOLUTIONS]</span></td>
+              <td>Continuous (monitoring) / Annually (inspection)</td>
+              <td>Preventive / Detective</td>
+              <td>Environmental monitoring system configuration and logs; fire suppression inspection certificates; UPS test records</td>
+              <td>Observation of environmental controls; inspection of monitoring logs and maintenance records</td>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 10: Control Summary -->
+      <section id="s10">
+        <h2>10. Control Summary</h2>
+
+        <h3>10.1 Control Count by Domain</h3>
+        <table>
+          <thead>
+            <tr><th>Domain</th><th>Control Objective</th><th>Controls</th><th>IDs</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logical Access to Financial Systems</td>
+              <td>CO-01</td>
+              <td>5</td>
+              <td>CTL-001 through CTL-005</td>
+            </tr>
+            <tr>
+              <td>Segregation of Duties</td>
+              <td>CO-06</td>
+              <td>2</td>
+              <td>CTL-006, CTL-007</td>
+            </tr>
+            <tr>
+              <td>Transaction Processing</td>
+              <td>CO-03</td>
+              <td>4</td>
+              <td>CTL-008 through CTL-011</td>
+            </tr>
+            <tr>
+              <td>Data Backup and Recovery</td>
+              <td>CO-04</td>
+              <td>3</td>
+              <td>CTL-012 through CTL-014</td>
+            </tr>
+            <tr>
+              <td>Change Management</td>
+              <td>CO-02</td>
+              <td>3</td>
+              <td>CTL-015 through CTL-017</td>
+            </tr>
+            <tr>
+              <td>Vendor Controls</td>
+              <td>CO-07</td>
+              <td>2</td>
+              <td>CTL-018, CTL-019</td>
+            </tr>
+            <tr>
+              <td>Incident Management</td>
+              <td>CO-05</td>
+              <td>3</td>
+              <td>CTL-020 through CTL-022</td>
+            </tr>
+            <tr>
+              <td>Physical Security</td>
+              <td>CO-08</td>
+              <td>3</td>
+              <td>CTL-023 through CTL-025</td>
+            </tr>
+            <tr style="font-weight:600;">
+              <td colspan="2"><strong>Total</strong></td>
+              <td><strong>25</strong></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>10.2 Status Summary</h3>
+        <table>
+          <thead>
+            <tr><th>Status</th><th>Count</th><th>Percentage</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-required">Documentation Required</span></td>
+              <td>19</td>
+              <td>76%</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-pending">Requires Confirmation</span></td>
+              <td>6</td>
+              <td>24%</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-implemented">Implemented</span></td>
+              <td>0</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout-danger">
+          <p><strong>Action Required:</strong> All 25 controls require either formal documentation or confirmation of existing implementation before Ramdoot Solutions can proceed with a SOC 1 engagement. Control owners must be assigned, evidence collection processes established, and controls must be operating for a sufficient period before audit readiness can be achieved.</p>
+        </div>
+      </section>
+
+      <!-- Section 11: Approval & Version History -->
+      <section id="s11">
+        <h2>11. Approval &amp; Version History</h2>
+
+        <h3>Approval Block</h3>
+        <div class="approval-block">
+          <table>
+            <tbody>
+              <tr>
+                <th>Prepared By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Prepared</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Reviewed By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Reviewed</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Approved By</th>
+                <td><span class="placeholder">[Name, Title — TO BE COMPLETED]</span></td>
+              </tr>
+              <tr>
+                <th>Date Approved</th>
+                <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Version History</h3>
+        <table class="version-history">
+          <thead>
+            <tr><th>Version</th><th>Date</th><th>Author</th><th>Changes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.1</td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td><span class="placeholder">[TO BE COMPLETED]</span></td>
+              <td>Initial draft — 25 controls across 8 domains</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div><!-- /numbered-section -->
+
+    <!-- Footer -->
+    <div class="doc-footer">
+      <span>&copy; 2026 Ramdoot Solutions. Confidential and Proprietary.</span>
+      <span>RS-SOC1-003 v0.1</span>
+    </div>
+
+  </div><!-- /page-wrapper -->
+</body>
+</html>
